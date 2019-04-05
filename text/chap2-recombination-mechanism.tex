@@ -360,17 +360,217 @@ These form \textit{via} the process of homologous recombination.
 
 
 \section{Chronology of meiotic recombination}
-cf Baudat et de Massy + ma presentation a ce sujet
 
-cf aussi Neil hunter: interhomolg interaction + programmed DSB formation + CO control
+Homologous recombination (HR), which occurs during prophase I, is the process through which homologous chromosomes physically interact and exchange strands of DNA\@. 
+In certain cases, it leads to the formation of a (relatively) long-term connection that maintains the bivalents together until their separation at anaphase I\@.
+
+HR begins at leptotene with the formation of a DNA double-strand break (DSB) on one homologue. 
+To repair properly, this crack needs a DNA strand to use as template. There begins a homology search accomplished at zygotene by the broken-strand invasion of the mating chromosome.
+The template-based repair process creates a transient structure, subsequently resolved into either a crossing-over (CO) or a non-crossover (NCO) during late zygotene and pachytene.
+
+In mammals, each of these actions is executed by a complex body of proteins summarised in Figure~\ref{fig:recombination-mammalian-proteins}. 
+
+
 
 \subsection{Initiation of recombination}
-\subsection{Meiotic DSB repair}
-\subsection{Resolution}
+
+The evolutionarily conserved SPO11 endonuclease — observed in a wide range of species \citep{baudat2000chromosome,mckim1998meiw68,romanienko2000mouse,steiner2002meiotic,bowring2006chromosome,stacey2006arabidopsis} — catalyses the programmed formation of DSBs \citep{keeney1997meiosisspecific,bergerat1997atypical} that marks the beginning of HR \citep{sun1989double}.
+Of the two isoforms found in mice \citep{metzler-guillemain2000identification}, SPO11\textgreek{β} is the one responsible for DSB formation \citep{bellani2010expression}.
+DNA cleavage by this homodimeric protein leaves a two-nucleotide 5' overhang \citep{demassy1995nucleotidea}	onto which it remains trapped till the further processing of DSB ends (see Section~\ref{chap2:DSB-repair}) \citep[reviewed in][]{cole2010evolutionarya}.
+
+Several other proteins have been identified as essential for the correct formation of DSBs (extensively reviewed in \citealp{keeney2008spo11a} and \citealp{demassy2013initiation}).
+Among them, the yeast MER2-MEI4-REC114 complex \citep{li2006saccharomyces,maleki2007interactions} and two mouse homologues (MEI4 and REC114) have been identified as functional and important for nick generation \citep{kumar2010functional,kumar2015mei4}, thus suggesting a conserved mechanism for recombination initiation. 
+Nevertheless, the mammalian system has some specificities since MEI1 \citep{libby2002mouse,libby2003positional}, which does not set forth any yeast homologue, has been uncovered as essential for normal DSB levels, along with HORMAD1 (yeast homologue: HOP1) \citep{shin2010hormad1,daniel2011meiotic}.
+
+Once DSBs have been generated, the ataxia telangiectasia mutated (ATM) kinase both phosphorylates the 139\textsuperscript{th} serine residue of histone H2AX variants located in their vicinity (then named \textgreek{γ}H2AX) \citep{rogakou1998dna,burma2001atm} and thwarts further DSB apertures of DNA \citep{lange2011atm,lukaszewicz2018control}.\\
+
+In mice and humans, ${\sim}$200—400 DSBs are initiated in this manner at early leptotene and, from this point forward, have to be repaired to secure the production of viable gametes.
+
+
+
+
+
+
+
+\subsection{Repair of double-strand breaks (DSBs)}
+\label{chap2:DSB-repair}
+
+\begin{figure}[p]
+	\centering
+	\includegraphics[width = 1\textwidth]{figures/chap2/recombination-mammalian-proteins.eps}
+	% \includegraphics[width = 0.7\textwidth, trim = 0cm 0cm 11.65cm 0cm, clip]{figures/chap1/morgan-drosophila-cross-results.eps}
+	\caption[Proteins involved in mammalian meiotic recombination]
+	{\textbf{Proteins involved in mammalian meiotic recombination.}
+		\par blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blabla
+		\par r blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blabla
+		\par r blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blablar blabla blabla blabla
+		\par This figure was reproduced from \citet{baudat2013meiotic}.
+	}
+\label{fig:recombination-mammalian-proteins}
+\end{figure}
+
+
+
+\subsubsection{DSB-end processing}
+The repair of DSBs begins with the processing of its ends: an endonucleolytic cleavage several nucleotides downstream of the 5' end \citep{neale2005endonucleolytic} is executed by the MRE11 complex both in yeasts \citep[reviewed in][]{borde2009double} and mammals \citep[reviewed in][]{borde2007multiple}.
+In \textit{Saccharomyces cerevisiae} and \textit{Caenorhabditis elegans}, MRE11 acts collaboratively with RAD50 and NBS1, two proteins required for DSB mending \citep[reviewed in][]{lam2015mechanism}. 
+Both have mammalian homologues, but their putative role in DSB repair \citep[reviewed in][]{baudat2013meiotic} is hard to prove since knocking them out is lethal for mice \citep{luo1999disruption,zhu2001targeted}.
+In contrast, that of a DNA polymerase (Pol \textgreek{β}) in releasing SPO11-bound oligonucleotides at DSB ends was unequivocally evidenced \citep[reviewed in \citealp{baudat2013meiotic}]{kidane2010dna}.
+
+
+
+\subsubsection{Strand invasion}
+As removal of SPO11 is paired with the 5’-to-3’ end resection of the DSB, 3’ single-stranded DNA (ssDNA) tails become accessible to the nuclear machinery (Figure~\ref{fig:recombination-mammalian-proteins}.b.).
+As such, RPA proteins rapidly bind them \citep{he1995rpa} but are then displaced by RAD51 and/or DMC1 recombinases \citep{pittman1998meiotic,yoshida1998mouse} which catalyze the pairing and exchange between the ssDNA strand and the intact, homologous double-stranded DNA (dsDNA).
+Their relationship is complex: RPA is necessary both for RAD51 filament formation and for DMC1-catalysed strand exchange, but notwithstandingly, it also competes with them for ssDNA binding \citep{sung2003rad51}.
+
+The proper functioning of DMC1 and RAD51 in strand invasion requires several other proteins that interact with either one or both of them: HOP2 and MND1 \citep{bugreev2014hop2mnd1}, BRCA1 \citep{scully1997association} and BRCA2 \citep{thorslund2007interactions}.
+This complex process also requires other, less well-characterised actors that I will not describe here for they are of little interest for the scope of this thesis \citep[but for review, see][and Figure~\ref{fig:recombination-mammalian-proteins}.c.]{neale2006clarifying}.\\
+
+\textbf{CF LESECQUE aussi parler de SEI et du fait que peut etre rejete si pas d'homologie pour eviter la recombinaison ectopique}
+
+\subsubsection{Recombination-intermediate processing}
+The interaction between the invading strand and the homologue is subsequently stabilised by several proteins.
+Indeed, BLM, TEX11 (yeast homologue: ZIP4) and RNF212 (yeast homologue: ZIP3) appear at zygotene at recombination foci and progressively decrease until the end of pachytene, \textit{i.e.} when DSBs are repaired \citep[reviewed in][]{baudat2013meiotic}. 
+In addition, together with MCM8 and MCM9 proteins \citep{lutzmann2012mcm8}, heterodimers of MSH4 and MSH5 \citep{scully1997association} are requisiste for synapsis stabilisation in both mice \citep{devries1999mouse,kneitz2000muts} and humans \citep{snowden2004hmsh4hmsh5}.
+
+Though, the role of MSH4 continues beyond synapsis establishment. 
+Indeed, the stabilisation of the interaction between the two homologues creates an intertwined recombination intermediate structure, and MSH4 participates in its resolution when it leads to a certain class of COs, but also, as argued by \citep{baudat2007regulating}, when it leads to NCOs.
+% The stabilisation of the interaction between the two homologues creates an intertwined recombination intermediate structure, — a Holliday junction (HJ), — which needs to be resolved.
+
+
+
+
+
+\subsection{Resolution of recombination intermediates}
+
+Recombination intermediate structures may be resolved \textit{via} two main pathways (Figure~\ref{fig:recombination-mammalian-proteins}.d.\ and e.).
+In the pathway leading to COs, the non-invading strand of the broken chromosome interacts with the displaced homologue strand which forms the D-loop.
+In constrast, in the pathway leading to NCOs, the non-invading strand anneals again the invading strand from the same chromatid, after the latter has elongated on the homologue and displaced from it.
+
+
+\begin{figure}[p]
+	\centering
+	\includegraphics[width = 0.85\textwidth]{figures/chap2/baudat-pathways-resolution.eps}
+	% \includegraphics[width = 0.7\textwidth, trim = 0cm 0cm 11.65cm 0cm, clip]{figures/chap1/morgan-drosophila-cross-results.eps}
+	\caption[Molecular mechanism of pathways leading to crossing-overs (COs) and non-crossovers (NCOs)]
+	{\textbf{Molecular mechanism of pathways leading to crossing-overs (COs) and non-crossovers (NCOs).}
+		\par Refaire une figure qui ressemble a celle-ci \citep{baudat2007regulating} mais qui incluera en plus l'information sur la resolution symmetrique et asymmetrique (cf \citep{wyatt2014holliday} — Figure 1). Il faudra ajouter dans le texte les ref a cette figure.
+	}
+\label{fig:pathways-resolution}
+\end{figure}
+
+
+\subsubsection{The CO pathway}
+In certain cases, the homologues are physically bound twice: one strand from each chromosome (the invading strand and the D-loop strand) displaces to bind the homologue, thus creating a double Holliday junction (dHJ).
+TEX11 (yeast homologue: ZIP4), RNF212 (yeast homologue: ZIP3) and HFM1 (yeast homologue: MER3) are though to play a role in processing the dHJ, since knocking one of them out leads to a diminished level of chiasmata and COs \citep[reviewed in \citealp{baudat2013meiotic}]{adelman2008zip4h,guiraldelli2013mouse,reynolds2013rnf212}.
+In yeasts, MER3, one of the proteins of this ZMM complex, specifically interacts with RAD51 to stimulate heteroduplex extension \citep{mazina2004saccharomyces}.\\
+
+The resolution of the dHJ \textit{per se} is catalysed by resolvases, \textit{i.e.} enzymes that slice the interwound strands.
+In mice, a pair of symmetrical nicks is introduced across the helical branchpoint of most (90\%) dHJs either by a heterodimer of MLH1 \citep{baker1996involvement, edelmann1996meiotic} and MLH3 \citep{lipkin2002meiotic} or by EXO1 \citep{wei2003inactivationa}.
+
+Alternatively, the dHJ can be resolved by introducing two single-stranded incisions \citep{wyatt2014holliday}. 
+In that case, the two nicks are asymmetric and can be located several nucleotides away from the branchpoint. 
+This resolution is catalysed by MUS81 and EME1 (yeast homologue: MMS4).
+In \textit{Saccharomyces pombe} where it was first discovered, it is the only pathway to produce COs \citep{osman2003generating}.
+However, in plants \citep{mercier2005two} and in mice \citep{holloway2008mus81}, it coexists with the MLH1-dependent CO pathway.\\
+
+
+Of the 200—400 recombination foci in mice, only 20 (one per chromosome) lead to a CO \citep{baudat2007regulating}.
+This implies the existence of another repair pathway: that leading to NCO events.
+
+
+\subsubsection{The NCO pathway}
+Instead of being resolved, the dHJ is sometimes dissolved by the BLM helicase together with a topoisomerase \citep{wu2003bloom}. 
+This pathway thus interferes with the formation of COs and, indeed, inactivating BLM leads to an increased number of chiasmata \citep{holloway2010mammalian}.
+
+Though, most NCOs are formed \textit{via} another pathway that occurs before the resolution of dHJs: the synthesis-dependent strand-annealing (SDSA) pathway \citep{allers2001differential}.
+In it, after the invading strand has extended past the site of the DSB, the D-loop is disrupted and the invading strand anneals its complementary ssDNA on the other side of the DSB\@.
+Intermediates of this pathway have been directly observed in \textit{Saccharomyces cerevisiae} \citep{mcmahill2007synthesisdependent} in which it produces the large majority of NCOs \citep{martini2011genomewide}.
+Molecularly, the dissociation between the invading strand and the homologue is promoted by the SRS2 helicase \citep{ira2003srs2}.\\
+
+
+Everything that has been described so far corresponds to recombination between the homologous chromosomes. 
+Though, recombination occurs in two additional forms.
+
+First, the broken strand can interact with the sister chromatid, as is the case in mitotic cells. 
+Indeed, mitotic DSBs are not programmed but occur spontaneously when DNA is damaged.
+In such cases, it is important for genome integrity to recombine with an identical DNA\@: that of the sister chromatid. 
+Such breaks are mainly repaired \textit{via} non-homologous end-joining (NHEJ), which consits in directly ligating the broken strands of DNA \citep{weterings2004mechanism} and which is highly prone to errors \citep{smith2001influence}.
+
+Second, non-allelic sequences located at different genomic locations — generally low copy repeats resulting from duplication events \citep{bailey2006primate} — can recombine together. 
+This is called non-allelic homologous recombination (NAHR) (or “ectopic recombination”) and proceeds similarly to HR \citep{sasaki2010genome}.
+
+Since both these processes go far beyond the scope of this thesis, and I will not detail them any further.\\
+
+In all three cases (mitotic recombination, NAHR and HR), errors in the recombination process sometimes arise. 
+Since HR is crucial for the correct segregation of homologues, any error arising in this process can have dramatic consequences for the forthcoming gametes.
+
+
+
+
+\textbf{NOTES\@: notions non abordees ici qui le seront dans d'autres chapitres. CO interference + obligatory CO (chap3 avec la distribution des CO/NCO/DSB sur les chromosomes. Il faudra a ce moment faire le lien avec CO interferents par Mlh1 et CO non interferents par Mus81 + au moins un dnas le PAR), conversion tract + MMR + BER + conversion/restauration (chap4 avec conversion genique). Voir ou je place le brassage genetique par les CO qui font des recombinants + la segregation aleatoire des chroms. Pas sur que ce soit necessaire d'en parler.}
+% DANS CROSSING-OVER: generate genetic diversity along with independent assortment (http://www.macmillanhighered.com/BrainHoney/Resource/6716/digital_first_content/trunk/test/hillis2e/hillis2e_ch07_5.html)
+Parler de NHEJ
+
+
+
+DANS LES PROBLEMES
+Aussi: il faudra parler du fait que, chez les femmes, il y a d'autres DSB qui se forment de facon non programmee. Et sont repares differemments (en particulier, plus longs + plus complex? voir chapitre 3). Plus, des problemes de trisomie plus souvent chez les femmes a cause du dictyate arrest.
+
+In females, chiasmata maintained for decades because stop at the end of diplotene (dictyate stage). May explain why higher aneuploidy and especially with maternal age.
+
+
+
 
 
 % https://www.ncbi.nlm.nih.gov/books/NBK21986/ — tetrad analysis utilisee pour mapper les doubles CO
-% https://www.ncbi.nlm.nih.gov/books/NBK22106/ — Mitotic crossing-over
+
+
+%%%%%% chap3: DSBs: In humans and mice, DSBs tend to avoid centromeres and heterochromatic acrocentric short arms, although they are heavily enriched near telomeres in human males [17]. % ALTEMOSE
+
+% Spatial distribution of DSBs: Lam and Keeney 2015
+% CHAPITRE 3: Revue de Massy initiation recombinaison parle des cartes de CO chez plein d'especes + les differences de recombinaison selon les regions genomiques
+% POUR CHAPITRE 3: DONC au total pour observer, on peut regarder ATM, Spo11. Egalement generalement RAD51 et DMC1. mais donc plus large car dans processing. 200 a 400 foci dans les souris.
+
+% CHAPITRE 3
+% BAUDAT MASSY 2013
+% In addition, the number of SPO11-dependent DSBs formed in every meiocyte is regulated by several factors. In contrast to crossovers, meiotic DSBs are difficult to quantify, especially because they are transient. Counting the foci formed by the recombinases RAD51 and DMC1 (see section below) has been widely used as the best available estimate of the number of DSBs in individual cells (oocytes or spermatocytes). It gives a count of 200–400 foci per cell in mice and humans3. A method for comparing the relative level of meiotic DSBs between mice of different genotypes was recently developed by quantifying the global level of oligonucleotides that are covalently attached to SPO11 (REF. 65). The role of the ataxia telangiectasia mutated (ATM) kinase as a nega- tive regulator of meiotic DSBs has been demonstrated using this method66. Situations in which SPO11 is unable to generate a wild-type number of DSBs correlate with defects in synapsis, suggesting that a minimum number of DSBs is needed to allow proper interactions between homologues67,68.
+%
+
+
+% Aussi des hotspots (chapitre 3) - depuis Baudat et de Massy CO
+% CO are not randomly distrib- uted, but occur in multiple specific regions of the genome called CO hotspots (de Massy 2003, Kauppi et al. 2004). A hotspot is a region 1Y2 kb wide where CO are clustered, as a result of localized initiation events (see below). The average spacing between hotspots is 50Y100 kb and hotspot activities vary over three to four orders of magnitude, from 0.9 to 0.0005 cM as determined in the human genome. In the human genome the number of hotspots is estimated around 25 000Y50 000 (Myers et al. 2005). The variations of hotspot density and activity along chromosomes result in domains with high (jungles) or low (desert) recombination activity. Most sub-telomeric regions are recombination jun- gles in male meiosis whereas centromeric regions are recombination deserts. However, the determinants of CO variation along chromosomes are not known, even though some factors correlated with CO density are beginning to be analyzed (Buard & de Massy 2007, TIG in revision).
+%
+
+
+%% INTERFERENCE
+% Cf lesecque revue + POPA Un paragraphe tres complet
+% + dans Baudat 2007 et 2013: interfering par dHJ, non-interfering Ms81.
+% Pas d'interference (ou peu? Baudat CO) dans les NCO
+
+%% INTERFERENCE (CAPILLO)
+% Since only a small fraction of DSBs are eventually processed as COs, a highly regulated genetic control determines both CO homeostasis and chromosomal distribution. In this way, if a CO occurs in a certain position, the probability for a new CO to take place nearby increases with chromosomal length. As a consequence, COs tend to follow an evenly spaced distribution across chromosome axes [Jones, 1967; Kleckner et al., 2003; Wang et al., 2015]. Importantly, this CO interference is influenced by the physical distance along the chromosomal axes (micrometers) rather than the genomic (Mb) or genetic distance (cM) [Wang et al., 2015]. However, not all COs are subject to interference, leading to recognition of interfering (class I) and non-interfering (class II) COs in different organisms [Hollingsworth and Brill, 2004; Phadnis et al., 2011]. Non-interfering COs are Mus81-Mms4 dependent and distribute themselves randomly along the chromosomes independent of each other, whereas interfering COs have been found to be distributed according to a gamma distribution. In mice, most COs manifest interference and are controlled by proteins Msh4-Msh5 [Berchowitz and Copenhaver, 2010], although some Mus81 activity has been detected during meiosis [Holloway et al., 2008]. Despite the evolutionary rationale of CO interference is still unknown, spaced COs ensure faithful chromosomal segregation and might facilitate linkage of functionally related genes [Wang et al., 2015 and references therein].
+
+% OBLIGATORY CO
+% These cytological analyses also show that at least one CO is formed per chromosome arm both in humans and mice, apart from short heterochromatic arms from acrocentric chromosomes. This regulation of CO frequency is a manifestation of the rule of the obligatory CO. Interestingly, mouse strains carrying Robertsonian translocations have two CO per chro- mosome, one per euchromatic arm (Dumas & Britton- Davidian 2002). The rule of the obligatory CO is also observed between the X and Y, where one CO is always observed in the pseudoautosomal region. A second level of CO regulation is shown by the
+% measures of distances between chiasmata or Mlh1 foci, or by genetic distances. These show that, both in mouse and human, CO are not randomly distributed and are more evenly spaced than expected if they occurred independently, a phenomenon defined as positive interference (Lawrie et al. 1995, Laurie & Hulten 1985, Anderson et al. 1999, Broman & Weber 2000, Broman et al. 2002).
+%
+
+% Voir aussi Neil Hunter: CO control
+
+% https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3003294/ : CO control (Yanowitz)
+
+%%% DANS GENE CONVERSION (CHAPITRE 4)
+% Parler de gene conversion + conversion/restauration
+% Parler de tract
+% Parler de heteroduplex
+% MMR et BER
+
+
+
+
+
 
 \section{Models of recombination}
 
