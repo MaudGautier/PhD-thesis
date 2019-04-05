@@ -86,7 +86,7 @@
 % Either way, you'll have to choose and configure an appropriate bibliography format...
 
 % The science-type option: numerical in-text citation with references in order of appearance.
-\usepackage{natbib}
+\usepackage{natbib} % ajouter [numbers] si je veux les compter
 % \usepackage[style=numeric-comp, sorting=none, backend=biber, doi=false, isbn=false]{biblatex}
 \newcommand*{\bibtitle}{References}
 
@@ -652,7 +652,6 @@
 
 \renewcommand\bibname{References}
 \bibliographystyle{apalike}
-\bibliography{references}
-
+\bibliography{references,bibliography_additional/Bibtex/01_chronology_recombination}
 
 \end{document}
