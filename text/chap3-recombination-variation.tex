@@ -48,78 +48,160 @@ This, — which he calls ‘natural selection’, — is therefore tightly linke
 
 Furthermore, the notion of biological species itself, formally defined by Ernst Mayr (1904--2005) as ‘groups of interbreeding natural populations that are reproductively (genetically) isolated from other such groups’ \citep{mayr1999systematics}, rests on the ability to sexually reproduce and thus, to meiotically recombine.
 
-The relationship between these two concepts (further developed in \citealp{felsenstein1981skepticism} and \citealp{butlin2005recombination}) is such that, in the mammalian clade, the only speciation gene discovered so far is the one that controls the localisation of double-strand breaks (DSBs) — the starting points of recombination — on the genome.
+The relationship between these two concepts (further developed in \citealp{felsenstein1981skepticism} and \citealp{butlin2005recombination}) is such that, in the mammalian clade, the only speciation gene discovered so far is the one that controls the localisation of double-strand breaks (DSBs) on the genome.
 
 I will come back to this essential gene and to its impact on the evolution of recombination rate in the third section of this chapter. 
-But prior to that, I will review the existing methods to detect recombination genome-wide, and the observations on the multiple levels of recombination rate (RR) variation along genomes and across species.
+But prior to that, I will review the existing methods to detect recombination genome-wide, and the multiple layers of recombination rate (RR) variation that have been observed along genomes and across species.
 
-
-
-
-%
-%
-%
-% INTRO
-% On comprend maintenant les mecanismes de la meiose et de la recombinaison.
-% % Le principe meme de meiose implique deux types de brassage genetique: la segregation independante des homologues + la recombinaison, et la formation de CO. Donc ca cree de nouvelles combinaisons alleliques, considerees comme l'avantage du sexe par rapport a la reproduction non sexuee.
-% En effet, sur ces combinaisons alleliques, il peut y avoir un phenomene de selection naturelle: on genere de la diversite avec la mutation et la selection, et on selectionne les interessantes avec la selection naturelle.
-% D'apres Darwin, qui a invente le concept, ce sont ces additions elementaires de diversite qui forment ensuite des especes (car on voit de la continuuite).
-% La speciation se fait effectivement lorsqu'une population s'isole et cree de la diversite. Quand elle est suffisamment differente des autres groupes, on va pouvoir la nommer comme une espece (et generalement, espece si descendant sterile). (i.e.ne recombine pas?)
-% % et de fait, le gene de "speciation" des mammiferes est implique dans le controle de la position de la recombinaison sur le genome (on en parlera plus longuement en section 3).
-% Avant de s'attarder sur ce gene qui explique donc la position de la recombinaison, il faut pouvoir detecter la recombinaison dans les genomes. En premiere partie, les methodes pour la detecter
-% Puis, on va observer comment les taux varient au sein des genomes et entre les especes
-% Ensuite, on parlera plus longuement de ce gene de speciation (PRDM9) et on verra quelle est une de ses consequences sur l'evolution du taux de recombinaison.
-%
 % CHAP 3: 1) comment mesurer et detecter la recombi. 2) les variations dans l'espace et le temps. 3) les positions des hotspots par PRDM9 + le dBGC
 
-
-
-
-%
 % Therefore during the modification of the descendants of any one species, and during the incessant struggle of all species to increase in numbers, the more diversified these descendants become, the better will be their chance of succeeding in the battle of life. Thus the small differences distinguishing varieties of the same species, will steadily tend to increase till they come to equal the greater differences between species of the same genus, or even of distinct genera.
-%
-%
-%
-%
+
+
 
 
 \section{Genome-wide detection of recombination}
-\subsection{Genetic maps and pedigree analyses}% deCODE (et historique Sturtevant, et definition des markers) Et ChIPs}
-\subsection{Analysis of linkage disequilibrium (LD)}%(et HapMap et biais)}
+
+\subsection{Linkage maps \textit{via} the analysis of crosses or pedigrees}
+\label{chap3:linkage-maps}
+
+The comprehension of genetic linkage by the group of Thomas Hunt Morgan (see Chapter~\ref{ch:1-history-genetics}) was the inaugural step towards the establishment of the first genetic map (a.k.a.\ linkage map) \citep{sturtevant1913linear}.
+Basically, these maps abstractly represent the proportion of crossing-overs (COs) occurring between pairs of ‘genetic markers’, \textit{i.e.} polymorphic\footnote{Which presents several forms. In other words: subject to inter-individual variability.} DNA sequences located at fixed genomic positions.
+
+Initially, genetic markers exclusively comprised genes coding for visually discernable phenotypes.
+Since their relatively wide genomic spacing granted a poor resolution to detect recombination, they were eventually supplanted by other types of markers: restriction fragment length polymorphisms (RFLPs) \textit{i.e.} sequences enzymatically shortenable first used for linkage analysis by \citet{botstein1980construction}; minisatellites and microsatellites \citep{hamada1982potential} \textit{i.e.} tandem repeats of short motifs highly variable in length \citep{ellegren2004microsatellites} and widely spread in eukaryotes \citep{hamada1982novel}; and single-nucleotide polymorphisms (SNPs) \textit{i.e.} one-base sequence variations carried by at least 1\% of the population.\\
+
+When the two parental chromosomes carry distinct alleles at these loci\footnote{Fixed position of a genetic marker on a chromosome (from the Latin word \textit{locus}: “place”)}, one can track their transmission by genotyping the markers in the descendants.
+As such, the mosaic of paternal and maternal haplotypes — and thus, the positions of recombination exchange points — can be reconstituted using various statistical methods \citep[reviewed in \citealp{backstrom2009gene}]{haldane1919combination, kosambi1943estimation}.
+
+These kindred individuals are generally obtained by crossing members of highly divergent inbred populations \citep[\textit{e.g.}][]{rowe1994maps,dietrich1996comprehensive}, one of which being, if possible, homozygous for the recessive alleles (‘test cross’) so as to disentangle the genotypes of the descendants \citep[reviewed in][]{brown2002mapping}.
+Alternatively, in species that have long generation time or that cannot be manipulated genetically for ethical considerations, successive generations of existing families (a.k.a.\ pedigrees) can be examined \citep[\textit{e.g.}][]{kong2002highresolution,kong2010finescale,cox2009new}.\\
+
+Examining large numbers of individuals allows to estimate the genetic distance (measured in ‘morgans’ (M) as a tribute to its designer) between pairs of markers: one centimorgan (cM) expresses a frequency of 1 CO every 100 meioses.
+However, for high recombination frequencies (\textit{i.e.} long distances), some experiments \citep[\textit{e.g.}][]{morgan1911random,morgan1912data} showed exceptions to additivity: the genetic distance between two polymorphic sites could be smaller than the sum of their distances with an in-between marker.
+Indeed, in cases of ‘double crossing-overs’ (\textit{i.e.} two COs occurring within a given interval — which is more likely in wider stretches), the two loci are inherited together.
+Thus, the CO event is not detectable and, in the end, the recombination frequency is underestimated.
+
+In addition, genetic distances are not proportional to physical remoteness, as stated by Hermann Muller (1890--1967) \citep{muller1920are} in a response to William Castle (1867--1962) who disputed the graphical representation of these maps \citep[reviewed in \citealp{vorms2013models}]{castle1919are,castle1919arrangement}:
+
+\begin{quote}
+\textit{‘[I]t has never been claimed, in the theory of linear linkage, that the per cents of crossing over are actually proportional to the map distances [ed.\ physical distances]:  what has been stated is that the per cents of crossing overs are calculable from the map distances — or, to put the matter in more mathematical terms, that the per cents of crossing over are functions of the distances of points from each other along a straight line.’}
+\end{quote}
+
+% HONNEUR PAR HALDANE
+% https://books.google.fr/books?id=7J_Xjhoev7AC&pg=PA99&lpg=PA99&dq=centimorgan+honor+sturtevant+haldane&source=bl&ots=Uuy-7Jsbfa&sig=ACfU3U2HzOzVNVp3-Jj5PT3qL3Nx7WcPDw&hl=fr&sa=X&ved=2ahUKEwi_2eXTjsjhAhWRDxQKHc_DCLIQ6AEwCHoECAcQAQ#v=onepage&q=centimorgan%20honor%20sturtevant%20haldane&f=false
+% https://www.sizes.com/units/centimorgan.htm
+% Quote Haldane 1919
+%The unit of distance is thus 100 times Morgan's unit. [page 303]
+%…
+%It is suggested that the unit of distance in a chromosome as defined above be termed a “morgan,” on the analogy of the ohm, volt, etc. Morgan's unit of distance is therefore a centimorgan. [page 305]
+% https://www.ias.ac.in/article/fulltext/reso/016/06/0540-0550
+
+Decades later, the complete sequencing of the \textit{Saccharomyces cerevisiae} chromosome III \citep{oliver1992complete} confirmed this statement by enabling the first direct comparison between linkage and physical maps. 
+The discrepancies between the two distances legitimised the introduction of a new measurement: the estimation of recombination rates (RRs) per physical distance (expressed in cM/Mb), useful to compare RRs across genomic regions, individuals or species.\\
+
+Altogether, linkage maps directly measure recombination occurring in the offspring and thus allow to observe differences between sexes \citep[\textit{e.g.}][]{cheung2007polymorphic,coop2008highresolution} or among individuals \citep[\textit{e.g.}][]{broman1998comprehensive}.
+However, the resolution of these maps is restrained by the position of polymorphic sites and the number of meioses analysed. 
+Consequently, in mammals, except for one very recent study \citep{halldorsson2019characterizing}, the resolution has remained capped at tens to hundreds of kilobases (kb) \citep{shifman2006highresolution,billings2010patterns,kong2010finescale}.
+This limitation motivated the development of a population-genetic method to learn about RRs at a finer-scale: the linkage disequilibrium (LD) analysis.
+
+
+
+
+
+\subsection{Linkage disequilibrium (LD) analysis}%(et HapMap et biais)}
+\label{chap3:LD}
+
+Populations of unrelated beings can be analysed in a fashion similar to family members since kinship (or non-kinship) only conveys a \textit{relative} sense: unrelated individuals are merely more distantly akin than traditional pedigrees \citep{nordborg2002linkage}.
+
+Therefore, the principle remains the same for populations of unrelated individuals as for families: recombination breaks down linkage disequilibrium (LD) \citep{lewontin1960evolutionary}, \textit{i.e.} non-random associations between loci (materialised by non-random segregations of alleles), which results in the fragmentation of LD into blocks.
+Reciprocally, analysing patterns of LD (\textit{i.e.} the positions of LD blocks) will allow to trace back the underlying recombination process.\\
+% The underlying recombination process can be traced back by analysing patterns of LD\@.\\
+% the non-random association between loci — called linkage disequilibrium (LD) \citep{lewontin1960evolutionary} — is broken down by recombination.
+% Thus, analysing patterns of LD can provide insights into the recombination events that have occurred since the last common ancestor (LCA) of the population.\\
+
+Concretely, LD can be quantified using statistics of association between allelic states at pairs of loci \citep{lewontin1964interaction,hill1968linkage} and the recombination rates (RRs) further estimated through a myriad of methods \citep[reviewed in][]{stumpf2003estimating} which basically consist in using the allelic diversity of each LD block to reconstruct the genealogy \citep[reviewed in][]{hinch2013landscape}.
+Indeed, patterns of LD do not account for recombination only \citep[reviewed in][]{venn2013inferring}: they are also shaped by other forces such as population history \citep{golding1984sampling}, mutation \citep{calafell2001haplotype} (though easily distinguishable from recombination \citep{hudson1985statistical}), natural selection \citep{barton2000genetic} and drift \citep{charlesworth1997effects}. 
+% To estimate RR accuratley from LD, it is therefore necessary to take the latter effects into account by modelling the underlying genealogical history of the population \citep{stumpf2003estimating}.\\
+% If the latter effects are not taken into account, RR cannot be estimated accurately from LD\@.
+% Therefore, it is necessary to model the underlying genealogical history of the population to correct for the latter effects \citep{stumpf2003estimating}.\\
+% A too simplistic model of the relationship between LD and RR would fail to estimate RR accurately.
+% For RR to be estimated accurately, these effects must be distinguished from recombination by additional tests \citep{hudson1985statistical} or taken into account when modelling the genealogy.\\
+% — even if some of these forces are distinguishable from recombination through additional tests \citep{hudson1985statistical}.
+% Such modelling of the underlying tree is necessary to avoid caveats with a simplistic model of the relationship between LD and RR\@.
+Modelling the underlying genealogical history of the population therefore allows to take the latter effects into account and thus, to estimate RR accurately from LD patterns \citep{stumpf2003estimating}.\\
+
+Recombination events have been inferred by LD analysis in a plethora of mammalian orders including Artiodactyla \citep{farnir2000extensive,mcrae2002linkage,nsengimana2004linkage}, Carnivora \citep{menotti-raymond1999genetic,sutter2004extensive,verardi2006detecting}, Lagomorpha \citep{carneiro2011genetic}, Rodentia \citep{brunschwig2012finescale}, Perissodactyla \citep{corbin2010linkage, mccue2012high} and Primates \citep{auton2012finescale}.
+Though, the resolution of recombination events is greatest in humans, where it has reached 1 to 2 kb \citep{theinternationalhapmapconsortium2007seconda, hinch2011landscape, the1000genomesprojectconsortium2015global}.
+Such precision arises from the fact that there have had many oppportunities for recombination to take place between the last common ancestor (LCA) of a population of unrelated beings and its studied descendants.
+Since recombination decreases LD at every generation \citep{slatkin2008linkage}, the more ancient the LCA, the shorter the LD blocks and thus, the higher the resolution.
+
+However, the recombination events identified with LD analysis sum up the whole recombination process that has occurred since the LCA\@: historic recombination, rather than current recombination, is uncovered.
+In addition, LD studies give a population average of recombination, with no possibility to extricate sex-specific nor individual recombination events.
+Third, both LD studies and linkage maps allow the detection of COs, but not NCOs.
+
+Another method, — sperm-typing, — solves the three aforementioned caveats: it provides fine-scale mapping of current CO and NCO recombination events in separate individuals.
+
+
+
+
+
 \subsection{High-resolution sperm-typing studies}%genome-wide genotyping: high-resolution studies}
 
-Voir Baudat de Massy 2013
-Voir McVenn
-Voir Lesecque
-Voir Popa
-Voir Hinch
+Sperm-typing consists in analysing the transmission of recombination events directly in the sperm of an individual.
+This was made possible by the development of a polymerase chain reaction\footnote{Molecular biology method used to make copies of a specific DNA fragment.} (PCR) method allowing to genotype single diploid and haploid cells \citep{li1988amplification}.
+Since PCR only allows the copy of size-limited DNA sequences and cannot be performed automatically, sperm-typing cannot be applied genome-wide \citep{coop2008highresolutiona}, unless a microfluidic device is used \citep{fan2011wholegenome,wang2012genomewide}.
+Instead, sperm-typing is generally restricted to regions of high recombinational activity inferred from linkage or LD maps (see Sections~\ref{chap3:linkage-maps}~and~\ref{chap3:LD}).\\
 
-% https://www.ncbi.nlm.nih.gov/books/NBK21986/ — tetrad analysis utilisee pour mapper les doubles CO
-% MAPS LINKAGE
-Quand parle des maps de linkage: voir citation Muller %1920:98-101
-‘[I]t has never been claimed, in the theory of linear linkage, that the per cents of crossing over are actually proportional to the map distances: what has been stated is that the per cents of crossing overs are calculable from the map distances…’
-% Spatial distribution of DSBs: Lam and Keeney 2015
-% CHAPITRE 3: Revue de Massy initiation recombinaison parle des cartes de CO chez plein d'especes + les differences de recombinaison selon les regions genomiques
-% POUR CHAPITRE 3: DONC au total pour observer, on peut regarder ATM, Spo11. Egalement generalement RAD51 et DMC1. mais donc plus large car dans processing. 200 a 400 foci dans les souris.
+It can be applied either to single gametes or to total-sperm DNA \citep[reviewed in][]{arnheim2003hot}.
+In single-sperm typing, the PCR is performed on the lysed sperm of an individual gamete with the use of pairs of primers\footnote{Short single-stranded nucleic acid used to initiate DNA synthesis.} flanking two polymorphic markers at the extremities of the locus of interest \citep{cui1989singlesperm,lien1993simple}.
+This \textit{modus operandi} has soon been used to construct linkage maps on highly recombining regions \citep{schmitt1994multipoint,lien2000evidence,cullen2002highresolution} while others \citep{tusie-luna1995gene, jeffreys1998highresolution, jeffreys2001intensely, guillon2002initiation} have used the alternative approach with total-sperm DNA that requires allele-specific PCR to capture and amplify recombinant molecules \citep{wu1989allelespecific}.
+
+In both cases, the precise CO exchange point can be mapped using the genetic markers internal to the selected locus.
+%% NOTE A MOI-MEME: voir la figure donnee dans these de Hinch — figure 1.10 (qui vient de May 2007) pour m'en inspirer quand ferai la figure sur toutes ces methodes.
+Sperm-typing thus offers the best resolution for recombination exchange points since it is only limited by SNP density — a resolution even sufficient to detect the difficult to access NCOs that only affect a few markers \citep{hellenthal2006insights}, as in \citet{tusie-luna1995gene} and \citet{guillon2002initiation}.
+
+However, even though some authors have managed allele-specific PCR in pooled ovaries \citep{guillon2005crossover, baudat2007cis} and single oocytes \citep{cole2014mouse}, it is almost exclusively used to the study of male products of meiosis.\\
+
+The three methods described so far allow to detect the outcome of the recombination process: COs (and NCOs in the case of sperm-typing).
+To get insights into other stages of the recombination process, one can use chromatin-immunoprecipitation (ChIP) of proteins involved in a given recombination stage (see Chapter~\ref{ch:2-recombination-mechanistics}) to crosslink them on their DNA binding sites, followed by the identification of bound DNA sequences either with a microarray (ChIP-chip) or by direct sequencing of the fragments (ChIP-seq) \citep[reviewed in][]{park2009chipseq}. 
+The sites of recombination initiation have been identified by using this technique with SPO11 proteins in yeasts \citep{gerton2000global,mieczkowski2007loss,pan2011hierarchical} and mice \citep{lange2016landscape} and the repair sites with RPA proteins in yeasts \citep{borde2009histone} and RAD51 and DMC1 proteins in mice \citep{smagulova2011genomewide,brick2012genetic}.
+Alternatively, sites of recombination initiation have been mapped by analysing the enrichment of single-stranded DNA (ssDNA) in yeasts \citep{blitzblau2007mapping,buhler2007mapping} and mice \citep{khil2012sensitive}.
+These methods do not rely on the existence of polymorphic markers and, therefore, allow a resolution of a few hundreds of kb (\textit{i.e.} the length of the sequenced fragments).\\
 
 
-% \section{Methods}
-% Genetic maps
-% sperm assays
-% linage of alleles and detection in pedigrees
-% genetic maps using LD
-% immunoprecip followed by sequencing
-% Genetic marker
-% Genetc maps (ordering markers, genetic distance to calculate, sex average VS sex-specific)
-% LD (quantify LD, hapmap, biases with LD)
-% sperm-typing
-% Identify recombination events (pedigree + DeCODE, LD, count, models of recombination (approximate likelihood, approximate genealogy, african american admixture), typing in single gametes)
-%
+All these approaches have contributed to a better understanding of recombination genome-wide.
+In particular, it was soon understood that recombination events cluster into 1—2-kb\footnote{In mammals. But, in yeasts, recombination hotspots span several kilobases.} regions called ‘recombination hotspots’.%, \textit{i.e.} regions highly active in recombination flanked by cold sequences suppressed for recombination.
+
+The first mammalian hotspots was discovered in the H2 region of mouse chromosome 17 \citep{steinmetz1982molecular} and the first human hotspots in \textgreek{β}-globin \citep{chakravarti1984nonuniform} and insulin \citep{chakravarti1986evidence} regions. Since then, the list of recognised hotspots have grown extensively \citep[reviewed in][]{arnheim2007mammalian,paigen2010mammalian} \textbf{mettre dans un supp la liste des hotspots humains et souris etudies + ref si temps de le faire en juin.}
+
+
+
+
+
+
+
 
 \section{The landscape of recombination}
 \subsection{Positive crossing-over (CO) interference}%%% PARLER DE PAR
 \subsection{Intragenomic patterns of variation}
+parler aussi des consequences sur la genetic diversity avec le DNMs.
 \subsection{Inter-individual effects of sex and age}
+
+% McVenn???
+% Utile pour correlation MALE/FEMELLE (cf partie 2.3)
+deCODE genetic map (one pedigree)
+% A pedigree study of particular interest in this thesis is the deCODE pedigree genetic map. Kong et al. (2010) genotyped a large cohort of Icelandic parent-offspring pairs (8850 maternal meioses, 6507 paternal meioses), resulting in sex-specific maps esti
+% mated at a resolution of tens of kilobases. 
+In order to analyse such a large sample, recombination events were identified by phasing both parent and offspring individually based on extensive IBD-sharing within the Icelandic population and then identifying the signal of recombination events where the offspring switched between paternal and maternal haplotypes (later formalised by (Palin et al., 2011)). 
+The high resolution of the map enabled the first fine-scale analysis of the structure of sex-specific variation at genome features. 
+Male-specific and female-specific maps had a correlation of 0.659 (10 kb scale), but there were clear sex differences. Hotspots were defined as intervals where the estimated level of recombination was greater than 10 times the genome average. Of the 4762 male-specific hotspots identified, 704 were estimated to have a rate less than 3 in female (relative to the genome average across bins). Similarly, 14.7% of hotspots in females were observed only in females, however the locations of hotspots with moderate intensity overlapped on average. The most dramatic sex- specific differences were observed at genes, especially for intronic rates (male - female = 0.270, p = 2.2 × 10−7; Figure 1.11). The deCODE data confirmed previous ob- servations from sex-averaged LD-based maps (Myers et al., 2005), in particular rates
+% were suppressed within transcribed regions.
+
+
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3242630/
+Determinants and correlates of RR variation and how maintained within and among species
 
 Parler aussi de l'effet sur la diversite genetique
 CO assurance and interference
