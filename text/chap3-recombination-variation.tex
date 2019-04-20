@@ -172,20 +172,133 @@ These methods do not rely on the existence of polymorphic markers and, therefore
 
 All these approaches have contributed to a better understanding of recombination genome-wide.
 In particular, it was soon understood that recombination events cluster into 1—2-kb\footnote{In mammals. But, in yeasts, recombination hotspots span several kilobases.} regions called ‘recombination hotspots’.%, \textit{i.e.} regions highly active in recombination flanked by cold sequences suppressed for recombination.
-
 The first mammalian hotspots was discovered in the H2 region of mouse chromosome 17 \citep{steinmetz1982molecular} and the first human hotspots in \textgreek{β}-globin \citep{chakravarti1984nonuniform} and insulin \citep{chakravarti1986evidence} regions. Since then, the list of recognised hotspots have grown extensively \citep[reviewed in][]{arnheim2007mammalian,paigen2010mammalian} \textbf{mettre dans un supp la liste des hotspots humains et souris etudies + ref si temps de le faire en juin.}
+% Transition: dire que ces hotspots permettent d'etudier la difference entre les differentes especes ou individus
 
 
 
+% + liste de tous les hotspots analyses chez les humains (ou pour moi, plutot souris) dans annexe B de Popa.
+
+% POUR APRES QUAND PARLE DES RECOMBINATION HOTSPOTS
+% single-sperm dans recombination hotspots \citep{hubert1994high,schneider2002direct}.
 
 
 
 
 
 \section{The landscape of recombination}
-\subsection{Positive crossing-over (CO) interference}%%% PARLER DE PAR
+\subsection{The non-random distribution of crossing-overs (COs)}
+
+The number and the distribution of crossing-overs (COs) along the genome are subject to a tight regulation \citep[reviewed in][]{jones1984control, jones2006meiotic}: setting a minimum number of COs (‘CO assurance’), evenly spacing the COs (‘CO interference’), maintaining the proper number of COs when that of DSBs decreases (‘CO homeostasis’) \textbf{and using the homologue rather than the sister chromatid}.
+
+% On distingue trois types d’interférence (Figure I.8) :
+% (i) L’interférence des DSB : l’induction artificielle d’un DSB semble réduire le taux de DSB aux loci voisins [Robine et al., 2007].
+% (ii) L’interférence des CO : la formation d’un CO dans une région réduit la probabilité d’apparition d’un autre CO dans un voisinage pouvant excéder 100 Mb chez les Mammifères par exemple [Muller, 1925, de Boer et al., 2007]. Cette interférence est présente chez la plupart des espèces eucaryotes analysées jusqu’à maintenant. [Székvölgyi & Nicolas, 2010].
+% (iii) L’homéostasie des CO : elle permet un baisse du nombre de DSB en tout en garantissant la présence de CO qui se fait alors aux dépends des NCO dans une région donnée [Martini et al., 2006].
+%
+
+
+
+
+
+
+\subsubsection{Crossing-over assurance (COA), or the ‘obligatory crossing-over’}
+Together with sister chromatid cohesion, COs hold the homologous chromosomes joint until anaphase I \citep[reviewed in][]{roeder1997meiotic} and are therefore essential to the proper disjunction of bivalents.
+Accordingly, in most sexually-reproducing organisms, the total number of COs ranges between one per chromosome and one per chromosome arm, irrespective of chromosome length \citep{pardo-manueldevillena2001recombination,dumas2002chromosomal,hillers2003chromosomewide,dumont2017variation}. 
+The sexual chromosomes also comply to this phenomenon since they systematically have one CO on their pseudoautosomal region (PAR).
+However, this ‘obligatory CO’ rule suffers an exception: \textit{Drosophila melanogaster} does not display any CO on its tiny 4\textsuperscript{th} chromosome nor, in certain cases, on its X chromosome \citep{orr-weaver1995meiosis, koehler1998human}.
+
+In \textit{Caenorhabditis elegans}, crossing-over assurance (COA) is so strong that only one DSB per pair of chromosome suffices to guarantee a CO \citep{rosu2011robust}.
+Nevertheless, forming only one DSB may be uncommon since their number and position is also under tight control, at least in yeasts \citep{wu1995factors,fan1997competition,robine2007genomewide,anderson2015reduced}: the formation of a DSB reduces the probability for another DSB to form nearby. 
+This phenomenon is called ‘interference’ and also applies to COs.
+
+
+
+\subsubsection{Crossing-over interference (COI)}
+
+Early studies on recombination \citep{sturtevant1915behavior,muller1916mechanism} have shown that, when more than one CO appears on a given chromosome, the chiasmata they form tend to be evenly spaced \citep{jones1967control, jones1974correlated, jones1984control,jones2006meiotic}.
+Indeed, the formation of a CO in a given region decreases the probability for another one to occur nearby \citep{vanveen2003meiosis,hillers2004crossover} — the physical distance, rather than the genomic (Mb) or genetic (cM) distance, being the primary parameter \citep{wang2015meiotic}.
+So far, COI has been observed in \textit{Arabidopsis thaliana} \citep{drouaud2007sexspecific}, \textit{Homo sapiens} \citep{laurie1985further,broman2000characterization} and \textit{Mus musculus} \citep{lawrie1995chiasma,anderson1999distribution,broman2002crossover}.\\
+
+% This so-called ‘CO interference’ (COI) ensures the proper disjunction of homologous chromosomes \citep{bishop2004early}.
+The mechanism of COI remains unclear but several models have been proposed \citep[reviewed in][]{youds2011choice}.
+One early hypothesis, — the polymerisation model, — posits that the completion of a CO induced the polymerisation of an inhibitor of recombination in its vicinity, thus preventing the formation of adjacent COs \citep{maguire1988crossover,king1990polymerization}.
+According to another one, — the stress model, — axis buckling converts the recombination intermediate into a CO, and this mechanical tension is released nearby established COs, thus making neighbouring DSBs repair into NCOs \citep{borner2004crossover,kleckner2004mechanical}.
+
+The most recent pieces of evidence point that, in mice, COI may operate in two consecutive steps: at late zygotene and at pachytene \citep{boer2006two}.
+And, even though correlations between the length of the synaptonemal complex (SC) and interference have been reported \citep{sym1994crossover,lynn2002covariation,petkov2007crossover}, others have found that COI does not depend on the SC \citep{deboer2007meiotic,shodhan2014msh4}, which suggests that it operates after SC formation: either prior to single-end invasion (SEI) \citep{hunter2001singleend, bishop2004early} or during the stabilisation of the SEI \citep{shinohara2008crossover}.\\
+% Since COI does not depend on the synaptonemal complex (SC) \citep{deboer2007meiotic}, it certainly operates after its formation: either prior to single-end invasion (SEI) \citep{hunter2001singleend, bishop2004early} or during the stabilisation of the SEI \citep{shinohara2008crossover}.
+
+Whatever the mechanism at play, it may have a role in controlling the outcome of the repair\footnote{This is a non-documented, personnal suggestion. Most (if not all) papers that discuss COI point that COs formed \textit{via} the MUS81 pathway are non-interferent while those formed \textit{via} the DSBR pathway are interferent, which implies that interference is a property emerging from the repair pathway. I propose to think the other way round: the mechanism that ensures COI by checking for the proximity with other COs could arbitrate which repair machinery gets recruited.} (e.g.\ by preferentially recruiting the MUS81 repair machinery).
+Indeed, the COs formed \textit{via} the DSBR pathway comply to COI whereas those repaired \textit{via} the MUS81 pathway do not \citep{santos2003mus81,kohl2013meiotic}.
+In particular, neither \textit{Saccharomyces pombe} for which all COs depend on the MUS81 pathway \citep{munz1994analysis,hollingsworth2004mus81,cromie2006single} nor \textit{Aspergillus nidulans} which lacks SC \citep[reviewed in \citealp{shaw1998meiosis} and \citealp{egel1995synaptonemal}]{strickland1958analysis} show CO interference.
+As for NCOs, they are not subject to interference either \citep{malkova2004gene,baudat2007regulating,miller2016wholegenome} but their formation is undoubtedly promoted by COI to downregulate the number of COs \citep{youds2010rtel1}.
+
+% Besoin de dire les roles ?
+% Two, not necessarily mutually exclusive, roles have been proposed for crossover interference: it may be necessary for the correct formation of the SC [Bo ̈rner et al.,
+% 2004] and/or to ensure proper disjunction by causing chiasmata to be placed such that the homologs are adequately held together prior to anaphase I, i.e., enough cohesive force between sister chromatids is transmitted through to the homologs [van Veen and Hawley, 2003]. It is notable that species that do not form SC, such as Aspergillus nidulans and S. pombe, also do not exhibit crossover interference [Egel, 1995].
+
+
+
+\subsubsection{Crossing-over homeostasis (COH)}
+Even though it has been disputed \citep{shinohara2008crossover}, the mechanism that ensures COI may be responsible for another level of regulation: crossing-over homeostasis (COH) \citep[reviewed in \citealp{youds2011choice}]{joshi2009pch2,zanders2009pch2delta}.
+COH promotes the formation of COs at the expense of NCOs when fewer DSBs than the wild-type level are generated.
+This phenomenon was first observed in \textit{Saccharomyces cerevisiae} \citep{martini2006crossover,chen2008global}, but also exists in \textit{Caenorhabditis elegans} \citep{yokoo2012cosa1,globus2012joy}, \textit{Drosophila melanogaster} \citep{mehrotra2006temporal} and \textit{Mus musculus} \citep{cole2012homeostatic}.
+
+
+
+
+\subsubsection{Preference for the homologue over the sister chromatid in DSB repair}
+
+So that the homologous chromosomes disjoin properly, a fourth regulatory level applies to the repair of DSBs into COs: the promotion of interhomologue CO over intersister repair.
+In mitosis, the sister chromatid is always favoured \citep{kadyk1992sister,bzymek2010double}, whereas evidence in \textit{Saccharomyces cerevisiae} suggests that two thirds \citep{goldfarb2010frequent} or nearly all \citep{pan2011hierarchical} DSBs are repaired using the homologue.
+Therefore, the template choice is regulated differently in these two processes \citep{andersen2010meiotic}.
+
+The proteins that play a role in homology search seem to be the adequate candidates for this endeavour \citep[reviewed in][]{youds2011choice}.
+Indeed, in \textit{Saccharomyces cerevisiae}, the phosphorylation of HOP1 (mouse homologue: HORMAD1) triggers a mechanism that prevents the repair of DSBs using the sister chromatid \citep{niu2005partner} and inhibits RAD51, thus leaving the homology search to DMC1 \citep{niu2009regulation}, which promotes interhomologue recombination more efficiently than RAD51 \citep{schwacha1997interhomolog}.
+Any remaining DSBs can be repaired with the sister chromatid, using the indispensable BRCA1 protein \citep{adamo2008brc}.
+Cohesins and components of the SC are also seemingly implicated in template choice \citep[reviewed in \citealp{pradillo2011template}]{couteau2004component,kim2010sister}.
+
+Interestingly, the proportion of interhomologue and intersister COs can vary: in regions dense in DSBs, intersister repair is favoured whereas in less DSB-dense regions, interhomologue repair is favoured \citep{hyppa2010crossover}.
+
+
+
+
+
 \subsection{Intragenomic patterns of variation}
+
+% CAPILLA — variations — https://www.karger.com/Article/FullText/452822
+% Mammalian Meiotic Recombination: A Toolbox for Genome Evolution
+% Capilla L.a · Garcia Caldés M.a, b · Ruiz-Herrera A.a, b
+
+
+
+% Spatial distribution of DSBs: Lam and Keeney 2015
+% CHAPITRE 3: Revue de Massy initiation recombinaison parle des cartes de CO chez plein d'especes + les differences de recombinaison selon les regions genomiques
+
+%%% Noor: dans partie variation entre les especes
+%%% https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3242630/
+
+% CHAPITRE 3
+% BAUDAT MASSY 2013
+% Aussi des hotspots (chapitre 3) - depuis Baudat et de Massy CO
+% CO are not randomly distrib- uted, but occur in multiple specific regions of the genome called CO hotspots (de Massy 2003, Kauppi et al. 2004). A hotspot is a region 1Y2 kb wide where CO are clustered, as a result of localized initiation events (see below). The average spacing between hotspots is 50Y100 kb and hotspot activities vary over three to four orders of magnitude, from 0.9 to 0.0005 cM as determined in the human genome. In the human genome the number of hotspots is estimated around 25 000Y50 000 (Myers et al. 2005). The variations of hotspot density and activity along chromosomes result in domains with high (jungles) or low (desert) recombination activity. Most sub-telomeric regions are recombination jun- gles in male meiosis whereas centromeric regions are recombination deserts. However, the determinants of CO variation along chromosomes are not known, even though some factors correlated with CO density are beginning to be analyzed (Buard & de Massy 2007, TIG in revision).
+%
+
+
+
+%%%%%% chap3: DSBs: In humans and mice, DSBs tend to avoid centromeres and heterochromatic acrocentric short arms, although they are heavily enriched near telomeres in human males [17]. % ALTEMOSE
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3242630/
+Determinants and correlates of RR variation and how maintained within and among species
+
+
 parler aussi des consequences sur la genetic diversity avec le DNMs.
+
+% More generally, knowing how recombination in uences DNA sequence diversity is essential for understanding the history of human populations and the dynamics of genome evolution [Pa ̈a ̈bo, 2003; Lohmueller et al., 2009]. These applications require high resolution mapping of recombination events and genome-wide maps of recombination frequencies, known as genetic maps.
+
+
+
 \subsection{Inter-individual effects of sex and age}
 
 % McVenn???
