@@ -53,7 +53,7 @@ The relationship between these two concepts (further developed in \citealp{felse
 I will come back to this essential gene and to its impact on the evolution of recombination rate in the third section of this chapter. 
 But prior to that, I will review the existing methods to detect recombination genome-wide, and the multiple layers of recombination rate (RR) variation that have been observed along genomes and across species.
 
-% CHAP 3: 1) comment mesurer et detecter la recombi. 2) les variations dans l'espace et le temps. 3) les positions des hotspots par PRDM9 + le dBGC
+% CHAP 3: 1 comment mesurer et detecter la recombi. 2 les variations dans l'espace et le temps. 3 les positions des hotspots par PRDM9 + le dBGC
 
 % Therefore during the modification of the descendants of any one species, and during the incessant struggle of all species to increase in numbers, the more diversified these descendants become, the better will be their chance of succeeding in the battle of life. Thus the small differences distinguishing varieties of the same species, will steadily tend to increase till they come to equal the greater differences between species of the same genus, or even of distinct genera.
 
@@ -150,38 +150,29 @@ Another method, — sperm-typing, — solves the three aforementioned caveats: i
 
 Sperm-typing consists in analysing the transmission of recombination events directly in the sperm of an individual.
 This was made possible by the development of a polymerase chain reaction\footnote{Molecular biology method used to make copies of a specific DNA fragment.} (PCR) method allowing to genotype single diploid and haploid cells \citep{li1988amplification}.
-Since PCR only allows the copy of size-limited DNA sequences and cannot be performed automatically, sperm-typing cannot be applied genome-wide \citep{coop2008highresolutiona}, unless a microfluidic device is used \citep{fan2011wholegenome,wang2012genomewide}.
+Since PCR only allows the copy of size-limited DNA sequences and cannot be performed automatically, sperm-typing cannot be applied genome-wide \citep{coop2008highresolution}, unless a microfluidic device is used \citep{fan2011wholegenome,wang2012genomewide}.
 Instead, sperm-typing is generally restricted to regions of high recombinational activity inferred from linkage or LD maps (see Sections~\ref{chap3:linkage-maps}~and~\ref{chap3:LD}).\\
 
 It can be applied either to single gametes or to total-sperm DNA \citep[reviewed in][]{arnheim2003hot}.
 In single-sperm typing, the PCR is performed on the lysed sperm of an individual gamete with the use of pairs of primers\footnote{Short single-stranded nucleic acid used to initiate DNA synthesis.} flanking two polymorphic markers at the extremities of the locus of interest \citep{cui1989singlesperm,lien1993simple}.
-This \textit{modus operandi} has soon been used to construct linkage maps on highly recombining regions \citep{schmitt1994multipoint,lien2000evidence,cullen2002highresolution} while others \citep{tusie-luna1995gene, jeffreys1998highresolution, jeffreys2001intensely, guillon2002initiation} have used the alternative approach with total-sperm DNA that requires allele-specific PCR to capture and amplify recombinant molecules \citep{wu1989allelespecific}.
+This \textit{modus operandi} has soon been used to construct linkage maps on highly recombining regions \citep{schmitt1994multipoint,lien2000evidence,cullen2002highresolution} while others \citep{tusie-luna1995gene, jeffreys1998highresolution, jeffreys2001intensely, guillon2002initiation} have used the alternative approach with total-sperm DNA which requires allele-specific PCR to capture and amplify recombinant molecules \citep{wu1989allelespecific}.
 
 In both cases, the precise CO exchange point can be mapped using the genetic markers internal to the selected locus.
 %% NOTE A MOI-MEME: voir la figure donnee dans these de Hinch — figure 1.10 (qui vient de May 2007) pour m'en inspirer quand ferai la figure sur toutes ces methodes.
-Sperm-typing thus offers the best resolution for recombination exchange points since it is only limited by SNP density — a resolution even sufficient to detect the difficult to access NCOs that only affect a few markers \citep{hellenthal2006insights}, as in \citet{tusie-luna1995gene} and \citet{guillon2002initiation}.
+Sperm-typing thus offers the best resolution for recombination exchange points since it is only limited by SNP density — a resolution even sufficient to detect the difficult-to-access NCOs that only affect a few markers \citep{hellenthal2006insights}, as in \citet{tusie-luna1995gene} and \citet{guillon2002initiation}.
 
-However, even though some authors have managed allele-specific PCR in pooled ovaries \citep{guillon2005crossover, baudat2007cis} and single oocytes \citep{cole2014mouse}, it is almost exclusively used to the study of male products of meiosis.\\
+However, even though some authors have managed allele-specific PCR in pooled ovaries \citep{guillon2005crossover, baudat2007cis} and single oocytes \citep{cole2014mouse}, it has almost exclusively been used for the study of male products of meiosis.\\
 
 The three methods described so far allow to detect the outcome of the recombination process: COs (and NCOs in the case of sperm-typing).
 To get insights into other stages of the recombination process, one can use chromatin-immunoprecipitation (ChIP) of proteins involved in a given recombination stage (see Chapter~\ref{ch:2-recombination-mechanistics}) to crosslink them on their DNA binding sites, followed by the identification of bound DNA sequences either with a microarray (ChIP-chip) or by direct sequencing of the fragments (ChIP-seq) \citep[reviewed in][]{park2009chipseq}. 
 The sites of recombination initiation have been identified by using this technique with SPO11 proteins in yeasts \citep{gerton2000global,mieczkowski2007loss,pan2011hierarchical} and mice \citep{lange2016landscape} and the repair sites with RPA proteins in yeasts \citep{borde2009histone} and RAD51 and DMC1 proteins in mice \citep{smagulova2011genomewide,brick2012genetic}.
 Alternatively, sites of recombination initiation have been mapped by analysing the enrichment of single-stranded DNA (ssDNA) in yeasts \citep{blitzblau2007mapping,buhler2007mapping} and mice \citep{khil2012sensitive}.
+
 These methods do not rely on the existence of polymorphic markers and, therefore, allow a resolution of a few hundreds of kb (\textit{i.e.} the length of the sequenced fragments).\\
 
 
 All these approaches have contributed to a better understanding of recombination genome-wide.
-In particular, it was soon understood that recombination events cluster into 1—2-kb\footnote{In mammals. But, in yeasts, recombination hotspots span several kilobases.} regions called ‘recombination hotspots’.%, \textit{i.e.} regions highly active in recombination flanked by cold sequences suppressed for recombination.
-The first mammalian hotspots was discovered in the H2 region of mouse chromosome 17 \citep{steinmetz1982molecular} and the first human hotspots in \textgreek{β}-globin \citep{chakravarti1984nonuniform} and insulin \citep{chakravarti1986evidence} regions. Since then, the list of recognised hotspots have grown extensively \citep[reviewed in][]{arnheim2007mammalian,paigen2010mammalian} \textbf{mettre dans un supp la liste des hotspots humains et souris etudies + ref si temps de le faire en juin.}
-% Transition: dire que ces hotspots permettent d'etudier la difference entre les differentes especes ou individus
-
-
-
-% + liste de tous les hotspots analyses chez les humains (ou pour moi, plutot souris) dans annexe B de Popa.
-
-% POUR APRES QUAND PARLE DES RECOMBINATION HOTSPOTS
-% single-sperm dans recombination hotspots \citep{hubert1994high,schneider2002direct}.
-
+In particular, it was soon understood that COs do not appear at random locations on the genome, and the reasons for this distribution became the subject of many research works.
 
 
 
@@ -189,54 +180,56 @@ The first mammalian hotspots was discovered in the H2 region of mouse chromosome
 \section{The landscape of recombination}
 \subsection{The non-random distribution of crossing-overs (COs)}
 
-The number and the distribution of crossing-overs (COs) along the genome are subject to a tight regulation \citep[reviewed in][]{jones1984control, jones2006meiotic}: setting a minimum number of COs (‘CO assurance’), evenly spacing the COs (‘CO interference’), maintaining the proper number of COs when that of DSBs decreases (‘CO homeostasis’) \textbf{and using the homologue rather than the sister chromatid}.
-
-% On distingue trois types d’interférence (Figure I.8) :
-% (i) L’interférence des DSB : l’induction artificielle d’un DSB semble réduire le taux de DSB aux loci voisins [Robine et al., 2007].
-% (ii) L’interférence des CO : la formation d’un CO dans une région réduit la probabilité d’apparition d’un autre CO dans un voisinage pouvant excéder 100 Mb chez les Mammifères par exemple [Muller, 1925, de Boer et al., 2007]. Cette interférence est présente chez la plupart des espèces eucaryotes analysées jusqu’à maintenant. [Székvölgyi & Nicolas, 2010].
-% (iii) L’homéostasie des CO : elle permet un baisse du nombre de DSB en tout en garantissant la présence de CO qui se fait alors aux dépends des NCO dans une région donnée [Martini et al., 2006].
-%
-
-
-
+The number and distribution of crossing-overs (COs) along the genome are subject to a tight regulation \citep[reviewed in][]{jones1984control, jones2006meiotic}: a minimum number of COs (‘CO assurance’), evenly spaced (‘CO interference’) — including when few DSBs are generated (‘CO homeostasis’) — are formed preferentially with the homologous chromosome.
 
 
 
 \subsubsection{Crossing-over assurance (COA), or the ‘obligatory crossing-over’}
 Together with sister chromatid cohesion, COs hold the homologous chromosomes joint until anaphase I \citep[reviewed in][]{roeder1997meiotic} and are therefore essential to the proper disjunction of bivalents.
-Accordingly, in most sexually-reproducing organisms, the total number of COs ranges between one per chromosome and one per chromosome arm, irrespective of chromosome length \citep{pardo-manueldevillena2001recombination,dumas2002chromosomal,hillers2003chromosomewide,dumont2017variation}. 
-The sexual chromosomes also comply to this phenomenon since they systematically have one CO on their pseudoautosomal region (PAR).
-However, this ‘obligatory CO’ rule suffers an exception: \textit{Drosophila melanogaster} does not display any CO on its tiny 4\textsuperscript{th} chromosome nor, in certain cases, on its X chromosome \citep{orr-weaver1995meiosis, koehler1998human}.
+Accordingly, in most sexually-reproducing organisms, the total number of COs ranges between one per chromosome and one per chromosome arm\footnote{With the notable exceptions of honey bees \citep{beye2006exceptionally} and birds \citep{groenen2009highdensity} which display higher numbers of COs per chromosome.}, irrespective of chromosome length \citep{dutrillaux1986role,pardo-manueldevillena2001recombination,dumas2002chromosomal,hillers2003chromosomewide,hassold2004cytological,dumont2017variation}.
+As such, mammalian genetic map lengths (which are proportional to CO numbers) can be predicted with the haploid number of chromosome arms (Figure~\ref{fig:correlation-CO-nb-chromosomes}).
+
+The sexual chromosomes also comply to this phenomenon: they systematically have one CO on their pseudoautosomal region (PAR), a feature likely facilitated by the much higher DSB rate on the PAR than on the autosomes \citep{kauppi2011distinct}.
+However, this ‘obligatory CO’ rule suffers exceptions: \textit{Drosophila melanogaster} does not display any CO on its tiny 4\textsuperscript{th} chromosome nor, in certain cases, on its X chromosome \citep{orr-weaver1995meiosis, koehler1998human} and neither do marsupial sex chromosomes \citep{sharp1982sex}.\\
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width = 1\textwidth]{figures/chap3/correlation-CO-nb-chromosomes.eps}
+	\caption[Correlation between genetic map lengths and the number of chromosomal arms in mammals]
+	{\textbf{Correlation between genetic map lengths and the number of chromosomal arms in mammals.}
+		\par The y-axis represents genetic map lengths from which the number of crossing-overs (COs) can be extrapolated.
+		The x-axis represents the total number of chromosomal arms per species, excluding the small arms of acrocentric chromosomes and the sex chromosomes of baboon and rhesus macaques.
+		The black line corresponds to the best fit between these two measures.
+		\par This figure was reproduced from \citet{coop2007evolutionary}.
+	}
+\label{fig:correlation-CO-nb-chromosomes}
+\end{figure}
+
 
 In \textit{Caenorhabditis elegans}, crossing-over assurance (COA) is so strong that only one DSB per pair of chromosome suffices to guarantee a CO \citep{rosu2011robust}.
-Nevertheless, forming only one DSB may be uncommon since their number and position is also under tight control, at least in yeasts \citep{wu1995factors,fan1997competition,robine2007genomewide,anderson2015reduced}: the formation of a DSB reduces the probability for another one to form nearby. 
-This phenomenon is called ‘interference’ and also applies to COs.
+Nevertheless, chromosome pairs holding only one DSB may be uncommon since the number and position of DSBs is also under tight control, at least in yeasts \citep{wu1995factors,fan1997competition,robine2007genomewide,anderson2015reduced}: the formation of a DSB reduces the likelihood for another to form nearby. 
+This phenomenon, called ‘interference’, also applies to COs, as reviewed in the upcoming paragraph.
+
 
 
 
 \subsubsection{Crossing-over interference (COI)}
 
 Early studies on recombination \citep{sturtevant1915behavior,muller1916mechanism} have shown that, when more than one CO appears on a given chromosome, the chiasmata they form tend to be evenly spaced \citep{jones1967control, jones1974correlated, jones1984control,jones2006meiotic}.
-Indeed, the formation of a CO in a given region decreases the probability for another one to occur nearby \citep{vanveen2003meiosis,hillers2004crossover} — the physical length of prophase chromosomes, rather than the genomic (bp) or genetic (cM) distance, being the primary parameter \citep{zhang2014crossover,wang2015meiotic}.
-So far, COI has been observed in \textit{Arabidopsis thaliana} \citep{drouaud2007sexspecific}, \textit{Homo sapiens} \citep{laurie1985further,broman2000characterization} and \textit{Mus musculus} \citep{lawrie1995chiasma,anderson1999distribution,broman2002crossover}.\\
+Indeed, the occurrence of a CO hampers the coincident formation of another one in the same pair of chromosomes \citep{vanveen2003meiosis,hillers2004crossover} — the physical length of prophase chromosomes, rather than the genomic (bp) or genetic (cM) distance, being the primary parameter \citep{zhang2014crossover,wang2015meiotic}.
+So far, COI has been noted in several species including \textit{Arabidopsis thaliana} \citep{drouaud2007sexspecific}, \textit{Homo sapiens} \citep{laurie1985further,broman2000characterization} and \textit{Mus musculus} \citep{lawrie1995chiasma,anderson1999distribution,broman2002crossover}.\\
 
-% This so-called ‘CO interference’ (COI) ensures the proper disjunction of homologous chromosomes \citep{bishop2004early}.
 The mechanism of COI remains unclear but several models have been proposed \citep[reviewed in][]{youds2011choice}.
-One early hypothesis, — the polymerisation model, — posits that the completion of a CO induced the polymerisation of an inhibitor of recombination in its vicinity, thus preventing the formation of adjacent COs \citep{maguire1988crossover,king1990polymerization}.
-According to another one, — the stress model, — axis buckling converts the recombination intermediate into a CO, and this mechanical tension is released nearby established COs, thus making neighbouring DSBs repair into NCOs \citep{borner2004crossover,kleckner2004mechanical}.
-
+One early hypothesis, — the polymerisation model, — posits that the completion of a CO triggers the polymerisation of an inhibitor of recombination, thus preventing the formation of adjacent COs \citep{maguire1988crossover,king1990polymerization}.
+According to another one, — the stress model, — axis buckling converts the recombination intermediate into a CO, and this mechanical tension is released in the vicinity of established COs, thus making neighbouring DSBs repair into NCOs instead \citep{borner2004crossover,kleckner2004mechanical}.
 The most recent pieces of evidence point that, in mice, COI may operate in two consecutive steps: at late zygotene and at pachytene \citep{boer2006two}.
-And, even though correlations between the length of the synaptonemal complex (SC) and interference have been reported \citep{sym1994crossover,lynn2002covariation,petkov2007crossover}, others have found that COI does not depend on the SC \citep{deboer2007meiotic,shodhan2014msh4}, which suggests that COI operates after SC formation: either prior to single-end invasion (SEI) \citep{hunter2001singleend, bishop2004early} or during the stabilisation of the SEI \citep{shinohara2008crossover}.\\
-% Since COI does not depend on the synaptonemal complex (SC) \citep{deboer2007meiotic}, it certainly operates after its formation: either prior to single-end invasion (SEI) \citep{hunter2001singleend, bishop2004early} or during the stabilisation of the SEI \citep{shinohara2008crossover}.
+
+Correlations between the length of the synaptonemal complex (SC) and interference have been reported \citep{sym1994crossover,lynn2002covariation,petkov2007crossover}, but others have found that COI does not depend on the SC \citep{deboer2007meiotic,shodhan2014msh4}, which suggests that COI operates after SC formation: either prior to single-end invasion (SEI) \citep{hunter2001singleend, bishop2004early} or during the stabilisation of the SEI \citep{shinohara2008crossover}.\\
 
 Whatever the mechanism at play, it may have a role in controlling the outcome of the repair\footnote{This is a non-documented, personnal suggestion. Most (if not all) papers that discuss COI point that COs formed \textit{via} the MUS81 pathway are non-interferent while those formed \textit{via} the DSBR pathway are interferent, which implies that interference is a property emerging from the repair pathway. I propose to think the other way round: the mechanism that ensures COI by checking for the proximity with other COs could arbitrate which repair machinery gets recruited.} (e.g.\ by preferentially recruiting the MUS81 repair machinery).
 Indeed, the COs formed \textit{via} the DSBR pathway comply to COI whereas those repaired \textit{via} the MUS81 pathway do not \citep{santos2003mus81,kohl2013meiotic}.
-In particular, neither \textit{Saccharomyces pombe} for which all COs depend on the MUS81 pathway \citep{munz1994analysis,hollingsworth2004mus81,cromie2006single} nor \textit{Aspergillus nidulans} which lacks SC \citep[reviewed in \citealp{shaw1998meiosis} and \citealp{egel1995synaptonemal}]{strickland1958analysis} show CO interference.
+In particular, neither \textit{Schizosaccharomyces pombe} for which all COs depend on the MUS81 pathway \citep{munz1994analysis,hollingsworth2004mus81,cromie2006single} nor \textit{Aspergillus nidulans} which lacks SC \citep[reviewed in \citealp{shaw1998meiosis} and \citealp{egel1995synaptonemal}]{strickland1958analysis} show CO interference.
 As for NCOs, they are not subject to interference either \citep{malkova2004gene,baudat2007regulating,miller2016wholegenome} but their formation is undoubtedly promoted by COI to downregulate the number of COs \citep{rockmill2003sgs1,youds2010rtel1,crismani2012fancm,seguela-arnaud2015multiple}.
-
-% Besoin de dire les roles ?
-% Two, not necessarily mutually exclusive, roles have been proposed for crossover interference: it may be necessary for the correct formation of the SC [Bo ̈rner et al.,
-% 2004] and/or to ensure proper disjunction by causing chiasmata to be placed such that the homologs are adequately held together prior to anaphase I, i.e., enough cohesive force between sister chromatids is transmitted through to the homologs [van Veen and Hawley, 2003]. It is notable that species that do not form SC, such as Aspergillus nidulans and S. pombe, also do not exhibit crossover interference [Egel, 1995].
 
 
 
