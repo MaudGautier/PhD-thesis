@@ -261,101 +261,112 @@ Further analysis of such maps has allowed to uncover both the large-scale and fi
 
 \subsection{Intragenomic patterns of variation}
 
+% Ici: depend de l'echelle a laquelle on regarde
+%
+% Quand on regarde a large scale, assez bien correle. Des differences selon les regions G+C, centromeres…
+% Puis, quand regarde a courte echelle, des variations, car des hotspots.
+% Puis, les differences de hotspots qui varient entre les individus, au sein d'une meme espece, et meme entre les especes.
+
+\subsubsection{Large-scale variations across genomic regions}
+
+When compared over the scale of megabases (Mb), recombination rates (RRs) vary by an order of magnitude in both humans (Figure~\ref{fig:recombination-rate-variation}.a.) \citep{nachman2002variation,myers2005finescale} and mice \citep{billings2010patterns, morgan2017structural}.
+
+These large-scale variations associate with certain elements of the genome (reviewed in \citealp{demassy2013initiation} and \citealp{lam2015mechanism}).
+Centromeric regions, for instance, are generally associated with little or no recombination, like in mammals \citep{qiao2012interplay} and yeasts: in \textit{Schizosaccharomyces pombe}, components of the RNA interference (RNAi) pathway repress DSB formation around centromeres \citep{ellermeier2010rnai} and in \textit{Saccharomyces cerevisiae}, SPO11 relocalises onto chromosome arms at prophase, thus preventing the formation of DSBs adjacent to centromeres \citep{kugou2009rec8}.
+This feature likely aids in the proper disjunction of homologues, since centromere-proximal COs result in aneuploidy in yeasts \citep{rockmill2006centromereproximal}, humans \citep{hassold2001err} and flies \citep{koehler1996recombination}.
+
+A similar suppression is also observed at telomeric regions in yeasts \citep{blitzblau2007mapping,buhler2007mapping}, possibly because DSBs in repetitive sequences are likely to be repaired through the non-allelic homologous recombination (NAHR) pathway which can alter genome architecture \textit{via} chromosomal rearrangements \citep{sasaki2010genome}.
+However, recombination seems increased in the neighbouring (subtelomeric) regions of yeasts \citep{chen2008global,barton2008meiotic} albeit this was not observed in other genome-wide studies \citep{buhler2001dna,pan2011hierarchical}.
+High RRs are also observed in the subtelomeric regions of mammals \citep{kong2002highresolution,jensen-seaman2004comparative,pratto2014recombination} and plants \citep{giraut2011genomewide}.\\
+
+
+
+In lieu of occurring at centromeres and telomeres, recombination primarily localises within interstitial regions, themselves fragmented into DSB-rich and DSB-poor domains — of about 100 kb in \textit{Saccharomyces cerevisiae} \citep{baudat1997clustering,borde1999use}.
+The DSB-rich domains are associated with higher GC-content in yeasts \citep{gerton2000global,petes2001meiotic,marsolier-kergoat2009gc}, rodents \citep{jensen-seaman2004comparative} and mammals \citep{eyre-walker1993recombination,fullerton2001local}.
+In humans and chimpanzees, these domains are further enriched in 5’ and 3’ untranslated regions (UTRs) and CpG islands \citep{kong2002highresolution, auton2012finescale}.
+
+It was suggested early that these highly-recombinant regions may correspond to structural genes \citep{thuriaux1977recombination}, which is indeed the case in maize \citep[reviewed in \citealp{okagaki2018critical}]{nelson1959intracistron, nelson1962waxy, nelson1975waxy, dooner1997recombination, dooner2008maize}.
+Notwithstandingly, neither \textit{Arabidopsis thaliana} \citep{kim2007recombination,horton2012genomewide}, \textit{Schizosaccharomyces pombe} \citep{cromie2007discrete} nor mammals \citep{mcvean2004finescale,myers2005finescale,brick2012genetic} share this characteristic: in humans and mice, recombination correlates negatively with both gene content \citep{kong2002highresolution,jensen-seaman2004comparative} and gene transcription rate \citep{mcvicker2010genomic}.
+
+Recently, \citet{halldorsson2019characterizing} argued that the mechanism guiding recombination away from genes may have emerged through evolution in order to reduce the deleterious effect of its inherent \textit{de novo} mutations (DNMs) on coding sequences. 
+The mutagenicity of recombination was indeed demonstrated in yeasts \citep{strathern1995dna} and humans \citep{arbeithuber2015crossovers} and explained the correlations found between recombination and genetic diversity in humans \citep{nachman2001single,lercher2002human,hellmann2003neutral,hellmann2005why,spencer2006influence,duret2008impact,montgomery2013origin} and other species \citep{begun1992levels,aquadro1997insights,webster2012direct,cutter2013genomic}.\\
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width = 1\textwidth]{figures/chap3/recombination-rate-variation.eps}
+	\caption[Heterogeneity in recombination rates along the human genome]
+	{\textbf{Heterogeneity in recombination rates along the human genome.}
+		\par \textbf{a |} The shape of the distribution of recombination rates (RRs) depends on the level of resolution.
+		\textbf{b |} Most recombination events cluster in a small proportion of the total genomic sequence.
+		\par This figure was reproduced from \citet{coop2007evolutionary} and originally adapted from \citep{myers2005finescale}.
+	}
+\label{fig:recombination-rate-variation}
+\end{figure}
+
+
+
+
+More generally, sites of recombination initiation seem to correspond to regions of open chromatin: highly active sites present trimethylation of the 4\textsuperscript{th} lysine of histone H3 (H3K4me3) marks in yeasts \citep{borde2009histone} and mice \citep{buard2009distinct}, and DNA methylation in humans \citep{sigurdsson2009hapmap}.
+
+Nucleosome-depleted regions (NDRs) are also typical of open chromatin and recombinational activity is stronger at these sites in mammals \citep[reviewed in \citealp{jabbari2019common}]{getun2010nucleosome,lange2016landscape,yamada2017genomic} as well as in \textit{Schizosaccharomyces pombe} \citep{decastro2012nucleosomal} and \textit{Saccharomyces cerevisiae} \citep{wu1994meiosisinduced,berchowitz2009positive} for which NDRs host most DSBs.
+More precisely, recombination is found near transcriptions start sites (TSSs) of gene promoters in \textit{Saccharomyces cerevisiae} \citep{baudat1997clustering, petes2001meiotic, mancera2008highresolution}, \textit{Canis lupus} \citep{auton2013genetic} and \textit{Arabidopsis thaliana} \citep{choi2018nucleosomes}.
+
+
+% correl avec GC content et nucleotide diversity: sont des consequences (GC: BGC, nucleotide diversity car mutagenique)
+% local scale: GC content and nucleotide diversity. (mutagenic: Diversity, Divergence, and GC Content in arnheim 2007)
+% Pas place la revue Buard & de Massy 2007, TIG
+% Dans recombination hotspot: ajouter des infos sur regulation par sequence (cf Sequence Dependence de Arnheim 2007)
+
+
+
+
+\subsubsection{Recombination hotspots}
+
+The level of resolution matters tremendously when analysing patterns of RR variation \citep[reviewed in][]{smukowski2011recombination}.
+Indeed, at finer genomic scales of 1–10 kb, recombination rates considerably vary (Figure~\ref{fig:recombination-rate-variation}.a.): in humans \citep{mcvean2004finescale,the1000genomesprojectconsortium2010map} and other eukaryotes \citep{mezard2015where}, 80\% of recombination events gather in only 20\% of the genome (Figure~\ref{fig:recombination-rate-variation}.b.), primarily into 1—2-kb\footnote{In mammals. But, in yeasts, recombination hotspots span several kilobases.} regions called ‘recombination hotspots’ \citep{myers2005finescale}.
+
+Hotspots are generally defined as sequences that show a recombinational activity several times greater than the background rate \citep{crawford2004evidence,stapley2017variation}. 
+However, the activity of adjacent regions and the genome-wide average are alternately used as the comparative criterium \citep{demassy2013initiation}, which renders the delimitation and the number of hotspots slightly imprecise.
+
+Nevertheless, apart from \textit{Drosophila melanogaster} \citep{comeron2012many,manzano-winkler2013how} and \textit{Caenorhabditis elegans} \citep{kaur2014crossover} which lack them, recombination hotspots have been identified in a myriad of eukaryotes, including \textit{Saccharomyces cerevisiae} \citep{sun1989doublestrand,lichten1995meiotic}, \textit{Schizosaccharomyces pombe} \citep{steiner2005natural,cromie2007discrete}, \textit{Arabidopsis thaliana} \citep{drouaud2006variation}, \textit{Zea mays} \citep{dooner1997recombination,yao2002molecular}, \textit{Triticum aestivum} \citep{saintenac2011variation} and other plants \citep{mezard2006meiotic}, \textit{Canis lupus} \citep{axelsson2012death}, \textit{Mus musculus} \citep{paigen2010mammalian,smagulova2011genomewide}, \textit{Pan troglodytes} \citep{winckler2005comparison,auton2012finescale} and \textit{Homo sapiens} \citep{jeffreys2001intensely,myers2005finescale}.\\
+
+
+
+The first experimental evidence for hotspots was found serendipitously in the H2 region (\textit{i.e.} major histocompatibility complex, MHC) of mouse chromosome 17 \citep{steinmetz1982molecular}.
+The first human hotspots were later identified in \textgreek{β}-globin \citep{chakravarti1984nonuniform} and insulin \citep{chakravarti1986evidence} regions. 
+Since then, the list of recognised hotspots has grown extensively \citep[reviewed in][]{arnheim2007mammalian,paigen2010mammalian} \textbf{mettre dans une annexe la liste des hotspots humains et souris etudies si temps de le faire en juin,}
+% + liste de tous les hotspots analyses chez les humains (ou pour moi, plutot souris) dans annexe B de Popa.
+many of which identified by sperm-typing studies \citep[e.g.\ ][]{hubert1994high,jeffreys2001intensely,schneider2002direct}.
+
+Later, genome-wide lists of hotspots — concordant with sperm-typing analyses \citep[e.g.][]{tiemann-boege2006highresolution} — have been achieved by analysing linkage disequilibrium in pedigrees or populations (see Sections~\ref{chap3:linkage-maps}~and~\ref{chap3:LD}).
+Using these approaches, about 30,000 recombination hotspots have been uncovered in humans \citep{myers2005finescale,theinternationalhapmapconsortium2007seconda} and 47,000 in mice \citep{brunschwig2012finescale}.\\
+
+
+Two additional layers of RR variation exist at the hotspot level in mammals.
+First, the recombinational activity of individual hotspots varies over orders of magnitude \citep{jeffreys2001intensely,kauppi2004where,paigen2008recombinational}, with the number of hotspots per class of intensity following a negative exponential relationship \citep{paigen2010mammalian}.
+Second, the apparent\footnote{The density of polymorphic markers (which can vary across hotspots) affects the ability to detect NCOs. As such, the apparent CO:NCO ratio may differ from the genuine CO:NCO ratio.} relative ratio of CO to NCO outcomes also varies between hotspots in flies \citep{singh2012classical}, yeasts \citep{mancera2008highresolution}, mice \citep{paigen2008recombinational} and humans \citep{jeffreys2004intense}.
+
+These relative differences in hotspot activity come from their both \textit{cis-} and \textit{trans-} regulations \citep[reviewed in][]{paigen2010mammalian} which also account for the differences in hotspot usage among individuals.
+
+
+
+
+% INFOS A GARDER RECOMBINATION VARIATION
 % CAPILLA — variations — https://www.karger.com/Article/FullText/452822
 % Mammalian Meiotic Recombination: A Toolbox for Genome Evolution
 % Capilla L.a · Garcia Caldés M.a, b · Ruiz-Herrera A.a, b
 
-
-
 % Spatial distribution of DSBs: Lam and Keeney 2015
-% CHAPITRE 3: Revue de Massy initiation recombinaison parle des cartes de CO chez plein d'especes + les differences de recombinaison selon les regions genomiques
 
 %%% Noor: dans partie variation entre les especes
 %%% https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3242630/
 
-% CHAPITRE 3
-% BAUDAT MASSY 2013
-% Aussi des hotspots (chapitre 3) - depuis Baudat et de Massy CO
-% CO are not randomly distrib- uted, but occur in multiple specific regions of the genome called CO hotspots (de Massy 2003, Kauppi et al. 2004). A hotspot is a region 1Y2 kb wide where CO are clustered, as a result of localized initiation events (see below). The average spacing between hotspots is 50Y100 kb and hotspot activities vary over three to four orders of magnitude, from 0.9 to 0.0005 cM as determined in the human genome. In the human genome the number of hotspots is estimated around 25 000Y50 000 (Myers et al. 2005). The variations of hotspot density and activity along chromosomes result in domains with high (jungles) or low (desert) recombination activity. Most sub-telomeric regions are recombination jun- gles in male meiosis whereas centromeric regions are recombination deserts. However, the determinants of CO variation along chromosomes are not known, even though some factors correlated with CO density are beginning to be analyzed (Buard & de Massy 2007, TIG in revision).
-%
 
-
-
-%%%%%% chap3: DSBs: In humans and mice, DSBs tend to avoid centromeres and heterochromatic acrocentric short arms, although they are heavily enriched near telomeres in human males [17]. % ALTEMOSE
-
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3242630/
-Determinants and correlates of RR variation and how maintained within and among species
-
-
-parler aussi des consequences sur la genetic diversity avec le DNMs.
-
-% More generally, knowing how recombination in uences DNA sequence diversity is essential for understanding the history of human populations and the dynamics of genome evolution [Pa ̈a ̈bo, 2003; Lohmueller et al., 2009]. These applications require high resolution mapping of recombination events and genome-wide maps of recombination frequencies, known as genetic maps.
-
-
-
-\subsection{Inter-individual effects of sex and age}
-
-% McVenn???
-% Utile pour correlation MALE/FEMELLE (cf partie 2.3)
-deCODE genetic map (one pedigree)
-% A pedigree study of particular interest in this thesis is the deCODE pedigree genetic map. Kong et al. (2010) genotyped a large cohort of Icelandic parent-offspring pairs (8850 maternal meioses, 6507 paternal meioses), resulting in sex-specific maps esti
-% mated at a resolution of tens of kilobases. 
-In order to analyse such a large sample, recombination events were identified by phasing both parent and offspring individually based on extensive IBD-sharing within the Icelandic population and then identifying the signal of recombination events where the offspring switched between paternal and maternal haplotypes (later formalised by (Palin et al., 2011)). 
-The high resolution of the map enabled the first fine-scale analysis of the structure of sex-specific variation at genome features. 
-Male-specific and female-specific maps had a correlation of 0.659 (10 kb scale), but there were clear sex differences. Hotspots were defined as intervals where the estimated level of recombination was greater than 10 times the genome average. Of the 4762 male-specific hotspots identified, 704 were estimated to have a rate less than 3 in female (relative to the genome average across bins). Similarly, 14.7% of hotspots in females were observed only in females, however the locations of hotspots with moderate intensity overlapped on average. The most dramatic sex- specific differences were observed at genes, especially for intronic rates (male - female = 0.270, p = 2.2 × 10−7; Figure 1.11). The deCODE data confirmed previous ob- servations from sex-averaged LD-based maps (Myers et al., 2005), in particular rates
-% were suppressed within transcribed regions.
-
-
-
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3242630/
-Determinants and correlates of RR variation and how maintained within and among species
-
-Parler aussi de l'effet sur la diversite genetique
-CO assurance and interference
-Le long des genomes (compartiments genomiques — telomeres, centromeres, intergenique) + local chromatin accessibility + parler des hotspot?
-Male femelle
-%%%%%% chap3: DSBs: In humans and mice, DSBs tend to avoid centromeres and heterochromatic acrocentric short arms, although they are heavily enriched near telomeres in human males [17]. % ALTEMOSE
-
-% CO interference + obligatory CO: lien avec CO interferents par Mlh1 et CO non interferents par Mus81 + au moins un dans le PAR
-% DANS CROSSING-OVER: generate genetic diversity along with independent assortment (http://www.macmillanhighered.com/BrainHoney/Resource/6716/digital_first_content/trunk/test/hillis2e/hillis2e_ch07_5.html)
-
-
-% CHAPITRE 3
-% BAUDAT MASSY 2013
-% In addition, the number of SPO11-dependent DSBs formed in every meiocyte is regulated by several factors. In contrast to crossovers, meiotic DSBs are difficult to quantify, especially because they are transient. Counting the foci formed by the recombinases RAD51 and DMC1 (see section below) has been widely used as the best available estimate of the number of DSBs in individual cells (oocytes or spermatocytes). It gives a count of 200–400 foci per cell in mice and humans3. A method for comparing the relative level of meiotic DSBs between mice of different genotypes was recently developed by quantifying the global level of oligonucleotides that are covalently attached to SPO11 (REF. 65). The role of the ataxia telangiectasia mutated (ATM) kinase as a nega- tive regulator of meiotic DSBs has been demonstrated using this method66. Situations in which SPO11 is unable to generate a wild-type number of DSBs correlate with defects in synapsis, suggesting that a minimum number of DSBs is needed to allow proper interactions between homologues67,68.
-%
-
-
-% Aussi des hotspots (chapitre 3) - depuis Baudat et de Massy CO
-% CO are not randomly distrib- uted, but occur in multiple specific regions of the genome called CO hotspots (de Massy 2003, Kauppi et al. 2004). A hotspot is a region 1Y2 kb wide where CO are clustered, as a result of localized initiation events (see below). The average spacing between hotspots is 50Y100 kb and hotspot activities vary over three to four orders of magnitude, from 0.9 to 0.0005 cM as determined in the human genome. In the human genome the number of hotspots is estimated around 25 000Y50 000 (Myers et al. 2005). The variations of hotspot density and activity along chromosomes result in domains with high (jungles) or low (desert) recombination activity. Most sub-telomeric regions are recombination jun- gles in male meiosis whereas centromeric regions are recombination deserts. However, the determinants of CO variation along chromosomes are not known, even though some factors correlated with CO density are beginning to be analyzed (Buard & de Massy 2007, TIG in revision).
-%
-
-
-%% INTERFERENCE
-% Cf lesecque revue + POPA Un paragraphe tres complet
-% + dans Baudat 2007 et 2013: interfering par dHJ, non-interfering Ms81.
-% Pas d'interference (ou peu? Baudat CO) dans les NCO
-
-%% INTERFERENCE (CAPILLO)
-% Since only a small fraction of DSBs are eventually processed as COs, a highly regulated genetic control determines both CO homeostasis and chromosomal distribution. In this way, if a CO occurs in a certain position, the probability for a new CO to take place nearby increases with chromosomal length. As a consequence, COs tend to follow an evenly spaced distribution across chromosome axes [Jones, 1967; Kleckner et al., 2003; Wang et al., 2015]. Importantly, this CO interference is influenced by the physical distance along the chromosomal axes (micrometers) rather than the genomic (Mb) or genetic distance (cM) [Wang et al., 2015]. However, not all COs are subject to interference, leading to recognition of interfering (class I) and non-interfering (class II) COs in different organisms [Hollingsworth and Brill, 2004; Phadnis et al., 2011]. Non-interfering COs are Mus81-Mms4 dependent and distribute themselves randomly along the chromosomes independent of each other, whereas interfering COs have been found to be distributed according to a gamma distribution. In mice, most COs manifest interference and are controlled by proteins Msh4-Msh5 [Berchowitz and Copenhaver, 2010], although some Mus81 activity has been detected during meiosis [Holloway et al., 2008]. Despite the evolutionary rationale of CO interference is still unknown, spaced COs ensure faithful chromosomal segregation and might facilitate linkage of functionally related genes [Wang et al., 2015 and references therein].
-
-% OBLIGATORY CO
-% These cytological analyses also show that at least one CO is formed per chromosome arm both in humans and mice, apart from short heterochromatic arms from acrocentric chromosomes. This regulation of CO frequency is a manifestation of the rule of the obligatory CO. Interestingly, mouse strains carrying Robertsonian translocations have two CO per chro- mosome, one per euchromatic arm (Dumas & Britton- Davidian 2002). The rule of the obligatory CO is also observed between the X and Y, where one CO is always observed in the pseudoautosomal region. A second level of CO regulation is shown by the
-% measures of distances between chiasmata or Mlh1 foci, or by genetic distances. These show that, both in mouse and human, CO are not randomly distributed and are more evenly spaced than expected if they occurred independently, a phenomenon defined as positive interference (Lawrie et al. 1995, Laurie & Hulten 1985, Anderson et al. 1999, Broman & Weber 2000, Broman et al. 2002).
-%
-
-% Voir aussi Neil Hunter: CO control
-
-% https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3003294/ : CO control (Yanowitz)
-
-% CHAPITRE 3
-% An additional checkpoint that monitors whether each chromosome has received a crossover is thought to exist, although molecular insight into this checkpoint is lacking[84].
-% Depuis Yanowitz
-% % 84. Mehrotra S, McKim KS. Temporal analysis of meiotic DNA double-strand break formation and repair in Drosophila females. PLoS Genet. 2006;2:e200. [PMC free article] [PubMed] [Google Scholar]
-%
-%
-% Aussi: il faudra parler du fait que, chez les femmes, il y a d'autres DSB qui se forment de facon non programmee. Et sont repares differemments (en particulier, plus longs + plus complex? voir chapitre 3). Plus, des problemes de trisomie plus souvent chez les femmes a cause du dictyate arrest.
-%
+% A CITER
+% Ritz, K. R., Noor, M. A. F., & Singh, N. D. (2017). Variation in Recombination Rate: Adaptive or Not? Trends in Genetics, 33(5), 364–374.
+% BAUDAT MASSY 2013: REF HOTSPOTs: Kauppi 2004 et de Massy 2003
+% A mettre avant: In humans, the genome-wide mean crossover rate is around 1.1 cM/Mb [24]. [24] A Kong et al. “A high-resolution recombination map of the human genome”. In: Nature 31.3 (2002), pp. 241–247.
 
 
 
@@ -363,44 +374,128 @@ Male femelle
 
 
 
-% - CO SC independent: Kohl and de los Santos
-% A mettre plus loin quand on parle des CO ET DE LA POSITIVE INTERFERENCE??
-% Loidl
-% which stabilizes the connection between partner chromosomes (151). It is also crucial
-% for the maturation of a certain class of COs, the number and distribution of which are controlled
-% by mutual local exclusion (positive interference).
-% This CO class is predominant in most eukaryotes studied so far, but a small proportion of COs are SC independent and noninterfering (see 29, 66).
-% 66. Kohl KP, Sekelsky J. 2013. Meiotic and mitotic recombination in meiosis. Genetics 194:327–34
-% 29. de los Santos T, Hunter N, Lee C, Larkin B, Loidl J, Hollingsworth NM. 2003. The Mus81/Mms4
-% endonuclease acts independently of double-Holliday junction resolution to promote a distinct subset of
-% crossovers during meiosis in budding yeast. Genetics 164:81–94
 
-% SUR LES CROSSOVERS (CLASSES)
-% Hunter - synaptonemal complexities
-% Recent data suggest that two classes of crossovers form in S. cerevisiae (and probably plants and mammals; e.g., de Los Santos et al., 2003). The majority, Class-I, is subject to distribution controls and dependent on Zip1 and at least five other meiosis-specific proteins (Börner, V., Kleckner, N. and N. Hunter, unpublished data). Loss of Class-I crossovers causes chromosomes to missegregate in most meioses, inferring a critical function for these events, and thus SC, in S. cerevisiae. In contrast, Class-II crossovers are randomly distributed and SC independent. Loss of these events does not affect SCs or cause chromosomes to missegregate.
+\subsection{Inter-individual differences in hotspot usage}
+
+\subsubsection{Sexual dimorphism}
+
+Sex differences in recombination were discovered over a century ago with the first linkage studies in \textit{Drosophila melanogaster} \citep{morgan1912complete,morgan1914no}, \textit{Bombyx mori} \citep{takanaytianzhong1914sexualWITHJAP} and \textit{Gammarus chevreuxi} \citep{huxley1928sexual}. 
+Since then, several levels of sexual dimorphism have been unveiled.
+
+First, as compared to males, the overall recombinational activity is greater in females\footnote{This feature (a species with different RRs in both sexes) is termed ‘heterochiasmy’.} for most mammals \citep{dunn1967sex} including mice \citep{shifman2006highresolution} and humans \citep{donis-keller1987genetic,broman1998comprehensive} — a result consistent with the fact that the genetic maps are longer in females than in males in these two species \citep{lynn2004variation,cox2009new} as well as in pigs \citep{mikawa1999linkage}, dogs \citep{neff1999secondgeneration} and thale cresses \citep{drouaud2007sexspecific}. 
+In mammals, this observation is likely due to the fact that female meiosis entails a dictyate arrest which can last for decades (from the fetal age to ovulation), thus leaving time for spontaneous DSBs to arise and to be repaired as complex COs (see Chapter~\ref{ch:2-recombination-mechanistics}).
+However, this effect is reversed in sheeps \citep{maddox2001enhanced}, flycatchers \citep{backstrom2008genebased} and most marsupials \citep{bennett1986novel,hayman1988further,hayman1990meiosis} but not visible in one marsupial \citep{hayman1990comparative} nor cattle \citep{kappes1997secondgeneration}.
+
+Second, sexual differences are regionalised: CO rates in men are several times lower near centromeres and higher near telomeres than in women \citep[reviewed in][]{buard2007playing}, arguably because the SC is shorter in males \citep{tease2004intersex} and that synapsis preferentially initiates at subtelomeric regions and at fewer sites than in females \citep{brown2005meiotic}. As such, the recombination landscape is generally flatter in females \citep{paigen2008recombinational}.
+
+Third, differences in hotspot usage can be so strong that a few hotspots are perceived as entirely sex-specific \citep{shiroishi1990recombinational,shiroishi1991genetic}.
+
+The explanations proposed for this sexual dimorphism include haploid selection \citep{lenormand2005recombination}, imprinting \citep{lercher2003imprinted} and sex-based differences in chromatin structures \citep{gerton2005homologous} or in SC length \citep{petkov2007crossover}.
 
 
 
 
-%
-% \section{Variation}
-% isochores
-% reparition variation des CO
-% differences within species
-% differences between male and females
-% genomic and environmental
-% differences between species
-% evolutionary effects of recombination rate variation on structure of genome (ducleotide diversity and divergence, distinguish scenarii, codon bias, other)
-% broad scale rate and PAR
-% CO assurance + interference
-% intragenomic variation in recombination and natural selection
-% Distribution of meiotic recombination (broad scale, fine scale, PRDM9)
-% role of genetic variation
-%
-%
+
+
+\subsubsection{Heterogeneity between individuals}
+
+Hotspot usage is also variable between individuals of the same sex (reviewed in \citealp{popa2011evolution} and \citealp{capilla2016mammalian}).
+
+In humans, fluctuations in recombination rates are greater between women than between men, but both sexes show inter-individual variation \citep{cheung2007polymorphic}.
+For instance, the major histocompatibility complex (MHC) shows a 2-fold difference among 5 men \citep{yu1996individual}, some hotspots are active in only a few men \citep{neumann2006polymorphism} and the CO:NCO ratios show inter-individual disparities \citep{jeffreys2005factors,sarbajna2012major}.
+
+As for mice, an inter-individual effect was also found in one strain \citep{koehler2002genetic}, but not in others.
+Thus, RRs vary not only between chromosomal regions and individuals, but also across populations and species, which indicates that they evolve with time, as reviewed in the forthcoming section.
+% This last layer of variation is reviewed in the next section.
+
+
+
+
 
 \section{Evolvability of recombination rates (RR)}
+
+% evolutionary effects of recombination rate variation on structure of genome (ducleotide diversity and divergence, distinguish scenarii, codon bias, other)
+% role of genetic variation
+
+
+
+% https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4389181/ — Dans LD
+% Human population studies have relied partly on the observation that adjacent SNPs tend to form clusters, or haplotype blocks, that are 10–100 kb long. Within these blocks most or all markers are in linkage disequilibrium (LD), and the block boundaries are correlated among populations21
+% 21. The structure of haplotype blocks in the human genome.
+% Gabriel SB, Schaffner SF, Nguyen H, Moore JM, Roy J, Blumenstiel B, Higgins J, DeFelice M, Lochner A, Faggart M, Liu-Cordero SN, Rotimi C, Adeyemo A, Cooper R, Ward R, Lander ES, Daly MJ, Altshuler D
+% Science. 2002 Jun 21; 296(5576):2225-9.
+%
+% Dans evolvability — https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4389181/
+% However, several observations suggest that the edges of haplotype blocks are not uniformly coincident with hot spots. The recombination maps of human chromosomes in LD units per Mb pair (which reflects historical recombination) and centimorgans (cM) per Mb pair (which reflects one-generation recombination) are not entirely concordant27. A high-resolution genome-wide association study of recombination in 728 human meioses found that only 60% of detected recombination events coincided with hot spots inferred from LD analysis28. Specific exceptions have also been reported at the level of individual hot spots29.
+% 27. A map of the human genome in linkage disequilibrium units.
+% Tapper W, Collins A, Gibson J, Maniatis N, Ennis S, Morton NE
+% Proc Natl Acad Sci U S A. 2005 Aug 16; 102(33):11835-9.
+% 28. High-resolution mapping of crossovers reveals extensive variation in fine-scale recombination patterns among humans.
+% Coop G, Wen X, Ober C, Pritchard JK, Przeworski M
+% Science. 2008 Mar 7; 319(5868):1395-8.
+% 29. Localized breakdown in linkage disequilibrium does not always predict sperm crossover hot spots in the human MHC class II region.
+% Kauppi L, Stumpf MP, Jeffreys AJ
+% Genomics. 2005 Jul; 86(1):13-24.
+
+
+
 \subsection{Inter- and intra-species comparison of fine-scale RR}
+
+intro: LD maps differ from hotspots (because only historic) donc suggests evolution.
+De https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4389181/
+- LD blocks correlated among populations (Gabriel 2002 The structure of haplotype blocks in the human genome.)
+- The recombination maps of human chromosomes in LD units per Mb pair (which reflects historical recombination) and centimorgans (cM) per Mb pair (which reflects one-generation recombination) are not entirely concordant (Tapper 2005 A map of the human genome in linkage disequilibrium units)
+- only 60% of detected recombination events coincided with hot spots inferred from LD analysis (Coop 2008 High-resolution mapping of crossovers reveals extensive variation in fine-scale recombination patterns among humans.)
+- and also specific cases of this non-concordance between LD and position of hotspots (Kauppi 2005 Localized breakdown in linkage disequilibrium does not always predict sperm crossover hot spots in the human MHC class II region.)
+- Coalescent analysis of genotype data detected most of the hot spots but showed significant differences between sperm crossover frequencies and historical recombination rates. This raises the possibility that some hot spots, particularly those in regions of strong association, may have evolved very recently and not left their full imprint on haplotype diversity. These results suggest that hot spots could be very abundant and possibly fluid features of the human genome. (Jeffreys et al 2005 — https://www.nature.com/articles/ng1565)
+
+
+Evolution that changes among populations of one species
+- Difference dans le nombre de MLH1 foci entre populations de souris: The same trend has been reported for inbred laboratory mice, where strains with low (CAST/Ei), medium (A/J), and high (C57/BL6, SPRET/Ei) levels of recombination were identified [Koehler et al., 2002b; Lynn et al., 2002; Baier et al., 2014]. 
+- Furthermore, the use of certain human recombination hotspots has been shown to be enriched in di erent populations [26, 32].
+% [26] A G Hinch et al. “The landscape of recombination in African Americans”. In: Nature 476.7359 (2011), pp. 170–175.
+% [32] I L Berg et al. “Variants of the protein PRDM9 di erentially regulate a set of human meiotic recombination hotspots highly active in African populations”. In: Proceedings of the National Academy of Sciences of the United States of America 108.30 (2011), p. 12378.
+
+
+The eovlution of hotspots also induces devergence between species
+- closely related species tend to show similar average rates of recombination in homologous chromosomes when comparing recombination rates on a broad scale (Mb) [Hassold et al., 2009; Garcia-Cruz et al., 2011; Auton et al., 2012]. However, similarities disappear on the finest scale (kb) [reviewed in Smukowski and Noor, 2011]
+- When comparing the degree of conservation between great apes and human recombination maps, a low degree of hotspots has been conserved on the finest scale, even between chimpanzees and bonobos, accounting for a rapid hotspot turnover during evolution [Stevison et al., 2016], consistent with previous studies [Auton et al., 2012]
+-Recombination hotspots have also been described in other organisms such as chimps and mice, although their positions are not conserved [29–31]
+% [29] W Winckler et al. “Comparison of fine-scale recombination rates in humans and chimpanzees”. In: Science 308.5718 (2005), pp. 107–111.
+% [30] K Paigen et al. “The recombinational anatomy of a mouse chromosome.” In: PLoS Genetics 4.7 (2008), e1000119–e1000119.
+% [31] A Auton et al. “A Fine-Scale Chimpanzee Genetic Map from Population Sequencing”. In: Science 336.6078 (2012), pp. 193–198.
+- When compared over the scale of megabases (Mb), closely related species show similar average recombination rates (RRs) \citep[reviewed in \citealp{capilla2016mammalian}]{hassold2009cytological,garcia-cruz2011comparative,auton2012finescale} and, in humans, RRs vary by an order of magnitude (Figure~\ref{fig:recombination-rate-variation}.a.).
+PAS BESOIN  DE METTRE LIEN VERS LA FIGURE!!
+
+
+
+Transition: This calls into question where the divergence comes from: PRDM9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PARTIE 1
+Single utilise par Hinch recemment
+Hinch: importance de connaitre la distribution des RR car impact sur cetaines maladies.
+
+
+
 \subsection{PRDM9, the fast-evolving mammalian speciation gene}
 \subsection{The Red Queen dynamics of hotspot evolution}
 hotspot paradox et dBGC
