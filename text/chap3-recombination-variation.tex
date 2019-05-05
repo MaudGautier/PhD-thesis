@@ -402,333 +402,187 @@ In humans, fluctuations in recombination rates are greater between women than be
 For instance, the major histocompatibility complex (MHC) shows a 2-fold difference among 5 men \citep{yu1996individual}, some hotspots are active in only a few men \citep{neumann2006polymorphism} and the CO:NCO ratios show inter-individual disparities \citep{jeffreys2005factors,sarbajna2012major}.
 
 As for mice, an inter-individual effect was also found in one strain \citep{koehler2002genetic}, but not in others.
-Thus, RRs vary not only between chromosomal regions and individuals, but also across populations and species, which indicates that they evolve with time, as reviewed in the forthcoming section.
-% This last layer of variation is reviewed in the next section.
+Thus, RRs vary not only between chromosomal regions and individuals, but also across populations and species, which indicates that they evolve with time, as reviewed in the following section.
 
 
 
 
 
-\section{Evolvability of recombination rates (RR)}
+\section{Evolvability of recombination rates (RRs)}
 
-% evolutionary effects of recombination rate variation on structure of genome (ducleotide diversity and divergence, distinguish scenarii, codon bias, other)
-% role of genetic variation
+\subsection{Intra- and inter-species comparison of fine-scale RRs}
 
+The comparison of human linkage disequilibrium (LD) maps has shown that LD blocks are highly correlated among populations \citep{gabriel2002structure}, but the positions of the historical recombination hotspots they uncover are not entirely concordant with the one-generation recombination of genetic maps \citep{tapper2005map}. 
+This non-concordance between historical and actual recombination was also observed independently at specific regions \citep{jeffreys2005human,kauppi2005localized} and suggests that the set of hotspots reorganises through time.
+Thus, discrepancies in the fine-scale RR should be found both within and among species.\\
 
+On the one hand, recombination rates exhibit intra-species disparity.
+In mice, for instance, the number of MLH1 foci (a proxy for the number of COs) differs between strains \citep{koehler2002genetic,paigen2008recombinational,baier2014variation} and, in humans, the use of recombination hostpots vary across populations \citep{berg2011variants,hinch2011landscape}.
 
-% https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4389181/ — Dans LD
-% Human population studies have relied partly on the observation that adjacent SNPs tend to form clusters, or haplotype blocks, that are 10–100 kb long. Within these blocks most or all markers are in linkage disequilibrium (LD), and the block boundaries are correlated among populations21
-% 21. The structure of haplotype blocks in the human genome.
-% Gabriel SB, Schaffner SF, Nguyen H, Moore JM, Roy J, Blumenstiel B, Higgins J, DeFelice M, Lochner A, Faggart M, Liu-Cordero SN, Rotimi C, Adeyemo A, Cooper R, Ward R, Lander ES, Daly MJ, Altshuler D
-% Science. 2002 Jun 21; 296(5576):2225-9.
-%
-% Dans evolvability — https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4389181/
-% However, several observations suggest that the edges of haplotype blocks are not uniformly coincident with hot spots. The recombination maps of human chromosomes in LD units per Mb pair (which reflects historical recombination) and centimorgans (cM) per Mb pair (which reflects one-generation recombination) are not entirely concordant27. A high-resolution genome-wide association study of recombination in 728 human meioses found that only 60% of detected recombination events coincided with hot spots inferred from LD analysis28. Specific exceptions have also been reported at the level of individual hot spots29.
-% 27. A map of the human genome in linkage disequilibrium units.
-% Tapper W, Collins A, Gibson J, Maniatis N, Ennis S, Morton NE
-% Proc Natl Acad Sci U S A. 2005 Aug 16; 102(33):11835-9.
-% 28. High-resolution mapping of crossovers reveals extensive variation in fine-scale recombination patterns among humans.
-% Coop G, Wen X, Ober C, Pritchard JK, Przeworski M
-% Science. 2008 Mar 7; 319(5868):1395-8.
-% 29. Localized breakdown in linkage disequilibrium does not always predict sperm crossover hot spots in the human MHC class II region.
-% Kauppi L, Stumpf MP, Jeffreys AJ
-% Genomics. 2005 Jul; 86(1):13-24.
+On the other hand, even though closely related species show similar average recombination rates (RRs) \citep{dumont2008evolution,hassold2009cytological,garcia-cruz2011comparative,auton2012finescale} when compared over the scale of megabases (Mb), dissimilarities appear at the finer scales, as was shown between humans and chimpanzees \citep{ptak2005finescale,winckler2005comparison} or between humans and great apes \citep{stevison2016time}.\\
+
+The reasons for such a rapid turnover of recombination hotspots were understood about a decade ago with the discovery of the protein that determines the position of recombination hotspots in mammals: PRDM9.
 
 
+\subsection{\textit{Prdm9}, the fast-evolving mammalian speciation gene}
 
-\subsection{Inter- and intra-species comparison of fine-scale RR}
+\subsubsection{Discovery of the \textit{Prdm9} gene}
+% Observation des motifs+ decouverts dans trois groupes en meme temps
 
-intro: LD maps differ from hotspots (because only historic) donc suggests evolution.
-De https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4389181/
-- LD blocks correlated among populations (Gabriel 2002 The structure of haplotype blocks in the human genome.)
-- The recombination maps of human chromosomes in LD units per Mb pair (which reflects historical recombination) and centimorgans (cM) per Mb pair (which reflects one-generation recombination) are not entirely concordant (Tapper 2005 A map of the human genome in linkage disequilibrium units)
-- only 60% of detected recombination events coincided with hot spots inferred from LD analysis (Coop 2008 High-resolution mapping of crossovers reveals extensive variation in fine-scale recombination patterns among humans.)
-- and also specific cases of this non-concordance between LD and position of hotspots (Kauppi 2005 Localized breakdown in linkage disequilibrium does not always predict sperm crossover hot spots in the human MHC class II region.)
-- Coalescent analysis of genotype data detected most of the hot spots but showed significant differences between sperm crossover frequencies and historical recombination rates. This raises the possibility that some hot spots, particularly those in regions of strong association, may have evolved very recently and not left their full imprint on haplotype diversity. These results suggest that hot spots could be very abundant and possibly fluid features of the human genome. (Jeffreys et al 2005 — https://www.nature.com/articles/ng1565)
+Positive regulatory (PR) domain zinc finger protein 9 (PRDM9) — encoded by a gene first named \textit{Meisetz} (for ‘meiosis-induced factor containing PR/SET domain and zinc-finger motif’) — was discovered in mouse germ cells as a methyltransferase protein essential to the progression through meiotic prophase \citep{hayashi2005histone,hayashi2006meisetz}.
+In 2010, three groups simultaneously identified it as responsible for the positioning of recombination hotspots in mice and humans \citep[reviewed in \citealp{cheung2010genetic} and \citealp{hochwagen2010meiosis}]{baudat2010prdm9,myers2010drive,parvanov2010prdm9}.
 
+One of these groups had previously identified a degenerate 13-bp GC-rich motif \citep{myers2005finescale} implicated in the activity of 40\% of human hotspots \citep{myers2008common,webb2008sperm} and had predicted that it was likely bound by a zinc finger protein of at least 12 units \citep{myers2008common}.
+Later, the computational analysis of all predicted zinc-finger DNA-binding proteins in the human genome yielded PRDM9 as both the only binding partner compatible with the observed degeneracy of the motif and the only candidate consistent with the lack of activity in chimpanzees \citep{myers2010drive}.
 
-Evolution that changes among populations of one species
-- Difference dans le nombre de MLH1 foci entre populations de souris: The same trend has been reported for inbred laboratory mice, where strains with low (CAST/Ei), medium (A/J), and high (C57/BL6, SPRET/Ei) levels of recombination were identified [Koehler et al., 2002b; Lynn et al., 2002; Baier et al., 2014]. 
-- Furthermore, the use of certain human recombination hotspots has been shown to be enriched in di erent populations [26, 32].
-% [26] A G Hinch et al. “The landscape of recombination in African Americans”. In: Nature 476.7359 (2011), pp. 170–175.
-% [32] I L Berg et al. “Variants of the protein PRDM9 di erentially regulate a set of human meiotic recombination hotspots highly active in African populations”. In: Proceedings of the National Academy of Sciences of the United States of America 108.30 (2011), p. 12378.
+The other two groups had previously independently identified a $\sim$5-Mb region on mouse chromosome 17 containing a \textit{trans-}acting locus controlling the activation of specific hotspots \citep{grey2009genomewide,parvanov2009transregulation}, respectively named \textit{Dsbc1} and \textit{Rcr1} at the time.
+\citet{parvanov2010prdm9} used a mouse cross to narrow the interval down to 181 kb and argued that, among the four genes it comprised, \textit{Prdm9} was the only relevant candidate that could explain the differences in hotspot usage.
 
+\citet{baudat2010prdm9} also reduced the interval with additional crosses to identify \textit{Prdm9} as a relevant candidate. 
+They further sequenced several human variants and found that the human \textit{Prdm9} alleles were associated with hotspot usage, thus providing convincing evidence that it plays a major role in hotspot positioning, and demonstrated its sequence-specific binding to the 13-bp motif \textit{in vitro}.
 
-The eovlution of hotspots also induces devergence between species
-- closely related species tend to show similar average rates of recombination in homologous chromosomes when comparing recombination rates on a broad scale (Mb) [Hassold et al., 2009; Garcia-Cruz et al., 2011; Auton et al., 2012]. However, similarities disappear on the finest scale (kb) [reviewed in Smukowski and Noor, 2011]
-- When comparing the degree of conservation between great apes and human recombination maps, a low degree of hotspots has been conserved on the finest scale, even between chimpanzees and bonobos, accounting for a rapid hotspot turnover during evolution [Stevison et al., 2016], consistent with previous studies [Auton et al., 2012]
--Recombination hotspots have also been described in other organisms such as chimps and mice, although their positions are not conserved [29–31]
-% [29] W Winckler et al. “Comparison of fine-scale recombination rates in humans and chimpanzees”. In: Science 308.5718 (2005), pp. 107–111.
-% [30] K Paigen et al. “The recombinational anatomy of a mouse chromosome.” In: PLoS Genetics 4.7 (2008), e1000119–e1000119.
-% [31] A Auton et al. “A Fine-Scale Chimpanzee Genetic Map from Population Sequencing”. In: Science 336.6078 (2012), pp. 193–198.
-- When compared over the scale of megabases (Mb), closely related species show similar average recombination rates (RRs) \citep[reviewed in \citealp{capilla2016mammalian}]{hassold2009cytological,garcia-cruz2011comparative,auton2012finescale} and, in humans, RRs vary by an order of magnitude (Figure~\ref{fig:recombination-rate-variation}.a.).
-PAS BESOIN  DE METTRE LIEN VERS LA FIGURE!!
+The dots were later reconnected with two past studies: one had found a haplotype associated with the control of recombination \citep{shiroishi1982new} — this haplotype actually contained \textit{Prdm9}; and in another, a protein binding a minisatellite motif had been partially purified \citep{wahls1991two} — this protein turned out to be PRDM9 \citep{wahls2011dna}.\\
+
+Since then, the role of PRDM9 in regulating the position of recombination hotspots has been confirmed multiple times in humans \citep{berg2010prdm9,pratto2014recombination} and observed in other primates \citep{groeneveld2012high,heerschop2016pioneering,schwartz2014primate}, rodents \citep{buard2014diversity,capilla2014genetic,kono2014prdm9}, ruminants \citep{sandor2012genetic,ahlawat2016zinc,ahlawat2016evidence,ahlawat2017evolutionary} and equids \citep{steiner2013characterization}.
+
+% Nevertheless, a PRDM9-independent pathway for hotspot specification seems to exist in mammals \citep{smagulova2011genomewide,narasimhan2016health} and no functional \textit{Prdm9} gene exists in canids \citep{axelsson2012death,munoz-fuentes2011prdm9,auton2013genetic} nor birds \citep{singhal2015stable} for which hotspots stably locate at transcription start sites (TSSs) instead.
+
+Nevertheless, even if PRDM9-lacking mice are recombination-deficient and thus sterile \citep{brick2012genetic}, a PRDM9-independent pathway for hotspot specification seems to exist \citep{smagulova2011genomewide} and to guarantee fertility in certain mammalian cases \citep{narasimhan2016health}. 
+Hotspots are also defined independently of PRDM9 in canids \citep{axelsson2012death,munoz-fuentes2011prdm9,auton2013genetic} and birds \citep{singhal2015stable} in which hotspot locate at transcription start sites (TSSs) instead and are stable over evolutionary times.
 
 
+\subsubsection{Structure of the protein}
 
-Transition: This calls into question where the divergence comes from: PRDM9
+\begin{figure}[h]
+	\centering
+	\includegraphics[width = 1\textwidth]{figures/chap3/PRDM9-structure.eps}
+	\caption[Molecular structure of PRDM9]
+	{\textbf{Molecular structure of PRDM9.}
+		\par \textbf{A |} The PRDM9 protein consists of a KRAB-like, a SSXRD, a PR/SET and a zinc finger (Znf) array domains. 
+		The three residues (located at positions -1, +3 and +6 relative to the alpha helix) that are explicitely lettered specify the DNA target of each Znf. 
+		Human \textit{A} and mouse \textit{Dom2} alleles are shown.
+		\textbf{B |} The composition of the tandem Znf array of the major human and mouse \textit{Prdm9} alleles are represented as a sequence of squares, coloured based on the composition of residues at positions -1, +3 and +6.
+		The boxes frame the fingers that contribute most to the principal motif of each allele.
+		\par This figure was reproduced from \citet{paigen2018prdm9}.
+	}
+\label{fig:PRDM9-structure}
+\end{figure}
+
+PRDM9 determines the precise localisation of hotspots thanks to its carboxy-terminal tandem array of 8 to over 20 Cys\textsubscript{2}-His\textsubscript{2} (C2H2) zinc fingers (Znf) \citep[reviewed in][]{paigen2018prdm9}: the residues -1, +3 and +6 (relative to the alpha helix) of each Znf specify the DNA trinucleotide to bind and thus, altogether, the sequence target of the Znf array \citep{neale2010prdm9}.
+A few fingers contribute preponderantly to the principal motif recognised (Figure~\ref{fig:PRDM9-structure}.b.) and one Znf is separated from the rest of the array and closer to the central region (Figure~\ref{fig:PRDM9-structure}.a.).
+
+The central region also contains the methyltransferase PR/SET domain which is distantly related to the family of Suppressor of variegation 3–9, Enhancer of Zeste and Trithorax (SET) domains \citep[reviewed in][]{grey2018prdm9}.
+Thanks to this domain, which is required for DSB formation \citep{diagouraga2018prdm9}, PRDM9 can catalyse the mono-, di- and trimethylation of H3K4 and H3K36 \citep{wu2013molecular,powers2016meiotic} but also its own authomethylation \citep{koh-stenta2017discovery} which may help to regulate its activity by modulating the folding of the PR/SET domain.
+
+The N-terminus hosts the Kr\"uppel-associated box (KRAB)–related domain involved in protein:protein interactions \citep{parvanov2016prdm9,parvanov2017prdm9,imai2017prdm9}, and a synovial sarcoma X repression domain (SSXRD).
+These two domains are also known to be involved in transcriptional repression \citep{margolin1994kruppelassociated,lim1998krabrelated} but no such activity was identified in human PRDM9 \citep{born2014bsubdomain}, and they both seem essential to the hotspot-targeting role of PRDM9 \citep{baker2017repeated,thibault-sennett2018interrogating}.
+
+
+\subsubsection{Hybrid sterility}
+
+PRDM9 likely acts as a multimer \citep{baker2015multimer,altemose2017map,schwarz2018prdm9} which may explain the dominance of certain alleles reported for human \textit{C} over \textit{A} \citep{pratto2014recombination} and \textit{I} over \textit{A} alleles \citep{baudat2010prdm9}, as well as mouse \textit{13R} over \textit{9R} \citep{brick2012genetic} and \textit{Cst} over \textit{Dom2} alleles \citep{smagulova2011genomewide, baker2015multimer, baker2015prdm9}.
+
+Multimer formation certainly plays a role in PRDM9-mediated homologue pairing \citep{davies2016reengineering} and dominance may affect the dosage sensitivity of PRDM9 \citep{flachs2012interallelic, segurel2011case} and thus participate in hybrid infertility which was observed long before the known implication of \textit{Prdm9} \citep{forejt1974genetic} and in speciation \citep{mihola2009mouse}.
+
+Given its critical role in fertility, one might expect PRDM9 to be under strong purifying selection and thus to be highly conserved. 
+But, counterintuitively, it seems to evolve rapidly, as discussed in the next paragraph.
+
+
+\subsubsection{The rapid evolution of \textit{Prdm9}}
+
+The Znf array forms a vast reservoir of variability since it may differ both in length (number of fingers) and composition, thus yielding extensive allelic possibilities for \textit{Prdm9}.
+
+Indeed, a large number of \textit{Prdm9} alleles have been uncovered in primates \citep{groeneveld2012high,heerschop2016pioneering} and ruminants \citep{ahlawat2016zinc}.
+As for mice, over 100 distinct alleles have been detected thus far \citep{buard2014diversity, kono2014prdm9}.
+Most laboratory inbred strains derived from the \textit{Mus musculus domesticus} subspecies carry either the \textit{Dom2} or \textit{Dom3} allele while those derived from \textit{Mus musculus musculus} carry the \textit{Msc} allele and those derived from \textit{Mus musculus castaneus} the \textit{Cst} allele (Figure~\ref{fig:PRDM9-structure}.b.).
+
+Human populations also vary in their PRDM9 allelic composition \citep{berg2010prdm9, berg2011variants, fledel-alon2011variation}: African populations have $\sim$50\% of allele \textit{A}, 13\% of allele \textit{C} and the rest composed of other minor alleles \citep{berg2011variants}; non-African populations mainly encompass allele \textit{A} and, to a smaller extent, allele \textit{B} \citep{baudat2010prdm9,berg2010prdm9,hinch2011landscape}; and the Neanderthal and Denisovan samples studied so far exhibit yet other alleles \citep{schwartz2014primate,lesecque2014red}.\\
+
+Such great allelic diversity, which is associated with diversity in hotspot usage, is made possible by \textit{Prdm9}'s high mutation rate \citep{jeffreys2013recombination} and by the strong positive selection exerted on its decisive Znf residues \citep{oliver2009accelerated,thomas2009extraordinary,ponting2011what}.
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-PARTIE 1
-Single utilise par Hinch recemment
-Hinch: importance de connaitre la distribution des RR car impact sur cetaines maladies.
-
-
-
-\subsection{PRDM9, the fast-evolving mammalian speciation gene}
 \subsection{The Red Queen dynamics of hotspot evolution}
-hotspot paradox et dBGC
 
-PRDM9 (role hybrid sterility speciation)
-positive sel prdm9
-%exemple de l'un qui a perdu PRDM9 mais qui n'est pas stérile pour autant.
+\subsubsection{DSB-induced biased gene conversion and the erosion of PRDM9 targets}
 
-% \section{Evolution}
-% PRDM9 (role hybrid sterility speciation)
-% hotspots and evolution
-% positive sel prdm9
-% Rapid evolution of the landscape
+Once PRDM9 has bound its allele-specific target, a DSB is initiated and subsequently repaired as a CO or a NCO (see Chapter~\ref{ch:2-recombination-mechanistics}).
+In most hotspots studied, the distribution of CO exchange points — which likely reflect the position of the resolution of the transient Holliday junction rather than the DSB initiation site \citep{smith2001homologous} — decreases identically on the two sides (5’ and 3’) of the DSB \citep{arnheim2007mammalian}.
+However, a skewed CO exchange point distribution appeared in a few hotspots \citep{jeffreys2002reciprocal,jeffreys2005factors,yauk2003highresolution,neumann2006polymorphism} and was interpreted as a visible corollary of the differential DSB initiation on the two homologues \citep{baudat2007cis}.
 
+Indeed, PRDM9 can \textit{a priori} bind its target on either homologue (‘haplotype’ henceforth). 
+However, if one haplotype has a higher PRDM9-binding affinity, it hosts more DSBs and is thus ‘hotter’ \citep{zelazowski2016marks}.
+Therefore, the other, ‘colder’ haplotype is used as a template to repair the DSB, which results in the hot haplotype being frequently replaced by the cold one. 
+This meiotic initiation bias thus yields biased gene conversion (BGC) recombination events and, since this phenomenon is induced by the preferential placement of DSBs on one haplotype, I will henceforth call it ‘DSB-induced BGC’ (dBGC), as others before \citep{lesecque2014biased, grey2018prdm9}.
 
-
-
-
+A differential binding affinity between the two haplotypes arises when one target motif acquires mutations — a plausible conjoncture since recombination is mutagenic \citep{arbeithuber2015crossovers,rattray2015elevated}.
+The more affinity-disruptive mutations the targeted motif gains (\textit{i.e.} the more eroded the hotspot), the more asymmetrically the DSBs initiate (\textit{i.e.} the more asymmetric the hotspot), and the stronger the dBGC effect \citep[reviewed in][]{tiemann-boege2017consequences}.
 
 
-% GENERAL
 
-% Troisieme chapitre:
-% Methodological approaches to study recombination
-% Variation of recombination rates wtithin genomes and among species
-% evolvability of recombination rates
+\subsubsection{The hotspot paradox}
+
+As just stated, during the repair of the DSB, the hot (recombination-activating) haplotype is converted into the cold (recombination-suppressing) haplotype from the other chromosome \citep{gutz1971site,schuchert1988ade6m26,jeffreys2009rise} and therefore suffers meiotic drive against itself.
+Consequently, in the long-term, the very mechanism of recombination is expected to lead to the self-destruction of hotspots — an expectation that seems antipodal with the observation that hotspots are abundant in sexually active eukaryotes.
+This dilemma has been called the ‘hotspot paradox’ \citep{boulton1997hotspot,coop2007live,lesecque2014red}: individually, hotspots are suicidal but, collectively, they are maintained.
+
+However, the loss of hotspots brings recombination defects.
+More particularly, a shortage of symmetric hotspots causes asynapsis, possibly because of a concomittant asymmetry in PRDM9-dependent chromatin remodelling \citep{davies2016reengineering} or of an excessively high level of heterozygosity impeding recombination \citep{gregorova2018modulation}.
+
+Given the benefits of recombination on fertility and viability, it has been suggested that natural selection may oppose the spread of recombination-suppressing haplotypes. 
+Though, simulations proved that this sole incent was insufficient to maintain hotspots in the face of their loss by gene conversion \citep{boulton1997hotspot,pineda-krch2005persistence}. 
+
+
+\subsubsection{Determinants of the Red Queen dynamics}
+
+\begin{figure}[!b]
+	\centering
+	\includegraphics[width = 1\textwidth]{figures/chap3/Alice-red-queen-BW.eps}
+	\caption[Original drawing of Alice and the Red Queen by John Tenniel]
+	{\textbf{Original drawing of Alice and the Red Queen by John Tenniel.}
+		\par The ‘Red Queen dynamics’ term is derived from a statement of the Red Queen in Lewis Carroll's \textit{\usebibentry{carroll1871lookingglass}{title}} \citeyearpar{carroll1871lookingglass} about the nature of her world: \textit{‘Now, \textit{here}, you see, it takes all the running \textit{you} can do, to keep in the same place. If you want to get somewhere else, you must run at least twice as fast as that!’.}
+		\par This figure is free of rights and was reproduced from \citet{carroll1871lookingglass}.
+	}
+\label{fig:Alice-red-queen-BW}
+\end{figure}
+
+
+The hotspot paradox can theroretically be resolved if a \textit{trans}-acting modifier — which can escape gene conversion — has the ability to activate or inactivate the hotspot \citep{peters2008combination,friberg2008cut}.
+
+\citet{ubeda2011red} formally formulated a model involving such a \textit{trans}-acting protein (PRDM9) that induces DSBs at multiple target loci.
+Owing to dBGC, the latter lose their propensity to be bound by PRDM9, thereby reducing the overall recombination rate and creating a selective pressure for PRDM9 alleles to evolve and target a new set of binding sites. 
+This intragenomic conflict leads to a never-ending situation where recombinogenic PRDM9 alleles continually chase their target motifs and evolve into other allelic variants as soon as their targeted sites are sufficiently eroded.
+Such race for evolution has been termed a ‘Red Queen dynamics’ \citep{vanvalen1973new}, after the words of the Red Queen in the \textit{\usebibentry{carroll1871lookingglass}{title}} book by Lewis Caroll \citeyearpar{carroll1871lookingglass} (Figure~\ref{fig:Alice-red-queen-BW}).
+
+For hotspots to persist under such a model, both a very high mutation rate of PRDM9 and a strong dBGC eroding its target motifs are required \citep{latrille2017red}.\\
+
+
+
+Altogether, DSB-induced biased gene conversion (dBGC) is an important drive for the evolution of the recombination landscape.
+Though, it is not the only one: another form of meiotic drive (GC-biased gene conversion, gBGC) also shapes the genome around recombination hotspots. 
+I will review it in the following chapter.
+
+\textbf{FIN CHAPITRE 3}\\
+
+
+
+\textbf{NOTES A MOI-MEME} 
+
+Ajouter une figure page entiere pour les differentes methodes d'etude de la recombinaison.
+
+Ajouter une figure de l'erosion des hotspots %en lien avec le ciblage par PRDM9 (cf inspiration de PRDM9 marks the spot Zelazowski) et avec la difference entre mutations suppressives ou augmentatrices
+
+% \textbf{METTRE UNE FIGURE DE LA DESTRUCTION DES HOTSPOTS ET REMPLACEMENT PAR D'AUTRES — voir https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3213376/ et https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4839589/ — et figure Hochwagen Marais 2010}
+% Voir aussi image de MAssy 2013 pour specifier les hotspots sur les H3K4 quand pas PRDM9.
+
+%\textbf{Si des mutations activatrices, peut creer de nouvelles cibles (et donc, l'asymetrie n'est pas forcement chez les hotspots anciens).
+% - ou activation de nouveaux hotspots (cf odenthal plus bas) et aussi hp de smagulova}
+
+% PARTIE 1
+% Single utilise par Hinch recemment
+% Hinch: importance de connaitre la distribution des RR car impact sur cetaines maladies
 %
-% Plan Mammalian Meiotic Recombination: A Toolbox for Genome Evolution (https://www.karger.com/Article/FullText/452822):
-% \begin{itemize}
-%     \item Recombination and he repair of DSBs (Organization of meiotic chromosomes: importance of chromosomal axes, molecular events involved in he formation and repair of DSBs)
-%     \item Methodological approaches to he study of recombination
-%     \item Genetic and epigenetic marks of DSBs and recombination hotspots
-%     \item Variation of recombination rates within genomes and among species (Variability at the chromosomal level, variation of fine-scale recombination maps)
-%     \item Evolvability of recombination rates (Chromosomal rearrangements as recombination modifiers)
-% \end{itemize}
-%
-% Plan de Hotposts for initiation of meiotic recombination (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6237102/)
-% \begin{itemize}
-%     \item Defining DSB hotspots
-%     \item Chromatin shapes the meiotic DSB landscape (Nucleosome occupancy, meiotic chromosome architecture)
-%     \item Meiotic DSB and crossover distributions
-%     \item PRDM9 and H3K4me3
-%     \item The hotspot paradox
-%     \item Recombination initiation in repetitive sequences
-%     \item Byond hotspots: DSB-dependent spatial regulation
-% \end{itemize}
-%
-% Autre:
-% \begin{itemize}
-%     \item Recombining without hotspots (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4684701/)
-%     \item Knockout of PRDM9 (http://science.sciencemag.org.inee.bib.cnrs.fr/content/352/6284/474)
-% \end{itemize}
-
-
-
-
-
-
-
-
-%%% THESES DES AUTRES
-% these darrier - partie recombinaison et DL
-% methodes detection
-% repartition et variation des CO
-% points chauds de recombi
-% evolution des points chaud
-% DL
-%
-% 2 theses droso rate variation Fine scale recombination variation in Drosophila melanogaster
-% many levels of varation
-% diff species (between within)
-% sex-biased recombi
-% genomic and environmental variation
-% +
-% evolutionary effects of recombination rate variation on structure of genome (ducleotide diversity and divergence, distinguish scenarii, codon bias, other)
-%
-%
-% odenthal:
-% rapid evolution of the landscape in human genomes
-%
-%
-% these prdm9 bovins
-% diversite de prdm9 (altemose)
-%
-%
-% Hinch: Detect and measure
-% sperm assays
-% linage of alleles and detection in pedigrees
-% genetic maps using LD
-% immunoprecip followed by sequencing
-%
-% Hinch: localisation, control and evolution of recombination
-% CO assurance + interference
-% hotspots of recombination
-% evolution of hotspots
-% role of genetic variation
-% differences between male and females
-% broad scale rate and PAR
-%
-% Hussin:
-% intragenomic variation in recombination and natural selection
-% detecting
-% patterns of variation in humans
-%
-% Lesecque: dynamique spatiale et temporelle de recombi et BGC
-% mesurer recombi
-% taux de recombinaison le long des genomes
-% dynamique temporelle des points chauds
-%
-% POPA
-% Genetic marker
-% Genetc maps (ordering markers, genetic distance to calculate, sex average VS sex-specific)
-% LD (quantify LD, hapmap, biases with LD)
-% sperm-typing
-% gene conversion rate
-%
-% VENN
-% Distribution of meiotic recombination (broad scale, fine scale, PRDM9)
-% Identify recombination events (pedigree + DeCODE, LD, count, models of recombination (approximate likelihood, approximate genealogy, african american admixture), typing in single gametes)
-%
-%
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%%%% NOTES CHAPITRE PRECEDENT
-
-
-
-
-% CHAPITRE 4
-% chapitre 4: BGC comme conseqeucne de la recombinaison
-% Isochores
-% (+ BGC comme sel nat)
-% (+ preuves directes et indirectes du BGC)
-
-
-
-%%% DANS GENE CONVERSION (CHAPITRE 4)
-% Parler de gene conversion + conversion/restauration
-% Parler de tract
-% Parler de heteroduplex
-% MMR et BER
-
-
-%%%% CHAPITRE 4
-% %% QUAND PARLERAI DU MISMATCH REPAIR
-% % https://en.wikipedia.org/wiki/Holliday_junction
-% Robin Holliday proposed the junction structure that now bears his name as part of his model of homologous recombination in 1964, based on his research on the organisms Ustilago maydis and Saccharomyces cerevisiae. The model provided a molecular mechanism that explained both gene conversion and chromosomal crossover. Holliday realized that the proposed pathway would create heteroduplex DNA segments with base mismatches between different versions of a single gene. He predicted that the cell would have a mechanism for mismatch repair, which was later discovered.[3] Prior to Holliday's model, the accepted model involved a copy-choice mechanism[26] where the new strand is synthesized directly from parts of the different parent strands.[27]
-% 3.  Liu Y, West S (2004). "Happy Hollidays: 40th anniversary of the Holliday junction". Nature Reviews Molecular Cell Biology. 5 (11): 937–44. doi:10.1038/nrm1502. PMID 15520813.
-% 27.  Advances in genetics. Academic Press. 1971. ISBN 9780080568027.
-%
-
-
-%% CHAPITRE 4
-%% GENE CONVERSION DES NCO (SDSA)
-% Wikipedia https://en.wikipedia.org/wiki/Synthesis-dependent_strand_annealing
-%SDSA is unique in that D-loop translocation results in conservative rather than semiconservative replication, as the first extended strand is displaced from its template strand, leaving the homologous duplex intact. Therefore, although SDSA produces non-crossover products because flanking markers of heteroduplex DNA are not exchanged, gene conversion does occur, wherein nonreciprocal genetic transfer takes place between two homologous sequences.[10]
-
-% CHAPITRE 4
-% % https://books.google.fr/books?id=7V0N6Tt8fUwC&pg=PA43&lpg=PA43&dq=murray+1960+polarity&source=bl&ots=mtj-qfJ1ZM&sig=ACfU3U1rKTqzCqEtcJkNw4ex96F_KPI87Q&hl=fr&sa=X&ved=2ahUKEwiG0b39-tfgAhUJ0RoKHRn4CWsQ6AEwB3oECAkQAQ#v=onepage&q=murray%201960%20polarity&f=false
-% Sur la polarité des gene conversion DONC des sites precis ou la recombinaison demarre (a mettre dans les points chauds de recombinaison).
-%
-% N. Saitou, Introduction to Evolutionary Genomics, Computational Biology 17,
-% % DOI 10.1007/978-1-4471-5304-7_2, © Springer-Verlag London 2013
-% file:///Users/maudgautier/Downloads/9781447153030-c2.pdf
-%
-% %% GENE CONVERSION (pargraphe de Whitehouse ou Saitou ou autre??)
-% Early studies on gene conversion were mostly restricted to fungal genetics. As
-% molecular evolutionary studies of multigene family started, unexpected similarity
-% of tandemly arrayed rRNA genes was found [ 15  ]. This phenomenon was termed
-% ‘concerted evolution,’ and gene conversion or unequal crossing-over was proposed
-% to explain this characteristic of some multigene families (e.g., [ 16  ]). New statistical
-% methods were developed to detect gene conversion between homologous
-% sequences [ 17, 18  ]. Program GENECONV developed by Sawyer [ 19  ] became the
-% standard tool for analyzing gene conversions. We now know that conversion can
-% occur in any genomic region irrespective of genes (DNA regions having function)
-% or nongenic regions (e.g., [ 20  ]). However, ‘gene conversion’ as technical jargon is
-% currently widely accepted, and I follow this nomenclature. Gene conversion can be
-% classifi ed into two types: intragenic or between alleles and intergenic or between
-% duplicated genes.
-%
-%
-% mismatch repair
-% https://fr.wikipedia.org/wiki/Mismatch_repair
-
-
-% Question à moi-même (pour Laurent): si DSB, pourquoi la partie cassée du chromosome ne part pas ailleurs dans le cytoplasme?
-
-
-
-% Biblio souris - meiose
-% O’Bryan, M. K. & Kretser, D. Mouse models for genes involved in impaired spermatogenesis. Int. J. Androl. 29, 76–89 (2006).
-
-
-
-
-
-
-
-% % SISTER
-% Hinch: Nevertheless, it appears that some fraction of programmed meiotic DSBs are repaired using the sister chromatid [Hyppa and Smith, 2010].
-% sex chromosomes: no homology donc repaired via sister chromatids at late prophase. Silenced (cf Altemose)
-%
-% % SYNCHRONISATION CELL CYCLE
-% Meiotic success also hinges on theability to synchronize the meiotic transcriptional programwith cell cycle progression and cell growth. This isachieved in yeast by coupling double strand break for-mation with progression of the replication fork
-% % Borde V, Goldman AS, Lichten M:Direct coupling betweenmeiotic DNA replication and recombination initiation.Science2000,290:806-809.
-%
-% % REGULATION
-% This step regulated: Pachytene checkpoint: avoid defects (Handel Schimenti)
-% If error, meiotic silencing (https://en.wikipedia.org/wiki/Synapsis)
-%
-% % DIFF MEIOSE MITOSE
-% attachement des chromosomes par les kinetochores differe de la meiose (https://cshperspectives.cshlp.org/content/7/5/a015859.long)
-% Autre difference avec la mitose: le spindle qui peut etre asymetrique.
-
-
-
-
 
 
 
