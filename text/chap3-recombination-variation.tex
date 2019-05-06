@@ -9,26 +9,6 @@
 
 \minitoc{}
 
-% INTRO precendente: pourquoi une reproduction sexuee: c'est couteux, mais on le fait — reponse: favorisé par la selection naturelle car elimine les mutations deleteres et amene des combinaisons avantageuse
-%
-% INTRO ici: la recombi est interessante parce qu'elle promeut deux types de brassage (CO+segregation) ca fait de la diversite genetique.
-% Formation de CO donc implique d'echanger des pans entiers des chromosomes.
-% ca se traduit par des rearrangements chromosomiques.
-% +variation environnement?
-%
-% AUTRE INTRO
-% la recombi est interessante parce qu'elle promeut deux types de brassage (CO+segregation) ca fait de la diversite genetique, avec les CO qui echangent des pans entiers de chromosomes.
-% Diversite genetique, sur laquelle la seleciton naturelle peut agir.
-% Mais, selection naturelle, depend de l'environnement / par rapport a un milieu donne.
-% Ce qui veut dire que va creer de la divergence entre les especes.
-% la speciation se fait a partir d'addition d'effets locaux dans les especes (cf darwin)
-% Pour pouvoir observer cela, il faut deja detecter la recombinaison.
-% Ensuite, on peut etudier comment ca varie au sein des genomes
-% Puis, on peut comprendre les causes et consequences (PRDM9 et RedQueen) des variations entre especes, et la speciation avec.
-%
-% https://www.evolutionmontpellier2018.org/program-second-joint-congress-evolutionary-biology
-
-
 
 The very mechanism of meiosis introduces genetic mixing in two separate ways.
 On the one hand, the paternal and maternal chromosomes are independently re-assorted during the first meiotic division.
@@ -42,7 +22,7 @@ This genetic diversity instilled by meiosis forms the substratum upon which, acc
 \end{quote}
 
 As enunciated by his theory, the prequisites to the variety-to-species transition also entail ‘a severe struggle for life [which] certainly cannot be disputed’, the occurrence of ‘variations useful to any organic being’ and ‘the strong principle of inheritance’ through which ‘they will tend to produce offspring similarly characterised’.
-This, — which he calls ‘natural selection’, — is therefore tightly linked to the process of meiotic recombination.
+The emergence of new species is therefore tightly linked to both what he calls ‘natural selection’ and to the process of meiotic recombination.
 
 Furthermore, the notion of biological species itself, formally defined by Ernst Mayr (1904--2005) as ‘groups of interbreeding natural populations that are reproductively (genetically) isolated from other such groups’ \citep{mayr1999systematics}, rests on the ability to sexually reproduce and thus, to meiotically recombine.
 
@@ -51,11 +31,7 @@ The relationship between these two concepts (further developed in \citealp{felse
 I will come back to this essential gene and to its impact on the evolution of recombination rate in the third section of this chapter. 
 But prior to that, I will review the existing methods to detect recombination genome-wide, and the multiple layers of recombination rate (RR) variation that have been observed along genomes and across species.
 
-% CHAP 3: 1 comment mesurer et detecter la recombi. 2 les variations dans l'espace et le temps. 3 les positions des hotspots par PRDM9 + le dBGC
-
 % Therefore during the modification of the descendants of any one species, and during the incessant struggle of all species to increase in numbers, the more diversified these descendants become, the better will be their chance of succeeding in the battle of life. Thus the small differences distinguishing varieties of the same species, will steadily tend to increase till they come to equal the greater differences between species of the same genus, or even of distinct genera.
-
-
 
 
 \section{Genome-wide detection of recombination}
@@ -104,9 +80,6 @@ Consequently, in mammals, except for one very recent study \citep{halldorsson201
 This limitation motivated the development of a population-genetic method to learn about RRs at a finer-scale: the linkage disequilibrium (LD) analysis.
 
 
-
-
-
 \subsection{Linkage disequilibrium (LD) analysis}%(et HapMap et biais)}
 \label{chap3:LD}
 
@@ -114,19 +87,9 @@ Populations of unrelated beings can be analysed in a fashion similar to family m
 
 Therefore, the principle remains the same for populations of unrelated individuals as for families: recombination breaks down linkage disequilibrium (LD) \citep{lewontin1960evolutionary}, \textit{i.e.} non-random associations between loci (materialised by non-random segregations of alleles), which results in the fragmentation of LD into blocks.
 Reciprocally, analysing patterns of LD (\textit{i.e.} the positions of LD blocks) will allow to trace back the underlying recombination process.\\
-% The underlying recombination process can be traced back by analysing patterns of LD\@.\\
-% the non-random association between loci — called linkage disequilibrium (LD) \citep{lewontin1960evolutionary} — is broken down by recombination.
-% Thus, analysing patterns of LD can provide insights into the recombination events that have occurred since the last common ancestor (LCA) of the population.\\
 
 Concretely, LD can be quantified using statistics of association between allelic states at pairs of loci \citep{lewontin1964interaction,hill1968linkage} and the recombination rates (RRs) further estimated through a myriad of methods \citep[reviewed in][]{stumpf2003estimating} which basically consist in using the allelic diversity of each LD block to reconstruct the genealogy \citep[reviewed in][]{hinch2013landscape}.
 Indeed, patterns of LD do not account for recombination only \citep[reviewed in][]{venn2013inferring}: they are also shaped by other forces such as population history \citep{golding1984sampling}, mutation \citep{calafell2001haplotype} (though easily distinguishable from recombination \citep{hudson1985statistical}), natural selection \citep{barton2000genetic} and drift \citep{charlesworth1997effects}. 
-% To estimate RR accuratley from LD, it is therefore necessary to take the latter effects into account by modelling the underlying genealogical history of the population \citep{stumpf2003estimating}.\\
-% If the latter effects are not taken into account, RR cannot be estimated accurately from LD\@.
-% Therefore, it is necessary to model the underlying genealogical history of the population to correct for the latter effects \citep{stumpf2003estimating}.\\
-% A too simplistic model of the relationship between LD and RR would fail to estimate RR accurately.
-% For RR to be estimated accurately, these effects must be distinguished from recombination by additional tests \citep{hudson1985statistical} or taken into account when modelling the genealogy.\\
-% — even if some of these forces are distinguishable from recombination through additional tests \citep{hudson1985statistical}.
-% Such modelling of the underlying tree is necessary to avoid caveats with a simplistic model of the relationship between LD and RR\@.
 Modelling the underlying genealogical history of the population therefore allows to take the latter effects into account and thus, to estimate RR accurately from LD patterns \citep{stumpf2003estimating}.\\
 
 Recombination events have been inferred by LD analysis in a plethora of mammalian orders including Artiodactyla \citep{farnir2000extensive,mcrae2002linkage,nsengimana2004linkage}, Carnivora \citep{menotti-raymond1999genetic,sutter2004extensive,verardi2006detecting}, Lagomorpha \citep{carneiro2011genetic}, Rodentia \citep{brunschwig2012finescale}, Perissodactyla \citep{corbin2010linkage, mccue2012high} and Primates \citep{auton2012finescale}.
@@ -142,8 +105,6 @@ Another method, — sperm-typing, — solves the three aforementioned caveats: i
 
 
 
-
-
 \subsection{High-resolution sperm-typing studies}%genome-wide genotyping: high-resolution studies}
 
 Sperm-typing consists in analysing the transmission of recombination events directly in the sperm of an individual.
@@ -156,7 +117,6 @@ In single-sperm typing, the PCR is performed on the lysed sperm of an individual
 This \textit{modus operandi} has soon been used to construct linkage maps on highly recombining regions \citep{schmitt1994multipoint,lien2000evidence,cullen2002highresolution} while others \citep{tusie-luna1995gene, jeffreys1998highresolution, jeffreys2001intensely, guillon2002initiation} have used the alternative approach with total-sperm DNA which requires allele-specific PCR to capture and amplify recombinant molecules \citep{wu1989allelespecific}.
 
 In both cases, the precise CO exchange point can be mapped using the genetic markers internal to the selected locus.
-%% NOTE A MOI-MEME: voir la figure donnee dans these de Hinch — figure 1.10 (qui vient de May 2007) pour m'en inspirer quand ferai la figure sur toutes ces methodes.
 Sperm-typing thus offers the best resolution for recombination exchange points since it is only limited by SNP density — a resolution even sufficient to detect the difficult-to-access NCOs that only affect a few markers \citep{hellenthal2006insights}, as in \citet{tusie-luna1995gene} and \citet{guillon2002initiation}.
 
 However, even though some authors have managed allele-specific PCR in pooled ovaries \citep{guillon2005crossover, baudat2007cis} and single oocytes \citep{cole2014mouse}, it has almost exclusively been used for the study of male products of meiosis.\\
@@ -170,17 +130,17 @@ These methods do not rely on the existence of polymorphic markers and, therefore
 
 
 All these approaches have contributed to a better understanding of recombination genome-wide.
-In particular, it was soon understood that COs do not appear at random locations on the genome, and the reasons for this distribution became the subject of many research works.
+In particular, it was soon understood that COs do not appear at random locations on the genome.
+The reasons for this particular distribution became the subject of many research works.
 
 
 
 
 \section{The landscape of recombination}
+
 \subsection{The non-random distribution of crossing-overs (COs)}
 
 The number and distribution of crossing-overs (COs) along the genome are subject to a tight regulation \citep[reviewed in][]{jones1984control, jones2006meiotic}: a minimum number of COs (‘CO assurance’), evenly spaced (‘CO interference’) — including when few DSBs are generated (‘CO homeostasis’) — are formed preferentially with the homologous chromosome.
-
-
 
 \subsubsection{Crossing-over assurance (COA), or the ‘obligatory crossing-over’}
 Together with sister chromatid cohesion, COs hold the homologous chromosomes joint until anaphase I \citep[reviewed in][]{roeder1997meiotic} and are therefore essential to the proper disjunction of bivalents.
@@ -209,10 +169,7 @@ Nevertheless, chromosome pairs holding only one DSB may be uncommon since the nu
 This phenomenon, called ‘interference’, also applies to COs, as reviewed in the upcoming paragraph.
 
 
-
-
 \subsubsection{Crossing-over interference (COI)}
-
 Early studies on recombination \citep{sturtevant1915behavior,muller1916mechanism} have shown that, when more than one CO appears on a given chromosome, the chiasmata they form tend to be evenly spaced \citep{jones1967control, jones1974correlated, jones1984control,jones2006meiotic}.
 Indeed, the occurrence of a CO hampers the coincident formation of another one in the same pair of chromosomes \citep{vanveen2003meiosis,hillers2004crossover} — the physical length of prophase chromosomes, rather than the genomic (bp) or genetic (cM) distance, being the primary parameter \citep{zhang2014crossover,wang2015meiotic}.
 So far, COI has been noted in several species including \textit{Arabidopsis thaliana} \citep{drouaud2007sexspecific}, \textit{Homo sapiens} \citep{laurie1985further,broman2000characterization} and \textit{Mus musculus} \citep{lawrie1995chiasma,anderson1999distribution,broman2002crossover}.\\
@@ -239,7 +196,6 @@ This phenomenon was first observed in \textit{Saccharomyces cerevisiae} \citep{m
 
 
 \subsubsection{Preference for the homologue over the sister chromatid in DSB repair}
-
 So that the homologous chromosomes disjoin properly, a fourth regulatory level applies to the repair of DSBs into COs: the promotion of interhomologue repair over intersister mending.
 Template choice must be regulated differently in mitosis and meiosis \citep{andersen2010meiotic}.
 Indeed, in mitosis, the sister chromatid is always favoured \citep{kadyk1992sister,bzymek2010double}, whereas evidence in \textit{Saccharomyces cerevisiae} suggests that, in meiosis, two thirds \citep{goldfarb2010frequent} to nearly all \citep{pan2011hierarchical} DSBs are repaired using the homologue.\\
@@ -256,14 +212,7 @@ Further analysis of such maps has allowed to uncover both the large-scale and fi
 
 
 
-
 \subsection{Intragenomic patterns of variation}
-
-% Ici: depend de l'echelle a laquelle on regarde
-%
-% Quand on regarde a large scale, assez bien correle. Des differences selon les regions G+C, centromeres…
-% Puis, quand regarde a courte echelle, des variations, car des hotspots.
-% Puis, les differences de hotspots qui varient entre les individus, au sein d'une meme espece, et meme entre les especes.
 
 \subsubsection{Large-scale variations across genomic regions}
 
@@ -304,17 +253,10 @@ The mutagenicity of recombination was indeed demonstrated in yeasts \citep{strat
 
 
 
-
 More generally, sites of recombination initiation seem to correspond to regions of open chromatin: highly active sites present trimethylation of the 4\textsuperscript{th} lysine of histone H3 (H3K4me3) marks in yeasts \citep{borde2009histone} and mice \citep{buard2009distinct}, and DNA methylation in humans \citep{sigurdsson2009hapmap}.
 
 Nucleosome-depleted regions (NDRs) are another typical feature of open chromatin and recombinational activity is stronger at these sites in mammals \citep[reviewed in \citealp{jabbari2019common}]{getun2010nucleosome,lange2016landscape,yamada2017genomic} as well as in \textit{Schizosaccharomyces pombe} \citep{decastro2012nucleosomal} and \textit{Saccharomyces cerevisiae} \citep{wu1994meiosisinduced,berchowitz2009positive} for which NDRs host most DSBs.
 More precisely, recombination is found near transcriptions start sites (TSSs) of gene promoters in \textit{Saccharomyces cerevisiae} \citep{baudat1997clustering, petes2001meiotic, mancera2008highresolution}, \textit{Canis lupus} \citep{auton2013genetic,campbell2016pedigreebased} and \textit{Arabidopsis thaliana} \citep{choi2018nucleosomes}.
-
-
-% correl avec GC content et nucleotide diversity: sont des consequences (GC: BGC, nucleotide diversity car mutagenique)
-% local scale: GC content and nucleotide diversity. (mutagenic: Diversity, Divergence, and GC Content in arnheim 2007)
-% Pas place la revue Buard & de Massy 2007, TIG
-% Dans recombination hotspot: ajouter des infos sur regulation par sequence (cf Sequence Dependence de Arnheim 2007)
 
 
 
@@ -344,30 +286,6 @@ First, the recombinational activity of individual hotspots varies over orders of
 Second, the apparent\footnote{The density of polymorphic markers (which can vary across hotspots) affects the ability to detect NCOs. As such, the apparent CO:NCO ratio may differ from the genuine CO:NCO ratio.} relative ratio of CO to NCO outcomes also varies between hotspots in flies \citep{singh2012classical}, yeasts \citep{mancera2008highresolution}, mice \citep{paigen2008recombinational} and humans \citep{jeffreys2004intense}.
 
 These relative differences in hotspot activity come from their both \textit{cis-} and \textit{trans-} regulations \citep[reviewed in][]{paigen2010mammalian} which also account for the differences in hotspot usage among individuals.
-
-
-
-
-% INFOS A GARDER RECOMBINATION VARIATION
-% CAPILLA — variations — https://www.karger.com/Article/FullText/452822
-% Mammalian Meiotic Recombination: A Toolbox for Genome Evolution
-% Capilla L.a · Garcia Caldés M.a, b · Ruiz-Herrera A.a, b
-
-% Spatial distribution of DSBs: Lam and Keeney 2015
-
-%%% Noor: dans partie variation entre les especes
-%%% https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3242630/
-
-
-% A CITER
-% Ritz, K. R., Noor, M. A. F., & Singh, N. D. (2017). Variation in Recombination Rate: Adaptive or Not? Trends in Genetics, 33(5), 364–374.
-% BAUDAT MASSY 2013: REF HOTSPOTs: Kauppi 2004 et de Massy 2003
-% A mettre avant: In humans, the genome-wide mean crossover rate is around 1.1 cM/Mb [24]. [24] A Kong et al. “A high-resolution recombination map of the human genome”. In: Nature 31.3 (2002), pp. 241–247.
-
-
-
-
-
 
 
 
@@ -569,9 +487,13 @@ I will review it in the following chapter.
 
 \textbf{NOTES A MOI-MEME} 
 
-Ajouter une figure page entiere pour les differentes methodes d'etude de la recombinaison.
+\textbf{Ajouter une figure pour les differentes methodes d'etude de la recombi (partie 1)}
+% Ajouter une figure page entiere pour les differentes methodes d'etude de la recombinaison.
+%% NOTE A MOI-MEME: voir la figure donnee dans these de Hinch — figure 1.10 (qui vient de May 2007) pour m'en inspirer quand ferai la figure sur toutes ces methodes.
 
-Ajouter une figure de l'erosion des hotspots %en lien avec le ciblage par PRDM9 (cf inspiration de PRDM9 marks the spot Zelazowski) et avec la difference entre mutations suppressives ou augmentatrices
+\textbf{Ajouter une figure de l'erosion des hotspots // montee en frequence de nouveaux alleles P9}
+
+% Ajouter une figure de l'erosion des hotspots %en lien avec le ciblage par PRDM9 (cf inspiration de PRDM9 marks the spot Zelazowski) et avec la difference entre mutations suppressives ou augmentatrices
 
 % \textbf{METTRE UNE FIGURE DE LA DESTRUCTION DES HOTSPOTS ET REMPLACEMENT PAR D'AUTRES — voir https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3213376/ et https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4839589/ — et figure Hochwagen Marais 2010}
 % Voir aussi image de MAssy 2013 pour specifier les hotspots sur les H3K4 quand pas PRDM9.
@@ -583,6 +505,25 @@ Ajouter une figure de l'erosion des hotspots %en lien avec le ciblage par PRDM9 
 % Single utilise par Hinch recemment
 % Hinch: importance de connaitre la distribution des RR car impact sur cetaines maladies
 %
+
+
+
+% INFOS A GARDER RECOMBINATION VARIATION
+%%% Noor: dans partie variation entre les especes
+%%% https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3242630/
+
+
+% A CITER
+% Ritz, K. R., Noor, M. A. F., & Singh, N. D. (2017). Variation in Recombination Rate: Adaptive or Not? Trends in Genetics, 33(5), 364–374.
+% BAUDAT MASSY 2013: REF HOTSPOTs: Kauppi 2004 et de Massy 2003
+% A mettre avant: In humans, the genome-wide mean crossover rate is around 1.1 cM/Mb [24]. [24] A Kong et al. “A high-resolution recombination map of the human genome”. In: Nature 31.3 (2002), pp. 241–247.
+
+
+
+
+
+
+
 
 
 
