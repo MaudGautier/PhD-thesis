@@ -445,4 +445,5 @@
 
 % JEM: combine all of the commands you run before appendices start
 \newcommand{\startappendices}
-  {\appendix\adjustmtc\noappendicestocpagenum\addappheadtotoc\appendixpage}
+  {\appendix\adjustmtc\noappendicestocpagenum\appendixpage}
+  % {\appendix\adjustmtc\noappendicestocpagenum\addappheadtotoc\appendixpage}

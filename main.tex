@@ -467,6 +467,13 @@
 
 
 
+% Change appendix title page (+ some modif in ociamthesis.cls to remove from toc + added in toc via adding doubleclearpage and phantomsection and line toc when calling \startappendices — see below)
+\makeatletter
+\renewcommand{\@chap@pppage}{}
+\makeatother
+
+
+
 
 %%%%% THESIS / TITLE PAGE INFORMATION
 % Everybody needs to complete the following:
@@ -635,7 +642,10 @@
 %% APPENDICES %% 
 % Starts lettered appendices, adds a heading in table of contents, and adds a
 %    page that just says "Appendices" to signal the end of your main text.
+\cleardoublepage\phantomsection
 \startappendices
+\part*{Appendices}
+\addcontentsline{toc}{part}{Appendices}
 % Add or remove any appendices you'd like here:
 % \include{text/appendix-1}
 \include{text/appendix1-list-hotspots}
