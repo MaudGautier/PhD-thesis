@@ -33,7 +33,6 @@
 
 \minitoc{}
 
-
 % DES TITRES POSSIBLES
 % The evolution of genomic GC-content through biased gene conversion
 % GC-biased gene conversion and the evolution of genomic landscapes (de Duret et Galtier)
@@ -53,9 +52,437 @@
 % Biased gene conversion and GC-content evolution
 % The genomic landscape of GC-content and biased gene conversion
 
+% GC-biased gene conversion, the fourth force of genome evolution (depuis Lesecque) 
 
 
+
+
+Gene conversion, \textit{i.e.} the process through which one DNA sequence is non-reciprocally copied onto another one (the homologue in the case of allelic gene conversion), leads to the non-Mendelian segregation of genetic information at the locus where it occured. 
+If the two alleles are equally likely to be converted, this has no incidence at the population scale: allelic frequencies remain constant over generations. 
+If, however, one homologue preferentially converts the other, it is more frequent in the pool of gametes and the transmission of alleles is necessarily biased: the donor has an evolutionary advantage over the acceptor.
+
+Such biased gene conversion (BGC) exists under two forms: DSB-induced BGC (dBGC) when the bias comes from a differential competency for homologues to host the double-strand break (see Chapter~\ref{ch:3-recombination-variation}), and GC-biased gene conversion (gBGC) when it comes from the nature of the nucleotides involved.
+Indeed, the repair of the cut homologue involves the formation of heteroduplexed DNA, \textit{i.e.} a stretch of DNA where the two strands bear distinct alleles.
+These mismatches are either ‘restored’ if the original allele of the cut sequence is reinstated, or ‘converted’ if it is supplanted by the allele of the homologue.
+The position of these events delineate ‘conversion tracts’ (CTs) — which are designated as ‘complex CTs’ when they alternate conversion and restoration events \citep{borts1989length} and ‘simple CTs’ otherwise.
+
+In most species, whether through conversions or restorations, the repair favours GC over AT alleles \citep{pessia2012evidence,glemin2014gc,glemin2015quantification,figuet2014biased,wallberg2015extreme,bolivar2016recombination}, hence the term ‘GC-biased gene conversion’ (gBGC). 
+Because its consequences on genome evolution ressemble those of natural selection, the very existence of this recently discovered phenomenon has been questioned by many in the more global context of the controversy opposing selectionists to neutralists (see Chapter~\ref{ch:1-history-genetics}).
+I will therefore start this chapter by reviewing the breakthrough of gBGC in the climate of this debate, then explore the similitudes of its implications for genome evolution with those of natural selection and finish by looking into the first studies that characterised it.
+
+
+% Gene conversion, \textit{i.e.} the process through which one DNA sequence is replaced by another one (the homologue in the case of allelic gene conversion), was first observed through tetrad analyses of fungal products of meiosis (see Chapter~\ref{ch:1-history-genetics}).
+% This phenomenon was first interpreted as mutational, hence the term ‘conversion’ \citep{winkler1930konversion} but it was later understood that it was in fact purely recombinational.
+% Generally, indeed, the chromosomal sequence that bears the double-strand break (DSB) is converted by its homologue, thus yielding a unidirectional transfer of genetic information.
+% If, at the scale of a population of meioses, one homologue preferentially converts the other, it is preferentially transmitted, \textit{i.e.} leads to biased gene conversion (BGC) — in that particular case, DSB-induced BGC (dBGC), as was discussed in the previous chapter.
+
+% Another form of meiotic drive exists: GC-biased gene conversion (gBGC).
+% Indeed, the repair of the cut homologue involves the formation of heteroduplexed DNA, \textit{i.e.} a DNA portion where the two strands display distinct alleles at heterozygous loci.
+% These mismatches can be repaired either through a ‘restauration’ event, \textit{i.e.} towards the original genotype of the cut sequence, or through a ‘conversion’ event, \textit{i.e.} towards the genotype of the homologous sequence.
+% Conversion events are observable all along conversion tracts (CTs), which, when they alternate conversion with restauration events, are termed ‘complex CTs’ \citep{borts1989length}.
+% Similar to dBGC, if, at the scale of a population of meioses, one allele has a greater chance of converting the other one, the gene conversion event is biased.
+
+% The discovery of such BGC towards GC alleles (gBGC) was made only very recently and took part into the debate between selectionists and neutralists.
+% I will start with reviewing this discovery in the context of this debate, then explore on what grounds the consequences of gBGC are similar to those of natural selection hence the debate on the nature of the causality, and last, look into the first characterisation and quantification of gBGC\@.
+
+
+\section{Discovery of GC-biased gene conversion (gBGC)}
+\subsection{The debated origin of isochores}
+
+\begin{figure}[!b]
+	\centering
+	\includegraphics[width = 1\textwidth]{figures/chap4/isochores-human.eps}
+	\caption[Overview of isochores on four human chromosomes]
+	{\textbf{Overview of isochores on four human chromosomes.}
+		\par Human chromosomes 1, 2, 3 and 4 are divided into 100-kb windows coloured according to their mean GC-content: the spectrum of GC-level was divided into five classes (indicated by broken horizontal lines) from ultra-marine blue (GC-poorest L1 isochores) to scarlet red (GC-richest H3 isochores). 
+		Grey vertical lines correspond to gaps present in the sequences and grey vertical regions to centromeres.
+		\par This figure was reproduced from \citet{costantini2006isochore} and corresponds to a subsample of the original figure.
+	}
+\label{fig:isochores-human}
+\end{figure}
+
+% The first ‘Chargaff's rule’, which states that the observation that the amount of adenosine (A) equals that of thymine (T) and that the amount of cytosine (C) equals that of guanine (G) \citep[reviewed in \citealp{kresge2005chargaff}][]{kresge2005chargaff}, reflects the
 %
+% The discovery of the double-helix structure of DNA \citep{franklin1953molecular,watson1953molecular,wilkins1953molecular} was made possible thanks to several advances on the study of DNA\@.
+% One of them was the so-called ‘Chargaff's rules’ \citep[reviewed in][]{kresge2005chargaff}, \textit{i.e.} the observation that, on the one hand, the amount of adenosine (A) equals that of thymine (T), and on the other hand the amount of cytosine (C) that of guanine (G) \citep{chargaff1950chemical}, which reflects the pairing of A with T bases, and of C with G bases in double-stranded DNA\@.
+%
+
+In double-stranded DNA, adenosine (A) and thymine (T) nucleotides pair up while cytosine (C) nucleotides mate guanine (G) bases \citep[reviewed in \citealp{kresge2005chargaff}]{kresge2005chargaff}.
+Therefore, when studying the composition of a stretch of DNA, it is conventional to measure its GC-content.
+
+Originally, this was done \textit{via} the ultra-centrifugation of DNA fragments \citep{meselson1957equilibrium,corneo1968isolation}.
+Using this technique, a few studies have characterised GC-content distribution in several eukaryotes \citep{filipski1973analysis,thiery1976analysis,macaya1976approach,macaya1978analysis,cortadas1977analysis} and revealed that mammalian, avian and reptilian genomes — but not amphibians nor fishes \citep{bernardi1990compositional} — display a long-range compositional heterogeneity (Figure~\ref{fig:isochores-human}).
+The long regions of 100 kb or more that carry a relatively homogeneous GC-content were later termed ‘isochores’ \citep{cuny1981major}.\\
+
+
+GC-rich isochores are enriched in genes \citep[reviewed in \citealp{bernardi2005distribution}]{bernardi1985mosaic,mouchiroud1991distribution,lander2001initial} that are shorter and more compact than in GC-poor regions \citep{duret1995statistical} and regional GC-content further correlates with the timing of DNA replication \citep{federico1998generichest,watanabe2002chromosomewide,costantini2008replication}, the density in transposable elements (TEs) \citep{smit1999interspersed,lander2001initial,mousegenomesequencingconsortium2002initial} and the recombinational activity \citep{fullerton2001local,kong2002highresolution}.\\
+
+
+Since base composition of homologous genomic regions correlate between the three amniotic lineages (mammals, birds and reptiles) \citep{kadi1993compositional,caccio1994singlecopy,hughes1999warmblooded}, it is thought that isochores were inherited from their last common ancestor (LCA).
+Since then, certain lineages have undergone additional somehow steep changes.
+For instance, the isochore GC-content of mice is less variable than that of other mammals — a pattern that is in the derived state as compared to nonrodents \citep{galtier1998isochore} and which likely reflects one \citep{mouchiroud1988compositional} or two \citep{smith2002compositional} extra ‘murid shifts’ since the LCA\@.
+
+Originally, two main hypotheses had been proposed as for the origin of isochores \citep[reviewed in][]{duret2009biased}.
+According to the mutational bias hypothesis, isochores would be caused by a variation along chromosomes in the mutational bias towards either AT or GC nucleotides \citep{filipski1988why,wolfe1989mutation,francino1999isochores,fryxell2000cytosine}.
+If this were true, GC~$\rightarrow$~AT and AT~$\rightarrow$~GC mutations should have the same probability of fixation at neutral sites.
+The finding that this was not the case \citep{eyre-walker1999evidence, smith2001synonymous, lercher2002evolution, webster2004fixation, spencer2006influence} ruled out this theory.
+
+Another proposition involving natural selection has been thoroughly defended by one of the major discoverers of isochores \citep{bernardi2000isochores,bernardi2007neoselectionist}. 
+In his view, the fact that G and C bases are linked \textit{via} three hydrogen bonds (instead of two for A and T bases) would compensate for the purportedly instable nature of DNA in warm-blooded animals.
+% allow a better stability of DNA in warm-blooded animals whose body temperature would purportedly make their genetic material more sensitive to denaturation.
+However, this does not explain why only a fraction of the genome is affected by higher GC-content \citep{duret2009biased}.
+This theory was further invalidated by the facts that no correlation between body temperature and GC-content was found \citep{belle2002analysis,ream2003base} and that this isochore organisation also takes place in cold-blooded animals like reptiles \citep{hughes1999warmblooded,hamada2003presence,costantini2016anolis}.
+In addition, a scenario according to which all sites are under selection has theoretical limitations: given the elevated rate of deleterious mutations in their protein-coding sequences \citep{eyre-walker1999high,keightley2000deleterious}, mammalian genomes would probably accumulate a mutation load too high to be coped with \citep{eyre-walker2001evolution}.
+
+An alternative role for natural selection in causing isochore organisation would be its fine-tuning the expression of tissue-specific genes \citep{vinogradov2003isochores,vinogradov2005noncoding}.
+This hypothesis may not hold, though, since the correlation between GC-content and gene expression is extremely weak \citep[reviewed in \citealp{duret2009biased}]{semon2005relationship,semon2006no}.\\
+
+
+Since natural selection thus seems insufficient to explain, on its own, the bias towards the fixation of GC alleles, another track has been considered: GC-biased gene conversion (gBGC).
+
+
+
+
+
+\subsection{An alternative causation: the gBGC model}
+
+The excess of AT~$\rightarrow$~GC substitutions in a context where GC~$\rightarrow$~AT mutations are preponderant can be explained in two non-mutually exclusive ways: either because of non-stationarity (\textit{i.e.} the GC-content in GC-rich isochores would still be decreasing) or because of GC-biased gene conversion (gBGC) as initially mentioned by \citet{holmquist1992chromosome} and \citet{eyre-walker1993recombination,eyre-walker1999evidence} but only first firmly defended by \citet{galtier2001gccontent}.
+
+The latter model originates from the observation that the mismatch repair (MMR) system — the main repair pathway during recombination \citep[reviewed in \citealp{evans2000roles} and \citealp{spies2015mismatch}]{alani1994interaction,nicolas1994polarity} which is also involved in the mending of base misincorporations during DNA replication \citep{surtees2004mismatch} — may favour G and C alleles \citep{brown1988different}. (Figure~\ref{fig:gBGC-galtier}). \\
+
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width = 1\textwidth]{figures/chap4/gBGC-galtier.eps}
+	\caption[Gene conversion during a recombination event involving a strong (G or C) \textit{versus} a  weak (A or T) base mismatch]
+	{\textbf{Gene conversion during a recombination event involving a strong (G or C) \textit{versus} a  weak (A or T) base mismatch.}
+		\par A pair of homologous chromosomes displaying a heterozygous site with a G:C pair represented as a black rectangle and a A:T pair as a white rectangle (\textbf{a}) undergoes a recombination event which materialises as a heteroduplex (\textbf{b}) containing a T:G mismatch (\textbf{c}).
+		The T:G mismatch is repaired and results either in a G:C (\textbf{d}) or a A:T (\textbf{d'}) pair which yield a non-Mendelian segregation of alleles (\textbf{e} and \textbf{e'}).
+		This has an incidence at the population-scale if the repair towards G:C (\textbf{d}) or A:T (\textbf{d'}) is more frequent than the other one. 
+		It is called GC-biased gene conversion (gBGC) in the particular case where the repair towards G:C (\textbf{d}) occurs more often.
+		\par This figure was reproduced from \citet{galtier2001gccontent}.
+	}
+\label{fig:gBGC-galtier}
+\end{figure}
+
+
+At the time, one major plea against gBGC was that there was only a narrow range within which gBGC can significantly alter base composition\footnote{If $N_e \times w \ll 1$ (where $N_e$ is the effective population size and $w$ is the per nucleotide conversion rate times the average conversion bias), gBGC has little effect on base composition.} without making it extreme\footnote{If $N_e \times w \gg 1$ (where $N_e$ is the effective population size and $w$ is the per nucleotide conversion rate times the average conversion bias), gBGC leads to extreme base composition.}.
+Taaahis was adressed by \citet{duret2008impact} who found that the gBGC model explains well the relationship between recombination and substitution rates.
+Indeed, considering that gBGC acts only at recombination hotspots, the substitution rate increases greatly at these loci, but stops before their GC-content reaches 100\%, because hotspots generally have a short lifespan \citep{ptak2005finescale,winckler2005comparison}. 
+%Indeed, considering that gBGC acts only at recombination hotspots which have a short lifespan \citep{ptak2005finescale,winckler2005comparison}, the substitution rate increases greatly, but only transiently — before the GC-content reaches 100\%. 
+% Nonetheless, very active and longer-lived hotspots are expected to become strong substitution hotspots \citep{duret2008impact}, as observed in the human genome \citep[reviewed in \citealp{duret2009biased}]{dreszer2007biased}.
+
+% Because of its occuring solely at hotspots,
+gBGC also provides an explanation for the higher heterogeneity of GC-rich isochores \citep{clay2001compositional,clay2001compositionala}: GC-content would vary depending on the intensity and age of hotspots.
+In particular, as soon as a hotspot gets inactivated, its GC-content should start decreasing, consistently with what has been observed in the GC-rich regions\footnote{According to the gBGC hypothesis, GC-rich regions are those that host the hotspots.} of primates \citep{duret2002vanishing,belle2004decline,meunier2004recombination,duret2006gc}.
+In contrast, in avian genomes that have evolutionarily stable recombination hotspots, GC-content continues increasing \citep{webster2006strong,capra2011substitution,mugal2013twisted}.\\
+
+
+Another objection to gBGC \citep{eyre-walker1999evidence} came with the observation that GC-content at the synonymous third position of codons (GC\textsubscript{3}) is generally greater than intronic GC-content \citep{clay1996human}.
+But \citet{duret2001elevated} provided an explanation compatible with gBGC to this observation: assuming that transposons are GC-poorer than the GC-rich regions of the genome, their accumulation within introns (but not exons) would justify such difference between intronic GC-content and GC\textsubscript{3}.\\
+
+Altogether, the presence of isochores seems to fit theoretically with gBGC\@.
+But, under the gBGC hypothesis, a number of other consequences are expected and their footprints can be researched in genomes.
+
+
+
+\subsection{Footprints of gBGC in mammalian genomes}
+
+One strong prediction of the gBGC model is that highly recombining regions should be GC-rich, which happens to be the case in several instances.
+
+For example, components of the genome that undergo ectopic gene conversion (\textit{i.e.} conversion between copies of a gene family) — like tranfer RNAs (tRNAs), introns of ribosomal RNAs (rRNAs) \citep{galtier2001gccontent}, human and mouse major histocompatibility complex (MHC) regions \citep{hogstrand1999gene} and other gene families \citep{backstrom2005gene,galtier2003gene,kudla2004gene} — are all GC-richer than the rest of the genome.
+
+The human pseudoautosomal region (PAR) of X and Y chromosomes — the only portion of male sexual chromosomes which has homology and therefore recombines — provides another example of the association between recombination and GC-content.
+Indeed, given its short size, the per-nucleotide recombination rate (RR) of the PAR is much higher than that of autosomes \citep{soriano1987high}, while the non-PAR sections of sex chromosomes recombine even less (X chromosome) or not at all (Y chromosome).
+Under the gBGC model, the average GC\textsubscript{3} of these four genomic domains is expected to increase with their RR — which, as a matter of fact, is the case \citep{galtier2001gccontent}.
+
+This relationship between recombination and GC-content is really impressive in the \textit{Fxy} gene that has been translocated onto the boundary of the mouse PAR a few million years ago: as compared to its X-linked portion, the PAR-side part of \textit{Fxy} has undergone an acceleration in substitution rates \citep{perry1999evolutionary} together with a strong increase in GC-content at both coding and non-coding positions \citep{montoya-burgos2003recombination,galtier2007adaptation} — a finding that is consistent with gBGC occuring at the highly recombining PAR-side of the gene.
+Surprisingly however, the \textit{XG} gene overlapping the PAR boundary of primates does not show the same pattern \citep{yi2004recombination}.
+Nevertheless, this observation does not necessarily conflict with the gBGC model: if \textit{XG} was wholly located within the PAR before displacing onto its boundary, — or rather, before the PAR boundary displaces onto the gene, since the mammalian PAR gradually erodes \citep{lahn1999four,marais2003sex}, — it would have accumulated a high GC-content and would now be undergoing a slow, mutation-driven decrease in GC-content that would not be detectable yet \citep{galtier2004recombination}.\\
+
+
+% Another strong prediction of the gBGC model is the influence of recombination on substitution patterns.
+At the genome-wide scale, GC-content correlates positively with recombination rate in yeasts \citep{gerton2000global,birdsell2002integrating}, nematodes and flies \citep{marais2001does,marais2003neutral,marais2002hillrobertson}, birds \citep{internationalchickengenomesequencingconsortium2004sequence}, turtles \citep{kuraku2006cdnabased}, paramecia \citep{duret2008analysis}, algae \citep{jancek2008clues}, plants \citep{glemin2006impact} and humans \citep{fullerton2001local,yu2001comparison,meunier2004recombination,khelifi2006gc,duret2008impact}.
+%, though with a low coefficient of determination ($R\textsuperscript{2} = 0.15$).
+
+But, since the evolution of GC-content is relatively slow as compared to that of recombination rates in mammalian clades, it has been claimed that these estimates should be measured on similar time scales to be correctly compared \citep{duret2009biased}.
+To do this, the stationary GC-content (GC\textsuperscript{*}), \textit{i.e.} the GC-content that sequences would reach at equilibrium if patterns of substitution remained constant over time, is generally used.
+Under the assumption that all sites evolve independently from one another \citep{sueoka1962genetic}, this statistic can be calculated as:
+
+\begin{equation*}
+	GC\textsuperscript{*} = \frac{u}{u+v}
+\end{equation*}
+
+where $u$ and $v$ represent respectively the AT~$\rightarrow$~GC and the GC~$\rightarrow$~AT substitution rates.
+But, because the latter assumption is not valid in vertebrates where the mutation rate of a given base depends on the nature of the neighbouring bases\footnote{For instance, CpG sites (\textit{i.e.} CG dinucleotides) are hypermutable \citep{arndt2003distinct}.}, \citet{duret2008impact} used a maximum likelihood approach to improve the estimation of GC\textsuperscript{*} and showed that it correlated better with recombination rate than with the observed GC-content (Figure~\ref{fig:correlation-recombi-stationary-GC}), which further suggests that recombination acts upon GC-content, and not the other way round, as was proposed by \citet{gerton2000global,blat2002physical} and \citet{petes2002context}.
+
+In past primate lineages, GC\textsuperscript{*} also correlates well with the historical recombination rate \citep{munch2014finescale,lesecque2014red}.\\
+
+
+% These correlations are in accordance with the gBGC model.
+
+These correlations between GC-content and recombination appear to be greater in males than in females for several species including mice, dogs and sheeps \citep{popa2012sexspecific} as well as humans \citep{webster2005maledriven, dreszer2007biased, duret2008impact}.
+% Also, GC\textsuperscript{*} is better correlated with male recombination rate (RR) than female RR in mice, dogs and sheeps \citep{popa2012sexspecific} as well as in human Alu repeats \citep{webster2005maledriven} and hotspots \citep{dreszer2007biased} and in 1-Mb windows of autosomes \citep{duret2008impact}.
+Since female DSBs are repaired many years later than male DSBs \citep{coop2007evolutionary}, it is possible that the repair of mismatches proceeds differently in the two sexes, which could explain the seemingly male-specific gBGC \citep{duret2009biased}.
+Alternatively, the sex-specific strategies for the distribution of recombination events along chromosomes (and more specifically, as a distance to telomeres) seem to account for this difference between males and females \citep{popa2012sexspecific}.
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width = 0.7\textwidth]{figures/chap4/correlation-recombi-stationary-GC.eps}
+	\caption[Correlation between the stationary GC-content (GC\textsuperscript{*}) and the crossover rate (cM/Mb) in human autosomes]
+	{\textbf{Correlation between the stationary GC-content (GC\textsuperscript{*}) and the crossover rate (cM/Mb) in human autosomes.}
+		\par Each dot corresponds to a 1-Mb-long genomic region. Green dots correspond to the predictions of the gBGC model. Data was extracted from the HapMap project.
+		\par This figure was reproduced from \citet{duret2009biased} and originally adapted from \citet{duret2008impact}.
+	}
+\label{fig:correlation-recombi-stationary-GC}
+\end{figure}
+
+
+
+
+
+% Dans recombination: 
+% longer in females humans (the map)
+% A second-generation combined linkage physical map of the human genome.
+% Matise TC, Chen F, Chen W, De La Vega FM, Hansen M, He C, Hyland FC, Kennedy GC, Kong X, Murray SS, Ziegle JS, Stewart WC, Buyske S
+% Genome Res. 2007 Dec; 17(12):1783-6.
+%
+% longer in dogs
+% A comprehensive linkage map of the dog genome.
+% Wong AK, Ruhe AL, Dumont BL, Robertson KR, Guerrero G, Shull SM, Ziegle JS, Millon LV, Broman KW, Payseur BA, Neff MW
+% Genetics. 2010 Feb; 184(2):595-605.
+
+
+
+
+
+
+
+\section{Interference with natural selection}
+
+Several observations of the gBGC model would also be observed under selection.
+For instance, since linkage reduces the efficacy of selection \citep{hill1966effect}, a correlation between GC-content and recombination rate would be expected if there was a very high selection coefficient in favour of GC alleles \citep{galtier2001gccontent}.
+More generally, the dynamics of the fixation process for one locus is identical under BGC and natural selection \citep{nagylaki1983evolution}, hence the reason why the first observations were interpreted as the result of natural selection \citep{eyre-walker1999evidence}.
+In this subsection, I review other cases where the effects of gBGC interfere with natural selection.
+
+DE CLEMENT Y
+The GC-biased gene conversion process is a fixation bias: when meiotic recombina- tion is high, G and C alleles spread more easily through the population than A and T alleles and thus will get fixed more rapidly. This fixation bias is neutral (it does not affect an organism’s fitness, its ability to reproduce) but will look like natural selection: first evidence of a fixation bias favoring G and C alleles was interpreted as resulting from natural selection
+
+
+This similarity between gBGC and selec- tion has the consequence that gBGC-induced genomic variation patterns may be incorrectly interpreted as selection. We now review vari- ous examples of such confounding patterns in recent molecular evolutionary literature.
+
+\subsection{The case of codon usage bias (CUB)}
+
+Codon usage bias (CUB) corresponds to the observation that the frequency of use of synonymous codons (\textit{i.e.} sequences of three nucleotides coding for the same amino acid (AA)) can vary across or within species \citep{fitch1976there}.
+Both adaptative (natural selection) and non-adaptative (mutation \citep{marais2001synonymous} and BGC) forces account for CUB \citep{bulmer1991selectionmutationdrift} — the controversy being rather the quantitative contribution of both mechanisms \citep{pouyet2016etude}.\\
+
+% It was early understood that codon usage responds to natural selection in microbial genomes \citep{ikemura1985codon} through what is called ‘translational selection’, \textit{i.e.} the coevolution of tRNA content and codon usage in a way that optimises translation.
+In \textit{Drosophila} and microbial genomes \citep{ikemura1985codon}, the CUB of each gene is correlated to tRNA content \citep{akashi1994synonymous,duret1999expression,behura2011coadaptation}, particularly for genes that are highly expressed \citep{chavancy1979adaptation,shields1988silent,moriyama1997codon}.
+This was interpreted as ‘translational selection’: the coevolution of tRNA content with codon usage would increase the accuracy or efficiency of tranlation \citep{sharp1995dna,duret2002evolution}.
+But other processes, like mRNA stability, protein folding, splicing regulation and robustness to translational errors could also play a role \citep[reviewed in \citealp{clement2017evolutionary}]{chamary2006hearing,cusack2011preventing,plotkin2011synonymous}.
+Also, CUB is reduced in regions of low recombination \citep{kliman1993reduced}.
+In contrast, in species with small effective population sizes ($Ne$) \citep{subramanian2008nearly,galtier2018codon}, like mammals, selection for codon usage appears weak (but see \citealp{chamary2006hearing}).
+
+One peculiar feature of codon usage in \textit{Drosophila} was that the preferred codon was systematically a G- or C-ending codon for all 20 amino acids (AAs) \citep[cited in][]{duret2009biased} and has also been observed in many bacteria \citep{hershberg2009general}.
+FINIR LA DESSUS
++ CE SOIR faire HAR et deleterious et papier BGC
+
+
+%https://www.genetics.org/content/160/2/595
+ % The evidence is that genes that are expressed at high levels often show strongly biased codon usage in favor of those codons that correspond to the most common tRNAs (Chavancyet al. 1979; Ikemura 1985, 1991; Moriyama and Powell 1997). The association between codon bias and gene expression has long been apparent in single-celled organisms (Bennetzen and Hall 1982; Gouy and Gautier 1982; Sharp and Li 1987b; Sharp and Devine 1989) and has recently been shown to hold in several multicelled organisms, including Drosophila melanogaster, Caenorhabditis elegans, and Arabidopsis thaliana (Duret and Mouchiroud 1999).
+
+
+% CLEMENT
+% The classical Bulmer’s model of coevolution between preferred codons and tRNA predicts a match between the frequency of tRNAs and preferred codons with two equivalent stable states (either AT or GC preference), and so does not explain the observed bias in preference [70]. However, our results are compatible with a modified version of this model in which an external force on base composition is introduced [71]
+% dified version of this model in which an external force on base composition is introduced [71]. We propose that gBGC could act as such a force. By increasing GC content, gBGC could disrupt the co-evolutionary equilibrium between preferred codons and tRNAs abundance towards a higher level of GC preference. This would in turn leads to the confounding effects of gBGC and SCU.
+% 70. Bulmer M (1987) Coevolution of codon usage and transfer RNA abundance. Nature 325: 728–730. https://doi.org/10.1038/325728a0 PMID: 2434856
+% 71. Higgs PG, Ran W (2008) Coevolution of codon usage and tRNA genes leads to alternative stable states of biased codon usage. Molecular Biology & Evolution 25: 2279–2291.
+%
+%
+
+
+
+
+
+METHODO (Codon Usage Bias in Animals: Disentangling the Effects of Natural Selection, Effective Population Size, and GC-Biased Gene Conversion  Nicolas Galtier)
+% Disentangling the effect of natural selection from that of neutral forces such as gBGC is a difficult task (Ratnakumar et al. 2010). Clément et al. (2017) introduced a model of codon usage accounting both for gBGC, which is assumed to affect AT↔GC mutations, and selection, which is assumed to affect mutations between preferred and non preferred codons.
+ % Here, we faced the additional problem that, in a substantial number of species, gene GC content was correlated to gene expression irrespective of codon usage, so that even defining preferred codons was challenging. We therefore addressed the problem by restricting our analysis of selection on codon usage to GC-conservative pairs of synonymous codons, which are supposedly unaffected by gBGC.
+ % https://academic.oup.com/mbe/article/35/5/1092/4829954#115998508
+
+\subsection{The case of human accelerated regions (HAR)}
+
+
+
+% \subsection{Deleterious effects of GC-biased gene conversion (gBGC)}
+\subsection{The deleterious effects of gBGC}
++ explication evolutive pour reduire le bias vers AT
+
+
+
+Plus loin: \citep{marais2003biased} pour dire que  GC-biased DNA repair has been
+demonstrated in yeasts and vertebrates and conjectured
+in most organisms, possibly reflecting an adaptation to
+% frequent GC ! AT mutations
+and importance of neutral side-effects
+associated with recombination on genome evolution
+(depuis meunier et Duret)
+
+% De plus, Hershberg & Petrov (2010) ont aussi montré qu’il existe un biais universel vers AT chez les procaryotes qui impacte leur BUC : les mutations de G vers A ou de C vers T sont plus fréquentes que les autres mutations et notamment plus fréquentes que A vers G ou T vers C
+
+
+
+gBGC is generally speaking a deleterious process in that it promotes G and C alleles irrespective of their effect on fitness (Galtier et al. 2009; Glémin 2010; Necşulea et al. 2011; Lachance and Tishkoff 2014). It might be that the molecular machinery involved in recombination is more efficiently selected to minimize b in large Ne species. A formal model would be required to validate this verbal hypothesis, though. 
+
+
+
+\section{Characterisation and quantification of gBGC}
+% \subsection{Theoretical insights}
+\subsection{Characterisation \textit{via} theoretical studies}
+- parler aussi de Ne ce que ca veut dire et equation de Nagylaki
+- modeles d'evolution
+\subsection{Quantification \textit{via} site frequency spectra (SFS)}
+- donnees de polymorphisme
+% \subsection{Empirical evidence/characterisation for gBGC}
+\subsection{Characterisation \textit{via} empirical studies}
+- caracterisation avec Lesecque (et d'autres?)
+- Direct proofs
+
+
+AUSSI A DIRE (Galtier 2018 codon) (deja dit dans l'intro, MAIS IL FAUT RAJOUTER QUE PAS DANS LA DROSO)
+gBGC has been identified as the main driver of GC-content evolution in vertebrates (Duret and Galtier 2009; Figuet et al. 2014; Glémin et al. 2015; Bolívar et al. 2016) and several other taxa (Pessia et al. 2012; Glémin et al. 2014; Wallberg et al. 2015).
+
+Et pas de gBGC dans la droso
+% Robinson MC, Stone EA, Singh ND (2014) Population genomic analysis reveals no evidence for GC- biased gene conversion in Drosophila melanogaster. Molecular Biology & Evolution 31: 425–433.
+
+
+
+\textbf{VOir entre recombining et recombinant region molecule fragment
+corriger les two times higher
+Reprendre Lesecque pour mieux expliquer l'eovlution des isochores.}
+
+
+% faudrait citer http://pbil.univ-lyon1.fr/members/duret/publications/PDF/2006-Duret-Gene.pdf
+%
+% A SAVOIR POUR MOI
+% duree de vie d'un hotspot?
+% pourquoi plutot sur les bords?
+% Est-ce que des cas avec AT favorise par rapport a GC
+
+% \begin{figure}[!b]
+%     \centering
+%     \includegraphics[width = 1\textwidth, trim = 1.4cm 0cm 1.5cm 0cm]{figures/chap4/outcome-heteroduplex.eps}
+%     \caption[Possible outcomes of mismatch repair in heteroduplex DNA for crossing-overs (COs)]
+%     {\textbf{Possible outcomes of mismatch repair in heteroduplex DNA for crossing-overs (COs).}
+%         \par ATTENTION, IL FAUDRAIT REFAIRE LA LEGENDE (si je garde cette figure de duret et galtier 2009) — cette legence est celle de Arbeithuber 2015.
+%         During the repair of DSBs, mismatches in intermediate heteroduplex tracts at polymorphic sites (triangles) can be either resolved restoring the original allele or can lead to gene conversion (gBGC) favoring GC alleles (red) versus AT alleles (blue). In the case of gBGC, more COs will have breakpoints with GC alleles distal to the DSB than proximal, distorting the segregation ratio of alleles between reciprocals.
+%         \par This figure was reproduced from \citet{duret2009biased}.
+%     }
+% \label{fig:outcome-heteroduplex}
+% \end{figure}
+
+
+
+
+Intensity of gBGC in species (Clement 2017) — B estimated.
+We detected gBGC in all but one species but its intensity is rather weak (Tables 4 and 5 and S4 and S5 Tables), of the same order to what was estimated in humans [38] but lower than in other mammals [39], maize [72], and particularly honey bee [41].
+72. Rodgers-Melnick E, Vera DL, Bass HW, Buckler ES (2016) Open Chromatin Reveals the Functional Maize Genome. Proceeding of the National Academy of Science USA in press.
+% 38. Gle ́min S, Arndt PF, Messer PW, Petrov D, Galtier N, et al. (2015) Quantification of GC-biased gene conversion in the human genome. Genome Research 25: 1215–1228. https://doi.org/10.1101/gr. 185488.114 PMID: 25995268
+% 39. Lartillot N (2013) Phylogenetic patterns of GC-biased gene conversion in placental mammals and the evolutionary dynamics of recombination landscapes. Molecular Biology & Evolution 30: 489–502.
+% 40. Clement Y, Arndt PF (2013) Meiotic Recombination Strongly Influences GC-Content Evolution in Short Regions in the Mouse Genome. Molecular Biology and Evolution.
+% 41. Wallberg A, Gle ́ min S, Webster MT (2015) Extreme recombination frequencies shape genome variation and evolution in the honeybee, Apis mellifera. PLoS Genetics 11: e1005189. https://doi.org/10.1371/ journal.pgen.1005189 PMID: 25902173
+%
+gBGC has been experi- mentally demonstrated in yeast [15,16], humans [17,18], birds [19] and rice [20]
+ Many indi- rect genomic evidences also supported gBGC in eukaryotes [21,22] and even recently in some prokaryotes [23], although it seems to be weak or absent in some species as Drosophila [24] where selection on codon usage predominates [25,26,27,28].
+
+
+Clement 2017
+% Gle ́min et al. [33] also proposed that changes in the steepness of the recombination/gBGC gradient could explain variation in GC content distributions among species, from unimodal GC-poor to bimodal GC-rich distribution
+
+
+Vu dans les especes (Codon Usage Bias in Animals: Disentangling the Effects of Natural Selection, Effective Population Size, and GC-Biased Gene Conversion  Nicolas Galtier)
+In animals, gBGC had so far been identified in vertebrates (Figuet et al. 2014), bees, and ants (Kent et al. 2012; Wallberg et al. 2015), and Daphnia (Keith et al. 2016), but not in D. melanogaster (Robinson et al. 2014), albeit on the X chromosome (Galtier et al. 2006; Haddrill and Charlesworth 2008).
+We here considerably expand the range of species and taxa in which gBGC is documented, adding annelids, echinoderms, tunicates, nemertians, cnidarians, lepidopterans, gastropod and bivalve molluscs, decapod and isopod crustaceans. 
+This study adds to the growing evidence that gBGC is a nearly universal process affecting a wide range of organisms (Pessia et al. 2012; Long et al. 2018).
+
+
+Relation avec Ne (Galtier)
+In contrast, no relationship was detected between the intensity of gBGC and Ne in our analysis. 
+% A similar pattern was recently reported in plants, based on a data set of eleven species (Clément et al. 2017). This result is somewhat surprising in that, just like selection, gBGC should only be effective if of magnitude well above that of drift. The intensity of the signal for gBGC is expected to be determined by the product of four parameters, namely Ne, the effective population size, r, the per base recombination rate, l, the length of gene conversion tracts, and b0, the repair bias in favor of GC. The rlb0 product is often denoted as b (Glémin et al. 2015). Our results rule out the hypothesis that b is constant—or a Ne effect should be detected. r, l and/or b0 must therefore vary substantially across species, and/or be inversely related to Ne.
+
+
+Why b scales inversely with Ne
+We can think of two possible reasons why b0 would scale inversely with Ne. First, gBGC is generally speaking a deleterious process in that it promotes G and C alleles irrespective of their effect on fitness (Galtier et al. 2009; Glémin 2010; Necşulea et al. 2011; Lachance and Tishkoff 2014). It might be that the molecular machinery involved in recombination is more efficiently selected to minimize b in large Ne species. A formal model would be required to validate this verbal hypothesis, though. Secondly, Lesecque et al. (2013) demonstrated that in yeast, when several SNPs are part of the same conversion tract, these are most often converted in the same direction—same donor and same recipient chromosomes—the direction only being influenced by SNPs located at the extremities of tracts. This implies a mechanical decay of the average GC bias as the number of SNPs per tract increases, since AT versus GC SNPs located in the middle of a conversion tract are converted in either direction with probability 0.5. This mechanism, if effective in animals too, might contribute to explaining the lack of a Ne effect on gBGC intensity, SNP density being positively correlated with Ne. Of note, the evolution of genomic GC-content has been associated with traits related to Ne in mammals and birds (Romiguier et al. 2010; Weber et al. 2014). This might be explained by b being fairly homogeneous within groups, but much more variable across distantly related taxa, so that B would only respond to Ne at a relatively small time scale. It might also be the case that the relationship between GC-content dynamics and life-history traits in mammals and birds is not (entirely) mediated by Ne—but rather by, for example, the mutation rate in a nonequilibrium situation (Romiguier et al. 2010; Bolívar et al. 2016).
+
+
+
+
+
+
+Mettre plutot dans les caracteristiques
+gBGC par MMR in yeasts (Lesecque)
+et peut etre aussi chez humains (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4510005/)
+
++ dire que associe a des fins de tract de conversion
+
+des pensees perso:
+BER et MMR interagissent dans le cadre de la demethylation (https://www-ncbi-nlm-nih-gov.inee.bib.cnrs.fr/pmc/articles/PMC4856981/pdf/gkw059.pdf) donc pourraient aussi pendant la recombi
+
+Explication sur BER\@: voir dans Duret 2009
+
+Pessia: toutes les espces
+
+%%% SAUVETAGE DES ONGLETS
+
+
+
+
+
+
+% Nicolas and Petes — https://sci-hub.tw/10.1007/bf01924007
+%
+%
+% gBGC
+% Ere_walker — https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1460637/pdf/10353909.pdf
+% Duret GC vanishing — https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1462357/pdf/12524353.pdf
+% Lercher — http://www.lifesci.sussex.ac.uk/home/Adam_Eyre-Walker/Website/Publications_files/LercherGenetics02.pdf
+% Meunier Duret — http://dev.bx.psu.edu/old/courses/bx-fall07/duret2.pdf
+% Duret Eyre-Walker — http://pbil.univ-lyon1.fr/members/duret/publications/PDF/2006-Duret-Gene.pdf
+% Galter Duret — https://www.sciencedirect.com/science/article/pii/S0168952507001138
+% Muyle — https://academic.oup.com/mbe/article/28/9/2695/1014245
+% https://sci-hub.tw/10.1002/9780470015902.a0020834.pub2
+%
+%
+% ISOCHORES (surement inutile)
+% Bernardi, G. (2000). Isochores and the evolutionary genomics of vertebrates. Gene, — https://sci-hub.tw/10.1016/s0378-1119(99)00485-0
+% The genome: an isochore ensemble and its evolution — http://content.ebscohost.com.inee.bib.cnrs.fr/ContentServer.asp?EbscoContent=dGJyMMvl7ESep7E4y9f3OLCmr1Gep69Ssq24SbGWxWXS&ContentCustomer=dGJyMOzpsE21p7JOuePfgeyx9Yvf5ucA&T=P&P=AN&S=R&D=a9h&K=79720846
+% Rise and fall of theory — https://en.wikipedia.org/wiki/Isochore_(genetics)
+%
+%
+% CHAP3
+% COA in yeast — https://www.nature.com/articles/ng.83
+% DNA methylation state accessibility — https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3721348/
+% https://www.google.com/search?ei=oILUXPiCHsSLlwSrwbeQDw&q=dna+methylation+chromatin+state+accessibility&oq=dna+methylation+chromatin+state+access&gs_l=psy-ab.1.0.33i22i29i30.683638.688043..689065...0.0..0.155.1655.4j10......0....1..gws-wiz.......0i7i30i19j0i19j0i22i30i19j33i21j33i160.9TVqd6gil2c
+%
+%
+% Mouse (female recombination rate)
+% http://www.informatics.jax.org/silver/frames/frame7-2.shtml
+%
+%
+% Paper https://tex.stackexchange.com/questions/146911/alternatives-to-asterisk-and-star-for-superscripts
+%
+%
+%
+% gBGC in avian
+% https://genomebiology.biomedcentral.com/articles/10.1186/s13059-018-1613-z
+%
+% recherche papiers laurent
+% https://scholar.google.fr/citations?user=Jhya3psAAAAJ&hl=fr&oi=sra
+%
+
+
+
+
 
 
 
