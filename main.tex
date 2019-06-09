@@ -64,10 +64,18 @@
 % Center figures larger than textwidth (https://tex.stackexchange.com/questions/16582/center-figure-that-is-wider-than-textwidth)
 \usepackage[export]{adjustbox}[2011/08/13]
 
-
-
-
+% To add blank lines
 \usepackage{parselines} 
+
+
+% To add a blank figure (Figure not created yet)
+\usepackage{todonotes}
+
+
+
+
+
+
 
 
 %%%%% SELECT YOUR DRAFT OPTIONS
@@ -458,14 +466,15 @@
 \usepackage{xcolor}
 \usepackage{colortbl}
 
-\makeatletter
-\arrayrulecolor{titlepagecolorsection}
-\def\mtc@bottom@rule{%
-  \ifx\mtc@rule\relax\relax\else
-      \vskip -2.5ex
-        \color{titlepagecolorsection}\rule[2.4\p@]{\columnwidth}{.4\p@}\vspace*{2.6\p@}\fi}    
-\makeatother
-
+% If redo it, then rules in tables are in purple
+% \makeatletter
+% \arrayrulecolor{titlepagecolorsection}
+% \def\mtc@bottom@rule{%
+%   \ifx\mtc@rule\relax\relax\else
+%       \vskip -2.5ex
+%         \color{titlepagecolorsection}\rule[2.4\p@]{\columnwidth}{.4\p@}\vspace*{2.6\p@}\fi}
+% \makeatother
+%
 
 
 \renewcommand*\rhead{\textcolor{titlepagecolor}}
@@ -679,6 +688,6 @@
 
 \renewcommand\bibname{References}
 \bibliographystyle{apalike}
-\bibliography{references,bibliography_additional/Bibtex/01_chronology_recombination,bibliography_additional/Bibtex/chap3_RR_variation_and_evolution,bibliography_additional/Bibtex/chap4_gBGC}
+\bibliography{references,bibliography_additional/Bibtex/01_chronology_recombination,bibliography_additional/Bibtex/chap3_RR_variation_and_evolution,bibliography_additional/Bibtex/chap4_gBGC,bibliography_additional/Bibtex/chap5_methodology}
 
 \end{document}
