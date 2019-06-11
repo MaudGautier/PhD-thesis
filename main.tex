@@ -118,10 +118,48 @@
 %\numberwithin{equation}{subsection}
 
 \usepackage{usebib}
+\usepackage{backref}
 \usepackage{hyperref}
-\hypersetup{colorlinks, linkcolor=black, citecolor=titlepagecolorsection} % Color citation links in purple
+\hypersetup{colorlinks, linkcolor=black, citecolor=titlepagecolorsection, urlcolor=titlepagecolorsection} % Color citation links in purple
 % To use usebib
 % \usepackage{keyval}
+\renewcommand*{\backrefsep}{,~}%
+\renewcommand*{\backreftwosep}{,~}% ', and~'
+\renewcommand*{\backreflastsep}{,~}% ' and~'
+%
+% \renewcommand*{\backrefalt}[4]{%
+% \ifcase #1 %
+% No citations.%
+% \or
+% \(\rightarrow\) page #2%
+% \else
+% \(\rightarrow\) pages #2%
+% \fi
+% }
+%
+
+% DEPUIS: http://monbloginformatique.blogspot.com/2010/03/hyperref-avec-backref-comment-afficher.html
+\newcommand{\mapolicebackref}[1]{\hspace*{\fill} \mbox{\textit {\small #1}}}
+%pour gérer les backref dans la bibliographie
+\renewcommand*{\backref}[1]{}
+\renewcommand*{\backrefalt}[4]{%
+\ifcase #1 \mapolicebackref{Not cited}
+% \or \mapolicebackref{Cited on page \href[page={#2}]{#2}}
+% \or \mapolicebackref{Cited on page \hyperlink{page.{#2}}{#2}}
+% \or \mapolicebackref{Cited on page \hyperlink{page.{#2}}{page.#2}}
+% \or \mapolicebackref{Cited on page \hyperlink{page.22}{#2}}
+% \or \mapolicebackref{Cited on page \bookmark[page={#2}]{#2}}
+\or \mapolicebackref{Cited at page #2}
+    \else \mapolicebackref{Cited at pages #2}
+\fi
+}
+% %redéfinir les séparateurs en français :
+% \renewcommand*{\backreftwosep}{ et~ }
+% \renewcommand*{\backreflastsep}{, et~}
+
+
+
+% \renewcommand\backrefpagesname{\(\rightarrow\) p.~}
 \bibinput{references}
 
 %
