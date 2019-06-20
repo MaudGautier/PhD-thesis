@@ -3,10 +3,15 @@
 % Attention ! Encodage UTF8 ! Sinon adapter en conséquence...
 %%%%%%%%%%%%%%%%
 
+\newgeometry{inner=2cm, outer=2cm, top=2cm, bottom=2cm}
+% \newgeometry{top=2.5cm, bottom=2.5cm}
+
+% pour ne pas conserver les parametres lies a cette page specifique dans le reste du doc (notamment fontsize et parindent)
+% https://tex.stackexchange.com/questions/45028/cancel-undo-a-setlength-parindent3ex
+\begingroup
+
 % \selectlanguage{french}
 
-\newgeometry{inner=2cm, outer=2cm, top=2cm, bottom=2cm}
-%\newgeometry{top=2.5cm, bottom=2.5cm}
 
 
 \setlength{\parindent}{0pt}
@@ -157,5 +162,5 @@ Institut de Science Financière et d'Assurances & Directeur : M. N. LEBOISNE
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-
+\endgroup
 \restoregeometry

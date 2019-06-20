@@ -73,6 +73,14 @@
 
 
 
+% To keep my old font size even if not the case in cover page
+% from: https://tex.stackexchange.com/questions/423334/how-to-store-and-restore-the-current-font-size
+\makeatletter
+\newcommand{\savefont}{\xdef\oldfontsize{\f@size}\xdef\oldblskip{\f@baselineskip}}
+\newcommand{\backtoppevfont}{\fontsize{\oldfontsize}{\oldblskip}\selectfont}
+\makeatother
+
+
 
 
 
@@ -558,8 +566,10 @@
 
 %%%%% THE ACTUAL DOCUMENT STARTS HERE
 \begin{document}
-
+% \savefont
 \include{text/0_cover}
+% \backtoppevfont
+
 
 %
 %\begin{titlepage}
