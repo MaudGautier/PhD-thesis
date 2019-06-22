@@ -64,7 +64,7 @@ In a B6xCAST F1 hybrid, hotspots are either activated by the \textit{Prdm9} alle
 To discriminate between these two scenarii, we classified all 1,018 hotspots based on two criteria (Table~\ref{tab:classification-hotspots}).
 
 First, we used PRDM9 ChIP-seq data in the parental B6 and CAST strains from \citet{baker2015prdm9}: 
-when a peak was detected in one parental strain, the hotspot was necessarily targeted by the allele present in that strain, i.e.\ PRDM9\textsuperscript{Dom2} (resp. PRDM9\textsuperscript{Cst}) when the peak was found in the B6 (resp. CAST) lineage.
+when a peak was detected in one parental strain, the hotspot was necessarily targeted by the allele present in that strain, i.e.\ PRDM9\textsuperscript{Dom2} (resp.\ PRDM9\textsuperscript{Cst}) when the peak was found in the B6 (resp.\ CAST) lineage.
  % and PRDM9\textsuperscript{Cst} when it was found in the CAST lineage.
 
 % When, however, no PRDM9 ChIP-seq peak was detected in either parent, knowing which allele targeted the hotspot was not straightforward.
@@ -72,7 +72,7 @@ when a peak was detected in one parental strain, the hotspot was necessarily tar
 % As a substitute, we used information from the strand-specific detection of PRDM9 ChIP-seq reads in the B6xCAST cross from \citet{baker2015prdm9} to predict which haplotype was cold, i.e.\ the donor in the subsequent gene conversion event.
 % % Indeed, if the majority of PRDM9 ChIP-seq tags map onto one haplotype, it means that this haplotype is preferentially bound by PRDM9 and thus, that it hosts the DSB more often than the alternate (thus, cold) haplotype.
 % Indeed, the haplotype onto which the majority of PRDM9 ChIP-seq tags map is necessarily that preferentially bound by PRDM9 and thus, the hot haplotype.
-% Like \citet{baker2015prdm9}, we set the threshold at 75\%: if more than 75\% of ChIP-seq reads mapped onto the B6 (resp. CAST) haplotype, we inferred that the cold haplotype was CAST (resp. B6).
+% Like \citet{baker2015prdm9}, we set the threshold at 75\%: if more than 75\% of ChIP-seq reads mapped onto the B6 (resp.\ CAST) haplotype, we inferred that the cold haplotype was CAST (resp.\ B6).
 %
 
 When, however, no PRDM9 ChIP-seq peak was detected in either parent, knowing which allele targeted the hotspot was not straightforward.
@@ -80,7 +80,7 @@ When, however, no PRDM9 ChIP-seq peak was detected in either parent, knowing whi
 % As a substitute, we used information from the strand-specific detection of PRDM9 ChIP-seq reads in the B6xCAST cross from \citet{baker2015prdm9}.
 As a substitute, we used information from the strand-specific detection of PRDM9 ChIP-seq reads \citep{baker2015prdm9}.
 Indeed, the proportion of PRDM9 ChIP-seq tags mapping onto one haplotype directly reflects its propensity to be bound by PRDM9 (relatively to that of the other haplotype).
-With the assumption that the least bound haplotype had a lower affinity because it had co-evolved with the \textit{Prdm9} allele targeting the hotspot and had thus undergone erosion in the parental lineage, we could infer that \textit{Prdm9\textsuperscript{Dom2}} (resp. \textit{Prdm9\textsuperscript{Cst}}) was the target when at least 75\% of PRDM9 ChIP-seq tags mapped preferentially onto the CAST (resp. B6) haplotype.
+With the assumption that the least bound haplotype had a lower affinity because it had co-evolved with the \textit{Prdm9} allele targeting the hotspot and had thus undergone erosion in the parental lineage, we could infer that \textit{Prdm9\textsuperscript{Dom2}} (resp.\ \textit{Prdm9\textsuperscript{Cst}}) was the target when at least 75\% of PRDM9 ChIP-seq tags mapped preferentially onto the CAST (resp.\ B6) haplotype.
  % and \textit{Prdm9\textsuperscript{Cst}} when they mapped preferentially onto the B6 haplotype.
 
 
@@ -117,7 +117,7 @@ With the assumption that the least bound haplotype had a lower affinity because 
 %  to predict which haplotype was cold, i.e.\ the donor in the subsequent gene conversion event.
 % % Indeed, if the majority of PRDM9 ChIP-seq tags map onto one haplotype, it means that this haplotype is preferentially bound by PRDM9 and thus, that it hosts the DSB more often than the alternate (thus, cold) haplotype.
 % Indeed, the haplotype onto which the majority of PRDM9 ChIP-seq tags map is necessarily that preferentially bound by PRDM9 and thus, the hot haplotype.
-% Like \citet{baker2015prdm9}, we set the threshold at 75\%: if more than 75\% of ChIP-seq reads mapped onto the B6 (resp. CAST) haplotype, we inferred that the cold haplotype was CAST (resp. B6).
+% Like \citet{baker2015prdm9}, we set the threshold at 75\%: if more than 75\% of ChIP-seq reads mapped onto the B6 (resp.\ CAST) haplotype, we inferred that the cold haplotype was CAST (resp.\ B6).
 %
 
 
@@ -165,8 +165,8 @@ With the assumption that the least bound haplotype had a lower affinity because 
 	{\textbf{Distribution of hotspots into each category of our classification.}
 		\par All 6,758 PRDM9 ChIP-seq defined hotspots identified by \citet{baker2015prdm9} and the subset of 1,018 that we selected were classified into 6 categories of hotspots, as described in the main text.
 		Hotspot categories were labeled as follows.
-		‘tB’ (resp. ‘tC’) stands for a PRDM9 allele originating from the B6 (resp. CAST) strain.
-		‘chB’ (resp. ‘chC’) stands for the B6 (resp. CAST) haplotype being the cold one.
+		‘tB’ (resp.\ ‘tC’) stands for a PRDM9 allele originating from the B6 (resp.\ CAST) strain.
+		‘chB’ (resp.\ ‘chC’) stands for the B6 (resp.\ CAST) haplotype being the cold one.
 		‘sym’ stands for symmetric hotspots, i.e.\ those having both haplotypes equally targeted by the two PRDM9 alleles.
 		‘NOV’ stands for novel hotspots, i.e.\ those for which no PRDM9 ChIP-seq peak was detected in either parent.
 		Thus, the target (tB or tC) for ‘NOV’ hotspots was exclusively determined based on the strand-specific mapping of PRDM9 ChIP-seq tags (see main text).
@@ -199,7 +199,7 @@ We note that, as most polymorphic sites in F1 hybrid hotspots result from hotspo
 
 % Identifying the hotspot-activating \textit{Prdm9} allele at fully eroded hotspots (i.e.\ those for which no PRDM9 ChIP-seq peak was detected in the parental strains) rested on the assumption that the differential PRDM9 binding affinity originated from motif erosion in one lineage (see Subsection~\ref{chap7:PRDM9-target-inference}).
 Identifying the hotspot-activating \textit{Prdm9} allele at fully eroded hotspots (i.e.\ those for which no PRDM9 ChIP-seq peak was detected in the parental strains) was done by deduction in lieu of direct observations (see Subsection~\ref{chap7:PRDM9-target-inference}) and may thus entail errors.
-Since the accuracy of the inferred \textit{Prdm9} target was critical to the posterior quantification of biased gene conversion, we wanted to make sure that our predictions were correct by verifying that occurrences of the PRDM9\textsuperscript{Dom2} (resp. PRDM9\textsuperscript{Cst}) target motif were found in hotspots predicted to be bound by it.
+Since the accuracy of the inferred \textit{Prdm9} target was critical to the posterior quantification of biased gene conversion, we wanted to make sure that our predictions were correct by verifying that occurrences of the PRDM9\textsuperscript{Dom2} (resp.\ PRDM9\textsuperscript{Cst}) target motif were found in hotspots predicted to be bound by it.
 
 \subsubsection{Discovery of the consensus target motifs}
 To do this, we first had to discover the motif targeted by PRDM9\textsuperscript{Dom2} and PRDM9\textsuperscript{Cst}.
@@ -259,8 +259,8 @@ For each \textit{Prm9} allele, the consensus motif we retained was the one with 
 We found that, in both cases, they were either identical to or the complement reverse of the ones published by \citet{baker2015prdm9} (Figure~\ref{fig:consensus-motifs}).
 % We were confident in the correctness of the consensus motifs we identified for both PRDM9\textsuperscript{Dom2} and PRDM9\textsuperscript{Cst} since they were either identical to or the complement reverse of the ones published by \citet{baker2015prdm9} (Figure~\ref{fig:consensus-motifs}).
 We also verified that these consensus motifs were specific to the sequences we selected: 
-we searched for them in control regions defined as sequences located 5-kb downstream of those used to discover the motifs and found that the consensus motif for \textit{Prdm9\textsuperscript{Dom2}} (resp. \textit{Prdm9\textsuperscript{Cst}}) appeared 10 (resp. 7) times less in these control sequences than in the training set.
-% by searching for them in control regions defined as sequences located 5-kb downstream of those used to discover the motifs: we found the consensus motif for \textit{Prdm9\textsuperscript{Dom2}} (resp. \textit{Prdm9\textsuperscript{Cst}}) in 10 (resp. 7) times more training sequences than control sequences.
+we searched for them in control regions defined as sequences located 5-kb downstream of those used to discover the motifs and found that the consensus motif for \textit{Prdm9\textsuperscript{Dom2}} (resp.\ \textit{Prdm9\textsuperscript{Cst}}) appeared 10 (resp.\ 7) times less in these control sequences than in the training set.
+% by searching for them in control regions defined as sequences located 5-kb downstream of those used to discover the motifs: we found the consensus motif for \textit{Prdm9\textsuperscript{Dom2}} (resp.\ \textit{Prdm9\textsuperscript{Cst}}) in 10 (resp.\ 7) times more training sequences than control sequences.
 
 
 \subsubsection{Occurrences of consensus motifs in the predicted hotspots}
@@ -318,26 +318,197 @@ Also, these motifs gathered in the close vicinity of the inferred DSB sites (i.e
 
 
 
-\section{dBGC hitchhiking in structured populations}
+\section{dBGC hitchhiking of past gBGC}
 % \section{Quantification of DSB-induced biased gene conversion (dBGC)}
 
 
 \subsection{Direct quantification of dBGC} 
 
-Next, we wanted to quantify DSB-induced biased gene conversion (dBGC) in the hotspots we were studying.
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width = 1\textwidth]{figures/chap7/dBGC_distribution.eps}
+    \caption[Distribution of the dBGC coefficient across categories of hotspots]
+	{\textbf{Distribution of the dBGC coefficient across categories of hotspots.}
+		\par The dBGC coefficient ($b_{dBGC}$) was directly extrapolated from the observed frequency of CAST-donor fragments in the pool of gametes ($x$) as follows: $b_{dBGC} = 2 \times x - 1$ \citep{nagylaki1983evolution} (see main text).
+		The distribution was reported for four groups of hotspots: those targeted by PRDM9\textsuperscript{Dom2} which were either completely eroded (NOV.tB.chB, dark grey) or not (tB.chB and tB.sym, red) in the B6 lineage, and those targeted by PRDM9\textsuperscript{Cst} which were either completely eroded (NOV.tC.chC, light grey) or not (tC.chC and tC.sym, yellow) in the CAST lineage.
+		The frequencies were normalised to the total number of hotspots in each category.
+    }
+\label{fig:dBGC-distribution}
+\end{figure}
+
+Next, we aimed at quantifying DSB-induced biased gene conversion (dBGC) for each hotspot.
+Thus, we directly extrapolated the dBGC coefficient ($b_{dBGC}$) from the observed frequency of CAST-donor fragments ($x$) which we measured in Chapter~\ref{ch:6-recombination-parameters}, from the equation of \citet{nagylaki1983evolution}:
+
+\begin{equation*}
+	x = \frac{1}{2} \times (1+b_{dBGC})
+	% b_{dBGC} = 2 \times x - 1
+\end{equation*}
 
 
+We looked at the distribution of the dBGC coefficient across four categories of hotspots (Figure~\ref{fig:dBGC-distribution}): 
+on the one hand, the PRDM9\textsuperscript{Dom2}-targeted hotspots which were either fully eroded or still present in the B6 lineage; and, on the other hand, the PRDM9\textsuperscript{Cst}-targeted hotspots completely eroded or still present in the CAST lineage.
+As expected, we observed that hotspots that were most eroded in the parental lineages were those for which the absolute dBGC coefficient was the greatest, while hotspots displaying a quasi-null dBGC coefficient corresponded to symmetric hotspots, i.e.\ targeted equally by PRDM9.
 
 
-Mettre le calcul du dBGC et mettre un histogramme? relation avec l'intensite du signal PRDM9, les novel ou symmetric
 \subsection{dBGC and the overtransmission of GC alleles}
+
+After quantifying the intensity of dBGC, we examined the allelic composition of conversion tracts (CTs) to measure that of gBGC\@.
+Among the 30,627 AT/GC (WS) polymorphic sites involved in the CTs of the recombination events detected, 17,876 ($58.3\%$, $CI=[57.8\%; 58.9\%]$) carried the \textit{S} (\textit{G} or \textit{C}) allele.
+This proportion was slightly lower for Rec-1S ($54.8\%$, $CI=[54.1\%; 55.5\%]$) than for Rec-2S ($64.0\%$, $CI=[63.2\%; 64.9\%]$) events.
+
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width = 1\textwidth]{figures/chap7/Proportion_GC_alleles_BIS.eps}
+    \caption[GC-profiles at AT/GC (WS) polymorphic sites of PRDM9\textsuperscript{Dom2}- and PRDM9\textsuperscript{Cst}-targeted hotspots]
+	{\textbf{GC-profiles at AT/GC (WS) polymorphic sites of PRDM9\textsuperscript{Dom2}- and PRDM9\textsuperscript{Cst}-targeted hotspots.}
+		\par The proportion of \textit{S} (\textit{G} or \textit{C}) alleles originating from the B6 lineage for PRDM9\textsuperscript{Dom2}-targeted hotspots ($N_{hotspots} = 167$) (red curve) or from the CAST lineage for PRDM9\textsuperscript{Cst}-targeted hotspots ($N_{hotspots} = 719$) (yellow curve) was computed over 300-bp sliding windows.
+    }
+\label{fig:prop-GC-alleles}
+\end{figure}
+
+
+
+
+
+However, this observed transmission bias was not solely due to gBGC, but could — in part — come from dBGC\@.
+Indeed, on the one hand, at PRDM9\textsuperscript{Dom2}-targeted (resp.\ PRDM9\textsuperscript{Cst}-targeted) hotspots, the B6 (resp.\ CAST) haplotype was GC-enriched in the vicinity of the DSB (Figure~\ref{fig:prop-GC-alleles}). 
+Such local increase in GC-content was a clear signature of the past gBGC that occurred in the parental lineages.
+Interestingly, we note that this effect was stronger in PRDM9\textsuperscript{Dom2}-targeted than in PRDM9\textsuperscript{Cst}-targeted hotspots, which could be explained by two independent reasons.
+First, as suggested by \citet{smagulova2016evolutionary}, the \textit{Prdm9\textsuperscript{Cst}} allele may be younger than the \textit{Prdm9\textsuperscript{Dom2}} one and, consequently, PRDM9\textsuperscript{Dom2}-targeted hotspots may have undergone more gBGC than PRDM9\textsuperscript{Cst}-targeted hotspots.
+Alternatively, considering that PRDM9\textsuperscript{Dom2}-targeted hotspots are less numerous than PRDM9\textsuperscript{Cst}-targeted ones in the B6xCAST hybrid (likely because of dominance effects), the subset of PRDM9\textsuperscript{Dom2}-targeted hotspots active in the hybrid may correspond to hotspots with particularly high PRDM9-affinity, which would thus have undergone stronger gBGC in the past lineage.
+
+
+
+
+\begin{table}[b!]
+	\centering
+	% \begin{adjustbox}{width = 1\textwidth}
+	\begin{tabular}{rrrr}
+
+
+		\toprule
+		& \multicolumn{3}{c}{\textbf{Donor haplotype}} \\
+		\cmidrule{2-4}
+		\textbf{Hotspot category} & \textbf{B6} & \textbf{CAST} & \textbf{NA} \\
+
+		\midrule
+
+		\textbf{\textit{PRDM9\textsuperscript{Dom2}-targeted}}\\
+		\textit{tB.sym}     & 177   & 164   & 68 \\ 
+		\textit{tB.chB}     & 553   & 165   & 142 \\ 
+		\textit{NOV.tB.chB} & 515   & 87    & 170 \\ 
+
+		\\
+
+		\textbf{\textit{PRDM9\textsuperscript{Cst}-targeted}}\\
+		\textit{tC.sym}     & 2400  & 3075  & 1868 \\ 
+		\textit{tC.chC}     & 1404  & 4329  & 1226 \\ 
+		\textit{NOV.tC.chC} & 248   & 664   & 284 \\
+
+		\bottomrule
+
+	\end{tabular}
+	% \end{adjustbox}
+	\caption[Number of B6- and CAST-donor fragments per category of hotspots]
+	{\textbf{Number of B6- and CAST-donor fragments per category of hotspots.}
+		\par The donor haplotype for each fragment was identified as described in Chapter~\ref{ch:6-recombination-parameters} in each of the six categories of hotspots reported in Table~\ref{tab:classification-hotspots}.
+	}
+\label{tab:count-donors}
+\end{table}
+
+
+On the other hand, for the majority (81\%, resp.\ 75\%) of conversion events occuring at PRDM9\textsuperscript{Dom2}-targeted (resp.\ PRDM9\textsuperscript{Cst}-targeted) hotspots, the B6 (resp.\ CAST) haplotype was the donor (Table~\ref{tab:count-donors}).
+
+In summary, the haplotype which was most often the donor (due to dBGC) was also the GC-richer (due to past gBGC). 
+In other words, dBGC occuring in the hybrid somehow hitchhiked the gBGC that occurred in the past lineages, thus creating a confounding effect to estimate the intensity of gBGC at a single meiotic generation.
+
+Consequently, at this point, cancelling the the action of dBGC was absolutely critical to quantify gBGC precisely.
+
+
+
+
+
+
+
 \subsection{Controlling for dBGC to quantify gBGC}
+
+\begin{table}[b!]
+    \centering
+	\begin{adjustbox}{width = 1\textwidth}
+		\begin{tabular}{rrrrrrr}
+
+
+			\hline
+			\textbf{Category} & \textbf{\# S} & \textbf{\# W} & \textbf{\% S} & \textbf{CI (min--max)} & \textbf{\textit{p}-val} & \textbf{$b_0$} \\
+
+
+			\hline
+			\textbf{\textit{Inside CTs\textsuperscript{$\star$}}}\\
+			$Rec$-$1S$                 & 5408 & 5179 & 0.5108 & 0.5012--0.5204 & 0.0267 & 0.0216 \\
+			$Rec$-$2S$                 & 2261 & 2078 & 0.5211 & 0.5061--0.5360 & 0.0057 & 0.0422 \\
+			\textbf{\textit{Total}}    & \textbf{7669} & \textbf{7257} & \textbf{0.5138} & \textbf{0.5057--0.5218} & \textbf{0.0007} & \textbf{0.0276} \\
+			\\
+			\textbf{\textit{Outside CTs\textsuperscript{$\star$}}}\\
+			$Rec$-$1S$                 & 9355 & 9433 & 0.4979 & 0.4907--0.5051 & 0.5743 & - \\
+			$Rec$-$2S$                 & 5051 & 5028 & 0.5011 & 0.4913--0.5109 & 0.8265 & - \\
+			\textbf{\textit{Total}}    & \textbf{14406} & \textbf{14461} & \textbf{0.4990} & \textbf{0.4933--0.5048} & \textbf{0.7506} & \textbf{-} \\
+			\hline
+
+		\end{tabular}
+	\end{adjustbox}
+	\caption[Transmission of the \textit{S} alleles inside (upper board) and outside (lower board) observed conversion tracts (CTs\textsuperscript{$\star$}) after controlling for dBGC]
+	{\textbf{Transmission of the \textit{S} alleles inside (upper board) and outside (lower board) observed conversion tracts (CTs\textsuperscript{$\star$}) after controlling for dBGC.}
+		\par Controlling for dBGC was operated by subsampling B6-donor and CAST-donor fragments in individual hotspots (see main text). 
+The values reported in this table correspond to the results obtained after one round of random sampling epresentative of all sampling combinations.
+\# S: Number of \textit{S} (\textit{G} or \textit{C}) alleles in the fragments sampled. 
+\# W: Number of \textit{W} (\textit{A} or \textit{T}) alleles in the fragments sampled.
+\% S: Proportion of \textit{S} alleles in the fragments sampled ($\frac{\# S}{\# S + \# W}$).
+CI: 95\%-confidence interval (test of proportions).
+$b_0$: Transmission bias, calculated as $b_0 = 2 \times x - 1$, where $x$ is the mean frequency of a \textit{S} allele within a pool of gametes coming from a WS heterozygous context.
+	}
+\label{tab:gBGC-frequencies}
+\end{table}
+
+
+
+
+To control for the impact of dBGC onto the transmission bias, we equalised the number of fragments coming from B6-donor and from CAST-donor conversion events.
+Concretely, we counted, for each hotspot, the total number of B6-donor ($n\textsubscript{B6}$) and of CAST-donor ($n\textsubscript{CAST}$) fragments. 
+If there were fewer B6- than CAST-donor fragments (resp.\ fewer CAST- than B6-donor fragments), all B6-donor (resp.\ CAST-donor) fragments as well as a random selection of $n\textsubscript{B6}$ fragments among the $n\textsubscript{CAST}$ CAST-donor (resp.\ $n\textsubscript{CAST}$ among the $n\textsubscript{B6}$ B6-donor) fragments were retained. 
+% If there were fewer B6- than CAST-donor fragments ($n\textsubscript{B6} < n\textsubscript{CAST}$), all B6-donor fragments as well as a random selection of $n\textsubscript{B6}$ fragments among the $n\textsubscript{CAST}$ CAST-donor fragments were retained.
+% Conversely, if there were fewer CAST- than B6-donor fragments ($n\textsubscript{CAST} < n\textsubscript{B6}$), all CAST-donor fragments as well as a random selection of $n\textsubscript{CAST}$ fragments among the $n\textsubscript{B6}$ B6-donor fragments were retained.
+
+To check if this simple method functioned properly, we examined the portions of the fragments located outside the observed CTs (CTs\textsuperscript{$\star$}).
+By definition, gene conversion does not occur in these DNA chunks and, thus, the allelic frequencies are expected \textit{not} to depart from a 1:1 transmission ratio.
+We found that the transmission of \textit{S} and \textit{W} alleles indeed abode by the Mendelian transmission of alleles (Table~\ref{tab:gBGC-frequencies}), which confirmed that our per-hotspot equalisation procedure allowed to efficiently control for the dBGC effect. 
+
+
+
+
+
+
+
+
 
 \section{Quantification of GC-biased gene conversion}
 % \subsection{Controling for dBGC to quantify gBGC}
 \subsection{Null $b$ in COs and tract extremities}
+
+
+% From then on, gBGC could be quantified in the CTs\textsuperscript{$\star$} of the recombination events detected.
+
+On the other hand, inside CTs\textsuperscript{$\star$}, the proportion of \textit{S} alleles found in the pool of gametes is significantly above the 0.5 null hypothesis of a Mendelian transmission, for both Rec-1S and Rec-2S ($p-value < 0.05$) (Table \ref{tab:gBGC-values}).
+
+
+Altogether, these findings prove (1) that our per-hotspot equalisation procedure allows to efficiently decouple dBGC and gBGC effects by controlling for the dBGC effect and (2) that a significant, albeit weak, transmission bias favouring \textit{S} alleles exists in mice. 
+
 \subsection{Weak $b$ in multiple-marker NCOs}
 \subsection{Strong $b$ in single-marker NCOs}
+
+
+\textbf{NOTES — voir avec Laurent comment quantifier le dBGC sur les hotspots, en tenant compte de l'erosion?}
 
 % \subsection{Low intensity of gBGC in NCOs with long CTs}
 % \subsection{Potential NCOs with 1 marker (pot-NCO-1)}
@@ -365,7 +536,7 @@ Si possible, ajouter les exploratons sur le dernier marker du tract: pas d'effet
 
 %OK % FIN CHAP 6
 %OK % Page de titre
-% CHAP 7: au moins motifs+ hitchhinking
+%OK % CHAP 7: au moins motifs+ hitchhinking
 %OK % ce soir: abstract en francais.
 % demain: fin chap 7 + chap8 (au moins design + adaptation methode)
 % Samedi: fin chap 8 + chap9 en entier
@@ -420,6 +591,8 @@ Si possible, ajouter les exploratons sur le dernier marker du tract: pas d'effet
 
 % (et dans la conclusion aussi) il faudra bcp discuter du fait que les parametres r l et b0 varient inversement avec b. (pour repondre a la question dans les objectifs de la these)
 % Voir cette phras: Instead, one or several of the parameters on which $b$ depends (the recombination rate $r$, the length of conversion tracts $L$ and the transmission bias $b_0$) necessarily vary inversely with $N_e$.
+% Discuter aussi de la figure 7.4 (GC-profiles): B6 a plus de GC car a ete plus erode car plus vieux et/ou vu que parmi les hotspots selectionnes, on n'a moins de cibles par B6, donc ceux selectionnes sont les plus forts. + on observe une inversion hors des tracts. Du a qqch?
+
 
 
 % Favoured direction of dBGC (asymmetry deja dit)
@@ -432,6 +605,26 @@ Si possible, ajouter les exploratons sur le dernier marker du tract: pas d'effet
 % Hotspot centres, defined as the summits of PRDM9 ChIP-seq peaks, coincided with the positions of PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-hotspot-centres}) and most (77\%) Spo-11 ChIP-seq peak centres previously detected in B6 \citep{lange2016landscape} were located closer than 50-bp away from our PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-DSBs}). Altogether, this suggests that hotspot centres approximate accurately the genuine locations of DSB sites.
 
 % \citet{lange2016landscape} published Spo-11 ChIP-seq data on B6 mice. 141 of our hotspots overlapped a Spo-11 ChIP-seq peak and for each of them, we computed the distance between the center of the Spo-11 ChIP-seq peak and the PRDM9 binding motif we previously identified. We found that 77.3\% of these 141 peaks were located less than 50-bp away from the PRDM9 binding motif which proves that the PRDM9 binding motifs are located adjacently to genuine DSB sites.
+
+
+
+% Pour la partie extension du hitchhiking aux pop structurees
+% Dans chapitre 9
+% Redire le hitchhiking et etendre aux populations structurees
+%
+% Indeed, in the B6 lineage, PRDM9\textsuperscript{B6}-targeted hotspots underwent gBGC in the past, thus leading to a GC-enrichment of the B6 haplotype. Conversely, in the CAST lineage, PRDM9\textsuperscript{CAST}-targeted hotspots underwent gBGC in the past, thus leading to a GC-enrichment of the CAST haplotype.
+% In parallel, the targeted hotspots erode in the `self' lineage, as predicted by the hotspot conversion paradox \citep{boulton1997hotspot}.
+%
+% Consequently, when the two lineages are crossed into a hybrid, each hotspot is eroded in the locally GC-enriched haplotype and the DSB initiates most of the times on the other, non-eroded and GC-poorer haplotype. This leads the eroded, GC-richer haplotype to be the donor sequence and \textit{GC} alleles to be overtransmitted. \\
+%
+% Thus, the observed favored transmission of \textit{S} alleles does not only reflect instant gBGC (gBGC occurring at one generation) but also past gBGC (that occurred in the lineages, prior to the hybrid cross) whose effect is hitchhiked by dBGC (favored transmission of the non-eroded haplotype). Therefore, quantifying gBGC requires to decouple these two phenomena. To cancel the action of dBGC and thus get a direct measure of the intensity of gBGC ($b$), we equalised the number of B6- and CAST-donor fragments in each hotspot.
+%
+% Puis, ca transitionne sur la mesure du gBGC qu'on discute a la section III
+
+
+
+
+
 
 
 
