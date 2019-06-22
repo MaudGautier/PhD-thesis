@@ -1,0 +1,501 @@
+\begin{savequote}[8cm]
+	
+	‘In relation to any experiment we may speak of this hypothesis as the “null hypothesis,” and it should be noted that the null hypothesis is never proved or established, but is possibly disproved, in the course of experimentation. Every experiment may be said to exist only in order to give the facts a chance of disproving the null hypothesis.’
+	
+	\qauthor{--- Ronald Fisher, \textit{\usebibentry{fisher1935design}{title}} \citeyearpar{fisher1935design} }
+	
+\end{savequote}
+
+\chapter{\label{ch:7-quantification-BGC}Quantification of biased gene conversion in mouse hotspots}
+% \chapter{\label{ch:7-quantification-BGC}Quantification of biased gene conversion in mouse F1 hybrids}
+% \chapter{\label{ch:7-quantification-BGC}Quantification of DSB-induced and GC-biased gene conversion}
+%\otherpagedecoration
+
+
+\minitoc{}
+
+{\small{} \itshape{}
+
+\paragraph{This chapter in brief —}
+
+Even if recombinational activity is known to vary by orders of magnitude across individual hotspots, the properties determining this variation are still poorly understood.
+Further progress in comprehending the basis of these fluctuations can only arise with the thorough examination of individual hotspots but, in mammals, only a handful of these have been directly characterised at high resolution.
+Here, thanks to the 18,821 events that we detected with the approach developed in Chapter~\ref{ch:5-methodology}, we identified the main factors governing the recombinational activity of individual hotspots, we precisely described recombination in over a thousand hotspots and we estimated the hidden biological parameters of recombination through an inferential approach.
+Overall, this study provides the first global picture of recombination patterns in mouse autosomal hotspots.
+
+
+% Resume
+% BGC avec Ne variable
+% On meusre chez souris
+% On a mesure le dBGC sur 1000 hotspots
+% On observe que, dans des populations structures comme dans nos hybrides F1, il existe un hitchhiking du dBGC sur le gBGC passe.
+% donc il nous a fallu controller pour cet effet pour quantifier le gBGC
+% On observe que l'intensite du gBGC est nul pour les CO, faible pour les NCO longs et plus eleve chez les NCO a 1 SNP.
+% Mais pas d'effet sur les bordures de SNPs dans les fins de tracts.
+% Cela suggere qu'il y a un mecanisme different qui met en place le gBGC sur els NCO courts et longs. Ou qu'il y a une pression de selection qui limite l'effet du gBGC sur les longs tracts.
+
+
+}
+
+\newpage
+
+Considering that the intensity of GC-biased gene conversion (gBGC) at the population-scale ($B$) is the product of the effective population size ($N_e$) by the gBGC coefficient ($b$) (see Chapter~\ref{ch:4-gBGC}), the finding that $B$ confines into a very small range of values — even across animals with considerably disparate $N_e$ — was puzzling \citep{galtier2018codon}.
+Logically thus, one or several of the parameters on which $b$ depends — among which the transmission bias $b_0$ — should vary inversely with $N_e$.
+
+Though, among mammals, the transmission bias ($b_0$) has only been measured in humans \citep{williams2015noncrossover, halldorsson2016rate} and consequently, the interplay between $b$ and $N_e$ remains unexplained.
+% To shed new insight into this relationship, we thus quantified gBGC in another mammalian species with larger $N_e$ (mice).
+In this chapter, I describe how we managed to shed new insight into this relationship by quantifying gBGC in another mammalian species with larger $N_e$ (mice).
+Since this quantification required to classify hotspots according to their PRDM9 target so as to control for the confounding effect of DSB-induced biased gene conversion (dBGC), I will start this chapter with two sections presenting this process.
+% But, before that, it appeared necessary to classify hotspots according to their PRDM9 target so as to control for the confounding effect of DSB-induced biased gene conversion (dBGC).
+%, as I report in the last section of this chapter.
+% But, before that, it appeared necessary to classify hotspots according to their PRDM9 target so as to control for the confounding effect of DSB-induced biased gene conversion (dBGC).
+% I describe this process in the first two sections of this chapter.
+
+
+
+% \section{Classification of hotspots}
+% \subsection{Identification of the PRDM9 target}
+
+\section{Identification of the PRDM9 target}
+\subsection{Methodology to classify hotspots}
+\label{chap7:PRDM9-target-inference}
+
+In a B6xCAST F1 hybrid, hotspots are either activated by the \textit{Prdm9} allele originating from the B6 lineage (\textit{Prdm9\textsuperscript{Dom2}}) or by that originating from the CAST lineage (\textit{Prdm9\textsuperscript{Cst}}).
+To discriminate between these two scenarii, we classified all 1,018 hotspots based on two criteria (Table~\ref{tab:classification-hotspots}).
+
+First, we used PRDM9 ChIP-seq data in the parental B6 and CAST strains from \citet{baker2015prdm9}: 
+when a peak was detected in one parental strain, the hotspot was necessarily targeted by the allele present in that strain, i.e.\ PRDM9\textsuperscript{Dom2} (resp. PRDM9\textsuperscript{Cst}) when the peak was found in the B6 (resp. CAST) lineage.
+ % and PRDM9\textsuperscript{Cst} when it was found in the CAST lineage.
+
+% When, however, no PRDM9 ChIP-seq peak was detected in either parent, knowing which allele targeted the hotspot was not straightforward.
+% % As a substitute, we used information from the strand-specific detection of PRDM9 ChIP-seq reads in the B6xCAST cross from \citet{baker2015prdm9} to predict which haplotype was hot, i.e.\ targeted by PRDM9, and which was cold, i.e.\ donor in the subsequent gene conversion event.
+% As a substitute, we used information from the strand-specific detection of PRDM9 ChIP-seq reads in the B6xCAST cross from \citet{baker2015prdm9} to predict which haplotype was cold, i.e.\ the donor in the subsequent gene conversion event.
+% % Indeed, if the majority of PRDM9 ChIP-seq tags map onto one haplotype, it means that this haplotype is preferentially bound by PRDM9 and thus, that it hosts the DSB more often than the alternate (thus, cold) haplotype.
+% Indeed, the haplotype onto which the majority of PRDM9 ChIP-seq tags map is necessarily that preferentially bound by PRDM9 and thus, the hot haplotype.
+% Like \citet{baker2015prdm9}, we set the threshold at 75\%: if more than 75\% of ChIP-seq reads mapped onto the B6 (resp. CAST) haplotype, we inferred that the cold haplotype was CAST (resp. B6).
+%
+
+When, however, no PRDM9 ChIP-seq peak was detected in either parent, knowing which allele targeted the hotspot was not straightforward.
+% As a substitute, we used information from the strand-specific detection of PRDM9 ChIP-seq reads in the B6xCAST cross from \citet{baker2015prdm9} to predict which haplotype was hot, i.e.\ targeted by PRDM9, and which was cold, i.e.\ donor in the subsequent gene conversion event.
+% As a substitute, we used information from the strand-specific detection of PRDM9 ChIP-seq reads in the B6xCAST cross from \citet{baker2015prdm9}.
+As a substitute, we used information from the strand-specific detection of PRDM9 ChIP-seq reads \citep{baker2015prdm9}.
+Indeed, the proportion of PRDM9 ChIP-seq tags mapping onto one haplotype directly reflects its propensity to be bound by PRDM9 (relatively to that of the other haplotype).
+With the assumption that the least bound haplotype had a lower affinity because it had co-evolved with the \textit{Prdm9} allele targeting the hotspot and had thus undergone erosion in the parental lineage, we could infer that \textit{Prdm9\textsuperscript{Dom2}} (resp. \textit{Prdm9\textsuperscript{Cst}}) was the target when at least 75\% of PRDM9 ChIP-seq tags mapped preferentially onto the CAST (resp. B6) haplotype.
+ % and \textit{Prdm9\textsuperscript{Cst}} when they mapped preferentially onto the B6 haplotype.
+
+
+% Using the assumption that the differential PRDM9 affinity arose from the erosion of the least bound haplotype in the parental lineage, we inferred that the \textit{Prdm9} allele targeting the hotspot was the one which co-evolved with the eroded haplotype.
+% We assumed that the least bound haplotype was least bound because it had co-evolved with eroded in the parental lineage where
+%
+% We assumed that the differential PRDM9 affinity was a manifestation of the erosion of the least bound haplotype during its coevolution with the \textit{Prdm9} allele targeting the hotspot in the parental lineage.
+% As such, we could infer that the \textit{Prdm9} allele targeting the hotspot was the one that had coevolved with the least bound haplotype.
+%
+% We assumed that the haplotype that had co-evolved with the \textit{Prdm9} allele targeting the hotspot had undergone erosion due to biased gene conversion in the parental lineage.
+%
+% We made the assumption that the differential PRDM9 affinity was the result of the erosion of the least bound haplotype during its co-evolution with the \textit{Prdm9} allele targeting the hotspot in the parental lineage.
+% we could determine that the
+% We then infered that the \textit{Prdm9} allele targeting the hotspot was the one that had co-evolved with the least bound haplotype
+%
+%
+%
+% We assumed that the least bound haplotype was eroded because it had co-evolved with the \textit{Prdm9} allele targeting the hotspot in the parental lineage.
+%
+%
+% And thus, we could
+%
+% % its motif in the haplotype that co-evolved with the \textit{Prdm9} allele targeting it, we can infer that the
+% % \textit{Prdm9} allele targeting the hotspot is the one which co-evolved with the eroded haplotype.
+%
+%
+% La proportion de tags sur un haplo reflete directement sa propensite (relativement a l'autre) a etre cible par PRDM9.
+% En supposant que dans la majorite des cas, la difference de ciblage est due a l'erosion dans l'autre haplo, et que cette erosion provient du fait qu'il etait cible dans la lignee parentale par l'llele PrdM9, on peut inferer que l'allele Prdm9 est celui qui a coevolue avec l'haplotype erode (non cible).
+%
+% - l'haplotype sur lequel les tags mappent est celui cible par PRDM9 (propensite a etre cible). Donc s'i haplotype bias, alors fort bias de formation de DSBs, donc c'est un hot haplotype.
+% - on dit que si plus de 75 alors biais fort et c'est l'aplot chaud.
+% Or, dans le cas d'une hybride ou les deux alleles sont presents,
+%
+%  to predict which haplotype was cold, i.e.\ the donor in the subsequent gene conversion event.
+% % Indeed, if the majority of PRDM9 ChIP-seq tags map onto one haplotype, it means that this haplotype is preferentially bound by PRDM9 and thus, that it hosts the DSB more often than the alternate (thus, cold) haplotype.
+% Indeed, the haplotype onto which the majority of PRDM9 ChIP-seq tags map is necessarily that preferentially bound by PRDM9 and thus, the hot haplotype.
+% Like \citet{baker2015prdm9}, we set the threshold at 75\%: if more than 75\% of ChIP-seq reads mapped onto the B6 (resp. CAST) haplotype, we inferred that the cold haplotype was CAST (resp. B6).
+%
+
+
+\subsection{Symmetric \textit{versus} asymmetric hotspots}
+
+\begin{table}[b!]
+	\centering
+	\begin{adjustbox}{width = 1\textwidth}
+		\begin{tabular}{rrrrrrr}
+
+			\toprule
+			& & \multicolumn{2}{c}{\textbf{Selected hotspots}} & &  \multicolumn{2}{c}{\textbf{All hotspots}} \\
+			\cmidrule{3-4}
+			\cmidrule{6-7}
+			\textbf{Hotspot category} & & \textbf{Number} & \textbf{Percentage (\%)} & & \textbf{Number} & \textbf{Percentage (\%)} \\
+
+			\cmidrule{1-1}
+			\cmidrule{3-4}
+			\cmidrule{6-7}
+
+			\textbf{\textit{PRDM9\textsuperscript{Dom2}-targeted}}\\
+			\textit{tB.sym}     & & 24    & 2.36  & & 181   & 2.68 \\ 
+			\textit{tB.chB}     & & 63    & 6.19  & & 267   & 3.95 \\ 
+			\textit{NOV.tB.chB} & & 80    & 7.86  & & 245   & 3.63 \\ 
+			\\
+
+			\textbf{\textit{PRDM9\textsuperscript{Cst}-targeted}}\\
+			\textit{tC.sym}     & & 322   & 31.63 & & 2,775 & 41.06 \\
+			\textit{tC.chC}     & & 241   & 23.67 & & 1,370 & 20.27 \\ 
+			\textit{NOV.tC.chC} & & 156   & 15.32 & & 659   & 9.75 \\ 
+			\\
+
+			\textbf{\textit{Unclassified}} & & 132 & 12.9 & & 1,261 & 18.2 \\
+			\\
+
+			\cmidrule{1-1}
+			\cmidrule{3-4}
+			\cmidrule{6-7}
+			\textbf{Total}      & & \textbf{1,018} & \textbf{100}   & & \textbf{6,758} & \textbf{100} \\
+			\bottomrule
+
+		\end{tabular}
+	\end{adjustbox}
+	\caption[Distribution of hotspots into each category of our classification]
+	{\textbf{Distribution of hotspots into each category of our classification.}
+		\par All 6,758 PRDM9 ChIP-seq defined hotspots identified by \citet{baker2015prdm9} and the subset of 1,018 that we selected were classified into 6 categories of hotspots, as described in the main text.
+		Hotspot categories were labeled as follows.
+		‘tB’ (resp. ‘tC’) stands for a PRDM9 allele originating from the B6 (resp. CAST) strain.
+		‘chB’ (resp. ‘chC’) stands for the B6 (resp. CAST) haplotype being the cold one.
+		‘sym’ stands for symmetric hotspots, i.e.\ those having both haplotypes equally targeted by the two PRDM9 alleles.
+		‘NOV’ stands for novel hotspots, i.e.\ those for which no PRDM9 ChIP-seq peak was detected in either parent.
+		Thus, the target (tB or tC) for ‘NOV’ hotspots was exclusively determined based on the strand-specific mapping of PRDM9 ChIP-seq tags (see main text).
+	}
+\label{tab:classification-hotspots}
+\end{table}
+
+
+
+We named the aforementioned class of hotspots displaying large haplotype biases (i.e.\ those with over 75\% of PRDM9 ChIP-seq tags mapping onto one haplotype) ‘asymmetric’ hotspots, and all the others ‘symmetric’ hotspots.
+% (i.e.\ those displaying no large haplotype bias)
+
+As mentioned above, such asymmetry materialises the erosion of the target motif in the parental lineage. 
+% We further subdivided the group of asymmetric hotspots into two subgroups, based on the extent of their erosion:
+% either they had undergone full erosion in the parental lineage and
+We further subdivided the group of asymmetric hotspots into two subgroups, based on the presence (or not) of a ChIP-seq peak in the parental strain:
+either no PRDM9 ChIP-seq peak was detected in either parental strain — in that case, the hotspot had undergone full erosion in the parental lineage and we classified it as a ‘novel’ hotspot; or a PRDM9 ChIP-seq peak was detected in one of the two parents — in that case, the hotspot had only been partially eroded in the parental strain.\\
+
+Altogether thus, we could infer both the \textit{Prdm9} allele (\textit{Prdm9\textsuperscript{Dom2}} or \textit{Prdm9\textsuperscript{Cst}}) and the level of asymmetry (symmetric, asymmetric or novel hotspot) and we used these two pieces of information to classify hotspots into six categories (Table~\ref{tab:classification-hotspots}).
+
+All in all, 87\% (886) of our 1,018 hotspots fell into one of these categories. 
+Of these, 81\% (719) were inferred to be targeted by PRDM9\textsuperscript{Cst} (322 symmetric, 241 partially eroded and 156 fully eroded) and 19\% (167) by PRDM9\textsuperscript{Dom2} (24 symmetric, 63 partially eroded and 80 fully eroded).
+
+We note that, as most polymorphic sites in F1 hybrid hotspots result from hotspot erosion in one parental lineage \citep{smagulova2016evolutionary}, the requirement of a minimum of 4 markers in the 300-bp central region that we set to select hotspots (see Chapter~\ref{ch:5-methodology}) led to a greater proportion of asymmetric hotspots in our selection (61\%) than in the total list of 6,758 hotspots identified by \citet{baker2015prdm9} (35\%).\\
+
+
+
+
+\subsection{Validation by detection of the target motifs}
+
+% Identifying the hotspot-activating \textit{Prdm9} allele at fully eroded hotspots (i.e.\ those for which no PRDM9 ChIP-seq peak was detected in the parental strains) rested on the assumption that the differential PRDM9 binding affinity originated from motif erosion in one lineage (see Subsection~\ref{chap7:PRDM9-target-inference}).
+Identifying the hotspot-activating \textit{Prdm9} allele at fully eroded hotspots (i.e.\ those for which no PRDM9 ChIP-seq peak was detected in the parental strains) was done by deduction in lieu of direct observations (see Subsection~\ref{chap7:PRDM9-target-inference}) and may thus entail errors.
+Since the accuracy of the inferred \textit{Prdm9} target was critical to the posterior quantification of biased gene conversion, we wanted to make sure that our predictions were correct by verifying that occurrences of the PRDM9\textsuperscript{Dom2} (resp. PRDM9\textsuperscript{Cst}) target motif were found in hotspots predicted to be bound by it.
+
+\subsubsection{Discovery of the consensus target motifs}
+To do this, we first had to discover the motif targeted by PRDM9\textsuperscript{Dom2} and PRDM9\textsuperscript{Cst}.
+%— which we inferred to correspond to the position of the PRDM9 ChIP-seq peak summit (see Chapter~\ref{ch:6-recombination-parameters}), 
+Since the motifs targeted by PRDM9 are known to be located in the vicinity of the DSB site \citep{brick2012genetic, baker2014prdm9}, we used the 300-bp central regions of the hotspots undoubtedly targeted by each of the \textit{Prdm9} alleles to discover their consensus motif.
+For the PRDM9\textsuperscript{Dom2} consensus motif, the hotspots we used were those for which a PRDM9 ChIP-seq peak had been found in the B6 strain:
+the B6 and CAST haplotypes of the symmetric PRDM9\textsuperscript{Dom2}-targeted hotspots (tB.sym) and the CAST haplotype of the partially eroded PRDM9\textsuperscript{Dom2}-targeted hotspots (tB.chB).
+Respectively, for the PRDM9\textsuperscript{Cst} consensus motif, the hotspots we used were those for which a PRDM9 ChIP-seq peak had been found in the CAST strain:
+the B6 and CAST haplotypes of the symmetric PRDM9\textsuperscript{Cst}-targeted hotspots (tC.sym) and the B6 haplotype of the partially eroded PRDM9\textsuperscript{Cst}-targeted hotspots (tC.chC).
+
+% The motifs targeted by PRDM9 are known to be located in the vicinity of the DSB site \citep{brick2012genetic, baker2014prdm9}, which we inferred to correspond to the position of the PRDM9 ChIP-seq peak summit (see Chapter~\ref{ch:6-recombination-parameters}).
+%
+% Therefore, to learn the PRDM9\textsuperscript{Dom2} consensus motif, we used the 300-bp central regions of the hotspots undoubtedly targeted by PRDM9\textsuperscript{Dom2}, i.e.\ hotspots for which a PRDM9 ChIP-seq peak had been found in the B6 strain:
+% the B6 and CAST haplotypes of the symmetric PRDM9\textsuperscript{Dom2}-targeted hotspots (tB.sym) and the CAST haplotype of the partially eroded PRDM9\textsuperscript{Dom2}-targeted hotspots (tB.chB).
+% Respectively, to learn the PRDM9\textsuperscript{Cst} consensus motif, we used the 300-bp central regions of the hotspots undoubtedly targeted by PRDM9\textsuperscript{Cst}, i.e.\ hotspots for which a PRDM9 ChIP-seq peak had been found in the CAST strain:
+% the B6 and CAST haplotypes of the symmetric PRDM9\textsuperscript{Cst}-targeted hotspots (tC.sym) and the B6 haplotype of the partially eroded PRDM9\textsuperscript{Cst}-targeted hotspots (tC.chC).
+%
+
+
+\begin{figure}[b!]
+	\centering
+	\begin{subfigure}[b]{0.495\textwidth}
+		\includegraphics[width=\textwidth]{figures/chap7/Baker_B6_motif.eps}
+		% \caption{PRDM9\textsuperscript{Dom2} \citep{baker2015prdm9}}
+		\caption{\textit{Prdm9\textsuperscript{Dom2}} \citep{baker2015prdm9}}
+		% \label{fig:baker_B6_motif}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.495\textwidth}
+		\includegraphics[width=\textwidth]{figures/chap7/Baker_CAST_motif.eps}
+		% \caption{PRDM9\textsuperscript{Cst} \citep{baker2015prdm9}}
+		\caption{\textit{Prdm9\textsuperscript{Cst}} \citep{baker2015prdm9}}
+		% \label{fig:baker_CAST_motif}
+	\end{subfigure}
+
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim=0.848cm 0.485cm 0cm 0cm,clip]{figures/chap7/Motif_B6.eps}
+		% \caption{PRDM9\textsuperscript{Dom2} (this study)}
+		\caption{\textit{Prdm9\textsuperscript{Dom2}} (this study)}
+		% \label{fig:B6_motif}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim=0.835cm 0.478cm 0cm 0cm,clip]{figures/chap7/Motif_CAST.eps}
+		% \caption{PRDM9\textsuperscript{Cst} (this study)}
+		\caption{\textit{Prdm9\textsuperscript{Cst}} (this study)}
+		% \label{fig:CAST_motif}
+	\end{subfigure}
+	\caption[Comparison of consensus motifs for \textit{Prdm9\textsuperscript{Dom2}} and \textit{Prdm9\textsuperscript{Cst}}]
+	{\textbf{Comparison of consensus motifs for \textit{Prdm9\textsuperscript{Dom2}} and \textit{Prdm9\textsuperscript{Cst}}.}
+		\par The consensus motifs for \textit{Prdm9\textsuperscript{Dom2}} (left) and \textit{Prdm9\textsuperscript{Cst}} (right) alleles found by \citet{baker2015prdm9} are reported at the top and those found in our study at the bottom.
+	}
+\label{fig:consensus-motifs}
+\end{figure}
+
+
+In practice, to search for the consensus motifs, we used the MEME motif discovery tool \citep{bailey2006meme} from the MEME Suite (version 4.11.2) \citep{bailey2009meme}, in the any-number-of-repetitions mode and allowing up to 10 motifs of width comprised between 10 and 30 bp.
+For each \textit{Prm9} allele, the consensus motif we retained was the one with the lowest E-value.
+We found that, in both cases, they were either identical to or the complement reverse of the ones published by \citet{baker2015prdm9} (Figure~\ref{fig:consensus-motifs}).
+% We were confident in the correctness of the consensus motifs we identified for both PRDM9\textsuperscript{Dom2} and PRDM9\textsuperscript{Cst} since they were either identical to or the complement reverse of the ones published by \citet{baker2015prdm9} (Figure~\ref{fig:consensus-motifs}).
+We also verified that these consensus motifs were specific to the sequences we selected: 
+we searched for them in control regions defined as sequences located 5-kb downstream of those used to discover the motifs and found that the consensus motif for \textit{Prdm9\textsuperscript{Dom2}} (resp. \textit{Prdm9\textsuperscript{Cst}}) appeared 10 (resp. 7) times less in these control sequences than in the training set.
+% by searching for them in control regions defined as sequences located 5-kb downstream of those used to discover the motifs: we found the consensus motif for \textit{Prdm9\textsuperscript{Dom2}} (resp. \textit{Prdm9\textsuperscript{Cst}}) in 10 (resp. 7) times more training sequences than control sequences.
+
+
+\subsubsection{Occurrences of consensus motifs in the predicted hotspots}
+
+\begin{figure}[p]
+	\centering
+	\begin{subfigure}[b]{0.495\textwidth}
+		\includegraphics[width=\textwidth]{figures/chap7/dom_tB.eps}
+		% \caption{Predicted \textit{Prdm9\textsuperscript{Dom2}}-activated.}
+		\caption{Predicted PRDM9\textsuperscript{Dom2}-targeted.}
+		% \label{fig:distrib_B6_motif_tB}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.495\textwidth}
+		\includegraphics[width=\textwidth]{figures/chap7/dom_tC.eps}
+		% \caption{Predicted \textit{Prdm9\textsuperscript{Cst}}-activated.}
+		\caption{Predicted PRDM9\textsuperscript{Cst}-targeted.}
+		% \label{fig:distrib_B6_motif_tC}
+	\end{subfigure}
+
+	\begin{subfigure}[b]{0.495\textwidth}
+		\includegraphics[width=\textwidth]{figures/chap7/cas_tB.eps}
+		% \caption{Predicted \textit{Prdm9\textsuperscript{Dom2}}-activated.}
+		\caption{Predicted PRDM9\textsuperscript{Dom2}-targeted.}
+		% \label{fig:distrib_CAST_motif_tB}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.495\textwidth}
+		\includegraphics[width=\textwidth]{figures/chap7/cas_tC.eps}
+		% \caption{Predicted \textit{Prdm9\textsuperscript{Cst}}-activated.}
+		\caption{Predicted PRDM9\textsuperscript{Cst}-targeted.}
+		% \label{fig:distrib_CAST_motif_tC}
+	\end{subfigure}
+	\caption[Occurrences of \textit{Prdm9\textsuperscript{Dom2}} and \textit{Prdm9\textsuperscript{Cst}} consensus motifs along hotspots predicted to be targeted by these alleles]
+	{\textbf{Occurrences of \textit{Prdm9\textsuperscript{Dom2}} and \textit{Prdm9\textsuperscript{Cst}} consensus motifs along hotspots predicted to be targeted by these alleles.}
+		\par Occurrences of the consensus motifs for \textit{Prdm9\textsuperscript{Dom2}} (top) and \textit{Prdm9\textsuperscript{Cst}} (bottom) were searched in the B6 (red) and CAST (yellow) haplotypes of hotspots predicted to be targeted by \textit{Prdm9\textsuperscript{Dom2}} (left) or by \textit{Prdm9\textsuperscript{Cst}} (right).
+		The numbers of hotspots for which the searched motif was found in at least one haplotype were: \textbf{(a)} $N=158$, \textbf{(b)} $N=242$, \textbf{(c)} $N=78$, \textbf{(d)} $N=698$.
+	}
+\label{fig:motifs-in-hotspots}
+\end{figure}
+
+
+
+
+
+Next, we searched for occurrences of both these consensus motifs in the two haplotypes of each 1-kb long hotspot, using the FIMO tool \citep{grant2011fimo} with default parameters. 
+When more than one occurrence of the motif was found in a given hotspot, we retained solely the motif with the highest log-likelihood ratio score.
+
+Altogether, we found that, in hotspots predicted to be targeted by PRDM9\textsuperscript{Dom2}, the majority (88.75\%) of the haplotypes predicted to be cold (i.e.\ not targeted by PRDM9) on the basis of the strand-specific detection of PRDM9 ChIP-seq reads from \citet{baker2015prdm9} (see Subsection~\ref{chap7:PRDM9-target-inference}) indeed contained a \textit{Prdm9\textsuperscript{Dom2}} motif and, conversely in hotspots predicted to be targeted by PRDM9\textsuperscript{Cst}, most (87.82\%) haplotypes predicted to be cold contained a \textit{Prdm9\textsuperscript{Cst}} motif.
+
+More precisely, the distribution of motif occurrences along both haplotypes of the hotspots predicted to be targeted be either one of the two \textit{Prdm9} alleles are reported in Figure~\ref{fig:motifs-in-hotspots}.
+As expected, occurrences of the \textit{Prdm9\textsuperscript{Dom2}} consensus motif were specific to hotspots predicted to be targeted by PRDM9\textsuperscript{Dom2} and, conversely, occurrences of the \textit{Prdm9\textsuperscript{Cst}} consensus motif specific to hotspots predicted to be targeted by PRDM9\textsuperscript{Cst}.
+In particular, motifs occurred more often in the ‘nonself’ haplotype (i.e.\ the B6 haplotype for PRDM9\textsuperscript{Cst}-targeted hotspots and the CAST haplotype for PRDM9\textsuperscript{Dom2}-targeted hotspots), most assuredly because the motif had undergone erosion in its ‘self’ lineage.
+Also, these motifs gathered in the close vicinity of the inferred DSB sites (i.e.\ the summits of the PRDM9 ChIP-seq peaks): 52\% of them were located closer than 60 bp away from the DSBs.
+
+
+
+
+
+\section{dBGC hitchhiking in structured populations}
+% \section{Quantification of DSB-induced biased gene conversion (dBGC)}
+
+
+\subsection{Direct quantification of dBGC} 
+
+Next, we wanted to quantify DSB-induced biased gene conversion (dBGC) in the hotspots we were studying.
+
+
+
+
+Mettre le calcul du dBGC et mettre un histogramme? relation avec l'intensite du signal PRDM9, les novel ou symmetric
+\subsection{dBGC and the overtransmission of GC alleles}
+\subsection{Controlling for dBGC to quantify gBGC}
+
+\section{Quantification of GC-biased gene conversion}
+% \subsection{Controling for dBGC to quantify gBGC}
+\subsection{Null $b$ in COs and tract extremities}
+\subsection{Weak $b$ in multiple-marker NCOs}
+\subsection{Strong $b$ in single-marker NCOs}
+
+% \subsection{Low intensity of gBGC in NCOs with long CTs}
+% \subsection{Potential NCOs with 1 marker (pot-NCO-1)}
+% \subsection{Estimation of gBGC in pot-NCO-1 discoveries}
+Si possible, ajouter les exploratons sur le dernier marker du tract: pas d'effet
+% + mettre les informations sur le fait que chez l'humain, on voit aussi la meme chose (NCO 1 ont plus forts BGC chez l'Homme) — ou plutot a mettre dans la discussion?
+
+% clasification des hotspots cibles par B6 ou CAST — motifs + validation
+% population structuree hitchhinking (et quantification du dBGC)
+% quantification du BGC (g et d)
+% + qqpart le fait que BGC regarde sur les bouts de tracts et rien de vu.
+% + extraction des NCO1 pour mesurer gBGC
+% Furthermore, the dBGC coefficent ($d$) for each hotspot can directly be extrapolated from Figure \ref{fig:correl-donor-DMC1}. Indeed, $d$ can be estimated based on the mean frequency of the \textit{CAST} allele in the pool of gametes ($x$) (\textit{i.e.} the observed proportion of CAST-donor fragments) through the following relationship: $x = \frac{1}{2} \times (1 + d)$ \citep{nagylaki1983evolutionA}.
+% As the observed per-hotspot proportions of CAST-donor fragments span the whole spectrum of values (from 0\% to 100\%), the dBGC coefficient also spans its whole spectrum across hotspots (from -1 to 1). In particular, hotspots that were most eroded in one parental lineage are those for which the absolute dBGC coefficient is the greatest, while hotspots displaying a quasi-null dBGC coefficient correspond to symmetric hotspots (\textit{i.e.} hotspots where both homologues are bound by PRDM9 with equal affinity).
+%
+% Hotspot centres, defined as the summits of PRDM9 ChIP-seq peaks, coincided with the positions of PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-hotspot-centres}) and most (77\%) Spo-11 ChIP-seq peak centres previously detected in B6 \citep{lange2016landscape} were located closer than 50-bp away from our PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-DSBs}). Altogether, this suggests that hotspot centres approximate accurately the genuine locations of DSB sites.
+
+
+
+
+
+
+
+
+
+%OK % FIN CHAP 6
+%OK % Page de titre
+% CHAP 7: au moins motifs+ hitchhinking
+%OK % ce soir: abstract en francais.
+% demain: fin chap 7 + chap8 (au moins design + adaptation methode)
+% Samedi: fin chap 8 + chap9 en entier
+% Dimanche: chap10 (au moins 1 section) + conclusion + preambule
+% Lundi: fin chapitre 10
+% Mardi + mercredi + jeudi: chap1 section 3
+% Vendredi + dimanche : figures sur Inkscape
+% Lundi + mardi: resume etendu + abbreviations + definitions + verif les references
+% Mercredi + Jeudi: relecture totale.
+% Vendredi: remerciements.
+% + Preparation de SMBE
+
+% \textbf{NOTE a Laurent: Je me demande s'il est pertinent de comparer ces deux mesures car, dans le cas de l'ABC, on extrapole le taux de recombinaison reel (i.e.\ nb de COs en cM/Mb génomique) alors que dans le cas des fragments informatifs, on obtient un taux de COs en cM/Mb séquencée.}
+
+
+
+
+
+
+% chap7:
+% clasification des hotspots cibles par B6 ou CAST — motifs + validation
+% population structuree hitchhinking (et quantification du dBGC)
+% quantification du BGC (g et d)
+% + qqpart le fait que BGC regarde sur les bouts de tracts et rien de vu.
+% + extraction des NCO1 pour mesurer gBGC
+% Furthermore, the dBGC coefficent ($d$) for each hotspot can directly be extrapolated from Figure \ref{fig:correl-donor-DMC1}. Indeed, $d$ can be estimated based on the mean frequency of the \textit{CAST} allele in the pool of gametes ($x$) (\textit{i.e.} the observed proportion of CAST-donor fragments) through the following relationship: $x = \frac{1}{2} \times (1 + d)$ \citep{nagylaki1983evolutionA}.
+% As the observed per-hotspot proportions of CAST-donor fragments span the whole spectrum of values (from 0\% to 100\%), the dBGC coefficient also spans its whole spectrum across hotspots (from -1 to 1). In particular, hotspots that were most eroded in one parental lineage are those for which the absolute dBGC coefficient is the greatest, while hotspots displaying a quasi-null dBGC coefficient correspond to symmetric hotspots (\textit{i.e.} hotspots where both homologues are bound by PRDM9 with equal affinity).
+%
+% Hotspot centres, defined as the summits of PRDM9 ChIP-seq peaks, coincided with the positions of PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-hotspot-centres}) and most (77\%) Spo-11 ChIP-seq peak centres previously detected in B6 \citep{lange2016landscape} were located closer than 50-bp away from our PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-DSBs}). Altogether, this suggests that hotspot centres approximate accurately the genuine locations of DSB sites.
+
+%
+% chap8:
+% design experimental avec l'introgression (schema croisement, selection des hotspots, identification du background genetique des F2)
+% adaptation de la methode + ABC ()
+% premiers resultats sur la recombinaison (taux de recombinaison variables dus a reelle difference (inexpliquee), plus longs COs, 
+
+% Design experimental (schema croisement avec introgression, selection des hotspots + design baits et sequencing + infos sur mapping etc, expected background)
+% Detection d'evenements quand F2 (identification du background, validation via simulations de Laurent, adaptation du pipeline de genotypage de chapitre 5 i.e.\ juste faire le truc sur les hotspots heterozygotes)
+% Resultats (taux de recombinaison variables dus a reelle difference (inexpliquee donc besoin de sequencer plus), ABC qui donne des resultats stables entre samples malgre les differences de recombination rates, ABC donne COs plus longs — possible plus longs que precedent projet car on analyse sur 5kb au lieu de 3)
+
+
+
+% chap9:
+% methode (powerful et adaptable a d'autres etudes de la recombinaison + mais limite majeure de detectabilite, en particulier, on rate les NCO1 qui semblent cruciaux pour l'etude du BGC (seulement mesure indirecte) + qqch en lien avec chap8? ou rare events a chercher change completement la donne avec l'utilisation des outils: tous les biais qui peuvent exister ou les imperfections deviennent critiques. e.g. misalignments par des INDELs, les erreurs de sequencage peu nombreuses mais trop elevees quand meme, error rate degenotypage…)
+% recombinants et dBGC (hotspot asymmetry et favoured direction dBGC + dBGC hitchhiking chez populations structurees + parametres identifies proches de ce que vu chez la souris et si on compare avec l'humain on trouve que CO/NCO de 1/10) + etude recombinaison a partir des mutants?
+% gBGC (confidence b + comparaison CO/NCO + comparaison humain/souris avec possibilite que evolution de la machinerie molec de formation BGC et transition epistemologie) ou plutot relation avec homme MALE et potentiellement des differences entre les sexes.
+% Confidence b
+% pour NCO
+% $R^2 = 0.5630626$; \textit{p}-val $< 2.2 \times 10^{-16}$
+% pour CO
+% $R^2 = 0.4183843$; \textit{p}-val $< 2.2 \times 10^{-16}$
+
+% (et dans la conclusion aussi) il faudra bcp discuter du fait que les parametres r l et b0 varient inversement avec b. (pour repondre a la question dans les objectifs de la these)
+% Voir cette phras: Instead, one or several of the parameters on which $b$ depends (the recombination rate $r$, the length of conversion tracts $L$ and the transmission bias $b_0$) necessarily vary inversely with $N_e$.
+
+
+% Favoured direction of dBGC (asymmetry deja dit)
+% As erosion occurs in the parental lineage which carries the target PRDM9 allele (\textit{i.e.} the `self' lineage), PRDM9 binds more strongly the intact `nonself' haplotype, resulting in the `self' haplotype being the donor in the gene conversion event.
+% Since a majority of hotspots in the B6xCAST hybrid is targeted by PRDM9\textsuperscript{CAST} \citep{smagulova2016evolutionary}, dBGC mainly operates in one direction: the favoured transmission of the CAST haplotype (Supplementary Figure \ref{fig:supp-correl-donor-DMC1-with-colors-per-target}). \\
+% `)
+
+
+% Pour la confiance dans b, redire que DSB est bien proche du motif (et ajouter si possible la validation avec els simulations ou on fait peu d'erreurs)
+% Hotspot centres, defined as the summits of PRDM9 ChIP-seq peaks, coincided with the positions of PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-hotspot-centres}) and most (77\%) Spo-11 ChIP-seq peak centres previously detected in B6 \citep{lange2016landscape} were located closer than 50-bp away from our PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-DSBs}). Altogether, this suggests that hotspot centres approximate accurately the genuine locations of DSB sites.
+
+% \citet{lange2016landscape} published Spo-11 ChIP-seq data on B6 mice. 141 of our hotspots overlapped a Spo-11 ChIP-seq peak and for each of them, we computed the distance between the center of the Spo-11 ChIP-seq peak and the PRDM9 binding motif we previously identified. We found that 77.3\% of these 141 peaks were located less than 50-bp away from the PRDM9 binding motif which proves that the PRDM9 binding motifs are located adjacently to genuine DSB sites.
+
+
+
+
+
+% chap10:
+% epistemologie (proprietes emergentes ou pas + toute la fin de mes notes Notes_for_discussion_personnal.txt sur microevol/macroevol et fonctionnel vs mecanismes)
+% comment la science avance (role des differents scientifiques qui ont apporte des nouvelles theories sont mieux connus que ceux qui font les decouvertes + analyse de l'evolution des recherches en evolution notamment avec apport de techniques comme genetique et ordis pour bioinfo + share knowledge gnomics.io)
+% bioinformaticien (regarder les donnees (importance sur les emthodes, en aprticulier vu que realignement et teste des choses comme filtres, jusqu'a ce que validation par des simul) + seulement des tendances, jamais reels biologiques donc faut passer par inferences — en particulier, important dans le cas des evolutionnistes, car on interprete le passe sans pouvoir le demontrer (cf Jay Gould) et ses imperfections sont utiles poour comprendre de nouvelles choses).
+
+% Dans epistemo: discuter du fait que la taille efficace de population est un concept qui est assez peu bien defini — difficile a mesurer donc les projets menes dessus sont un peu limites.
+
+
+% Annexes (erreur du jeune est d'en mettre trop)
+%% pour chap6
+% mettre les figures DMC1 (les deux — correlation par groupe de 10 plus relation asymetrie)
+% + position des switch points
+%% data availability: mettre lien vers le github pour reproduire les figure et avoir les tableaux d'entree + numero accession SRA
+%% pour chap8: mettre les autres images de l'identification du background + image des correlations sur les memes hotspots
+%% les listes de hotspots etudies
+
+% Annexe des permissions
+% La meilleure:
+% [It] is not the nature of things for any one man to make a sudden, violent discovery; science goes step by step and every man depends on the work of his predecessors. When you hear of a sudden unexpected discovery—a bolt from the blue—you can always be sure that it has grown up by the influence of one man or another, and it is the mutual influence which makes the enormous possibility of scientific advance. Scientists are not dependent on the ideas of a single man, but on the combined wisdom of thousands of men, all thinking of the same problem and each doing his little bit to add to the great structure of knowledge which is gradually being erected. 
+% — Sir Ernest Rutherford
+% Concluding remark in Lecture ii (1936) on 'Forty Years of Physics', revised and prepared for publication by J.A. Ratcliffe, collected in Needham and Pagel (eds.), Background to Modern Science: Ten Lectures at Cambridge Arranged by the History of Science Committee, (1938), 73-74. Note that the words as prepared for publication may not be verbatim as spoken in the original lecture by the then late Lord Rutherford.
+
+
+
+
+% [I]f texts are unified by a central logic of argument, then their pictorial illustrations are integral to the ensemble, not pretty little trifles included only for aesthetic or commercial value. Primates are visual animals, and (particularly in science) illustration has a language and set of conventions all its own.
+% De Stephen Jay Gould
+% de Jay Gould encore
+% God bless all the precious little examples and all their cascading implications; without these gems, these tiny acorns bearing the blueprints of oak trees, essayists would be out of business.
+% Questioning the Millennium (second edition, Harmony, 1999), p. 42
+% de Einstein 
+% When a man after long years of searching chances on a thought which discloses something of the beauty of this mysterious universe, he should not therefore be personally celebrated. He is already sufficiently paid by his experience of seeking and finding. In science, moreover, the work of the individual is so bound up with that of his scientific predecessors and contemporaries that it appears almost as an impersonal product of his generation.
+% From the story "The Progress of Science" in The Scientific Monthly edited by J. McKeen Cattell (June 1921), Vol. XII, No. 6. The story says that the comments were made at the annual meeting of the National Academy of Sciences at the National Museum in Washington on April 25, 26, and 27. Einstein's comments appear on p. 579, though the story may be paraphrasing rather than directly quoting since it says "In reply Professor Einstein in substance said" the quote above.
+% 
+% In science men have discovered an activity of the very highest value in which they are no longer, as in art, dependent for progress upon the appearance of continually greater genius, for in science the successors stand upon the shoulders of their predecessors; where one man of supreme genius has invented a method, a thousand lesser men can apply it. … In art nothing worth doing can be done without genius; in science even a very moderate capacity can contribute to a supreme achievement. 
+% — Bertrand Russell
+% Essay, 'The Place Of Science In A Liberal Education.' In Mysticism and Logic: and Other Essays (1919), 41.
+
+% It is a wrong business when the younger cultivators of science put out of sight and deprecate what their predecessors have done; but obviously that is the tendency of Huxley and his friends … It is very true that Huxley was bitter against the Bishop of Oxford, but I was not present at the debate. Perhaps the Bishop was not prudent to venture into a field where no eloquence can supersede the need for precise knowledge. The young naturalists declared themselves in favour of Darwin’s views which tendency I saw already at Leeds two years ago. I am sorry for it, for I reckon Darwin’s book to be an utterly unphilosophical one. 
+% — William Whewell
+% Letter to James D, Forbes (24 Jul 1860). Trinity College Cambridge, Whewell Manuscripts.
+
+% Very few people, including authors willing to commit to paper, ever really read primary sources–certainly not in necessary depth and contemplation, and often not at all ... When writers close themselves off to the documents of scholarship, and then rely only on seeing or asking, they become conduits and sieves rather than thinkers. When, on the other hand, you study the great works of predecessors engaged in the same struggle, you enter a dialogue with human history and the rich variety of our own intellectual traditions. You insert yourself, and your own organizing powers, into this history–and you become an active agent, not merely a ‘reporter.’ 
+% — Stephen Jay Gould
+
+% [It] is not the nature of things for any one man to make a sudden, violent discovery; science goes step by step and every man depends on the work of his predecessors. When you hear of a sudden unexpected discovery—a bolt from the blue—you can always be sure that it has grown up by the influence of one man or another, and it is the mutual influence which makes the enormous possibility of scientific advance. Scientists are not dependent on the ideas of a single man, but on the combined wisdom of thousands of men, all thinking of the same problem and each doing his little bit to add to the great structure of knowledge which is gradually being erected. 
+% — Sir Ernest Rutherford
+% Concluding remark in Lecture ii (1936) on 'Forty Years of Physics', revised and prepared for publication by J.A. Ratcliffe, collected in Needham and Pagel (eds.), Background to Modern Science: Ten Lectures at Cambridge Arranged by the History of Science Committee, (1938), 73-74. Note that the words as prepared for publication may not be verbatim as spoken in the original lecture by the then late Lord Rutherford.
+
+% It is strange that only extraordinary men make the discoveries, which later appear so easy and simple.
+% GEORG C. LICHTENBERG, 1742 TO 1799
+
+
+
+
+% REMERCIEMENTS
+% You have … been told that science grows like an organism. You have been told that, if we today see further than our predecessors, it is only because we stand on their shoulders. But this [Nobel Prize Presentation] is an occasion on which I should prefer to remember, not the giants upon whose shoulders we stood, but the friends with whom we stood arm in arm … colleagues in so much of my work. 
+% — Sir Peter B. Medawar
+% From Nobel Banquet speech (10 Dec 1960).
+
+
+
