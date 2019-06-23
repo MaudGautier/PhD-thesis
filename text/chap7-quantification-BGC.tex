@@ -18,11 +18,12 @@
 
 \paragraph{This chapter in brief —}
 
-Even if recombinational activity is known to vary by orders of magnitude across individual hotspots, the properties determining this variation are still poorly understood.
-Further progress in comprehending the basis of these fluctuations can only arise with the thorough examination of individual hotspots but, in mammals, only a handful of these have been directly characterised at high resolution.
-Here, thanks to the 18,821 events that we detected with the approach developed in Chapter~\ref{ch:5-methodology}, we identified the main factors governing the recombinational activity of individual hotspots, we precisely described recombination in over a thousand hotspots and we estimated the hidden biological parameters of recombination through an inferential approach.
-Overall, this study provides the first global picture of recombination patterns in mouse autosomal hotspots.
-
+In order to shed new light into the relationship between the intensity of GC-biased gene conversion (gBGC) and the effective population size ($N_e$), we wanted to precisely quantify the transmission bias ($b_0$) in a mammalian species with low $N_e$: mice.
+We first quantified DSB-induced biased gene conversion (dBGC) in autosomal hotspots and observed that, in our B6xCAST F1 hybrid, dBGC hitchhiked the past gBGC that had occurred in the parental lineages.
+We then controlled for this confounding effect to quantify gBGC in both COs and NCOs.
+We found that the transmission bias ($b_0$) was null for COs and very weak for multiple-marker NCOs. 
+However, single-marker NCOs showed large $b_0$.
+% suggere mecanisme OU pression de selection quand bcp de SNPs (a discuter a la fin de ce chpaitre + dans chapitre 9)
 
 % Resume
 % BGC avec Ne variable
@@ -440,33 +441,33 @@ Consequently, at this point, cancelling the the action of dBGC was absolutely cr
 		\begin{tabular}{rrrrrrr}
 
 
-			\hline
-			\textbf{Category} & \textbf{\# S} & \textbf{\# W} & \textbf{\% S} & \textbf{CI (min--max)} & \textbf{\textit{p}-val} & \textbf{$b_0$} \\
+			\toprule
+			\textbf{Category} & \textbf{\# S} & \textbf{\# W} & \textbf{\% S} & \textbf{CI (min-max)} & \textbf{\textit{p}-val} & \textbf{$b_0$} \\
 
 
-			\hline
+			\midrule
 			\textbf{\textit{Inside CTs\textsuperscript{$\star$}}}\\
 			$Rec$-$1S$                 & 5408 & 5179 & 0.5108 & 0.5012--0.5204 & 0.0267 & 0.0216 \\
 			$Rec$-$2S$                 & 2261 & 2078 & 0.5211 & 0.5061--0.5360 & 0.0057 & 0.0422 \\
 			\textbf{\textit{Total}}    & \textbf{7669} & \textbf{7257} & \textbf{0.5138} & \textbf{0.5057--0.5218} & \textbf{0.0007} & \textbf{0.0276} \\
 			\\
 			\textbf{\textit{Outside CTs\textsuperscript{$\star$}}}\\
-			$Rec$-$1S$                 & 9355 & 9433 & 0.4979 & 0.4907--0.5051 & 0.5743 & - \\
-			$Rec$-$2S$                 & 5051 & 5028 & 0.5011 & 0.4913--0.5109 & 0.8265 & - \\
+			$Rec$-$1S$                 & 9355 & 9433 & 0.4979 & 0.4907--0.5051 & 0.5743 & \textit{-} \\
+			$Rec$-$2S$                 & 5051 & 5028 & 0.5011 & 0.4913--0.5109 & 0.8265 & \textit{-} \\
 			\textbf{\textit{Total}}    & \textbf{14406} & \textbf{14461} & \textbf{0.4990} & \textbf{0.4933--0.5048} & \textbf{0.7506} & \textbf{-} \\
-			\hline
+			\bottomrule
 
 		\end{tabular}
 	\end{adjustbox}
 	\caption[Transmission of the \textit{S} alleles inside (upper board) and outside (lower board) observed conversion tracts (CTs\textsuperscript{$\star$}) after controlling for dBGC]
 	{\textbf{Transmission of the \textit{S} alleles inside (upper board) and outside (lower board) observed conversion tracts (CTs\textsuperscript{$\star$}) after controlling for dBGC.}
 		\par Controlling for dBGC was operated by subsampling B6-donor and CAST-donor fragments in individual hotspots (see main text). 
-The values reported in this table correspond to the results obtained after one round of random sampling epresentative of all sampling combinations.
-\# S: Number of \textit{S} (\textit{G} or \textit{C}) alleles in the fragments sampled. 
-\# W: Number of \textit{W} (\textit{A} or \textit{T}) alleles in the fragments sampled.
-\% S: Proportion of \textit{S} alleles in the fragments sampled ($\frac{\# S}{\# S + \# W}$).
-CI: 95\%-confidence interval (test of proportions).
-$b_0$: Transmission bias, calculated as $b_0 = 2 \times x - 1$, where $x$ is the mean frequency of a \textit{S} allele within a pool of gametes coming from a WS heterozygous context.
+		The values reported in this table correspond to the results obtained after one round of random sampling epresentative of all sampling combinations.
+		\# S\@: Number of \textit{S} (\textit{G} or \textit{C}) alleles in the fragments sampled. 
+		\# W\@: Number of \textit{W} (\textit{A} or \textit{T}) alleles in the fragments sampled.
+		\% S\@: Proportion of \textit{S} alleles in the fragments sampled ($\frac{\# S}{\# S + \# W}$).
+		CI\@: 95\%-confidence interval (test of proportions).
+		$b_0$: Transmission bias, calculated as $b_0 = 2 \times x - 1$, where $x$ is the mean frequency of a \textit{S} allele within a pool of gametes coming from a WS heterozygous context.
 	}
 \label{tab:gBGC-frequencies}
 \end{table}
@@ -488,207 +489,238 @@ We found that the transmission of \textit{S} and \textit{W} alleles indeed abode
 
 
 
-
-
-
-
 \section{Quantification of GC-biased gene conversion}
 % \subsection{Controling for dBGC to quantify gBGC}
-\subsection{Null $b$ in COs and tract extremities}
+\subsection{Null $b_0$ in COs and weak $b_0$ in multiple-marker NCOs}
+
+After controlling for dBGC, it became possible to measure the intensity of gBGC\@.
+Indeed, for both Rec-1S and Rec-2S events, the proportion of \textit{S} alleles inside CTs\textsuperscript{$\star$} ($x$) was significantly — but weakly — above 50\% (Table~\ref{tab:gBGC-frequencies}).
+The transmission bias ($b_0$) could then be calculated directly for both Rec-1S and Rec-2S as ${b_0 = 2 \times x - 1}$ \citep{nagylaki1983evolution}.
+
+Though, these estimates were not directly representative of the transmission bias in COs and NCOs, since we previously showed that, contrary to Rec-2S which exclusively comprised NCOs, Rec-1S events were composed of about 52\% of NCOs and 48\% of COs (see Chapter~\ref{ch:6-recombination-parameters}). 
+Assuming that the $b_0$ for the NCOs observed as Rec-2S events was representative of the $b_0$ for the NCOs identified as Rec-1S events, we could decompose the transmission bias as such: 
+
+\begin{equation*}
+	b_0^{Rec2S} = (b_0^{Rec1S} \times 0.52) + (b_0^{CO} \times 0.48)
+\end{equation*}
+
+Using the $b_0$ values for Rec-1S and Rec-2S reported in Table~\ref{tab:gBGC-frequencies}, the latter formula resulted in $b_0^{CO}$ equalling 0. 
+Therefore, COs do not contribute to gBGC in mice.
+
+As for NCOs, their contribution to gBGC could be directly extracted from that measured on Rec-2S events: $b_0^{NCO} = 0.0422$, i.e.\ a 52.11\% transmission of \textit{S} alleles.\\
+
+All in all thus, the transmission bias was null (or too weak to be detectable) for COs and extremely weak — albeit significant — for the NCOs we detected, i.e.\ those whose CT overlapped at least two markers.
+Nevertheless, since the CTs of NCOs are extremely short (36 bp in average, see Chapter~\ref{ch:6-recombination-parameters}), a significant proportion of them should overlap only 1 marker.
+Thus, we aimed at quantifying the transmission bias in single-marker NCOs, this time through an indirect approach that I describe in the following subsection.
+
+\subsection{Strong $b_0$ in single-marker NCOs}
+
+Briefly, estimating the contribution of single-marker NCO (NCO-1) events consisted of three main steps.
+First, we adapted the procedure developed in Chapter~\ref{ch:5-methodology} to fish out all events which were likely to be NCO-1 events (pot-NCO-1, for ‘potential NCO-1 events’).
+Second, since the large majority of them (90.0\%, Table~\ref{tab:NCO-1-FP-rate}) were false positives (FPs) and most of these FPs (66.7\%) arose from sequencing errors, we measured the sequencing error rate directly in our sequencing data to estimate, among the pot-NCO-1 events, the relative proportion of FPs displaying W\textrightarrow{} S and S\textrightarrow{} W erroneous conversion events.
+With this, we could finally deconvolute the fraction of the observed ratio of $\frac{SW}{WS+SW}$ due to FPs and to genuine NCO-1 events, and thus, extrapolate the transmission bias on single-marker NCOs.
+
+I detail these three steps in the rest of this subsection.
 
 
-% From then on, gBGC could be quantified in the CTs\textsuperscript{$\star$} of the recombination events detected.
+% - 1) on extrait les NCO-1 (qui ont de nombreux FP principalement du a erreur de seq)
+% - 2) on estime le taux de WS du a erreur de sequencage seulement
+% - 3) on calcule la difference avec ce qui est observe pour extrapoler le BGC dans les NCO-1
 
-On the other hand, inside CTs\textsuperscript{$\star$}, the proportion of \textit{S} alleles found in the pool of gametes is significantly above the 0.5 null hypothesis of a Mendelian transmission, for both Rec-1S and Rec-2S ($p-value < 0.05$) (Table \ref{tab:gBGC-values}).
+\subsubsection{Extraction of potential single-marker NCOs (pot-NCO-1 events)}
+
+\begin{table}[b!]
+	\centering
+	\begin{adjustbox}{width = 1\textwidth}
+		\begin{tabular}{rrrrrrrr}
+			\toprule
+			\multicolumn{3}{r}{} & \multicolumn{2}{c}{\textbf{Filter off}} & & \multicolumn{2}{c}{\textbf{Filter on}} \\
+			\cmidrule{4-5} 
+			\cmidrule{7-8} 
+			\textbf{Target} & \textbf{Nb of} & \textbf{Nb of} & \textbf{Nb of} & \textbf{Event rate} & & \textbf{Nb of} & \textbf{Event rate} \\
+
+			\textbf{category} & \textbf{targets} & \textbf{fragments} & \textbf{events} & \textbf{($\times$ 10\textsuperscript{-6})} & & \textbf{events} & \textbf{($\times$ 10\textsuperscript{-6})} \\
+
+			\midrule
+			Hotspots & 1,018 & 228,984,512 & 243,390 & 1062.9 & & 147,792 & 645.4 \\
+			Controls & 500 & 106,850,906 & 110,615 & 1035.2 & & 62,074 & 580.9 \\
+			\midrule
+			\multicolumn{1}{r}{\textbf{FP rate}} & \multicolumn{4}{r}{\textbf{97.4 \%}} & & \multicolumn{2}{r}{\textbf{90.0 \%}} \\
+			\bottomrule
+		\end{tabular}
+	\end{adjustbox}
+	\caption[Number of pot-NCO-1 events detected in hotspot and control targets with and without the sequencing error filter]
+	{\textbf{Number of pot-NCO-1 events detected in hotspot and control targets with and without the sequencing error filter.}
+        \par Pot-NCO-1 events were detected with or without a sequencing error filter (see main text).
+        All fragments or events overlapping at least 1 bp with a given target are counted in this table.
+        The event rate corresponds to the ratio of candidate recombination events over the total number of fragments.
+        The maximum false positive (FP) rate is the ratio of the event rate in control targets over that in hotspots.
+    }
+\label{tab:NCO-1-FP-rate}
+\end{table}
 
 
-Altogether, these findings prove (1) that our per-hotspot equalisation procedure allows to efficiently decouple dBGC and gBGC effects by controlling for the dBGC effect and (2) that a significant, albeit weak, transmission bias favouring \textit{S} alleles exists in mice. 
 
-\subsection{Weak $b$ in multiple-marker NCOs}
-\subsection{Strong $b$ in single-marker NCOs}
+The procedure we implemented in Chapter~\ref{ch:5-methodology} to identify recombination events discarded (1) genotyping errors coming from alignment defects by mapping the reads on both the B6 and the CAST reference genomes and (2) genotyping errors coming from sequencing miscalls by requiring a minimum of 2 markers.
+% to confirm the genotype. 
+To uncover pot-NCO-1 events, we removed this second filter and replaced it with an alternative, less efficient filter to to limit the number of sequencing miscalls: we checked that the allele supporting the genotype call with the mapping onto the B6 genome was identical to that based on the mapping onto the CAST genome.
+When setting this filter on, the NCO-1 FP error rate was lower than without the filter, but remained as high as 90.0\% (Table~\ref{tab:NCO-1-FP-rate}), which meant that as few as 14,766 of the pot-NCO-1 events detected within hotspots corresponded to genuine NCO-1 events.
+% The NCO-1 FP error rate was as high as 90.0\% when this second filter whereas, without it, the error rate was even higher (Table~\ref{tab:NCO-1-FP-rate}).
+
+
+
+\subsubsection{Estimation of erroneous W\textrightarrow{} S and S\textrightarrow{} W conversion events}
+
+Quantifying gBGC comes back to measuring the $\frac{WS}{WS+SW}$ ratio.
+However, since the large majority of pot-NCO-1 events corresponded to FPs, we had to distinguish the (potential) contribution of FPs to this ratio from that of genuine NCO-1 events.
+In particular, this ratio may depart from the expected 50\% ratio if (1) a non-negligible proportion of FPs arose from sequencing miscalls and (2) W\textrightarrow{} S and S\textrightarrow{} W sequencing errors appeared at different frequencies.\\
+
+% \paragraph{Proportion of FPs due to sequencing errors\\}
+First, we thus wanted to quantify the proportion of FPs due to sequencing miscalls.
+To do this, we estimated the sequencing error rate directly in our sequencing data by monitoring the apparition of \textit{de novo} variants:
+we assumed that, outside the polymorphic sites identified by variant-calling, any base call that differed from the nucleotide of the reference genome was a sequencing error and counted them to compute the conditional frequency matrix of sequencing errors\footnote{Matrix $M$ was computed based on the analysis of one chromosome (chromosome 10) for all of our 18 samples individually (because the sequencing errors may vary between the biological samples and sequencing runs). This matrix gives the probability of each erroneous base call, given the genuine nucleotide.} ($M$):
+
+\begin{equation*}
+M = \begin{bmatrix}
+\Pr( A\rightarrow A \mid A) & \Pr( A\rightarrow C \mid A) & \Pr( A\rightarrow G \mid A) & \Pr( A\rightarrow T \mid A) \\
+\Pr( C\rightarrow A \mid C) & \Pr( C\rightarrow C \mid C) & \Pr( C\rightarrow G \mid C) & \Pr( C\rightarrow T \mid C) \\
+\Pr( G\rightarrow A \mid G) & \Pr( G\rightarrow C \mid G) & \Pr( G\rightarrow G \mid G) & \Pr( G\rightarrow T \mid G) \\
+\Pr( T\rightarrow A \mid T) & \Pr( T\rightarrow C \mid T) & \Pr( T\rightarrow G \mid T) & \Pr( T\rightarrow T \mid T) 
+\end{bmatrix}
+\end{equation*}
+
+
+
+
+\newpage
+
+
+$\forall (i,j) \in \{A, C, G, T\}^2$, the number of NCO-1 FPs expected due to sequencing errors involving a genuine base $i$ mistakenly called as a $j$ base ($e_{i\rightarrow j}$) simply equalled the product of the number of central markers (i.e.\ markers \textit{not} located at the extremity of fragments) that were genuinely $i$ in $ij$ polymorphic sites ($g_{i}^{ij}$) by the conditional probability that a genuine $i$ would mistakenly be called a $j$ ($\Pr( i\rightarrow j \mid i )$):
+
+\begin{equation} \label{eq:nb-errors}
+	e_{i\rightarrow j} = g_{i}^{ij} \times \Pr( i\rightarrow j \mid i )
+\end{equation}
+
+
+$g_{i}^{ij}$ was not directly accessible from the data, because we could not know which base calls were correctly sequenced.
+Though, this number was linked to the number of central markers containing an $i$ allele and involved in a polymorphic site $ij$ ($n_{i}^{ij}$) through the following equation:
+
+\begin{equation} \label{eq:genuine-to-called}
+	n_{i}^{ig} = g_{i}^{ij} \times ( 1 - \Pr( i\rightarrow j \mid i ) ) + g_{j}^{ij} \times \Pr( j\rightarrow i \mid j )
+\end{equation}
+
+
+When we computed the $M$ matrix, we found that the frequency of sequencing errors was very low ($\simeq 10^{-3}$).
+Thus, to approximate $g_{i}^{ij}$, we used the simplifying assumption that the frequency of wrong calls were close to zero and that of good calls close to 1:
+
+\begin{subequations} 
+	\begin{align}
+		\forall (i,j) \in \{A, C, G, T\}^2 \; \backslash \: i \neq j,&\Pr( i\rightarrow j \mid i ) \simeq 0,\label{eq:assumption-low-freqs}\\
+		\forall i \in \{A, C, G, T\},&\Pr( i\rightarrow i \mid i ) \simeq 1
+	\end{align}
+\end{subequations}
+
+
+From equation~\ref{eq:assumption-low-freqs}, equation~\ref{eq:genuine-to-called} simplified to:
+
+\begin{equation} \label{eq:genuine-to-called-simplified}
+	n_{i}^{ij} \simeq g_{i}^{ij}
+\end{equation}
+
+And, by incorporating equation~\ref{eq:genuine-to-called-simplified} into equation~\ref{eq:nb-errors}, we had:
+
+\begin{equation*} \label{eq:nb-errors-with-only-known-parameters}
+	e_{i\rightarrow j} = n_{i}^{ij} \times \Pr( i\rightarrow j \mid i )
+\end{equation*}
+
+
+Finally, the total number of FPs that were expected due to sequencing errors ($E$) was the total sum of each type of sequencing errors: 
+
+\begin{equation*} \label{eq:sum-all-NCOs-expected}
+	E = \underset{i \neq j} {\sum_{(i, j) \in \{A, C, G, T\}^2}} e_{i\rightarrow j}
+\end{equation*}
+
+
+
+
+This allowed us to predict that, among the total 287,577,349 fragments overlapping 3 markers or more, 231,905 were expected to be discovered as NCO-1 FPs due to sequencing errors only.
+This represented 66.7\% of the 347,652\footnote{The sequencing error estimate was calculated upon all sequenced fragments, i.e.\ before setting the sequencing error filter, and thus had to be compared to the total number of NCO-1 FPs obtained without the filter (Table~\ref{tab:NCO-1-FP-rate}).} NCO-1 FPs that we found in pot-NCO-1 events (110,615 in control regions + an estimate of 237,037 in hotspots, Table~\ref{tab:NCO-1-FP-rate}).
+
+We further evaluated the imprecision on this percentage by calculating, for each sample individually\footnote{With the exception of the four samples which were lowly sequenced}, the ratio between the latter number of FPs expected due to sequencing errors in the sample and the total number of fragments in the sample. 
+We sequentially applied the multiplier of each sample to the total number of fragments and finally determined that the proportion of FPs due to sequencing errors capped between 60 and 78\% of all FPs.\\
+
+
+Therefore, the largest part (66.7\%, CI $= [60\%; 78\%$]) of FPs arose from sequencing errors.
+The next step thus consisted in estimating the $\frac{WS}{WS+SW}$ ratio expected because of these sequencing errors.
+To do this, we simply computed the total number of FPs containing an erroneous W\textrightarrow{} S base call ($E_{W\rightarrow S}$) and the number containing an erroneousS\textrightarrow{} W base call ($E_{S\rightarrow W}$) as follows:
+
+\begin{align}
+        E_{W\rightarrow S}&= e_{A\rightarrow C} + e_{A\rightarrow G} + e_{T\rightarrow C} + e_{T\rightarrow G}, \\
+        E_{S\rightarrow W}&= e_{C\rightarrow A} + e_{C\rightarrow T} + e_{G\rightarrow A} + e_{G\rightarrow T}
+\end{align}
+
+All in all, we found that $E_{S\rightarrow W}$ was greater than $E_{W\rightarrow S}$, i.e.\ S bases were more oftenly mistakenly sequenced as W bases than the other way round.
+More precisely, we found that the $\frac{WS}{WS+SW}$ ratio expected with such FPs (i.e.\ $\frac{E_{W\rightarrow S}}{E_{W\rightarrow S} + E_{S\rightarrow W}}$) equalled 0.39.
+
+We note that this estimate was slightly lower than the $\frac{WS}{WS+SW}$ observed in control regions (0.31), possibly because the non-negligible portion (33.3\%) of FPs that did not originate from these sequencing errors may somehow also bias the ratio.
+
+
+
+
+\subsubsection{Extrapolation of the transmission bias for single-marker NCOs}
+
+In spite of the high FP error rate, we found that the transmission of S alleles was significantly higher in hotspot regions (0.356, CI\textsubscript{95\%} $=[0.3532, 0.3594]$) than in control regions (0.317, CI\textsubscript{95\%} $=[0.3129,0.3220]$). 
+Assuming that the 133,026 FPs found in hotspot regions contributed to the $\frac{SW}{WS+SW}$ ratio in the same manner as those found in control regions, and that the contribution of the remaining 14,766 genuine NCO-1 events reflected the transmission bias of NCO-1 events, we could deconvolute both phenomena as such:
+
+\begin{equation*}
+	n_{hotspots}^{NCO_1 + FP} \times r_{hotspots}^{NCO_1 + FP}  = n_{hotspots}^{NCO_1} \times r_{hotspots}^{NCO_1} + n_{hotspots}^{FP} \times r_{control}^{FP}
+\end{equation*}
+where $n_{j}^{i}$ corresponds to the counts of events $i$ in regions $j$, and $r_{j}^{i}$ to the observed ratio of $\frac{SW}{WS+SW}$ due to events $i$ in regions $j$.
+
+
+Using this formula, we predicted that $r_{hotspots}^{NCO_1}$ equalled 0.70 (i.e.\ that $b_0^{NCO_1}$ equalled 0.40). 
+This estimate was much higher than what we found for both Rec-1S and Rec-2S, but, interestingly, it was strikingly close to what was previously found for humans \citep{halldorsson2016rate} and concorded with what has recently been found in mice by \citet{li2018highresolution}.\\
+
+
+Altogether thus, we found that the transmission bias differed tremendously between multiple-marker NCOs (NCO-2+) for which $b_0$ was extremely weak, and single-marker NCOs (NCO-1) for which $b_0$ was as high as that of humans.
+Thus, the overall contribution of NCOs to gBGC depends on the relative proportion of NCO-1 and NCO-2+ events, and these must thus be estimated to finally quantify gBGC\@.
+
+
+
+
+
+
+
+
+\subsection{Global estimation of $b_0$ for NCOs}
+
+\begin{figure}[b!]
+	\centering
+	\includegraphics[width = 1\textwidth]{figures/chap7/prop_NCO1_according_to_divergence_real_mutational_process.eps}
+	\caption[Relationship between the proportion of NCO CT markers involved in NCO-1 events and marker density]
+	{\textbf{Relationship between the proportion of NCO CT markers involved in NCO-1 events and marker density.}
+		\par We performed simulations to estimate the proportion of NCO-2+ and NCO-1 events given marker density, by distributing a given number of markers (x-axis) along each hotpot and counting the proportion of NCO-2+ and NCO-1 events, i.e.\ the number of NCO events whose CT overlapped at least two or strictly one marker, respectively.
+	}
+\label{fig:density-NCO}
+\end{figure}
+
+
+
+To estimate the overall contribution of NCOs to gBGC, we deconvoluted $b_0^{NCO}$ as the sum of the intensity of gene conversion bias in NCO-1 ($b_{0}^{NCO_{1}}$) and NCO-2+ ($b_{0}^{NCO_{2+}}$) events, weighted by the chance for a given NCO CT marker to be involved in a NCO-1 ($f^{NCO_{1}}$) or in a NCO-2+ ($f^{NCO_{2+}}$) event: 
+\begin{equation*} 
+	b_{0}^{NCO} = b_{0}^{NCO_{1}} \times f^{NCO_{1}} + b_{0}^{NCO_{2+}} \times f^{NCO_{2+}} 
+\end{equation*}
+
+Though, the relative proportion of NCO-2+ events increases with marker density (Figure~\ref{fig:density-NCO}), and our experimental design required a high level of heterozygosity (see Chapter~\ref{ch:5-methodology}), not representative of the real heterozygosity in mouse populations.
+However, other studies have estimated the genome-wide polymorphism in wild \textit{Mus musculus domesticus} mice: using a 95\% sensitivity for SNP discovery, it was estimated to be around 0.47\% \citep{davies2015factors}, a result similar to the 0.55\% value previously found on a subset of the genome \citep{frazer2007sequencebased}.
+
+With such SNP density, we would expect 74.75\% of NCO CT markers to come from NCO-1 events (representing 86.23\% of the NCOs overlapping at least one marker) and the remaining 25.25\% from NCO-2+ events (representing 13.77\% of the NCOs overlapping at least one marker) (Figure~\ref{fig:density-NCO}), which would result in an overall $b_0^{NCO}$ of 0.310.
+
+
+
+
+
 
 
 \textbf{NOTES — voir avec Laurent comment quantifier le dBGC sur les hotspots, en tenant compte de l'erosion?}
-
-% \subsection{Low intensity of gBGC in NCOs with long CTs}
-% \subsection{Potential NCOs with 1 marker (pot-NCO-1)}
-% \subsection{Estimation of gBGC in pot-NCO-1 discoveries}
-Si possible, ajouter les exploratons sur le dernier marker du tract: pas d'effet
-% + mettre les informations sur le fait que chez l'humain, on voit aussi la meme chose (NCO 1 ont plus forts BGC chez l'Homme) — ou plutot a mettre dans la discussion?
-
-% clasification des hotspots cibles par B6 ou CAST — motifs + validation
-% population structuree hitchhinking (et quantification du dBGC)
-% quantification du BGC (g et d)
-% + qqpart le fait que BGC regarde sur les bouts de tracts et rien de vu.
-% + extraction des NCO1 pour mesurer gBGC
-% Furthermore, the dBGC coefficent ($d$) for each hotspot can directly be extrapolated from Figure \ref{fig:correl-donor-DMC1}. Indeed, $d$ can be estimated based on the mean frequency of the \textit{CAST} allele in the pool of gametes ($x$) (\textit{i.e.} the observed proportion of CAST-donor fragments) through the following relationship: $x = \frac{1}{2} \times (1 + d)$ \citep{nagylaki1983evolutionA}.
-% As the observed per-hotspot proportions of CAST-donor fragments span the whole spectrum of values (from 0\% to 100\%), the dBGC coefficient also spans its whole spectrum across hotspots (from -1 to 1). In particular, hotspots that were most eroded in one parental lineage are those for which the absolute dBGC coefficient is the greatest, while hotspots displaying a quasi-null dBGC coefficient correspond to symmetric hotspots (\textit{i.e.} hotspots where both homologues are bound by PRDM9 with equal affinity).
-%
-% Hotspot centres, defined as the summits of PRDM9 ChIP-seq peaks, coincided with the positions of PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-hotspot-centres}) and most (77\%) Spo-11 ChIP-seq peak centres previously detected in B6 \citep{lange2016landscape} were located closer than 50-bp away from our PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-DSBs}). Altogether, this suggests that hotspot centres approximate accurately the genuine locations of DSB sites.
-
-
-
-
-
-
-
-
-
-%OK % FIN CHAP 6
-%OK % Page de titre
-%OK % CHAP 7: au moins motifs+ hitchhinking
-%OK % ce soir: abstract en francais.
-% demain: fin chap 7 + chap8 (au moins design + adaptation methode)
-% Samedi: fin chap 8 + chap9 en entier
-% Dimanche: chap10 (au moins 1 section) + conclusion + preambule
-% Lundi: fin chapitre 10
-% Mardi + mercredi + jeudi: chap1 section 3
-% Vendredi + dimanche : figures sur Inkscape
-% Lundi + mardi: resume etendu + abbreviations + definitions + verif les references
-% Mercredi + Jeudi: relecture totale.
-% Vendredi: remerciements.
-% + Preparation de SMBE
-
-% \textbf{NOTE a Laurent: Je me demande s'il est pertinent de comparer ces deux mesures car, dans le cas de l'ABC, on extrapole le taux de recombinaison reel (i.e.\ nb de COs en cM/Mb génomique) alors que dans le cas des fragments informatifs, on obtient un taux de COs en cM/Mb séquencée.}
-
-
-
-
-
-
-% chap7:
-% clasification des hotspots cibles par B6 ou CAST — motifs + validation
-% population structuree hitchhinking (et quantification du dBGC)
-% quantification du BGC (g et d)
-% + qqpart le fait que BGC regarde sur les bouts de tracts et rien de vu.
-% + extraction des NCO1 pour mesurer gBGC
-% Furthermore, the dBGC coefficent ($d$) for each hotspot can directly be extrapolated from Figure \ref{fig:correl-donor-DMC1}. Indeed, $d$ can be estimated based on the mean frequency of the \textit{CAST} allele in the pool of gametes ($x$) (\textit{i.e.} the observed proportion of CAST-donor fragments) through the following relationship: $x = \frac{1}{2} \times (1 + d)$ \citep{nagylaki1983evolutionA}.
-% As the observed per-hotspot proportions of CAST-donor fragments span the whole spectrum of values (from 0\% to 100\%), the dBGC coefficient also spans its whole spectrum across hotspots (from -1 to 1). In particular, hotspots that were most eroded in one parental lineage are those for which the absolute dBGC coefficient is the greatest, while hotspots displaying a quasi-null dBGC coefficient correspond to symmetric hotspots (\textit{i.e.} hotspots where both homologues are bound by PRDM9 with equal affinity).
-%
-% Hotspot centres, defined as the summits of PRDM9 ChIP-seq peaks, coincided with the positions of PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-hotspot-centres}) and most (77\%) Spo-11 ChIP-seq peak centres previously detected in B6 \citep{lange2016landscape} were located closer than 50-bp away from our PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-DSBs}). Altogether, this suggests that hotspot centres approximate accurately the genuine locations of DSB sites.
-
-%
-% chap8:
-% design experimental avec l'introgression (schema croisement, selection des hotspots, identification du background genetique des F2)
-% adaptation de la methode + ABC ()
-% premiers resultats sur la recombinaison (taux de recombinaison variables dus a reelle difference (inexpliquee), plus longs COs, 
-
-% Design experimental (schema croisement avec introgression, selection des hotspots + design baits et sequencing + infos sur mapping etc, expected background)
-% Detection d'evenements quand F2 (identification du background, validation via simulations de Laurent, adaptation du pipeline de genotypage de chapitre 5 i.e.\ juste faire le truc sur les hotspots heterozygotes)
-% Resultats (taux de recombinaison variables dus a reelle difference (inexpliquee donc besoin de sequencer plus), ABC qui donne des resultats stables entre samples malgre les differences de recombination rates, ABC donne COs plus longs — possible plus longs que precedent projet car on analyse sur 5kb au lieu de 3)
-
-
-
-% chap9:
-% methode (powerful et adaptable a d'autres etudes de la recombinaison + mais limite majeure de detectabilite, en particulier, on rate les NCO1 qui semblent cruciaux pour l'etude du BGC (seulement mesure indirecte) + qqch en lien avec chap8? ou rare events a chercher change completement la donne avec l'utilisation des outils: tous les biais qui peuvent exister ou les imperfections deviennent critiques. e.g. misalignments par des INDELs, les erreurs de sequencage peu nombreuses mais trop elevees quand meme, error rate degenotypage…)
-% recombinants et dBGC (hotspot asymmetry et favoured direction dBGC + dBGC hitchhiking chez populations structurees + parametres identifies proches de ce que vu chez la souris et si on compare avec l'humain on trouve que CO/NCO de 1/10) + etude recombinaison a partir des mutants?
-% gBGC (confidence b + comparaison CO/NCO + comparaison humain/souris avec possibilite que evolution de la machinerie molec de formation BGC et transition epistemologie) ou plutot relation avec homme MALE et potentiellement des differences entre les sexes.
-% Confidence b
-% pour NCO
-% $R^2 = 0.5630626$; \textit{p}-val $< 2.2 \times 10^{-16}$
-% pour CO
-% $R^2 = 0.4183843$; \textit{p}-val $< 2.2 \times 10^{-16}$
-
-% (et dans la conclusion aussi) il faudra bcp discuter du fait que les parametres r l et b0 varient inversement avec b. (pour repondre a la question dans les objectifs de la these)
-% Voir cette phras: Instead, one or several of the parameters on which $b$ depends (the recombination rate $r$, the length of conversion tracts $L$ and the transmission bias $b_0$) necessarily vary inversely with $N_e$.
-% Discuter aussi de la figure 7.4 (GC-profiles): B6 a plus de GC car a ete plus erode car plus vieux et/ou vu que parmi les hotspots selectionnes, on n'a moins de cibles par B6, donc ceux selectionnes sont les plus forts. + on observe une inversion hors des tracts. Du a qqch?
-
-
-
-% Favoured direction of dBGC (asymmetry deja dit)
-% As erosion occurs in the parental lineage which carries the target PRDM9 allele (\textit{i.e.} the `self' lineage), PRDM9 binds more strongly the intact `nonself' haplotype, resulting in the `self' haplotype being the donor in the gene conversion event.
-% Since a majority of hotspots in the B6xCAST hybrid is targeted by PRDM9\textsuperscript{CAST} \citep{smagulova2016evolutionary}, dBGC mainly operates in one direction: the favoured transmission of the CAST haplotype (Supplementary Figure \ref{fig:supp-correl-donor-DMC1-with-colors-per-target}). \\
-% `)
-
-
-% Pour la confiance dans b, redire que DSB est bien proche du motif (et ajouter si possible la validation avec els simulations ou on fait peu d'erreurs)
-% Hotspot centres, defined as the summits of PRDM9 ChIP-seq peaks, coincided with the positions of PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-hotspot-centres}) and most (77\%) Spo-11 ChIP-seq peak centres previously detected in B6 \citep{lange2016landscape} were located closer than 50-bp away from our PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-DSBs}). Altogether, this suggests that hotspot centres approximate accurately the genuine locations of DSB sites.
-
-% \citet{lange2016landscape} published Spo-11 ChIP-seq data on B6 mice. 141 of our hotspots overlapped a Spo-11 ChIP-seq peak and for each of them, we computed the distance between the center of the Spo-11 ChIP-seq peak and the PRDM9 binding motif we previously identified. We found that 77.3\% of these 141 peaks were located less than 50-bp away from the PRDM9 binding motif which proves that the PRDM9 binding motifs are located adjacently to genuine DSB sites.
-
-
-
-% Pour la partie extension du hitchhiking aux pop structurees
-% Dans chapitre 9
-% Redire le hitchhiking et etendre aux populations structurees
-%
-% Indeed, in the B6 lineage, PRDM9\textsuperscript{B6}-targeted hotspots underwent gBGC in the past, thus leading to a GC-enrichment of the B6 haplotype. Conversely, in the CAST lineage, PRDM9\textsuperscript{CAST}-targeted hotspots underwent gBGC in the past, thus leading to a GC-enrichment of the CAST haplotype.
-% In parallel, the targeted hotspots erode in the `self' lineage, as predicted by the hotspot conversion paradox \citep{boulton1997hotspot}.
-%
-% Consequently, when the two lineages are crossed into a hybrid, each hotspot is eroded in the locally GC-enriched haplotype and the DSB initiates most of the times on the other, non-eroded and GC-poorer haplotype. This leads the eroded, GC-richer haplotype to be the donor sequence and \textit{GC} alleles to be overtransmitted. \\
-%
-% Thus, the observed favored transmission of \textit{S} alleles does not only reflect instant gBGC (gBGC occurring at one generation) but also past gBGC (that occurred in the lineages, prior to the hybrid cross) whose effect is hitchhiked by dBGC (favored transmission of the non-eroded haplotype). Therefore, quantifying gBGC requires to decouple these two phenomena. To cancel the action of dBGC and thus get a direct measure of the intensity of gBGC ($b$), we equalised the number of B6- and CAST-donor fragments in each hotspot.
-%
-% Puis, ca transitionne sur la mesure du gBGC qu'on discute a la section III
-
-
-
-
-
-
-
-
-
-
-% chap10:
-% epistemologie (proprietes emergentes ou pas + toute la fin de mes notes Notes_for_discussion_personnal.txt sur microevol/macroevol et fonctionnel vs mecanismes)
-% comment la science avance (role des differents scientifiques qui ont apporte des nouvelles theories sont mieux connus que ceux qui font les decouvertes + analyse de l'evolution des recherches en evolution notamment avec apport de techniques comme genetique et ordis pour bioinfo + share knowledge gnomics.io)
-% bioinformaticien (regarder les donnees (importance sur les emthodes, en aprticulier vu que realignement et teste des choses comme filtres, jusqu'a ce que validation par des simul) + seulement des tendances, jamais reels biologiques donc faut passer par inferences — en particulier, important dans le cas des evolutionnistes, car on interprete le passe sans pouvoir le demontrer (cf Jay Gould) et ses imperfections sont utiles poour comprendre de nouvelles choses).
-
-% Dans epistemo: discuter du fait que la taille efficace de population est un concept qui est assez peu bien defini — difficile a mesurer donc les projets menes dessus sont un peu limites.
-
-
-% Annexes (erreur du jeune est d'en mettre trop)
-%% pour chap6
-% mettre les figures DMC1 (les deux — correlation par groupe de 10 plus relation asymetrie)
-% + position des switch points
-%% data availability: mettre lien vers le github pour reproduire les figure et avoir les tableaux d'entree + numero accession SRA
-%% pour chap8: mettre les autres images de l'identification du background + image des correlations sur les memes hotspots
-%% les listes de hotspots etudies
-
-% Annexe des permissions
-% La meilleure:
-% [It] is not the nature of things for any one man to make a sudden, violent discovery; science goes step by step and every man depends on the work of his predecessors. When you hear of a sudden unexpected discovery—a bolt from the blue—you can always be sure that it has grown up by the influence of one man or another, and it is the mutual influence which makes the enormous possibility of scientific advance. Scientists are not dependent on the ideas of a single man, but on the combined wisdom of thousands of men, all thinking of the same problem and each doing his little bit to add to the great structure of knowledge which is gradually being erected. 
-% — Sir Ernest Rutherford
-% Concluding remark in Lecture ii (1936) on 'Forty Years of Physics', revised and prepared for publication by J.A. Ratcliffe, collected in Needham and Pagel (eds.), Background to Modern Science: Ten Lectures at Cambridge Arranged by the History of Science Committee, (1938), 73-74. Note that the words as prepared for publication may not be verbatim as spoken in the original lecture by the then late Lord Rutherford.
-
-
-
-
-% [I]f texts are unified by a central logic of argument, then their pictorial illustrations are integral to the ensemble, not pretty little trifles included only for aesthetic or commercial value. Primates are visual animals, and (particularly in science) illustration has a language and set of conventions all its own.
-% De Stephen Jay Gould
-% de Jay Gould encore
-% God bless all the precious little examples and all their cascading implications; without these gems, these tiny acorns bearing the blueprints of oak trees, essayists would be out of business.
-% Questioning the Millennium (second edition, Harmony, 1999), p. 42
-% de Einstein 
-% When a man after long years of searching chances on a thought which discloses something of the beauty of this mysterious universe, he should not therefore be personally celebrated. He is already sufficiently paid by his experience of seeking and finding. In science, moreover, the work of the individual is so bound up with that of his scientific predecessors and contemporaries that it appears almost as an impersonal product of his generation.
-% From the story "The Progress of Science" in The Scientific Monthly edited by J. McKeen Cattell (June 1921), Vol. XII, No. 6. The story says that the comments were made at the annual meeting of the National Academy of Sciences at the National Museum in Washington on April 25, 26, and 27. Einstein's comments appear on p. 579, though the story may be paraphrasing rather than directly quoting since it says "In reply Professor Einstein in substance said" the quote above.
-% 
-% In science men have discovered an activity of the very highest value in which they are no longer, as in art, dependent for progress upon the appearance of continually greater genius, for in science the successors stand upon the shoulders of their predecessors; where one man of supreme genius has invented a method, a thousand lesser men can apply it. … In art nothing worth doing can be done without genius; in science even a very moderate capacity can contribute to a supreme achievement. 
-% — Bertrand Russell
-% Essay, 'The Place Of Science In A Liberal Education.' In Mysticism and Logic: and Other Essays (1919), 41.
-
-% It is a wrong business when the younger cultivators of science put out of sight and deprecate what their predecessors have done; but obviously that is the tendency of Huxley and his friends … It is very true that Huxley was bitter against the Bishop of Oxford, but I was not present at the debate. Perhaps the Bishop was not prudent to venture into a field where no eloquence can supersede the need for precise knowledge. The young naturalists declared themselves in favour of Darwin’s views which tendency I saw already at Leeds two years ago. I am sorry for it, for I reckon Darwin’s book to be an utterly unphilosophical one. 
-% — William Whewell
-% Letter to James D, Forbes (24 Jul 1860). Trinity College Cambridge, Whewell Manuscripts.
-
-% Very few people, including authors willing to commit to paper, ever really read primary sources–certainly not in necessary depth and contemplation, and often not at all ... When writers close themselves off to the documents of scholarship, and then rely only on seeing or asking, they become conduits and sieves rather than thinkers. When, on the other hand, you study the great works of predecessors engaged in the same struggle, you enter a dialogue with human history and the rich variety of our own intellectual traditions. You insert yourself, and your own organizing powers, into this history–and you become an active agent, not merely a ‘reporter.’ 
-% — Stephen Jay Gould
-
-% [It] is not the nature of things for any one man to make a sudden, violent discovery; science goes step by step and every man depends on the work of his predecessors. When you hear of a sudden unexpected discovery—a bolt from the blue—you can always be sure that it has grown up by the influence of one man or another, and it is the mutual influence which makes the enormous possibility of scientific advance. Scientists are not dependent on the ideas of a single man, but on the combined wisdom of thousands of men, all thinking of the same problem and each doing his little bit to add to the great structure of knowledge which is gradually being erected. 
-% — Sir Ernest Rutherford
-% Concluding remark in Lecture ii (1936) on 'Forty Years of Physics', revised and prepared for publication by J.A. Ratcliffe, collected in Needham and Pagel (eds.), Background to Modern Science: Ten Lectures at Cambridge Arranged by the History of Science Committee, (1938), 73-74. Note that the words as prepared for publication may not be verbatim as spoken in the original lecture by the then late Lord Rutherford.
-
-% It is strange that only extraordinary men make the discoveries, which later appear so easy and simple.
-% GEORG C. LICHTENBERG, 1742 TO 1799
-
-
-
-
-% REMERCIEMENTS
-% You have … been told that science grows like an organism. You have been told that, if we today see further than our predecessors, it is only because we stand on their shoulders. But this [Nobel Prize Presentation] is an occasion on which I should prefer to remember, not the giants upon whose shoulders we stood, but the friends with whom we stood arm in arm … colleagues in so much of my work. 
-% — Sir Peter B. Medawar
-% From Nobel Banquet speech (10 Dec 1960).
-
-
 
