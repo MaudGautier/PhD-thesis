@@ -1,0 +1,210 @@
+\begin{savequote}[8cm]
+	
+	‘In relation to any experiment we may speak of this hypothesis as the “null hypothesis,” and it should be noted that the null hypothesis is never proved or established, but is possibly disproved, in the course of experimentation. Every experiment may be said to exist only in order to give the facts a chance of disproving the null hypothesis.’
+	
+	\qauthor{--- Ronald Fisher, \textit{\usebibentry{fisher1935design}{title}} \citeyearpar{fisher1935design} }
+	
+\end{savequote}
+
+\chapter{\label{ch:7-quantification-BGC}Quantification of biased gene conversion in mouse hotspots}
+% \chapter{\label{ch:7-quantification-BGC}Quantification of biased gene conversion in mouse F1 hybrids}
+% \chapter{\label{ch:7-quantification-BGC}Quantification of DSB-induced and GC-biased gene conversion}
+%\otherpagedecoration
+
+
+\minitoc{}
+
+{\small{} \itshape{}
+
+\paragraph{This chapter in brief —}
+
+
+}
+
+\newpage
+
+\section{}
+\subsection{}
+\subsection{}
+\subsection{}
+
+\section{}
+\subsection{}
+\subsection{}
+\subsection{}
+
+\section{}
+\subsection{}
+\subsection{}
+\subsection{}
+
+
+
+%OK % FIN CHAP 6
+%OK % Page de titre
+%OK % CHAP 7: au moins motifs+ hitchhinking
+%OK % ce soir: abstract en francais.
+% demain: fin chap 7 + chap8 (au moins design + adaptation methode)
+% Samedi: fin chap 8 + chap9 en entier
+% Dimanche: chap10 (au moins 1 section) + conclusion + preambule
+% Lundi: fin chapitre 10
+% Mardi + mercredi + jeudi: chap1 section 3
+% Vendredi + dimanche : figures sur Inkscape
+% Lundi + mardi: resume etendu + abbreviations + definitions + verif les references
+% Mercredi + Jeudi: relecture totale.
+% Vendredi: remerciements.
+% + Preparation de SMBE
+
+% \textbf{NOTE a Laurent: Je me demande s'il est pertinent de comparer ces deux mesures car, dans le cas de l'ABC, on extrapole le taux de recombinaison reel (i.e.\ nb de COs en cM/Mb génomique) alors que dans le cas des fragments informatifs, on obtient un taux de COs en cM/Mb séquencée.}
+
+
+
+
+
+
+% chap7:
+% clasification des hotspots cibles par B6 ou CAST — motifs + validation
+% population structuree hitchhinking (et quantification du dBGC)
+% quantification du BGC (g et d)
+% + qqpart le fait que BGC regarde sur les bouts de tracts et rien de vu.
+% + extraction des NCO1 pour mesurer gBGC
+% Furthermore, the dBGC coefficent ($d$) for each hotspot can directly be extrapolated from Figure \ref{fig:correl-donor-DMC1}. Indeed, $d$ can be estimated based on the mean frequency of the \textit{CAST} allele in the pool of gametes ($x$) (\textit{i.e.} the observed proportion of CAST-donor fragments) through the following relationship: $x = \frac{1}{2} \times (1 + d)$ \citep{nagylaki1983evolutionA}.
+% As the observed per-hotspot proportions of CAST-donor fragments span the whole spectrum of values (from 0\% to 100\%), the dBGC coefficient also spans its whole spectrum across hotspots (from -1 to 1). In particular, hotspots that were most eroded in one parental lineage are those for which the absolute dBGC coefficient is the greatest, while hotspots displaying a quasi-null dBGC coefficient correspond to symmetric hotspots (\textit{i.e.} hotspots where both homologues are bound by PRDM9 with equal affinity).
+%
+% Hotspot centres, defined as the summits of PRDM9 ChIP-seq peaks, coincided with the positions of PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-hotspot-centres}) and most (77\%) Spo-11 ChIP-seq peak centres previously detected in B6 \citep{lange2016landscape} were located closer than 50-bp away from our PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-DSBs}). Altogether, this suggests that hotspot centres approximate accurately the genuine locations of DSB sites.
+
+
+% chap8:
+% design experimental avec l'introgression (schema croisement, selection des hotspots, identification du background genetique des F2)
+% adaptation de la methode + ABC ()
+% premiers resultats sur la recombinaison (taux de recombinaison variables dus a reelle difference (inexpliquee), plus longs COs, 
+
+% Design experimental (schema croisement avec introgression, selection des hotspots + design baits et sequencing + infos sur mapping etc, expected background)
+% Detection d'evenements quand F2 (identification du background, validation via simulations de Laurent, adaptation du pipeline de genotypage de chapitre 5 i.e.\ juste faire le truc sur les hotspots heterozygotes)
+% Resultats (taux de recombinaison variables dus a reelle difference (inexpliquee donc besoin de sequencer plus), ABC qui donne des resultats stables entre samples malgre les differences de recombination rates, ABC donne COs plus longs — possible plus longs que precedent projet car on analyse sur 5kb au lieu de 3)
+
+
+
+% chap9:
+% methode (powerful et adaptable a d'autres etudes de la recombinaison + mais limite majeure de detectabilite, en particulier, on rate les NCO1 qui semblent cruciaux pour l'etude du BGC (seulement mesure indirecte) + qqch en lien avec chap8? ou rare events a chercher change completement la donne avec l'utilisation des outils: tous les biais qui peuvent exister ou les imperfections deviennent critiques. e.g. misalignments par des INDELs, les erreurs de sequencage peu nombreuses mais trop elevees quand meme, error rate degenotypage…)
+% recombinants et dBGC (hotspot asymmetry et favoured direction dBGC + dBGC hitchhiking chez populations structurees + parametres identifies proches de ce que vu chez la souris et si on compare avec l'humain on trouve que CO/NCO de 1/10) + etude recombinaison a partir des mutants?
+% gBGC (confidence b + comparaison CO/NCO + comparaison humain/souris avec possibilite que evolution de la machinerie molec de formation BGC et transition epistemologie) ou plutot relation avec homme MALE et potentiellement des differences entre les sexes.
+% Confidence b
+% pour NCO
+% $R^2 = 0.5630626$; \textit{p}-val $< 2.2 \times 10^{-16}$
+% pour CO
+% $R^2 = 0.4183843$; \textit{p}-val $< 2.2 \times 10^{-16}$
+
+% (et dans la conclusion aussi) il faudra bcp discuter du fait que les parametres r l et b0 varient inversement avec b. (pour repondre a la question dans les objectifs de la these)
+% Voir cette phras: Instead, one or several of the parameters on which $b$ depends (the recombination rate $r$, the length of conversion tracts $L$ and the transmission bias $b_0$) necessarily vary inversely with $N_e$.
+% Discuter aussi de la figure 7.4 (GC-profiles): B6 a plus de GC car a ete plus erode car plus vieux et/ou vu que parmi les hotspots selectionnes, on n'a moins de cibles par B6, donc ceux selectionnes sont les plus forts. + on observe une inversion hors des tracts. Du a qqch?
+
+
+
+% Favoured direction of dBGC (asymmetry deja dit)
+% As erosion occurs in the parental lineage which carries the target PRDM9 allele (\textit{i.e.} the `self' lineage), PRDM9 binds more strongly the intact `nonself' haplotype, resulting in the `self' haplotype being the donor in the gene conversion event.
+% Since a majority of hotspots in the B6xCAST hybrid is targeted by PRDM9\textsuperscript{CAST} \citep{smagulova2016evolutionary}, dBGC mainly operates in one direction: the favoured transmission of the CAST haplotype (Supplementary Figure \ref{fig:supp-correl-donor-DMC1-with-colors-per-target}). \\
+% `)
+
+
+% Pour la confiance dans b, redire que DSB est bien proche du motif (et ajouter si possible la validation avec els simulations ou on fait peu d'erreurs)
+% Hotspot centres, defined as the summits of PRDM9 ChIP-seq peaks, coincided with the positions of PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-hotspot-centres}) and most (77\%) Spo-11 ChIP-seq peak centres previously detected in B6 \citep{lange2016landscape} were located closer than 50-bp away from our PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-DSBs}). Altogether, this suggests that hotspot centres approximate accurately the genuine locations of DSB sites.
+
+% \citet{lange2016landscape} published Spo-11 ChIP-seq data on B6 mice. 141 of our hotspots overlapped a Spo-11 ChIP-seq peak and for each of them, we computed the distance between the center of the Spo-11 ChIP-seq peak and the PRDM9 binding motif we previously identified. We found that 77.3\% of these 141 peaks were located less than 50-bp away from the PRDM9 binding motif which proves that the PRDM9 binding motifs are located adjacently to genuine DSB sites.
+
+
+
+% Pour la partie extension du hitchhiking aux pop structurees
+% Dans chapitre 9
+% Redire le hitchhiking et etendre aux populations structurees
+%
+% Indeed, in the B6 lineage, PRDM9\textsuperscript{B6}-targeted hotspots underwent gBGC in the past, thus leading to a GC-enrichment of the B6 haplotype. Conversely, in the CAST lineage, PRDM9\textsuperscript{CAST}-targeted hotspots underwent gBGC in the past, thus leading to a GC-enrichment of the CAST haplotype.
+% In parallel, the targeted hotspots erode in the `self' lineage, as predicted by the hotspot conversion paradox \citep{boulton1997hotspot}.
+%
+% Consequently, when the two lineages are crossed into a hybrid, each hotspot is eroded in the locally GC-enriched haplotype and the DSB initiates most of the times on the other, non-eroded and GC-poorer haplotype. This leads the eroded, GC-richer haplotype to be the donor sequence and \textit{GC} alleles to be overtransmitted. \\
+%
+% Thus, the observed favored transmission of \textit{S} alleles does not only reflect instant gBGC (gBGC occurring at one generation) but also past gBGC (that occurred in the lineages, prior to the hybrid cross) whose effect is hitchhiked by dBGC (favored transmission of the non-eroded haplotype). Therefore, quantifying gBGC requires to decouple these two phenomena. To cancel the action of dBGC and thus get a direct measure of the intensity of gBGC ($b$), we equalised the number of B6- and CAST-donor fragments in each hotspot.
+%
+% Puis, ca transitionne sur la mesure du gBGC qu'on discute a la section III
+
+
+% Dans chaptire 9, mettre aussi la table de calcul du bgc global et la comparaison avec l'Homme.
+
+
+% Hotspot centres, defined as the summits of PRDM9 ChIP-seq peaks, coincided with the positions of PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-hotspot-centres}) and most (77\%) Spo-11 ChIP-seq peak centres previously detected in B6 \citep{lange2016landscape} were located closer than 50-bp away from our PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-DSBs}). Altogether, this suggests that hotspot centres approximate accurately the genuine locations of DSB sites.
+
+
+% + mettre les informations sur le fait que chez l'humain, on voit aussi la meme chose (NCO 1 ont plus forts BGC chez l'Homme) — ou plutot a mettre dans la discussion?
+
+% Dans discuss, l'estimation du $B$
+
+% Fait que NCO-1 ont BGC plus fort que NCO-2+ suggere mecanisme OU pression de selection quand bcp de SNPs (a discuter a la fin de ce chpaitre + dans chapitre 9)
+
+
+
+% chap10:
+% epistemologie (proprietes emergentes ou pas + toute la fin de mes notes Notes_for_discussion_personnal.txt sur microevol/macroevol et fonctionnel vs mecanismes)
+% comment la science avance (role des differents scientifiques qui ont apporte des nouvelles theories sont mieux connus que ceux qui font les decouvertes + analyse de l'evolution des recherches en evolution notamment avec apport de techniques comme genetique et ordis pour bioinfo + share knowledge gnomics.io)
+% bioinformaticien (regarder les donnees (importance sur les emthodes, en aprticulier vu que realignement et teste des choses comme filtres, jusqu'a ce que validation par des simul) + seulement des tendances, jamais reels biologiques donc faut passer par inferences — en particulier, important dans le cas des evolutionnistes, car on interprete le passe sans pouvoir le demontrer (cf Jay Gould) et ses imperfections sont utiles poour comprendre de nouvelles choses).
+
+% Dans epistemo: discuter du fait que la taille efficace de population est un concept qui est assez peu bien defini — difficile a mesurer donc les projets menes dessus sont un peu limites.
+
+% Mettre dedans l'idee que reflechir sur comment le BGC peut etre contreselectionnne a l'echelle de l'individu pour eviter les defauts a l'echelle populationnelle est insoluble. 
+% Mais, mettre la citation (Ernst Mayr oiu Jay Gould?) sur : claim to tell that the problems they did not solve are insoluble.
+
+
+
+% Annexes (erreur du jeune est d'en mettre trop)
+%% pour chap6
+% mettre les figures DMC1 (les deux — correlation par groupe de 10 plus relation asymetrie)
+% + position des switch points
+%% data availability: mettre lien vers le github pour reproduire les figure et avoir les tableaux d'entree + numero accession SRA
+%% pour chap8: mettre les autres images de l'identification du background + image des correlations sur les memes hotspots
+%% les listes de hotspots etudies
+
+% Annexe des permissions
+% La meilleure:
+% [It] is not the nature of things for any one man to make a sudden, violent discovery; science goes step by step and every man depends on the work of his predecessors. When you hear of a sudden unexpected discovery—a bolt from the blue—you can always be sure that it has grown up by the influence of one man or another, and it is the mutual influence which makes the enormous possibility of scientific advance. Scientists are not dependent on the ideas of a single man, but on the combined wisdom of thousands of men, all thinking of the same problem and each doing his little bit to add to the great structure of knowledge which is gradually being erected. 
+% — Sir Ernest Rutherford
+% Concluding remark in Lecture ii (1936) on 'Forty Years of Physics', revised and prepared for publication by J.A. Ratcliffe, collected in Needham and Pagel (eds.), Background to Modern Science: Ten Lectures at Cambridge Arranged by the History of Science Committee, (1938), 73-74. Note that the words as prepared for publication may not be verbatim as spoken in the original lecture by the then late Lord Rutherford.
+
+
+
+
+% [I]f texts are unified by a central logic of argument, then their pictorial illustrations are integral to the ensemble, not pretty little trifles included only for aesthetic or commercial value. Primates are visual animals, and (particularly in science) illustration has a language and set of conventions all its own.
+% De Stephen Jay Gould
+% de Jay Gould encore
+% God bless all the precious little examples and all their cascading implications; without these gems, these tiny acorns bearing the blueprints of oak trees, essayists would be out of business.
+% Questioning the Millennium (second edition, Harmony, 1999), p. 42
+% de Einstein 
+% When a man after long years of searching chances on a thought which discloses something of the beauty of this mysterious universe, he should not therefore be personally celebrated. He is already sufficiently paid by his experience of seeking and finding. In science, moreover, the work of the individual is so bound up with that of his scientific predecessors and contemporaries that it appears almost as an impersonal product of his generation.
+% From the story "The Progress of Science" in The Scientific Monthly edited by J. McKeen Cattell (June 1921), Vol. XII, No. 6. The story says that the comments were made at the annual meeting of the National Academy of Sciences at the National Museum in Washington on April 25, 26, and 27. Einstein's comments appear on p. 579, though the story may be paraphrasing rather than directly quoting since it says "In reply Professor Einstein in substance said" the quote above.
+% 
+% In science men have discovered an activity of the very highest value in which they are no longer, as in art, dependent for progress upon the appearance of continually greater genius, for in science the successors stand upon the shoulders of their predecessors; where one man of supreme genius has invented a method, a thousand lesser men can apply it. … In art nothing worth doing can be done without genius; in science even a very moderate capacity can contribute to a supreme achievement. 
+% — Bertrand Russell
+% Essay, 'The Place Of Science In A Liberal Education.' In Mysticism and Logic: and Other Essays (1919), 41.
+
+% It is a wrong business when the younger cultivators of science put out of sight and deprecate what their predecessors have done; but obviously that is the tendency of Huxley and his friends … It is very true that Huxley was bitter against the Bishop of Oxford, but I was not present at the debate. Perhaps the Bishop was not prudent to venture into a field where no eloquence can supersede the need for precise knowledge. The young naturalists declared themselves in favour of Darwin’s views which tendency I saw already at Leeds two years ago. I am sorry for it, for I reckon Darwin’s book to be an utterly unphilosophical one. 
+% — William Whewell
+% Letter to James D, Forbes (24 Jul 1860). Trinity College Cambridge, Whewell Manuscripts.
+
+% Very few people, including authors willing to commit to paper, ever really read primary sources–certainly not in necessary depth and contemplation, and often not at all ... When writers close themselves off to the documents of scholarship, and then rely only on seeing or asking, they become conduits and sieves rather than thinkers. When, on the other hand, you study the great works of predecessors engaged in the same struggle, you enter a dialogue with human history and the rich variety of our own intellectual traditions. You insert yourself, and your own organizing powers, into this history–and you become an active agent, not merely a ‘reporter.’ 
+% — Stephen Jay Gould
+
+% [It] is not the nature of things for any one man to make a sudden, violent discovery; science goes step by step and every man depends on the work of his predecessors. When you hear of a sudden unexpected discovery—a bolt from the blue—you can always be sure that it has grown up by the influence of one man or another, and it is the mutual influence which makes the enormous possibility of scientific advance. Scientists are not dependent on the ideas of a single man, but on the combined wisdom of thousands of men, all thinking of the same problem and each doing his little bit to add to the great structure of knowledge which is gradually being erected. 
+% — Sir Ernest Rutherford
+% Concluding remark in Lecture ii (1936) on 'Forty Years of Physics', revised and prepared for publication by J.A. Ratcliffe, collected in Needham and Pagel (eds.), Background to Modern Science: Ten Lectures at Cambridge Arranged by the History of Science Committee, (1938), 73-74. Note that the words as prepared for publication may not be verbatim as spoken in the original lecture by the then late Lord Rutherford.
+
+% It is strange that only extraordinary men make the discoveries, which later appear so easy and simple.
+% GEORG C. LICHTENBERG, 1742 TO 1799
+
+
+
+
+% REMERCIEMENTS
+% You have … been told that science grows like an organism. You have been told that, if we today see further than our predecessors, it is only because we stand on their shoulders. But this [Nobel Prize Presentation] is an occasion on which I should prefer to remember, not the giants upon whose shoulders we stood, but the friends with whom we stood arm in arm … colleagues in so much of my work. 
+% — Sir Peter B. Medawar
+% From Nobel Banquet speech (10 Dec 1960).
+
+
+
