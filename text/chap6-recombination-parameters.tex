@@ -6,11 +6,7 @@
 	
 \end{savequote}
 
-% \chapter{\label{ch:6-recombination-parameters}Estimation of mouse recombination parameters}
-% \chapter{\label{ch:6-recombination-parameters}Characterisation of mouse recombination hotspots}
-% \chapter{\label{ch:6-recombination-parameters}Characterisation of mouse meiotic recombination}
 \chapter{\label{ch:6-recombination-parameters}Characterisation of recombination in mouse autosomal hotspots}
-% \chapter{\label{ch:6-recombination-parameters}Characterisation of recombination in autosomal hotspots of mice}
 %\otherpagedecoration
 
 
@@ -22,21 +18,8 @@
 
 Even if recombinational activity is known to vary by orders of magnitude across individual hotspots, the properties determining this variation are still poorly understood.
 Further progress in comprehending the basis of these fluctuations can only arise with the thorough examination of individual hotspots but, in mammals, only a handful of these have been directly characterised at high resolution.
-% after the characterisation of individual hotspots.
-% However, in mammals, only a handful of these have been directly characterised at high resolution.
 Here, thanks to the 18,821 events that we detected with the approach developed in Chapter~\ref{ch:5-methodology}, we identified the main factors governing the recombinational activity of individual hotspots, we precisely described recombination in over a thousand hotspots and we estimated the hidden biological parameters of recombination through an inferential approach.
-%we precisely described recombination in over a thousand mouse autosomal hotspots thanks to the 18,821 events that we detected with the approach developed in Chapter~\ref{ch:5-methodology} and we used an inferential approach to accurately estimate the biological parameters of recombination in mice.
-% We first identified the main factors governing the recombinational activity of individual hotspots and then inferred the real recombination parameters by indirect approaches.
-% We found that PRDM9 binding affinity predicted accurately the recombinational activity and that, overall, the relative proportion of COs and NCOs and the lengths of their conversion tracts do not differ much across autosomal hotspots.
 Overall, this study provides the first global picture of recombination patterns in mouse autosomal hotspots.
-
-% Pourquoi on caracterise la recombi: pour l'instant, caracterise sur qqs hotspots selectionnes (voir la liste en annexe) et sur le chromosome 1. Mais pas effectue en detail sur un grand nombre de hotspots. Nous, on veut voir si les parametres mesures sur les hotspots etudies sont representatifs de l'ensemble des hotspots et ce qui explique la variation de recombinaison entre hotspots (les determinants).
-% Pour ce faire, on utilise les 18,821 evenements detectes avec l'approche developpee au chapitre~\ref{ch:5-methodology}.
-% Premierement, les evenements detectes semblents etre appeles avec confiance, car sont correles a plusieurs determinants de la recombinaison.
-% On peut donc caracteriser les recombinants tranquillement: position et longuer des tracts, donneurs, proportion de CO/NCO par hotspot…
-% Mais, ce ne sont pas les rels parametres de recombi qui, eux, sont caches.
-% Donc, il faut passer par une approche inferentielle pour extrapoler les parametres reels.
-% On trouve des parametres prfaitement compatibles avec ce qui a ete observe chez qqs hotspots.
 
 }
 
@@ -220,22 +203,25 @@ As for Rec-2S events, the CT\textsuperscript{$\star$} corresponds to the region 
 \subsection{Identification of the gene-conversion donor}
 
 After a gene conversion event, the receiver (cold) haplotype is converted into the donor (hot) haplotype all along the CT\@.
-Thus, when all markers located within the CT\textsuperscript{$\star$} were typed \textit{B6} (resp. \textit{CAST}), we infered that the donor was the B6 (resp. CAST) haplotype.
+Thus, when all markers located within the CT\textsuperscript{$\star$} were typed \textit{B6} (resp.\ \textit{CAST}), we infered that the donor was the B6 (resp.\ CAST) haplotype.
 If, however, the CT\textsuperscript{$\star$} included no variant (which was the case for a portion of Rec-1S events) or if it was not defined (which was the case for Rec-MS events), we could not infer which haplotype was the donor.\\
 
-For a given hotspot, the fraction of CAST-donor (resp. B6-donor) recombination events should be proportional to the probability that the DSB initiates on the B6 (resp. CAST) haplotype.
+For a given hotspot, the fraction of CAST-donor (resp.\ B6-donor) recombination events should be proportional to the probability that the DSB initiates on the B6 (resp.\ CAST) haplotype.
 Thus, to assess the accuracy of our inference, we used DMC1 ssDNA-sequencing (SSDS) data from a B6\textsubscript{f}xCAST\textsubscript{m} hybrid \citep{smagulova2016evolutionary} to estimate the relative proportion of DSB initiation on each haplotype: 
 we remapped the raw data (SRR2961459, SRR2961460) on both the B6 and the CAST reference genomes and we genotyped all the variants of each fragment. 
-When the totality of its variants were typed \textit{B6}, we assigned the B6 haplotype to the fragment and, respectively, we assigned the CAST haplotype to it when the totality of its variants were typed \textit{CAST}.
+% When the totality of its variants were typed \textit{B6}, we assigned the B6 haplotype to the fragment and, respectively, we assigned the CAST haplotype to it when the totality of its variants were typed \textit{CAST}.
+When the totality of its variants were typed \textit{B6}, we assigned the B6 haplotype to the fragment and, respectively, the CAST haplotype when they were typed \textit{CAST}.
 We then compared this probability for each hotspot to initiate a DSB on the B6 haplotype (i.e.\ the expected proportion of CAST-donor events) to the actual fraction of CAST-donor events inferred with the approach described above (Figure~\ref{fig:correl-donor-DMC1}).
 
 
 \begin{figure}[t]
     \centering
     \includegraphics[width = 1\textwidth]{figures/chap6/CorrelationDMC1_FINAL_BIS_on_lab_computer.eps}
-	\caption[Correlation between the expected and the observed proportions of CAST-donor fragments across hotspots]
-	{\textbf{Correlation between the expected and the observed proportions of CAST-donor fragments across hotspots.}
-		\par 
+	\caption[Correlation between the expected and observed proportions of CAST-donor fragments across hotspots displaying at least 5 events]
+	{\textbf{Correlation between the expected and observed proportions of CAST-donor fragments across hotspots displaying at least 5 events.}
+		\par The expected proportion of CAST-donor fragments (x-axis) was based on the probability of the DSB to initiate on the B6 haplotype from DMC1 ssDNA-sequencing (SSDS) data by \citet{smagulova2016evolutionary} (see main text).
+		Only the 582 hotspots displaying a minimum of 5 recombination events are reported in this figure.
+		The Pearson correlation between the two measures gave: $R^2 = 0.66$; {\textit{p}-val $< 2.2 \times 10^{-16}$}.
     % \par The expected proportion of CAST-donor fragments (x-axis) is computed based on the probability of the DSB to initiate on the B6 haplotype (see \ref{par:MM-DMC1-analysis} for details on the analysis of DMC1 ssDNA-sequencing (SSDS) data by \citep{smagulova2016evolutionary}). The observed proportion of CAST-donor fragments (y-axis) is calculated as described in the main text (see above). Solely the 582 hotspots displaying a minimum of 5 recombination events are reported in this graph. The coefficient of correlation between the expected and observed proportions of CAST-donor fragments is $r = 0.81$ ($p-value < 2.2\e{-16}$).}
 }
 \label{fig:correl-donor-DMC1}
@@ -245,14 +231,15 @@ We then compared this probability for each hotspot to initiate a DSB on the B6 h
 
 
 Overall, we found a strong positive correlation between the expected and the observed proportions of CAST-donor fragments (Pearson correlation: $R^2 = 0.66$; {\textit{p}-val $< 2.2 \times 10^{-16}$}).
-Therefore, our donor-inference method is sufficient to explain, at the hotspot scale, most of the variance due to DSB initiation bias. This is a strong proof that our very simple and intuitive way of assigning its donor to each fragment is trustworthy.
-
+% Therefore, our donor-inference method is sufficient to explain, at the hotspot scale, most of the variance due to DSB initiation bias. This is a strong proof that our very simple and intuitive way of assigning its donor to each fragment is trustworthy.
+% Therefore, our donor-inference method is sufficient to explain, at the hotspot scale, most of the variance due to DSB initiation bias and our very simple and intuitive way of assigning its donor to each fragment is trustworthy.
+Our simple and intuitive way of assigning its donor to each fragment is thus sufficient to explain, at the hotspot scale, most of the variance due to DSB initiation bias and should also be trustworthy at the scale of single fragments.
 
 
 \subsection{Description of the recombination events} 
 
 Among the 18,821 recombination events detected across 898 hotspots (median~$= 10$; max $= 327$ events per hotspot), 11,665 corresponded to Rec-1S events, 5,932 to Rec-2S events and 1,224 to Rec-MS events.
-The CTs\textsuperscript{$\star$} of Rec-1S events (median~$= 97$~bp; mean~$= 142$~bp) were longer — and, consequently, somewhat more spread (Figure~\ref{fig:example-recombinants} and Appendix~\ref{app:list-hostpots}) — than the CTs\textsuperscript{$\star$} of Rec-2S events (median~$= 78$ bp; mean~$= 90$ bp).
+The CTs\textsuperscript{$\star$} of Rec-1S events (median~$= 97$~bp; mean~$= 142$~bp) were longer — and, consequently, somewhat more spread (Figure~\ref{fig:example-recombinants} and Appendix~\ref{app:data-and-figs}) — than the CTs\textsuperscript{$\star$} of Rec-2S events (median~$= 78$ bp; mean~$= 90$ bp).
 % awk '$26=="NCO" {print}' $DATA/2_dBGC/6_ThirdSequencing/05_Analyses_of_Recombinants/02_Recombinants_and_False_Positives_Dataset/Recombinants_dataset.txt|cut -f24|Rscript -e 'summary(as.numeric(readLines("stdin")))'
 %    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
 %    9.00   54.00   78.00   90.36  113.00  475.00
@@ -526,139 +513,6 @@ All in all thus, we would expect to detect 26.2 Rec-1S events (13.7 (52.3\%) NCO
 
 
 
-
-
-
-
-
-
-%OK % FIN CHAP 6
-% CHAP 7: au moins motifs+ hitchhinking
-% ce soir: abstract en francais.
-% demain: fin chap 7 + chap8 (au moins design + adaptation methode)
-% Samedi: fin chap 8 + chap9 en entier
-% Dimanche: chap10 (au moins 1 section) + conclusion + preambule
-% Lundi: fin chapitre 10
-% Mardi + mercredi + jeudi: chap1 section 3
-% Vendredi + dimanche : figures sur Inkscape
-% Lundi + mardi: resume etendu + abbreviations + definitions + verif les references
-% Mercredi + Jeudi: relecture totale.
-% Vendredi: remerciements.
-% + Preparation de SMBE
-
-% \textbf{NOTE a Laurent: Je me demande s'il est pertinent de comparer ces deux mesures car, dans le cas de l'ABC, on extrapole le taux de recombinaison reel (i.e.\ nb de COs en cM/Mb génomique) alors que dans le cas des fragments informatifs, on obtient un taux de COs en cM/Mb séquencée.}
-
-
-
-
-
-
-
-% chap 6: (plan a revoir)
-% High-confidence and determinants (correl DMC1 + correl Paigen) + avant parler des cartes DMC1 Spo11 et correlation PRDM9 donc expliquer le meilleur descripteur (sachant que Prdm9 moins precis)
-% Inferrence des CT et donneur (avec analyse de ssDNA DMC1) + description du jeu de donnees (Rec-1)
-% Inference des parametres reels de recombinaison par ABC (simul + selection + comparaison litterature et extrapolation du taux de CO et de la proportion de CO/NCO dans Rec-1S).
-% + qq part la relation entre CO/NCO et le nbre de SNPs
-
-% intro: souris avec les infos connues dedans sur la recombi (DCM1, les cartes PRDM9 ChIP-seq Baker, Spo11…) — differences entre tous ces descripteurs de la recombinaison et ce qui est su chez la souris
-% high confidence + determinants (trouves dans les hotspots intenses en relation avec DMC1) et inferrence des CT + donneur et description du jeu de donnees
-% ABC et inference des parametres reels de recombinaison chez la souris (mise au point des simulations + selection des simul + resultats sur les param de recombi)
-
-% chap7:
-% clasification des hotspots cibles par B6 ou CAST — motifs + validation
-% population structuree hitchhinking (et quantification du dBGC)
-% quantification du BGC (g et d)
-% + qqpart le fait que BGC regarde sur les bouts de tracts et rien de vu.
-% + extraction des NCO1 pour mesurer gBGC
-% Furthermore, the dBGC coefficent ($d$) for each hotspot can directly be extrapolated from Figure \ref{fig:correl-donor-DMC1}. Indeed, $d$ can be estimated based on the mean frequency of the \textit{CAST} allele in the pool of gametes ($x$) (\textit{i.e.} the observed proportion of CAST-donor fragments) through the following relationship: $x = \frac{1}{2} \times (1 + d)$ \citep{nagylaki1983evolutionA}.
-% As the observed per-hotspot proportions of CAST-donor fragments span the whole spectrum of values (from 0\% to 100\%), the dBGC coefficient also spans its whole spectrum across hotspots (from -1 to 1). In particular, hotspots that were most eroded in one parental lineage are those for which the absolute dBGC coefficient is the greatest, while hotspots displaying a quasi-null dBGC coefficient correspond to symmetric hotspots (\textit{i.e.} hotspots where both homologues are bound by PRDM9 with equal affinity).
-%
-% Hotspot centres, defined as the summits of PRDM9 ChIP-seq peaks, coincided with the positions of PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-hotspot-centres}) and most (77\%) Spo-11 ChIP-seq peak centres previously detected in B6 \citep{lange2016landscape} were located closer than 50-bp away from our PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-DSBs}). Altogether, this suggests that hotspot centres approximate accurately the genuine locations of DSB sites.
-
-%
-% chap8:
-% design experimental avec l'introgression (schema croisement, selection des hotspots, identification du background genetique des F2)
-% adaptation de la methode + ABC ()
-% premiers resultats sur la recombinaison (taux de recombinaison variables dus a reelle difference (inexpliquee), plus longs COs, 
-
-% Design experimental (schema croisement avec introgression, selection des hotspots + design baits et sequencing + infos sur mapping etc, expected background)
-% Detection d'evenements quand F2 (identification du background, validation via simulations de Laurent, adaptation du pipeline de genotypage de chapitre 5 i.e.\ juste faire le truc sur les hotspots heterozygotes)
-% Resultats (taux de recombinaison variables dus a reelle difference (inexpliquee donc besoin de sequencer plus), ABC qui donne des resultats stables entre samples malgre les differences de recombination rates, ABC donne COs plus longs — possible plus longs que precedent projet car on analyse sur 5kb au lieu de 3)
-
-
-
-
-% chap9:
-% methode (powerful et adaptable a d'autres etudes de la recombinaison + mais limite majeure de detectabilite, en particulier, on rate les NCO1 qui semblent cruciaux pour l'etude du BGC (seulement mesure indirecte) + qqch en lien avec chap8? ou rare events a chercher change completement la donne avec l'utilisation des outils: tous les biais qui peuvent exister ou les imperfections deviennent critiques. e.g. misalignments par des INDELs, les erreurs de sequencage peu nombreuses mais trop elevees quand meme, error rate degenotypage…)
-% recombinants et dBGC (hotspot asymmetry et favoured direction dBGC + dBGC hitchhiking chez populations structurees + parametres identifies proches de ce que vu chez la souris et si on compare avec l'humain on trouve que CO/NCO de 1/10) + etude recombinaison a partir des mutants?
-% gBGC (confidence b + comparaison CO/NCO + comparaison humain/souris avec possibilite que evolution de la machinerie molec de formation BGC et transition epistemologie)
-% Confidence b
-% pour NCO
-% $R^2 = 0.5630626$; \textit{p}-val $< 2.2 \times 10^{-16}$
-% pour CO
-% $R^2 = 0.4183843$; \textit{p}-val $< 2.2 \times 10^{-16}$
-
-
-
-% chap10:
-% epistemologie (proprietes emergentes ou pas + toute la fin de mes notes Notes_for_discussion_personnal.txt sur microevol/macroevol et fonctionnel vs mecanismes)
-% comment la science avance (role des differents scientifiques qui ont apporte des nouvelles theories sont mieux connus que ceux qui font les decouvertes + analyse de l'evolution des recherches en evolution notamment avec apport de techniques comme genetique et ordis pour bioinfo + share knowledge gnomics.io)
-% bioinformaticien (regarder les donnees (importance sur les emthodes, en aprticulier vu que realignement et teste des choses comme filtres, jusqu'a ce que validation par des simul) + seulement des tendances, jamais reels biologiques donc faut passer par inferences — en particulier, important dans le cas des evolutionnistes, car on interprete le passe sans pouvoir le demontrer (cf Jay Gould) et ses imperfections sont utiles poour comprendre de nouvelles choses).
-
-
-
-
-% Annexes (erreur du jeune est d'en mettre trop)
-%% pour chap6
-% mettre les figures DMC1 (les deux — correlation par groupe de 10 plus relation asymetrie)
-% + position des switch points
-%% data availability: mettre lien vers le github pour reproduire les figure et avoir les tableaux d'entree + numero accession SRA
-%% pour chap8: mettre les autres images de l'identification du background + image des correlations sur les memes hotspots
-%% les listes de hotspots etudies
-
-% Annexe des permissions
-% La meilleure:
-% [It] is not the nature of things for any one man to make a sudden, violent discovery; science goes step by step and every man depends on the work of his predecessors. When you hear of a sudden unexpected discovery—a bolt from the blue—you can always be sure that it has grown up by the influence of one man or another, and it is the mutual influence which makes the enormous possibility of scientific advance. Scientists are not dependent on the ideas of a single man, but on the combined wisdom of thousands of men, all thinking of the same problem and each doing his little bit to add to the great structure of knowledge which is gradually being erected. 
-% — Sir Ernest Rutherford
-% Concluding remark in Lecture ii (1936) on 'Forty Years of Physics', revised and prepared for publication by J.A. Ratcliffe, collected in Needham and Pagel (eds.), Background to Modern Science: Ten Lectures at Cambridge Arranged by the History of Science Committee, (1938), 73-74. Note that the words as prepared for publication may not be verbatim as spoken in the original lecture by the then late Lord Rutherford.
-
-
-
-
-% [I]f texts are unified by a central logic of argument, then their pictorial illustrations are integral to the ensemble, not pretty little trifles included only for aesthetic or commercial value. Primates are visual animals, and (particularly in science) illustration has a language and set of conventions all its own.
-% De Stephen Jay Gould
-% de Jay Gould encore
-% God bless all the precious little examples and all their cascading implications; without these gems, these tiny acorns bearing the blueprints of oak trees, essayists would be out of business.
-% Questioning the Millennium (second edition, Harmony, 1999), p. 42
-% de Einstein 
-% When a man after long years of searching chances on a thought which discloses something of the beauty of this mysterious universe, he should not therefore be personally celebrated. He is already sufficiently paid by his experience of seeking and finding. In science, moreover, the work of the individual is so bound up with that of his scientific predecessors and contemporaries that it appears almost as an impersonal product of his generation.
-% From the story "The Progress of Science" in The Scientific Monthly edited by J. McKeen Cattell (June 1921), Vol. XII, No. 6. The story says that the comments were made at the annual meeting of the National Academy of Sciences at the National Museum in Washington on April 25, 26, and 27. Einstein's comments appear on p. 579, though the story may be paraphrasing rather than directly quoting since it says "In reply Professor Einstein in substance said" the quote above.
-% 
-% In science men have discovered an activity of the very highest value in which they are no longer, as in art, dependent for progress upon the appearance of continually greater genius, for in science the successors stand upon the shoulders of their predecessors; where one man of supreme genius has invented a method, a thousand lesser men can apply it. … In art nothing worth doing can be done without genius; in science even a very moderate capacity can contribute to a supreme achievement. 
-% — Bertrand Russell
-% Essay, 'The Place Of Science In A Liberal Education.' In Mysticism and Logic: and Other Essays (1919), 41.
-
-% It is a wrong business when the younger cultivators of science put out of sight and deprecate what their predecessors have done; but obviously that is the tendency of Huxley and his friends … It is very true that Huxley was bitter against the Bishop of Oxford, but I was not present at the debate. Perhaps the Bishop was not prudent to venture into a field where no eloquence can supersede the need for precise knowledge. The young naturalists declared themselves in favour of Darwin’s views which tendency I saw already at Leeds two years ago. I am sorry for it, for I reckon Darwin’s book to be an utterly unphilosophical one. 
-% — William Whewell
-% Letter to James D, Forbes (24 Jul 1860). Trinity College Cambridge, Whewell Manuscripts.
-
-% Very few people, including authors willing to commit to paper, ever really read primary sources–certainly not in necessary depth and contemplation, and often not at all ... When writers close themselves off to the documents of scholarship, and then rely only on seeing or asking, they become conduits and sieves rather than thinkers. When, on the other hand, you study the great works of predecessors engaged in the same struggle, you enter a dialogue with human history and the rich variety of our own intellectual traditions. You insert yourself, and your own organizing powers, into this history–and you become an active agent, not merely a ‘reporter.’ 
-% — Stephen Jay Gould
-
-% [It] is not the nature of things for any one man to make a sudden, violent discovery; science goes step by step and every man depends on the work of his predecessors. When you hear of a sudden unexpected discovery—a bolt from the blue—you can always be sure that it has grown up by the influence of one man or another, and it is the mutual influence which makes the enormous possibility of scientific advance. Scientists are not dependent on the ideas of a single man, but on the combined wisdom of thousands of men, all thinking of the same problem and each doing his little bit to add to the great structure of knowledge which is gradually being erected. 
-% — Sir Ernest Rutherford
-% Concluding remark in Lecture ii (1936) on 'Forty Years of Physics', revised and prepared for publication by J.A. Ratcliffe, collected in Needham and Pagel (eds.), Background to Modern Science: Ten Lectures at Cambridge Arranged by the History of Science Committee, (1938), 73-74. Note that the words as prepared for publication may not be verbatim as spoken in the original lecture by the then late Lord Rutherford.
-
-% It is strange that only extraordinary men make the discoveries, which later appear so easy and simple.
-% GEORG C. LICHTENBERG, 1742 TO 1799
-
-
-
-
-% REMERCIEMENTS
-% You have … been told that science grows like an organism. You have been told that, if we today see further than our predecessors, it is only because we stand on their shoulders. But this [Nobel Prize Presentation] is an occasion on which I should prefer to remember, not the giants upon whose shoulders we stood, but the friends with whom we stood arm in arm … colleagues in so much of my work. 
-% — Sir Peter B. Medawar
-% From Nobel Banquet speech (10 Dec 1960).
 
 
 
