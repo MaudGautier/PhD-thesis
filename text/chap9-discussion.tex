@@ -1,0 +1,540 @@
+\begin{savequote}[8cm]
+
+	‘I suppose the process of acceptance will pass through the usual four stages:\\
+	(i) this is worthless nonsense;\\
+	(ii) this is an interesting, but perverse, point of view;\\
+	(iii) this is true, but quite unimportant;\\
+	(iv) I always said so.’
+	
+	\qauthor{--- John B. S. Haldane, \textit{\usebibentry{haldane1963truth}{title}} \citeyearpar{haldane1963truth} }
+	
+\end{savequote}
+
+% \chapter{\label{ch:9-discussion}Implications for mouse genome evolution}
+\chapter{\label{ch:9-discussion}Implications for mammalian genome evolution}
+%\otherpagedecoration
+
+
+\minitoc{}
+
+% CONCLU
+% The aim of this thesis was to study the role of recombination on genome evolution.
+
+% This thesis aimed at better comprehending recombination and its impact on genome evolution, which was made possible by analysing
+The work presented in this thesis allowed to better comprehend recombination and its impact on genome evolution: 
+in brief, we precisely characterised patterns of recombination in mice, brought primary answers to the specific role of one recombination-dependent gene, and quantified the contribution of all types of recombination products to GC-content evolution \textit{via} biased gene conversion.
+
+The progress we made on this topic principally rested on the analysis of the recombination events we could detect in mouse autosomal hotspots with the approach we developed. 
+% It principally rested on the analysis of the recombination events detected in mouse autosomal hotspots with the method we implemented.
+In this chapter, I will first discuss both the significance and the limitations of this method in the context of studies on recombination.
+Next, I will focus on our findings concerning recombination and more particularly on the hitchhiking effect of DSB-induced biased gene conversion (dBGC) onto past GC-biased gene conversion (gBGC).
+Last, I will try and give answers upon the original motivation of this work: figuring out the interplay between the effective population size ($N_e$) and the gBGC coefficient ($b$), by comparing our findings in mice to those of others in humans.
+
+% En resume,
+% Intro on a mis au point une methode qui permet d'etudier la recombinaison a high resolution chez des single hybrids, either simple hybrids with two genomes or F2 individuals with a third introgressed genome.
+% Avec elle, on a pu caracteriser la recombinaison chez la souris, et comparer chez un mutant donc comprendre le role d'un gene, et de plus, quantifier le gBGC
+%
+% Mais cette methode presente neanmoins des limitations, je vais donc discuter de son interet et de ses limites
+% Puis, je vais discuter des infos sur recombinaison et en particulier, du phenomene qu'on a mis en evidence: le hitchhiking
+%
+% Enfin, je repondrai a la questino qu'on s'etait pose a la base concernant la relation entre b et Ne, en comparant avec l'homme et en expliquant les implications sur l'evolution du BGC
+
+
+\section{Significance and limitations of our method}
+% \subsection{The critical impact of tool biases for the detection of rare events}%how biases of tools can be problematic when searching for rare events}
+% \subsection{The critical tool biases for detection of rare events}%how biases of tools can be problematic when searching for rare events}
+\subsection{Tool biases in the context of rare event detection}
+
+% Classical genomic tools (e.g.\ mappers, genome assemblers, variant-callers, peak-callers…) usually perform etremely well, but a subset of their outcome can be erroneous.
+In most types of analyses for which classical genomic tools (e.g.\ mappers, genome assemblers, variant-callers, peak-callers…) are used, the erroneous subset of their outcome is amply negligible.
+However, in particular cases — like ours — where rare events are the object of the analysis, their inherent biases can become critical.\\
+
+For instance, read mapping is based on a Smith-Waterman algorithm which basically consists in maximising the matching score between the read and the reference genome \citep{smith1981identification}.
+In particular, mappers are parameterised so that the penalty associated to opening a gap (i.e.\ for an INDEL) is generally higher than that associated to a sequence of several mismatches.
+Consequently, when reads encompass INDELs close to their edges, their extremities are often misaligned.
+This effect can be corrected by INDEL local realignment methods, which take into account the totality of reads mapping at a given region and select one consensus alignment that optimises the similarity of most reads with the reference genome.
+In both cases (mapping and local realignment), the goal of maximal similarity leads to instances where the reads better match the reference genome than they genuinely should.
+% In other words, mapping, — but also local realignment, — is biased towards the reference genome.
+
+But, by definition, recombination events include a portion of the reference genome (one of its parents) and a portion of another genome, different from the reference (its other parent).
+In this context, the reference-biased mapping can disrupt immensely their discovery: in this study, we observed that over 98\% false positive discoveries originated from such errors and we thus counterbalanced this bias by performing the procedure using each parental genome successively as a reference.\\
+
+Similarly, sequencing errors arise at frequencies below 1\% \citep{fox2014accuracy,pfeiffer2018systematic}.
+This bring no difficulty in most case studies since only a negligible fraction of fragments carry an erroneous base call.
+However, these are not negligible as compared to the rarity of recombination events.
+This issue was particularly critical in the context of single-marker NCO (NCO-1) events:
+to estimate the BGC coefficient ($b$) on these events, we had to monitor the number and direction (S\textrightarrow{} W or W\textrightarrow{} S) of these errors.
+
+
+
+
+\subsection{The issue of NCO detectability}
+
+For multiple-marker NCO (NCO-2+) events, the sequencing error problem was solved immediately, since it was highly improbable that a given fragment would carry two or more erroneous base calls right at the position of its polymorphic sites.
+Though, this also meant that only NCOs with certains characteristics could be detected with high confidence.
+As such, the most obvious limitation of our approach was NCO detectability: we could only spot NCOs displaying sufficiently long conversion tracts (CTs).
+
+In addition, the level of detectability depends on marker density, which can vary across — but also along — hotspots.
+To make this along-hotspot fluctuation visible, we added that information (the maximum number of Rec-1S and Rec-2S switch points detectable) for each existing marker-marker interval (Figure~\ref{fig:example-recombinants}).
+
+In the end, this NCO detectability issue was problematic mainly to estimate the genuine CT lengths of recombination events, but we could solve it indirectly \textit{via} the use of an approximate bayesian computation (ABC) approach.
+In contrast, except in the matter of NCO-1 events, this issue was not particularly problematic to quantify gBGC, since only the heterozygous — and thus, detectable — sites involved in CTs participate to it.
+
+
+% - ces differences de detectabilite expliquent aussi pourquoi le ratio Rec-1S:Rec-2S est different
+
+% However, our data revealed about twice as many Rec-1S as Rec-2S. Two non-mutually exclusive reasons justify this finding.
+% On the one hand, the Rec-1S:Rec-2S ratio does not directly reflect the CO:NCO ratio since Rec-1S are a mixture of COs (about 47.7\%) and NCOs (about 52.3\%) (see \ref{par:MM-CO-NCO-estimates-in_Recs}).
+% On the other hand, NCOs are less detectable than COs (3 times less according to the results of the ABC), since, to be detected, NCO CTs (which are only a few tens of base pairs long) must overlap at least two markers.
+
+
+
+\subsection{A powerful and adaptable approach}
+
+Classical approaches to study recombination generally show too small resolution to detect NCOs and thus only allow the detection of COs.
+Here, even if NCO detectability was smaller than CO detectability (3 times smaller, according to the ABC in Chapter~\ref{ch:6-recombination-parameters}), our method detected both types of events at high resolution.
+In contrast, most studies that quantified gBGC in other species have restricted the measurement on NCOs \citep{si2015widely,williams2015noncrossover,halldorsson2016rate,smeds2016highresolution}.
+In our case, we could measure it both on CO and NCO events. 
+%and, in particular, showed that COs do not undergo gBGC\@.
+
+Altogether thus, our approach was a good compromise to study both recombination and its evolutionary consequences on any existing type of recombination event.
+On top of that, it was arguably even better suited than the other existing techniques, for it proved to be more than 100 times as powerful as the latter to detect recombination (see Chapter~\ref{ch:5-methodology}).\\
+
+% And, on top of that, it proved to be more than 100 times as powerful as all the current techniques to detect recombination (see Chapter~\ref{ch:5-methodology}).\\
+
+In addition, our approach was originally designed to study F1 hybrids but we showed that it could be extended to more complex designs to study recombination (Chapter~\ref{ch:8-HFM1}).
+Indeed, we managed to deal with the incorporation of a third genome and, theoretically, this adaptation should be possible with any other number of genomic introgressions.
+
+% FAIRE UNE TRANSI??
+% Using the events detected with this approach, we could thus precisely characterise recombination patterns in mice and quantify gBGC, whose intensity depends on several parameters detailed in the following section.
+
+
+
+
+% \section{Description of recombination in hybrid mice}%dBGC hitchhiking in structured populations (extension to structured pops)}
+\section{Parameters affecting the intensity of gBGC}
+\label{chap9:parameters-BGC}
+
+With the events that our approach allowed to detect, we could precisely characterise recombination patterns in mice (see Chapter~\ref{ch:6-recombination-parameters}) and quantify gBGC (see Chapter~\ref{ch:7-quantification-BGC}).
+To further understand how the intensity of the latter is modulated, we wanted to compare the parameters on which it depends between humans and mice.
+But, with an experimental design such as ours, another variable (namely, dBGC) affects the observed intensity of gBGC\@.
+In this section, I discuss how all these criteria can impact this phenomenon.
+
+
+\subsection{Impact of elevated hotspot asymmetry}
+
+To detect recombination events, one obvious prerequisite is the presence of polymorphic sites.
+We thus selected hotspots that displayed a minimum of 4 markers in the 300-bp central region.
+Yet, as most SNPs in F1 hybrid hotspots result from hotspot erosion in one parental lineage \citep{smagulova2016evolutionary}, this minimum-number-of-SNPs requirement led to a slightly greater proportion of asymmetric (i.e.\ eroded in one lineage) hotspots than would be expected with a random selection (Table~\ref{tab:classification-hotspots}).
+
+As \citet{li2018highresolution} pointed out, such asymmetric hotspots display, on average, lower recombinational activities than expected on the basis of PRDM9 ChIP-seq binding (Figure~\ref{fig:correlation-PRDM9-standard-error}).
+Thus, the overall recombination rate we extrapolated from our data is likely to be slightly underestimated (see Chapter~\ref{ch:6-recombination-parameters}).
+
+What's more, by definition, hotspot asymmetry implies a haplotype bias for PRDM9 binding.
+As such, our enrichment of targets in asymmetric hotspots likely amplified dBGC, and thus, the variations in dBGC intensity we observed may be somewhat more extreme than what would be expected on average hotspots.
+In addition, since the majority of hotspots in the B6xCAST hybrid is targeted by PRDM9\textsuperscript{Cst} \citep{smagulova2016evolutionary}, dBGC in that hybrid mainly operates in one direction: the favoured transmission of the CAST haplotype (see Chapter~\ref{ch:7-quantification-BGC}).
+This is particularly important, considering that dBGC impacts the observed gBGC\@.
+%, as discussed in the subsection below.
+
+
+
+
+% \subsection{Favoured direction of dBGC in B6xCAST ou hfm1} +asym + hfm1
+\subsection{dBGC hitchhiking in structured populations} 
+
+The hybrid mice that we analysed descended from crosses between two strains which displayed distinct \textit{Prdm9} alleles.
+Thus, their respective hotspots specifically underwent gBGC and got GC-enriched as compared to the genome of the other (‘nonself’) strain:
+% in the B6 (resp.\ CAST) lineage, PRDM9\textsuperscript{Dom2}-targeted (resp.\ PRDM9\textsuperscript{Cst}-targeted) hotspots locally enriched in GC while these positions in the CAST (resp.\ B6) lineage did not.
+% in the B6 lineage, PRDM9\textsuperscript{Dom2}-targeted hotspots locally enriched in GC while these positions in the CAST lineage did not;
+% and, conversely, in the CAST lineage, PRDM9\textsuperscript{Cst}-targeted hotspots enriched more their GC-content than the B6 lineage did.
+% while in the CAST lineage, PRDM9\textsuperscript{Cst}-targeted hotspots got GC-enriched.
+In parallel, the targeted hotspots got eroded in the ‘self’ lineage, as predicted by the hotspot conversion paradox \citep{boulton1997hotspot}.
+
+Consequently, when the two strains were crossed into a hybrid, each hotspot had been eroded in the locally GC-enriched (self) haplotype. 
+Thus, the DSB initiated preferentially on the other (nonself), non-eroded and GC-poorer haplotype.
+In turn, this led the eroded, GC-richer (self) haplotype to be the donor during the gene conversion event and its \textit{GC} alleles to be overtransmitted into the pool of gametes.\\
+
+Such interplay between dBGC (targeting the non-eroded haplotype) and past gBGC (local enrichment in \textit{GC} alleles) can be extended to any more general case of structured population:
+if two populations with distinct \textit{Prdm9} alleles have evolved independently during a length of time sufficient for the hotspots targeted by each allele to erode specifically in their lineage, crossing them together will end in dBGC hitchhiking past gBGC\@. 
+\textbf{AJOUTER FIGURE DE L'EROSION}\\
+
+% In the particular scenario of B6xCAST hybrids (and this surely extends to other cases of structured populations too), we found that the B6 haplotype was more GC-enriched in PRDM9\textsuperscript{Dom2}-targeted hotspots than the CAST haplotype was in PRDM9\textsuperscript{Cst}-targeted hotspots (Figure~\ref{fig:GC-profiles}).
+% This may be due to the fact that
+% As such, because of different levels of erosion and GC-increase in the past lineages, the interplay between dBGC and gBGC when populations cross may differ quantitatively between the two sets of targeted hotspots.\\
+%
+% - particular case of B6xCAST
+% - B6 plus erode (car plus vieux, ou parce que
+
+
+This phenomenon of dBGC hitchhiking brought a confounding effect to quantify gBGC and we thus decoupled the two processes by equalising, at every hotspot, the number of B6- and CAST-donor fragments to cancel the dBGC effect.
+This allowed us to quantify the transmission bias ($b_0$) in mice, useful to comprehend how the gBGC coefficient ($b$) varies with the effective population size ($N_e$).
+But, prior to that, the other parameters on which $b$ depends (the recombination rate $r$ and the length of conversion tracts $L$) should also be examined: this is the object of the next subsection.
+ 
+
+% Discuter aussi de la figure 7.4 (GC-profiles): B6 a plus de GC car a ete plus erode car plus vieux et/ou vu que parmi les hotspots selectionnes, on n'a moins de cibles par B6, donc ceux selectionnes sont les plus forts. + on observe une inversion hors des tracts. Du a qqch?
+
+
+
+\subsection{Comparison with human recombination parameters}
+
+To understand how $b$ interacts with $N_e$, we compared two of the parameters on which it depends in the species with large $N_e$ that we studied (mice) and another with lower $N_e$ (humans).\\
+
+First, the length of CO CTs we found for mice was very close to the one directly measured in a few human hotspots \citep{jeffreys2004intense}.
+Thus, the 2-fold difference on the $r^{CO} \times L^{CO}$ parameter between male mice and humans directly reflected the 2-fold difference in their CO rates (Table~\ref{tab:estimation-gBGC-values}).
+
+
+As for NCOs, we found a 3-fold difference on the $r^{NCO} \times L^{NCO}$ parameter between male mice and humans (Table~\ref{tab:estimation-gBGC-values}).
+Since we found mouse $L^{NCO}$ to be at least 1.5 times smaller than human $L^{NCO}$, the 3-fold difference on $r^{NCO} \times L^{NCO}$ was compatible with a 2-fold difference on the NCO rate ($r^{NCO}$) between male mice and humans. 
+In other words, since the mouse CO rate was twice as small as the human CO rate, the 2-fold difference between human and mouse NCO rates was perfectly consistent with a human CO:NCO rate of 0.10, i.e.\ close to the known mouse CO:NCO rate \citep{cole2010comprehensive}.
+
+Therefore, the parameters that we estimated indirectly with our ABC approach were in agreement with what one could have legitimately expected: similar CO:NCO rates for species within the mammalian clade.\\
+
+
+Altogether, except for the length of CO conversion tracts which were roughly identical in the two species, all the variables (the recombination rate for both COs and NCOs, and the length of NCO conversion tracts) were smaller in mice than in humans.
+
+Next, we examined whether the last parameter on which $b$ depends (the transmission bias) also changed in the same direction, as discussed in the upcoming section.
+
+% (et dans la conclusion aussi) il faudra bcp discuter du fait que les parametres r l et b0 varient inversement avec b. (pour repondre a la question dans les objectifs de la these)
+% Voir cette phras: Instead, one or several of the parameters on which $b$ depends (the recombination rate $r$, the length of conversion tracts $L$ and the transmission bias $b_0$) necessarily vary inversely with $N_e$.
+
+
+
+
+\begin{sidewaystable}[p]
+%\begin{table}[h!]
+    \centering
+	\begin{adjustbox}{width=\textwidth}
+    \begin{tabular}{rrrrr}
+        
+        \toprule
+        & \textbf{\textit{Mus musculus}} &  & \textbf{\textit{Homo sapiens}} &  \\
+        \cmidrule(l){2-2} \cmidrule(l){3-5}
+        Parameter (unit) & \textit{Male} & \textit{Male} & \textit{Female} & \textit{Sex-averaged} \\
+        
+        % \midrule
+        \cmidrule(l){1-1} \cmidrule(l){2-2} \cmidrule(l){3-5}
+        
+        $r^{CO}$ (cM/Mb)    & 0.42\textsuperscript{[3,4]} & 0.812\textsuperscript{[2]} & 1.398\textsuperscript{[2]} & 1.13\textsuperscript{[1,2]} \\
+        $L^{CO}$ (bp)       & 447\textsuperscript{$\star$} [245--874]\textsuperscript{b} & 460\textsuperscript{[5]} [300--1,019]\textsuperscript{a} & \textit{-} & \textit{-} \\
+        $r^{CO} \times L^{CO}$ ($\times 10^{-6}$)      & 2.37 [1.30--4.63]\textsuperscript{b} & 3.73 [2.44--8.27]\textsuperscript{a} & 6.43 [4.19--14.25]\textsuperscript{a} & 5.20 [3.39--11.51]\textsuperscript{a} \\
+        $b_0^{CO}$          & 0.00\textsuperscript{$\star$} [-0.0407--0.00428]\textsuperscript{b} & 0.5\textsuperscript{[6]} & 0.404\textsuperscript{[6]} [0.262--0.572]\textsuperscript{b} & 0.402\textsuperscript{[6]} [0.262--0.576]\textsuperscript{b}  \\
+        \textbf{$r^{CO} \times L^{CO} \times b_0^{CO}$ ($\times 10^{-6}$)}      & \textbf{0.00 [-0.0529--0.0198]\textsuperscript{c}} & \textbf{1.87 [1.22--4.135]\textsuperscript{b}} & \textbf{2.60 [1.10--8.15]\textsuperscript{c}} & \textbf{2.09 [0.882--6.63]\textsuperscript{c}} \\
+		\\
+		\midrule
+        % \cmidrule(l){1-1} \cmidrule(l){2-2} \cmidrule(l){3-5}
+        \\
+        $r^{NCO}$ (cM/Mb)   & 3.78\textsuperscript{$\ddagger$} & \textit{-} & \textit{-} & \textit{-} \\
+        $L^{NCO}$ (bp)      & 36\textsuperscript{$\star$} [4--54]\textsuperscript{b} & 55--290\textsuperscript{[5],$\mathsection$} & \textit{-} & \textit{-} \\
+        $r^{NCO} \times L^{NCO}$ ($\times 10^{-6}$)    & 1.36 [0.151--2.04]\textsuperscript{b} & 3.9\textsuperscript{[6]} [3.5--4.4]\textsuperscript{b} & 10.0\textsuperscript{[6]} [8.5--11.6]\textsuperscript{b} & 7.0\textsuperscript{[6]} [6.0--8.0]\textsuperscript{b} \\
+        $b_0^{NCO}$         & 0.310\textsuperscript{$\star$} & 0.262\textsuperscript{[7]} [0.142--0.382]\textsuperscript{b} & 0.450\textsuperscript{[7]} [0.382--0.522]\textsuperscript{b} & 0.36\textsuperscript{[7]} [0.16--0.56]\textsuperscript{b} \\
+        \textbf{$r^{NCO} \times L^{NCO} \times b_0^{NCO}$ ($\times 10^{-6}$)}   & \textbf{0.422 [0.0469--0.633]\textsuperscript{b}} & \textbf{1.02 [0.497--1.68]\textsuperscript{c}} & \textbf{4.50 [3.25--6.06]\textsuperscript{c}} & \textbf{2.52 [0.96--4.48]\textsuperscript{c}} \\
+        \\
+		\midrule
+        % \cmidrule(l){1-1} \cmidrule(l){2-2} \cmidrule(l){3-5}
+        
+        \textbf{$b$ ($\times 10^{-6}$)} & \textbf{0.422 [0.0469--0.633]\textsuperscript{b} } & \textbf{2.89 [1.72--5.81]\textsuperscript{c} } & \textbf{7.10 [4.35--14.21]\textsuperscript{c} } & \textbf{4.61 [1.84--11.1]\textsuperscript{c} } \\
+        
+        \bottomrule
+        
+    \end{tabular}
+	\end{adjustbox}
+	\caption[Estimation of biased gene conversion parameters in \textit{Homo sapiens} and \textit{Mus musculus}]
+	{\textbf{Estimation of biased gene conversion parameters in \textit{Homo sapiens} and \textit{Mus musculus}.} 
+		%The sources providing the values reported in this table are given in numbered superscript brackets. [1]: \citet{dumont2008evolution}. [2]: \citet{kong2002high}. [3]: \citet{cox2009new}. [4]: \citet{jensen2004comparative}. [5]: \citet{jeffreys2004intense}. [6]: \citet{halldorsson2016rate}. [7]: \citet{williams2015non}.
+		\par The sources providing the values reported in this table are given with the following numbered superscript brackets. [1]: \citet{dumont2008evolution}. [2]: \citet{kong2002highresolution}. [3]: \citet{shifman2006highresolution}. [4]: \citet{paigen2008recombinational}. [5]: \citet{jeffreys2004intense}. [6]: \citet{halldorsson2016rate}. [7]:~\citet{williams2015noncrossover}.
+		$\star$: Measured or estimated in this study.
+		$\ddagger$: We assumed that the mouse $r^{NCO}$ was about 9 times the mouse $r^{CO}$, since the CO:NCO ratio is 1:10 in the mouse \citep{handel2010genetics}.
+		$\mathsection$: Human $L^{NCO}$ values provided by \citet{jeffreys2004intense} correspond to the mean CT lengths of the two most extreme simulated distributions compatible with observed NCO events.
+		Any value reported without any source was directly calculated by us on the basis of the other parameters in this table. 
+		Between brackets, we report uncertainty intervals on these values. As their types may differ according to the sources, we specify them explicitly with alphabetical characters: Minimal and maximal values (a); 95\% confidence interval (b); 90\% confidence interval (c).
+	}
+\label{tab:estimation-gBGC-values}
+\end{sidewaystable}
+%\end{table}
+
+
+
+
+
+
+
+\section{Evolution of gBGC in mammals}
+% \section{A selective pressure restraining gBGC?}
+\subsection{Confidence in the estimation of $b$}
+
+If we decompose the relative contributions of COs and NCOs to gBGC, their parameters (recombination rate $r$, conversion tract length $L$ and transmission bias $b_0$) are related to the gBGC coefficient $b$ in the following way:
+
+\begin{alignat*}{4}
+	b&={}& 					   &b^{CO} 					&{}+{}& 					 &b^{NCO}& \\
+	 &={}& ( b_{0}^{CO} \times &r^{CO} \times L^{CO} ) 	&{}+{}& ( b_{0}^{NCO} \times &r^{NCO}& \times L^{NCO} )
+\end{alignat*}
+
+
+With this and the values that we estimated for all the parameters, we calculated that $b$ in the male mice we studied equalled 0.422 (Table~\ref{tab:estimation-gBGC-values}).
+The validity of this value depends on all the variables mentioned in the equation above.
+Among these, $r^{CO}$, $r^{NCO}$, $L^{CO}$ and $L^{NCO}$ are \textit{a priori} rather reliable as they concord with biological expectations (see Chapter~\ref{ch:6-recombination-parameters} and Section~\ref{chap9:parameters-BGC}).
+
+As for $b_{0}^{NCO}$ and $b_{0}^{CO}$, their estimates were based on the direct observation of $b_0$ for Rec-1S, Rec-2S and NCO-1 events (see Chapter~\ref{ch:7-quantification-BGC}).
+The latter depend largely on the correctness in the identification of the donor in the gene conversion event. 
+Indeed, if the inferred donor were \textit{not} accurate, results for the defective fragment would be reversed: all polymorphic sites within the CT\textsuperscript{$\star$} would be designated as being outside CTs\textsuperscript{$\star$}, and conversely. \\
+
+Regarding Rec-2S events, since both edges of its CTs\textsuperscript{$\star$} are directly observable, the position of multiple-marker (NCO-2+) CTs was unambiguous and there should not have been any mistake on the measure of $b_0^{NCO_{2+}}$.
+Concerning NCO-1 events, we grossly estimated $b_0^{NCO_1}$, but it may slightly differ from the genuine value. 
+Still, in view of the fact that the value we found was extremely close to that of human $b_0$ and very close to the one measured by \citet{li2018highresolution} on mice, we are confident that our estimate be roughly correct.
+
+As for Rec-1S events, only one edge of the CT\textsuperscript{$\star$} was unambiguously defined and we assumed that the other edge was located at the PRDM9 ChIP-seq peak summit (see Chapter~\ref{ch:6-recombination-parameters}).
+However, if the DSB site were mistakenly inferred to be on the opposite side of the unambiguous CT\textsuperscript{$\star$} edge, donor inference would also be erroneous.
+It was previously shown that the position of the DSB may vary by up to 30 bp from the consensus motif \citep{lange2016landscape} and we thus performed simulations in which the genuine position of the DSB was 30 bp away from its inference. 
+Using biologically realistic values for all other parameters, we found that the inferred donor was incorrect in fewer than 1\% of all recombination events identified under that scenario. 
+Therefore, the procedure we used to infer the donor in the recombination event was robust to the inferred position of the DSB\@.
+
+Whatsoever, even under a worst-case scenario where the donor would be erroneously inferred for most Rec-1S, this would not change results for Rec-2S events and, since NCOs are, by far, the main contributors to $b$ (Table~\ref{tab:estimation-gBGC-values}), our main conclusions would not change drastically.
+
+% Confidence b
+% pour NCO
+% $R^2 = 0.5630626$; \textit{p}-val $< 2.2 \times 10^{-16}$
+% pour CO
+% $R^2 = 0.4183843$; \textit{p}-val $< 2.2 \times 10^{-16}$
+
+
+
+
+% Hotspot centres, defined as the summits of PRDM9 ChIP-seq peaks, coincided with the positions of PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-hotspot-centres}) and most (77\%) Spo-11 ChIP-seq peak centres previously detected in B6 \citep{lange2016landscape} were located closer than 50-bp away from our PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-DSBs}). Altogether, this suggests that hotspot centres approximate accurately the genuine locations of DSB sites.
+
+% \citet{lange2016landscape} published Spo-11 ChIP-seq data on B6 mice. 141 of our hotspots overlapped a Spo-11 ChIP-seq peak and for each of them, we computed the distance between the center of the Spo-11 ChIP-seq peak and the PRDM9 binding motif we previously identified. We found that 77.3\% of these 141 peaks were located less than 50-bp away from the PRDM9 binding motif which proves that the PRDM9 binding motifs are located adjacently to genuine DSB sites.
+
+
+
+\subsection{A rapid evolution of the gBGC machinery?}
+
+% \subsection{comparison with humans}
+
+
+
+
+
+The transmission bias on NCOs ($b_0^{NCO}$) we estimated for male mice in this study was similar to that previously reported in male humans (Table~\ref{tab:estimation-gBGC-values}).
+Therefore, the quantitative difference on $r^{NCO} \times L^{NCO}$ between male mice and humans led to a 2.5-fold difference on $b^{NCO}$ between the two species. 
+As such, it seemd that NCOs contribute differently to gBGC in male mice and in men.
+
+
+However, comparing the contribution of their COs to gBGC was not as clear: 
+in humans, since $b_0$ has only been reported for complex COs (CCOs) which represent about 0.31\% and 1.33\% of male and female COs, respectively \citep{webb2008sperm, halldorsson2016rate}, the estimates reported in Table~\ref{tab:estimation-gBGC-values} for humans corresponded to those of CCOs; whereas our estimate of $b_0^{CO}$ in mice corresponded to simple COs (mice do not display any complex COs).
+Nevertheless, at least a portion (though small) of human COs contributed to gBGC, since male human $b_0^{CCO}$ equals 0.5. 
+Whether or not (and to what extent) simple COs also contribute to gBGC in humans still remains an open question. 
+In contrast, in male mice, we found that the contribution of COs to gBGC was null ($b_0^{CO} = 0$).
+
+Therefore, while both NCOs and COs (at least complex COs) contribute to $b$ in humans, solely NCOs contribute to it in mice, which suggests that the mechanisms leading to gBGC in male mice and humans may be different and, thus, that the molecular machinery responsible for gBGC may have evolved extremely rapidly within the mammalian clade.
+More specifically, in mice, NCO-1 events largely predominated in the intensity of $b$, since $b_0^{NCO_1}$ was largely superior to $b_0^{NCO_{2+}}$ — a finding that is consistent with what has been found by \citet{li2018highresolution}.
+After reanalysing data from \citet{halldorsson2016rate}, \citet{li2018highresolution} showed that this finding also held true in male humans. 
+In women however, we found that this was not the case: when considering all COs, the intensity of gBGC showed no decrease with the number of markers involved in CO CTs (data not shown), which implied that the mechanism leading to gBGC may also differ between sexes.
+
+
+
+
+% \subsection{nco 1 et 2 et effet de dilution}
+\subsection{A selective pressure restraining gBGC?}
+
+% Fait que NCO-1 ont BGC plus fort que NCO-2+ suggere mecanisme OU pression de selection quand bcp de SNPs (a discuter a la fin de ce chpaitre + dans chapitre 9)
+
+
+
+Using the approach previously described by \citet{glemin2015quantification}, we also measured the population-scaled gBGC coefficient ($B$) in humans and the two parental strains of the hybrid mice we studied.
+We found that the variation of $B$ was confined into a 1-to-1.5 range between \textit{H. sapiens} ($B = 0.355; CI_{95\%} = [0.282; 0.445]$) and \textit{Mus musculus domesticus} ($B = 0.465; CI_{95\%} = [0.337; 0.603]$) and into a 1-to-3.5 range between \textit{H. sapiens} ($B = 0.355; CI_{95\%} = [0.282; 0.445]$) and \textit{Mus musculus castaneus} ($B = 1.21; CI_{95\%} = [1.13; 1.26]$).
+
+Interestingly, the parameters on which $B$ depends differ in much larger scopes between humans and mice: $b$ was almost 7 times as high in men as in male mice (Table~\ref{tab:estimation-gBGC-values}), and $N_e$ differ by 20 to 70 times between these species \citep{charlesworth2009fundamental,phifer-rixey2012adaptive}.
+
+We also note that, since the minimum and maximum $N_e$ in humans are estimated to be 10,000 and 20,000 respectively \citep{charlesworth2009fundamental}, $B$ (calculated as $4 \times N_e \times b$) would give a minimum-maximum range of 0.184--0.369, perfectly compatible with our independent observation of $B$: 0.355.
+
+In mice, however, the sex-averaged $b$ could be calculated since it has never been reported for females.
+Using the male $b$ instead, the estimate for $4 \times N_e \times b_{male}$ would range between 0.0979 and 0.338 for \textit{Mus musculus domesticus} and between 0.338 and 1.24 for \textit{Mus musculus castaneus}, which were slightly lower estimates than the observed $B$ (0.465 and 1.21 respectively for the two species).
+Under the assumption that, like in humans, females would contribute more than males to gBGC (Table~\ref{tab:estimation-gBGC-values}) and thus that the sex-averaged $b$ would be slightly higher than the male $b$, the estimate would fit well with the observed $B$. If this were true, it could mean that any sexual difference concerning gBGC in humans may also exist in mice.\\
+
+
+
+% PEUT ETRE NE COMMENCER QUE LA
+All in all, both qualitative and quantitative differences exist between humans and mice for males, and likely between men and women too (but data is lacking to verify this in mice). 
+This suggests that the DSB repair machinery leading to gBGC proceeds differently in these two species, and thus that this machinery evolved extremely rapidly within the mammalian clade.
+
+As gBGC is known to promote the fixation of \textit{G} and \textit{C} alleles even when they are deleterious \citep{galtier2009gc, neccsulea2011meiotic}, the burden of this force at the population-scale should be higher in species with large $N_e$. Nonetheless, $B$ remains in a small range, irrespective of the species' $N_e$. It is thus tempting to suggest that there may be a selective pressure on the DSB repair machinery to minimise $b$ in species with large $N_e$, as has already been proposed by \citet{galtier2018codon}.
+
+Given our observations, it seems that several parameters would allow to restrain $B$ in species where the effective population size is high.
+Indeed, both the recombination rate and the lengths of NCO CTs are smaller in mice than in humans and thus contribute to lessening $b$.
+
+In addition, since $b_0^{NCO_1}$ is much greater than $b_0^{NCO_{2+}}$ in mice, the relative proportions of NCO-1 and NCO-2+ events, determined by the polymorphism, impact $b$ (see Chapter~\ref{ch:6-recombination-parameters}): the more polymorphic, the greater proportion of NCO-2+ events, and thus the lower $b$. Since species with large $N_e$ are more polymorphic and thus entail more NCO-2+ events, the fact that $b_0^{NCO_{2+}}$ is much smaller than $b_0^{NCO_1}$ may be interpreted as another manifestation of the existence of a selective pressure acting to restrain $B$ in large-$N_e$ populations.
+
+
+\textbf{Puis, mettre une transition sur pourquoi ce b pourrait etre limite a l'echelle individuelle}
+
+
+
+
+
+\textbf{NOTES — ajouter une figure erosion des hotspots dans un cross}
+
+
+%OK % FIN CHAP 6
+%OK % Page de titre
+%OK % CHAP 7: au moins motifs+ hitchhinking
+%OK % ce soir: abstract en francais.
+%OK % demain: fin chap 7 + chap8 (au moins design + adaptation methode)
+% Samedi: fin chap 8 + chap9 en entier
+% Dimanche: chap10 (au moins 1 section) + conclusion + preambule
+% Lundi: fin chapitre 10
+% Mardi + mercredi + jeudi: chap1 section 3
+% Vendredi + dimanche : figures sur Inkscape
+% Lundi + mardi: resume etendu + abbreviations + definitions + verif les references
+% Mercredi + Jeudi: relecture totale.
+% Vendredi: remerciements.
+% + Preparation de SMBE
+
+% \textbf{NOTE a Laurent: Je me demande s'il est pertinent de comparer ces deux mesures car, dans le cas de l'ABC, on extrapole le taux de recombinaison reel (i.e.\ nb de COs en cM/Mb génomique) alors que dans le cas des fragments informatifs, on obtient un taux de COs en cM/Mb séquencée.}
+
+
+
+
+
+% chap10:
+% epistemologie (proprietes emergentes ou pas + toute la fin de mes notes Notes_for_discussion_personnal.txt sur microevol/macroevol et fonctionnel vs mecanismes)
+% comment la science avance (role des differents scientifiques qui ont apporte des nouvelles theories sont mieux connus que ceux qui font les decouvertes + analyse de l'evolution des recherches en evolution notamment avec apport de techniques comme genetique et ordis pour bioinfo + share knowledge gnomics.io)
+% bioinformaticien (regarder les donnees (importance sur les emthodes, en aprticulier vu que realignement et teste des choses comme filtres, jusqu'a ce que validation par des simul) + seulement des tendances, jamais reels biologiques donc faut passer par inferences — en particulier, important dans le cas des evolutionnistes, car on interprete le passe sans pouvoir le demontrer (cf Jay Gould) et ses imperfections sont utiles poour comprendre de nouvelles choses).
+
+% Dans epistemo: discuter du fait que la taille efficace de population est un concept qui est assez peu bien defini — difficile a mesurer donc les projets menes dessus sont un peu limites.
+
+% Mettre dedans l'idee que reflechir sur comment le BGC peut etre contreselectionnne a l'echelle de l'individu pour eviter les defauts a l'echelle populationnelle est insoluble. 
+% Mais, mettre la citation (Ernst Mayr oiu Jay Gould?) sur : claim to tell that the problems they did not solve are insoluble.
+% It is an occupational risk of biologists to claim, towards the end of their careers, that the problems which they have not solved are insoluble. (John maynard Smith)
+
+
+% Annexes (erreur du jeune est d'en mettre trop)
+%% pour chap6
+% mettre les figures DMC1 (les deux — correlation par groupe de 10 plus relation asymetrie)
+% + position des switch points
+%% data availability: mettre lien vers le github pour reproduire les figure et avoir les tableaux d'entree + numero accession SRA
+%% pour chap8: mettre les autres images de l'identification du background + image des correlations sur les memes hotspots
+%% les listes de hotspots etudies
+
+% Annexe des permissions
+% La meilleure:
+% [It] is not the nature of things for any one man to make a sudden, violent discovery; science goes step by step and every man depends on the work of his predecessors. When you hear of a sudden unexpected discovery—a bolt from the blue—you can always be sure that it has grown up by the influence of one man or another, and it is the mutual influence which makes the enormous possibility of scientific advance. Scientists are not dependent on the ideas of a single man, but on the combined wisdom of thousands of men, all thinking of the same problem and each doing his little bit to add to the great structure of knowledge which is gradually being erected. 
+% — Sir Ernest Rutherford
+% Concluding remark in Lecture ii (1936) on 'Forty Years of Physics', revised and prepared for publication by J.A. Ratcliffe, collected in Needham and Pagel (eds.), Background to Modern Science: Ten Lectures at Cambridge Arranged by the History of Science Committee, (1938), 73-74. Note that the words as prepared for publication may not be verbatim as spoken in the original lecture by the then late Lord Rutherford.
+
+
+
+
+% [I]f texts are unified by a central logic of argument, then their pictorial illustrations are integral to the ensemble, not pretty little trifles included only for aesthetic or commercial value. Primates are visual animals, and (particularly in science) illustration has a language and set of conventions all its own.
+% De Stephen Jay Gould
+% de Jay Gould encore
+% God bless all the precious little examples and all their cascading implications; without these gems, these tiny acorns bearing the blueprints of oak trees, essayists would be out of business.
+% Questioning the Millennium (second edition, Harmony, 1999), p. 42
+% de Einstein 
+% When a man after long years of searching chances on a thought which discloses something of the beauty of this mysterious universe, he should not therefore be personally celebrated. He is already sufficiently paid by his experience of seeking and finding. In science, moreover, the work of the individual is so bound up with that of his scientific predecessors and contemporaries that it appears almost as an impersonal product of his generation.
+% From the story "The Progress of Science" in The Scientific Monthly edited by J. McKeen Cattell (June 1921), Vol. XII, No. 6. The story says that the comments were made at the annual meeting of the National Academy of Sciences at the National Museum in Washington on April 25, 26, and 27. Einstein's comments appear on p. 579, though the story may be paraphrasing rather than directly quoting since it says "In reply Professor Einstein in substance said" the quote above.
+% 
+% In science men have discovered an activity of the very highest value in which they are no longer, as in art, dependent for progress upon the appearance of continually greater genius, for in science the successors stand upon the shoulders of their predecessors; where one man of supreme genius has invented a method, a thousand lesser men can apply it. … In art nothing worth doing can be done without genius; in science even a very moderate capacity can contribute to a supreme achievement. 
+% — Bertrand Russell
+% Essay, 'The Place Of Science In A Liberal Education.' In Mysticism and Logic: and Other Essays (1919), 41.
+
+% It is a wrong business when the younger cultivators of science put out of sight and deprecate what their predecessors have done; but obviously that is the tendency of Huxley and his friends … It is very true that Huxley was bitter against the Bishop of Oxford, but I was not present at the debate. Perhaps the Bishop was not prudent to venture into a field where no eloquence can supersede the need for precise knowledge. The young naturalists declared themselves in favour of Darwin’s views which tendency I saw already at Leeds two years ago. I am sorry for it, for I reckon Darwin’s book to be an utterly unphilosophical one. 
+% — William Whewell
+% Letter to James D, Forbes (24 Jul 1860). Trinity College Cambridge, Whewell Manuscripts.
+
+% Very few people, including authors willing to commit to paper, ever really read primary sources–certainly not in necessary depth and contemplation, and often not at all ... When writers close themselves off to the documents of scholarship, and then rely only on seeing or asking, they become conduits and sieves rather than thinkers. When, on the other hand, you study the great works of predecessors engaged in the same struggle, you enter a dialogue with human history and the rich variety of our own intellectual traditions. You insert yourself, and your own organizing powers, into this history–and you become an active agent, not merely a ‘reporter.’ 
+% — Stephen Jay Gould
+
+% [It] is not the nature of things for any one man to make a sudden, violent discovery; science goes step by step and every man depends on the work of his predecessors. When you hear of a sudden unexpected discovery—a bolt from the blue—you can always be sure that it has grown up by the influence of one man or another, and it is the mutual influence which makes the enormous possibility of scientific advance. Scientists are not dependent on the ideas of a single man, but on the combined wisdom of thousands of men, all thinking of the same problem and each doing his little bit to add to the great structure of knowledge which is gradually being erected. 
+% — Sir Ernest Rutherford
+% Concluding remark in Lecture ii (1936) on 'Forty Years of Physics', revised and prepared for publication by J.A. Ratcliffe, collected in Needham and Pagel (eds.), Background to Modern Science: Ten Lectures at Cambridge Arranged by the History of Science Committee, (1938), 73-74. Note that the words as prepared for publication may not be verbatim as spoken in the original lecture by the then late Lord Rutherford.
+
+% It is strange that only extraordinary men make the discoveries, which later appear so easy and simple.
+% GEORG C. LICHTENBERG, 1742 TO 1799
+
+
+
+
+% REMERCIEMENTS
+% You have … been told that science grows like an organism. You have been told that, if we today see further than our predecessors, it is only because we stand on their shoulders. But this [Nobel Prize Presentation] is an occasion on which I should prefer to remember, not the giants upon whose shoulders we stood, but the friends with whom we stood arm in arm … colleagues in so much of my work. 
+% — Sir Peter B. Medawar
+% From Nobel Banquet speech (10 Dec 1960).
+
+
+% DEDICACE
+% A Loïc Rajjou,
+% qui, le premier, m'a donné le goût de la recherche,
+% et sans la rencontre duquel,
+% l'idée-même d'un doctorat ne m'aurait pas effleuré l'esprit.
+
+% l'idee d'un doctorat ne m'aurait pas meme effleure l'esprit.
+% l'idée-même d'un doctorat ne m'aurait pas effleurée.
+%
+
+% l'idee d'un doctorat ne m'aurait pas meme effleuree.
+% Je lui dois tout, alors merci a lui.
+% la possibilite d'un doctorat ne m'aurait pas meme effleure l'esprit.
+% l'idee-meme d'un doctorat ne m'aurait pas effleure l'esprit.
+
+% et sans la rencontre duquel l'idee meme d'un doctorat ne m'aurait jamais effleuree.
+% et sans le soutien duquel l'idee meme d'un doctorat ne m'aurait jamais effleuree.
+% et sans le soutien duquel la possibilite d'un doctorat serait reste une idee vague.
+% et sans lequel je n'aurais jamais envisage un doctorat.
+
+% qui, le premier, m'a donne le gout de la recherche
+% et sans la rencontre duquel,
+%
+% sans la rencontre duquel
+% cette these n'aurait pas existe
+%
+
+
+
+\textbf{\\NOTES}
+Revoir chaptire 2 pour les proteines / gene names: https://incenp.org/notes/2012/gene-nomenclature.html
+Levures: Proteine \textit{GENE}
+Mouse: PROTEINE \textit{Gene}
+Homme: PROTEINE \textit{GENE}
+
++ ajouter la definition de ZMM (p38 CO pathway)
+acronym for yeast proteins
+Zip1/Zip2/Zip3/Zip4, Msh4/Msh5, Mer3
+(+ ces proteines a mettre en italique)
+
+a set of yeast proteins (Zip1, Zip2, Zip3, Zip4/Spo22, Mer3, Msh4, and Msh5, termed the SIC or ZMM proteins) 
+
+
+https://incenp.org/notes/2012/gene-nomenclature.html
+
+
+
+
+% HFM1
+% file:///Users/maudgautier/Downloads/StatHotspots.html#pairwise-comparison-of-capture-efficiency
+% file:///Users/maudgautier/Library/Containers/com.apple.mail/Data/Library/Mail%20Downloads/0B36F5AF-413F-43AB-BAA8-D254CD7974B3/MapGenotypeF1.html
+%
+% file:///Users/maudgautier/Documents/These/R_projects/01_identification_of_recombinants.html#perspectives
+% file:///Users/maudgautier/Documents/These/R_projects/03_New_method/03_Rmarkdown_recap.html
+% file:///Users/maudgautier/Documents/These/R_projects/01b_Mice_Whole_experiment/01_identification_of_recombinants.html
+% file:///Users/maudgautier/Documents/These/R_projects/01_identification_of_recombinants.html
+%
+%
+%
+% A garder
+% https://en.wikipedia.org/wiki/Intragenomic_conflict
+% https://www.phil.vt.edu/dmayo/PhilStatistics/b%20Fisher%20design%20of%20experiments.pdf
+% https://gdurif.perso.math.cnrs.fr/#contact
+% Wu anaotomy of mouse recombination hotspot
+% https://www.nature.com/articles/ng0794-420
+% https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4978934/
+% Yauk EMBO
+% https://en.wikipedia.org/wiki/History_of_evolutionary_thought
+% https://tel.archives-ouvertes.fr/tel-00431055/document
+% https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1832099/
+%
+%
+%
+% https://www.nature.com/scitable/topicpage/genetic-drift-and-effective-population-size-772523
+% https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2635931/
+%
+%
+% http://www.lequydonhanoi.edu.vn/upload_images/S%C3%A1ch%20ngo%E1%BA%A1i%20ng%E1%BB%AF/Rich%20Dad%20Poor%20Dad.pdf
+%
