@@ -37,24 +37,24 @@
 The classical approach to understand the specific role of a given recombination-dependent gene consists in studying individuals with an inactivated version of the gene.
 % Even though many of the actors of the recombination process are known, the specific role of some of them remains to be elucidated.
 % Classically, this can be done by studying individuals for which a given recombination-dependent gene has been inactivated.
-Such introgression of a knocked-in (KI) gene into a hybrid can be done by crossing one of its ancestors with a third strain containing the inactivated version of the gene.
-Thus, recombination events should be searched in the hotspots of a F2 individual containing three distinct genetic backgrounds.
+Such introgression of a knocked-in (KI) gene into a hybrid can be done by crossing one of its ancestors with a third strain containing the non-functional allele.
+Thus, recombination events should be searched for in the hotspots of a F2 individual containing three distinct genetic backgrounds.
 Here, we adapted the method we implemented for simple F1 hybrids to such design.
 Basically, we had to distinguish the polymorphic sites expressing variation between the two parental genomes from those originating from the third introgressed genome.
 % In the end, our method was as powerful as the original one for simple F1 hybrids.
-This implementation was as powerful as the original method and we could thus study the role of \textit{Hfm1}, a DNA helicase important for CO control: we found that its KI leads to increased recombination rate and shortened CO conversion tracts.
+This implementation was as powerful as the original method and we could thus study the role of \textit{Hfm1}, a DNA helicase important for CO control: we observed that its KI led to increased recombination rate and shortened CO conversion tracts.
 
 }
 
 \newpage
 
-Even though it is nowadays largely acknowledged that the formation of recombination events (COs and NCOs) depends on a complex network of proteins (see Chapter~\ref{ch:2-recombination-mechanistics}), the specific role and impact of many of these actors has not yet been elucidated.
+Even though it is nowadays largely acknowledged that the formation of recombination events (COs and NCOs) depends on a complex network of proteins (see Chapter~\ref{ch:2-recombination-mechanistics}), the specific role and impact of many of these actors has not been elucidated yet.
 In particular, the yeast gene \textit{MER3} (mouse homologue: \textit{Hfm1}) codes for a meiosis-specific DNA helicase \citep{nakagawa1999saccharomyces,nakagawa2002saccharomyces} that participates in CO control and in DNA heteroduplex extension \citep{mazina2004saccharomyces,nakagawa2002mer3}.
 This gene is also essential to CO formation in other fungi \citep{sugawara2009coprinus}, plants \citep{mercier2005two,chen2005arabidopsis}, humans \citep{tanaka2006hfm1} and mice \citep{guiraldelli2013mouse}.
-Though, even if it has been shown that it diminishes the rate in mice \citep{guiraldelli2013mouse}, its impact on other parameters of recombination, like the length of conversion tracts, has not been established.
+Though, even if it has been shown that it diminishes the recombination rate in mice \citep{guiraldelli2013mouse}, its impact on other parameters of recombination, like the length of conversion tracts, has not been established.
 
-Because the method that I described in Chapter~\ref{ch:5-methodology} showed unprecedented power to detect recombination events in single individuals, it became possible to study the impact of \textit{Hfm1} on recombination by comparing the recombinational outcome of wild-type and \textit{hfm1} mutant (\textit{Hfm1\textsuperscript{-/-}}) mice.
-In this chapter, I detail how the mutant gene was introgressed into F2 mice descending from B6 and CAST strains, how we refactored our method to study recombination in these F2 individuals and what were the primary results of this analysis.
+Because the method that we implemented (see Chapter~\ref{ch:5-methodology}) showed unprecedented power to detect recombination in single individuals, it seemed possible to study the role of \textit{Hfm1} by comparing the recombinational outcome of wild-type and \textit{hfm1} mutant (\textit{Hfm1\textsuperscript{-/-}}) mice.
+In this chapter, I detail how the mutant gene was introgressed into F2 mice descending from B6 and CAST strains, how we refactored our method to study recombination in these F2 individuals containing a third genetic background and what the primary results of this analysis were.
 
 
 
@@ -166,7 +166,7 @@ In this chapter, I detail how the mutant gene was introgressed into F2 mice desc
 A point mutation on \textit{Hfm1} (\textit{Hfm1\textsuperscript{KI}}) was introduced in the zygote of a cross between two F1 mice deriving from hybridisations between two \textit{Mus musculus domesticus} strains: strain C57BL/6J, hereafter called B6 and strain DBA/2J, hereafter called DBA2.
 The resulting founder mice (F0\#2 and F0\#3) were thus heterozygous for the \textit{Hfm1} gene (\textit{Hfm1\textsuperscript{WT/KI}}) and their genetic backgrounds were composed of 50\% DBA2 and 50\% B6 genomes.
 
-Further crosses with other B6 and \textit{Mus musculus castaneus} (strain CAST/EiJ, hereafter called CAST) mice resulted in individuals carrying either two KI (i.e.\ inactivated) alleles for \textit{Hfm1} (\textit{Hfm1\textsuperscript{KI/KI}} or \textit{Hfm1\textsuperscript{-/-}}), two WT (i.e.\ activated) alleles (\textit{Hfm1\textsuperscript{WT/WT}} or \textit{Hfm1\textsuperscript{+/+}}) or one allele of each (\textit{Hfm1\textsuperscript{WT/KI}} or \textit{Hfm1\textsuperscript{+/-}}).
+Further crosses with other B6 and \textit{Mus musculus castaneus} (strain CAST/EiJ, hereafter called CAST) mice resulted in individuals carrying either two KI (i.e.\ inactivated) alleles for \textit{Hfm1} (\textit{Hfm1\textsuperscript{KI/KI}}, i.e.\ \textit{Hfm1\textsuperscript{-/-}}), two WT (i.e.\ activated) alleles (\textit{Hfm1\textsuperscript{WT/WT}}, i.e.\ \textit{Hfm1\textsuperscript{+/+}}) or one allele of each (\textit{Hfm1\textsuperscript{WT/KI}}, i.e.\ \textit{Hfm1\textsuperscript{+/-}}).
 The genetic backgrounds for these mice were composed of a mixture of B6, DBA2 and CAST genomes (Table~\ref{tab:genealogies}).
 
 Of these, two \textit{hfm1} mutant (28353 and 28367) and two WT (28355 and 28371) male mice were selected for further analysis: their sperm DNA was extracted and sonicated to produce fragments of a mean size of 450 bp.
@@ -320,12 +320,12 @@ More precisely, the expected genomic proportion (and thus, the expected proporti
 
 The recombination events of interest in this analysis were those arising between a CAST haplotype and a B6 or a DBA2 haplotype.
 What's more, the B6 and the DBA2 genomes present high sequence conservation — presumably because they inherited large genomic regions from a relatively recent common ancestor \citep{davis2005genomewide}, — whereas the B6 and CAST strains which diverged about 350,000 to 500,000 years ago \citep{geraldes2008inferring} present a much higher genome-wide divergence of 1 SNP every 150 bp \citep{keane2011mouse}.
-Thus, for the sake of siplicity, we chose not to distinguish between the B6 and DBA2 background and grouped these two haplotypes under the label ‘BD’.
+Thus, for the sake of simplicity, we chose \textit{not} to distinguish between the B6 and the DBA2 backgrounds and, instead, grouped these two haplotypes under the label ‘BD’.
 With this simplified notation, an expected 50\% of the hotspots of the analysed mice should be in a BD/BD background, and the other 50\% in a BD/CAST background (Table~\ref{tab:background-expected}).\\
 
 
-The background composition of hotspots constituted one difference with the dataset analysed in Chapter~\ref{ch:5-methodology}, in which all hotspots were heterozygous because the individual analysed was a F1 hybrid.
-But the most critical difference was the presence of a third genomic origin (DBA2): the polymorphic sites between DBA2 and B6 would undoubtedly lead to spurious genotype calls and thus, false positive discoveries.
+The background composition of hotspots made a noteworthy difference with the dataset analysed in Chapter~\ref{ch:5-methodology}, in which all hotspots were heterozygous because the individual analysed was a F1 hybrid.
+But the most critical difference was the presence of a third genomic origin (DBA2): the polymorphic sites between DBA2 and B6 would undoubtedly lead to spurious genotype calls and thus, to false positive discoveries.
 Therefore, prior to searching for recombination events in this dataset, it was necessary to distinguish the B6-DBA2 polymorphic sites from the BD-CAST polymorphic sites, in order to base the genotyping solely on the latter class of markers.
 
 
@@ -337,7 +337,7 @@ Therefore, prior to searching for recombination events in this dataset, it was n
 \section{Detection of recombination in F2 individuals}
 \subsection{Inferrence of the origin of polymorphic sites}
 
-Because the B6 and the DBA2 genomes were much more highly conserved \citep{davis2005genomewide} than the B6 and the CAST genomes \citep{keane2011mouse}, we used the simplifying assumption that any polymorphic site between the CAST and B6 genomes would also appear between the CAST and DBA2 genomes. 
+Because the B6 and the DBA2 genomes were much more highly conserved \citep{davis2005genomewide} than the B6 and the CAST genomes \citep{keane2011mouse}, we used the simplifying assumption that any polymorphic site between the CAST and the B6 genomes would also appear between the CAST and the DBA2 genomes. 
 In other words, we assumed that the B6 and the DBA2 strains carried the same allele at BD-CAST polymorphic sites.
 When mapped against the CAST reference genome, the ‘reference’ (REF) allele at any such BD-CAST polymorphic site was necessarily the CAST allele and the ‘alternate’ (ALT) allele was the BD (B6 and DBA2) allele.
 Thus, given that no hotspot could be in a CAST/CAST background (Table~\ref{tab:background-expected}), there was no possible \textit{scenario} for which an individual could be genotyped by the variant-caller as REF/REF at a BD-CAST polymorphic site.
@@ -346,12 +346,13 @@ In contrast, the polymorphic sites between the B6 and the DBA2 genomes could be,
 Indeed, at such B6-DBA2 polymorphic sites, the allele carried by the B6 strain was, by definition, different than that carried by the DBA2 strain.
 According to the principle of parsimony, one of them (either the B6 or the DBA2 strain) should carry the same allele as the CAST strain.
 If the B6 (resp.\ DBA2) allele was identical to the CAST allele, the B6 (resp.\ DBA2) allele would be the labeled as the reference (REF) allele and the DBA2 (resp.\ B6) allele as the alternate (ALT), when mapped against the CAST reference genome.
-Therefore, an individual with a B6/CAST- or a B6/B6- background (resp.\ DBA2/CAST- or DBA2/DBA2-background) would be genotyped REF/REF at such a B6-DBA2 polymorphic site.
+Therefore, an individual with a B6/CAST- or a B6/B6- background (resp.\ DBA2/CAST- or DBA2/DBA2-background) would be genotyped REF/REF at such B6-DBA2 polymorphic sites.
 
 To distinguish between the two types of markers (B6-DBA2 or BD-CAST), we thus followed the following rule: 
 if, in at least one of the four mice, a marker was genotyped REF/REF, we inferred that it was a B6-DBA2 marker.
 Otherwise, we inferred that it was a BD-CAST marker.
-We note that this led to erroneous calls (a B6-DBA2 marker mistakenly labeled as a BD-CAST marker) in cases where all four mice had the B6/B6 or the B6/CAST (resp.\ the DBA2/DBA2 or the DBA2/CAST) background. Though, in these \textit{scenarii}, the DBA2 and the B6 haplotypes are strictly undiscernable from one another and hus this would not lead to any erroneous genotyping error.
+We note that this led to erroneous calls (a B6-DBA2 marker mistakenly labeled as a BD-CAST marker) in cases where all four mice had the B6/B6 or the B6/CAST (resp.\ the DBA2/DBA2 or the DBA2/CAST) background. Though, in such \textit{scenarii}, the DBA2 and the B6 haplotypes were strictly undiscernable from one another and, consequently, no erroneous genotyping error could possibly occur.
+% this would not lead to any erroneous genotyping error.
 
 
 
@@ -366,9 +367,31 @@ in any other case, the background was not inferred.
 Last, we refined the analysis for the targets whose genetic background could not be inferred with the criterium aforementioned: if they were flanked on both the 5’ and the 3’ sides by at least 5 targets with a BD/BD (resp.\ BD/CAST) genetic background, we attributed them the BD/BD (resp.\ BD/CAST) background.
 
 This \textit{modus operandi} ended in a mosaic of BD/BD and BD/CAST genetic backgrounds consistent with 0 or 1 (and sometimes 2) crossing-overs per chromosome in each individual (Figure~\ref{fig:mosaic-backgrounds} and Appendix~\ref{app:data-and-figs}), which provided strong support that our inferrence was correct.
-All in all, across all 1,390 loci of the 4 mice, 7 were incongruent with the genetic background around (either because they were subject to a double crossing-over, or because of genotyping errors). We thus chose to remove these from the analysis.
+All in all, across all 1,390 loci of the 4 mice, 7 were incongruent with the surrounding genetic background (either because they were subject to a double crossing-over, or because our inferrence was incorrect at these sites). We thus chose to remove them from the analysis.
 Altogether, the proportion of heterozygous (i.e.\ BD/CAST-background) targets (Table~\ref{tab:proportion-het-backgrounds}) was close to the expected 50\% (Table~\ref{tab:background-expected}).
-To further verify that these observed proportions fitted what was expected, we simulated a BD/CASTxBD/BD cross in which COs (number given by the sex-averaged genetic length) were drawn randomly along each chromosome. We found that the distribution of the expected proportion of heterozygous targets fitted with the observations (data not shown).
+To further verify that these observed proportions fitted what was expected, we simulated a BD/CASTxBD/BD cross in which COs (number given by the sex-averaged genetic length) were drawn randomly along each chromosome. We found that the distribution of the expected proportion of heterozygous targets (data not shown) fitted with the observations (Table~\ref{tab:proportion-het-backgrounds}).
+
+
+
+
+% RIGHT PAGE
+\begin{sidewaysfigure}[p]
+    \centering
+    \leftskip-2.4cm
+    \rightskip-2.4cm
+    \rotfloatpagestyle{empty}
+    \includegraphics[width = 1.25\textwidth]{figures/chap8/HFM1_background_28353.eps}
+    \captionsetup{width=1.25\textwidth, margin={-2.2cm, -3.3cm}}
+    \caption[Mosaic of genetic backgrounds inferred at each target along the chromosomes of mouse 28353]
+    {\textbf{Mosaic of genetic backgrounds inferred at each target along the chromosomes of mouse 28353.}
+        \par Chromosomes are represented in grey and oriented so that the centromere is on the bottom side of the figure (mouse chromosomes are acrocentric).
+		Each segment corresponds to the position of a target (hotspot or control region) and was coloured in red when the background inferred was BD/BD (homozygous) and in blue when the background inferred was BD/CAST (heterozygous). 
+		The corresponding figures for the three other mice (28355, 28367, 28371) are reported in Appendix~\ref{app:data-and-figs}.        
+    }
+\label{fig:mosaic-backgrounds}
+\end{sidewaysfigure}
+
+
 
 
 
@@ -390,8 +413,8 @@ To further verify that these observed proportions fitted what was expected, we s
 		\multicolumn{2}{r}{\textbf{Average}} & \textbf{724} & \textbf{596} & \textbf{54.85} \\
         \bottomrule
     \end{tabular}
-    \caption[Proportion of heterozygous targets in each mouse analysed]
-	{\textbf{Proportion of heterozygous targets in each mouse analysed.}
+    \caption[Observed proportion of heterozygous targets in the studied mice]
+	{\textbf{Observed proportion of heterozygous targets in the studied mice.}
 		\par The background for each hotspot was inferred as described in the main text, for wild-type (WT) mice (top panel) and mutant mice (bottom panel). The line in bold represents the average across all four mice.
 	}
 \label{tab:proportion-het-backgrounds}
@@ -469,34 +492,67 @@ To further verify that these observed proportions fitted what was expected, we s
 
 \subsection{Detection of events in heterozygous hotspots}
 
-Finally, we applied the unique-molecule genotyping pipeline described in Chapter~\ref{ch:5-methodology} to all the heterozygous targets and, by comparing the number of events found in control regions and hotspots, the maximum FP error rate was similar to that from Chapter~\ref{ch:5-methodology}: 3.22\% (Table~\ref{tab:HFM1-FP-rate}).
+Finally, we applied the unique-molecule genotyping pipeline described in Chapter~\ref{ch:5-methodology} to all the heterozygous targets and we found that the maximum FP error rate for this readaptation of our approach (3.22\%, Table~\ref{tab:HFM1-FP-rate}) was similar to that from Chapter~\ref{ch:5-methodology} (3.73\%, Table~\ref{tab:FP-rate}).
 
-Altogether thus, our procedure was efficient to detect recombination events in the F2 individuals.
-From this point on, we could thus assess the impact of the \textit{hfm1} mutation on several aspects of the recombination process.
+Altogether thus, our procedure was as efficient to detect recombination events in F2 individuals containing a third genetic background introducing genotyping errors as it was for F1 hybrids.
+From this point on, we could thus assess the impact of the \textit{hfm1} mutation on several aspects of recombination.
 
 
 
-\section{Impact of \textit{Hfm1} on recombination}
-\subsection{Impact on the recombination rate (ou CO rate)}
+
+\section{Impact of the \textit{Hfm1} gene on recombination}
+\subsection{Impact on the recombination rate (RR)}
 \label{chap8:recombination-rate}
 
-- observe que le taux de recombi est bcp plus grand chez non mut.
-- coherent avec litt.
-- mais, dans litt, surtout affecte les CO, nous peut pas mais regarde les Rec-1S en comparant deux a deux sur les memes sets de hotspots.
+We observed that the recombination rate (RR) was, on average, almost twice as high for mutants as for WT mice (Table~\ref{tab:HFM1-FP-rate}).
+Surprisingly, this effect was the opposite of what others had previously found.
+Indeed, another study in mice observed a reduction by 20\% in the number of bivalents in \textit{hfm1} mutants \citep{guiraldelli2013mouse} and the formation of COs was reduced by 38\% in \textit{Arabidopsis} \textit{mer3} mutants \citep{mercier2005two} and by 50--60\% in \textit{Saccharomyces cerevisiae} \textit{mer3} mutants \citep{borner2004crossover,jessop2006meiotic}.
 
-% Les ref trouvees dans Guiraldelli
-This effect (diminished CO rate) is similar to that found in \textit{Arabidopsis} \textit{mer3} mutants where the formation of COs is reduced by 38\% \citep{mercier2005two} and in \textit{Saccharomyces cerevisiae} \textit{mer3} mutants where it is reduced by 50--60\% \citep{borner2004crossover,jessop2006meiotic}.
+In our case, this effect was majoritarily driven by the extremely high recombination rate of mouse 28353 (136 events per million of sequenced fragments, Table~\ref{tab:HFM1-FP-rate}), which was over twice that of the other mutant mouse 28367 (67.4 events per million of sequenced fragments).
 
-% Trouvailles de Guiraldelli chez souris
-% In a majority of Hfm12/2 spermatocytes the number of initial recombination events appears comparable to that observed in wild-type mice, but recombination is defective and the number of bivalents at diakinesis is reduced to ,20%. These results are consistent with current models of recombination in which HFM1 participates in the major CO pathway. Although CO formation is severely defective in Hfm12/2 spermatocytes, chromosomes pair and initial synapsis is apparently normal. Our results suggest that early recombination transactions are sufficient for homologous recognition, pairing and initial synapsis. However, synapsis is incomplete for all but a small number of chromosomes in Hfm12/2 spermatocytes.
+Though, if, say, the subset of heterozygous hotspots of mouse 28353 were more intense (i.e.\ displayed higher recombinational activity on average than other hotspots), this observation would not correspond to a genuine biological effect.
+In the following subsection, I describe how we thus controlled for such technical biases.
+% In the following subsection, I describe how we distinguished between such technical effects and genuine biological effects.
+% Thus, in the following subsection, I describe how we examined whether this effect was genuine or if it was a technical effect due to the distribution of heterozygous hotspots in each mice.
 
 
 
-(Table~\ref{tab:HFM1-FP-rate})
+\subsection{Pairwise comparison of the RR in shared hotspots} 
 
-\subsection{Pairwise comparison of the CO rate at shared hotspots} Ou sans pairwise et recombination rate
-refaire la manip de laurent et conclure
-Inexpliquee la variation entre individus. Donc besoin d'avoir plus d'individus pour comprendre le determinant de ce taux de CO / recombi chez les mutants, et essayer d'identifier un facteur en commun.
+
+\begin{figure}[p]
+    \centering
+    \begin{subfigure}[b]{0.75\textwidth}
+        \subcaption{Between the two WT mice}
+        \includegraphics[width=\textwidth]{figures/chap8/28371_vs_28355.eps}
+    \end{subfigure}
+
+	\vspace{0.5cm}
+
+    \begin{subfigure}[b]{0.75\textwidth}
+        \subcaption{Between the two mutant mice}
+		\includegraphics[width=\textwidth]{figures/chap8/28367_vs_28353.eps}
+    \end{subfigure}
+    \caption[Correlation of the number of recombination events in shared hotspots for the two WT and the two mutant mice]
+	{\textbf{Correlation of the number of recombination events in shared hotspots for the two WT (a) and the two mutant (b) mice.}
+		\par The linear regression was significant for the WT mice (slope $=1.03$; \textit{p}-val $< 2 \times 10^{-16}$; $n_{hotspots} = 257$) and for the two mutant mice (slope = $0.69$; \textit{p}-val $< 2 \times 10^{-16}$; $n_{hotspots} = 241$).
+		Figures for all other pairwise correlations are reported in Appendix~\ref{app:data-and-figs}.
+		Results of the linear correlation were similar for Rec-1S and Rec-2S events, as well as when controlling for the total number of events sequenced at each hotspot (data not shown).
+	}
+\label{fig:pairwise-RR-shared}
+\end{figure}
+
+
+To test whether the variation in overall recombination rate (RR) across mice was due to the fact that the sets of hotspots analysed (i.e.\ heterozygous hotspots) were different between mice, we performed comparisons of the RR in shared hotspots for all pairs of mice (Figure~\ref{fig:pairwise-RR-shared} and Appendix~\ref{app:data-and-figs}).
+We found that the difference in recombination rates between WT and mutant mice was observed even for shared hotspots, which proved that the effect was not due to a differential sampling of heterozygous loci.
+
+In addition, since \textit{Hfm1} is known to be involved in CO formation \citep{mazina2004saccharomyces} — but not, to our knowledge, in NCO formation, — and because the effect in previous studies was only reported for COs \citep{guiraldelli2013mouse,mercier2005two,borner2004crossover}, we reproduced the pairwise comparisons separately for Rec-1S and Rec-2S events (Appendix~\ref{app:data-and-figs}).
+We found that the results were similar for both Rec-1S and Rec-2S, which showed that both COs and NCOs were affected.
+
+All in all, the RR for the two WT mice were extremely close (Figure~\ref{fig:pairwise-RR-shared}.a.): the slope of the linear regression was almost 1 (slope $=1.03$; \textit{p}-val $<2 \times 10^{-16}$).
+However, the recombination rates between the two mutant mice was extremely variable (Table~\ref{tab:HFM1-FP-rate} and Figure~\ref{fig:pairwise-RR-shared}.b.).
+What drives such variability among \textit{hfm1} mutants remains, at this stage, unknown: to get more insight on this topic, it would be necessary to analyse the data from additional mutant mice displaying distinct mosaics of genetic backgrounds, and see, for instance, if the increased RR is associated to a given locus in the BD/BD or BD/CAST background.
+
 
 \subsection{Impact on CO tract length}
 
@@ -547,13 +603,14 @@ CO CTs were slightly longer (albeit \textit{not} significantly) than those found
 
 Interestingly, we found a clear CO CT length reduction in \textit{hfm1} mutant mice as compared to WT mice (Table~\ref{tab:HFM1-ABC-results}).
 Because the observed recombination rates varied greatly between the two mutants (Subsection~\ref{chap8:recombination-rate}), we checked whether this effect was also visible in single individuals and found that, indeed, the inferred conversion tract lengths were stable, no matter the recombination rate.
-This observation was consistent with the idea that, in mice, the \textit{Hfm1} gene plays a role in extending the DNA heteroduplex.
+This observation was consistent with the idea that, in mice, the \textit{Hfm1} gene plays a role in extending the DNA heteroduplex.\\
 
 
+In summary, the method we implemented to detect recombination was adaptable to cases where other genomes had been introgressed into the hybrid and allowed to gain new insight onto recombination in mice.
+Though, as any approach, it had inherent limitations, which I will discuss in the following chapter, together with the scientific implications of the whole work done in the context of this thesis.
 
-PUIS UNE CONCLU UN PEU PLUS GENERALE ex: donc finalement, la methode qu'on a mis au point a permis de gagner new insights sur la recombi, mais aussi le BGC, cependant, il existe toutefois des limitations que je discute dans le prochain chapitre, ainsi que les implications scientifiques.
 
-
+\textbf{NOTE — ajouter dans subsection Detection of events in heterozygous hotspots que le taux d'erreur attendu si on ne distinguait pas les marqueurs B6--DBA2}
 
 
 
