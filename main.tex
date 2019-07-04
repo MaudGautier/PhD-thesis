@@ -89,7 +89,8 @@
 
 
 
-
+% spacing lines
+\usepackage{setspace}
 
 
 
@@ -545,7 +546,7 @@
 
 %%%%% THESIS / TITLE PAGE INFORMATION
 % Everybody needs to complete the following:
-\title{Suitably impressive thesis title}
+\title{Recombination as a driver of genome evolution: characterisation of biased gene conversion in mice}
 \author{Your Name}
 \college{Your College}
 
@@ -628,20 +629,8 @@
 \setcounter{tocdepth}{2}
 
 
-% %%%%% ABSTRACT SEPARATE
-% % This is used to create the separate, one-page abstract that you are required to hand into the Exam
-% % Schools.  You can comment it out to generate a PDF for printing or whatnot.
-% \begin{abstractseparate}
-%     \input{text/abstract} % Create an abstract.tex file in the 'text' folder for your abstract.
-% \end{abstractseparate}
-%
 
-% JEM: Pages are roman numbered from here, though page numbers are invisible until ToC.  This is in
-% keeping with most typesetting conventions.
-\begin{romanpages}
-
-% Title page is created here
-% \maketitle
+%%%% EPIGRAPHE
 
 % Add epigraph
 \begin{alwayssingle}
@@ -661,6 +650,65 @@
 	\vspace*{\fill}
 	\vspace*{\fill} 
 \end{alwayssingle}
+
+
+
+% %%%%% ABSTRACT SEPARATE
+% % This is used to create the separate, one-page abstract that you are required to hand into the Exam
+% % Schools.  You can comment it out to generate a PDF for printing or whatnot.
+% \begin{abstractseparate}
+%     \input{text/abstract} % Create an abstract.tex file in the 'text' folder for your abstract.
+% \end{abstractseparate}
+%
+% \newgeometry{inner=2cm, outer=2cm, top=2cm, bottom=2cm}
+\thispagestyle{empty}\begin{alwayssingle}
+\begingroup
+\begin{center}
+	\fontsize{25pt}{28pt}\selectfont
+	\textbf{Recombination as a driver of genome evolution:\\characterisation of biased gene conversion in mice}
+\end{center}
+   %  \begin{center}
+	  %   \Large \bfseries Recombination as a driver of genome evolution: characterisation of biased gene conversion in mice
+
+	% \end{center}
+
+\endgroup
+
+\begingroup
+\setlength{\parskip}{1em}
+% \renewcommand{\baselinestretch}{1.5}
+{\setstretch{1.1}
+\input{text/abstract}
+}
+\endgroup
+\end{alwayssingle}
+% \restoregeometry
+
+% JEM: Pages are roman numbered from here, though page numbers are invisible until ToC.  This is in
+% keeping with most typesetting conventions.
+\begin{romanpages}
+
+% Title page is created here
+% \maketitle
+
+% % Add epigraph
+% \begin{alwayssingle}
+%     \thispagestyle{empty}
+%     \vspace*{\fill}
+%     % \begin{savequote}[8cm]
+%     \makebox[\textwidth][r] {
+%         \begin{minipage}[t]{8cm}
+%             \hfill \slshape{‘Ibergekumene tsores iz gut tsu dertseylin.’}\\
+%             \hfill (C'est un plaisir de raconter les ennuis passés.)\\
+%             \hfill \qauthor{--- Proverbe yiddish, placé en épigraphe de Primo Levi, \textit{\usebibentry{levi1975systeme}{title}} \citeyearpar{levi1975systeme}}
+%         \end{minipage}
+%     }
+%     % \end{savequote}
+%
+%
+%     \vspace*{\fill}
+%     \vspace*{\fill}
+% \end{alwayssingle}
 
 %%%%% DEDICATION -- If you'd like one, un-comment the following.
 % \begin{dedication}
@@ -690,13 +738,26 @@
 % This aligns the bottom of the text of each page.  It generally makes things look better.
 \flushbottom
 
+% \addcontentsline{toc}{chapter}{Abstract}
+% \addcontentsline{toc}{chapter}{R\'esum\'e en francais}
+% \addcontentsline{toc}{chapter}{Remerciements}
+% \addcontentsline{toc}{chapter}{R\'esum\'e \'etendu en francais}
 % This is where the whole-document ToC appears:
 \tableofcontents%\otherpagedecoration
 
+% \begin{savequote}[8cm]
+	% ‘If we wish to trace the history of ideas, iconography becomes a candid camera trained upon the scholar's mind.’
+	% \qauthor{--- Stephen Jay Gould, \textit{\usebibentry{gould1993eight}{title}} \citeyearpar{gould1993eight} }
+% \end{savequote}
 \listoffigures%\otherpagedecoration
 	\mtcaddchapter
 % \mtcaddchapter is needed when adding a non-chapter (but chapter-like) entity to avoid confusing minitoc
 
+% \begin{savequote}[8cm]
+	% $1 + 1 = 2$\\
+	% ‘The above proposition is occasionally useful.’
+	% \qauthor{--- Bertrand Russell, \textit{\usebibentry{whitehead1912principia}{title}} \citeyearpar{whitehead1912principia} }
+% \end{savequote}
 % Uncomment to generate a list of tables:
 \listoftables
 	\mtcaddchapter
