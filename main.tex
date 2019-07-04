@@ -696,21 +696,31 @@
 % Add or remove any chapters you'd like here, by file name (excluding '.tex'):
 \flushbottom
 %\cpart{Bibliography}
+\part*{Preamble}
+\addcontentsline{toc}{part}{Preamble}
+\include{text/preamble}
 \part{Introduction}
+\label{part:introduction}
 \include{text/chap1-history-genetics}
 \include{text/chap2-recombination-mechanism}
 \include{text/chap3-recombination-variation}
 \include{text/chap4-gBGC}
 \part{Objectives of the thesis}
+\label{part:objectives}
 \include{text/objectives}
 \part{Results}
+\label{part:results}
 \include{text/chap5-methodology}
 \include{text/chap6-recombination-parameters}
 \include{text/chap7-quantification-BGC}
 \include{text/chap8-HFM1}
 \part{Discussion}
+\label{part:discussion}
 \include{text/chap9-discussion}
-% \include{text/chap10-philosophising}
+\include{text/chap10-philosophising}
+\part*{Conclusion}
+\addcontentsline{toc}{part}{Conclusion}
+\include{text/conclusion}
 
 %\cpart{PART 1}
 % \include{text/ch1-intro}
@@ -746,7 +756,21 @@
 % \printbibliography[heading=bibintoc,title={\bibtitle}]}
 
 \renewcommand\bibname{References}
+% \part*{References}
+% \begin{savequote}[8cm]
+    %
+	% ‘Of course, trying to keep an intellectual away from literature works about as well as recommending chastity to \textit{Homo sapiens}, the sexiest primate of all.’
+	% \qauthor{--- Stephen Jay Gould, \textit{\usebibentry{gould1985median}{title}} \citeyearpar{gould1985median} }
+% \end{savequote}
+
+% % Add blank lines before starting
+% \begin{parse lines}[\noindent]{#1\\}
+%
+%
+%
+% \end{parse lines}
+
 \bibliographystyle{apalike}
-\bibliography{references,bibliography_additional/Bibtex/01_chronology_recombination,bibliography_additional/Bibtex/chap3_RR_variation_and_evolution,bibliography_additional/Bibtex/chap4_gBGC,bibliography_additional/Bibtex/chap5_methodology,bibliography_additional/Bibtex/chap6_recombination_parameters,bibliography_additional/Bibtex/chap7_quantification_BGC,bibliography_additional/Bibtex/chap8_HFM1}
+\bibliography{references,bibliography_additional/Bibtex/01_chronology_recombination,bibliography_additional/Bibtex/chap3_RR_variation_and_evolution,bibliography_additional/Bibtex/chap4_gBGC,bibliography_additional/Bibtex/chap5_methodology,bibliography_additional/Bibtex/chap6_recombination_parameters,bibliography_additional/Bibtex/chap7_quantification_BGC,bibliography_additional/Bibtex/chap8_HFM1,bibliography_additional/Bibtex/chap10_philosophising}
 
 \end{document}
