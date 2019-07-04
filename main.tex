@@ -93,6 +93,23 @@
 \usepackage{setspace}
 
 
+% \usepackage[nottoc]{tocbibind}
+
+
+% \renewcommand{\bibsection}{%
+% \part*{\bibname}
+% \bibmark
+% \ifnobibintoc\else
+% \phantomsection
+% \addcontentsline{toc}{part}{\bibname}
+% \fi
+% \prebibhook}
+%
+
+\newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
+
+% \usepackage[notocbib]{apacite}
+% \usepackage[notbib]{tocbibind}
 
 
 %%%%% SELECT YOUR DRAFT OPTIONS
@@ -835,22 +852,38 @@
 % {\renewcommand*\MakeUppercase[1]{#1}%
 % \printbibliography[heading=bibintoc,title={\bibtitle}]}
 
-\renewcommand\bibname{References}
+% \bibintoc
+% % Inspire de https://tex.stackexchange.com/questions/75621/remove-bibliography-entry-from-toc-or-change-the-way-it-is-displayed
+\renewcommand{\bibname}{References}
 % \part*{References}
-% \begin{savequote}[8cm]
-    %
-	% ‘Of course, trying to keep an intellectual away from literature works about as well as recommending chastity to \textit{Homo sapiens}, the sexiest primate of all.’
-	% \qauthor{--- Stephen Jay Gould, \textit{\usebibentry{gould1985median}{title}} \citeyearpar{gould1985median} }
-% \end{savequote}
+% \addcontentsline{toc}{part}{References}
 
+% % \bibmark
+% % \ifnobibintoc\else
+% \addcontentsline{toc}{part}{References}
+% % \fi
+% \phantomsection
+% \makeatletter
+% \makeatother
+
+% \renewcommand{\bibname}{References}
+% \bibintoc
+% \part*{References}
+% \addcontentsline{toc}{part}{References}
+% \begin{savequote}[8cm]
+%
+%     ‘Of course, trying to keep an intellectual away from literature works about as well as recommending chastity to \textit{Homo sapiens}, the sexiest primate of all.’
+%     \qauthor{--- Stephen Jay Gould, \textit{\usebibentry{gould1985median}{title}} \citeyearpar{gould1985median} }
+% \end{savequote}
+%
 % % Add blank lines before starting
 % \begin{parse lines}[\noindent]{#1\\}
 %
 %
 %
 % \end{parse lines}
-
 \bibliographystyle{apalike}
 \bibliography{references,bibliography_additional/Bibtex/01_chronology_recombination,bibliography_additional/Bibtex/chap3_RR_variation_and_evolution,bibliography_additional/Bibtex/chap4_gBGC,bibliography_additional/Bibtex/chap5_methodology,bibliography_additional/Bibtex/chap6_recombination_parameters,bibliography_additional/Bibtex/chap7_quantification_BGC,bibliography_additional/Bibtex/chap8_HFM1,bibliography_additional/Bibtex/chap10_philosophising}
+
 
 \end{document}
