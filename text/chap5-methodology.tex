@@ -233,17 +233,17 @@ This requires two steps: disclosing the position of polymorphic sites and identi
 
 We performed variant-calling (i.e.\ the process of identifying variant (a.k.a.\ polymorphic) sites on a genome) with GATK\footnote{Other routine manipulations of files and visualisation of alignments were performed using the following tools and versions: SAMTools (version 1.4) \citep{li2009sequence}, BEDTools (version 2.26.0) \citep{quinlan2010bedtools}, JVarKit \citep{lindenbaum2015jvarkit}, the IGV interface (version 2.3\_88) \citep{robinson2011integrative}.} (version 3.3) \citep{mckenna2010genome}.
 
-Basically, GATK performs four main steps: local insertion/deletion (INDEL) realignment, base quality score recalibration (BQSR), variant-calling \textit{per se} and variant quality score recalibration (VQSR).
-Briefly, local INDEL realignment consists in transforming regions with INDEL-based misalignments into clean reads containing a consensus INDEL\@; BQSR consists in applying a score correction accounting for sources of systematic technical errors by modelling sequencing miscalls empirically; variant-calling allows to call both SNPs and INDELs; and VQSR provides an estimate of the probability that a called variant is a true genetic variant thanks to the establishment of an empirical model linking the latter likelihood to metrics describing the variants.\\
+Basically, GATK performs four main steps: local insertion/deletion (indel) realignment, base quality score recalibration (BQSR), variant-calling \textit{per se} and variant quality score recalibration (VQSR).
+Briefly, local indel realignment consists in transforming regions with indel-based misalignments into clean reads containing a consensus indel; BQSR consists in applying a score correction accounting for sources of systematic technical errors by modelling sequencing miscalls empirically; variant-calling allows to call both SNPs and indels; and VQSR provides an estimate of the probability that a called variant is a true genetic variant thanks to the establishment of an empirical model linking the latter likelihood to metrics describing the variants.\\
 
 For all these steps, the GATK team recommends a number of best practices \citep{depristo2011framework, vanderauwera2013fastq} which, in many instances, require several external datasets of ‘true’ (i.e.\ validated by several independent studies) and ‘false’ variants which are available for human genomes only.
 Therefore, we adapted the variant-calling process to mouse genomes as described hereunder, by using other types of datasets as close as possible to the recommendations from the GATK team. 
 
-First, to perform local INDEL realignment, our list of known INDELs was made of all the INDELs found between the B6 strain and any of the other 35 strains of the version 5 release (\url{ftp://ftp-mouse.sanger.ac.uk/REL-1505-SNPs_Indels/}) of the mouse genomes project (MGP) \citep{keane2011mouse}.
+First, to perform local indel realignment, our list of known indels was made of all the indels found between the B6 strain and any of the other 35 strains of the version 5 release (\url{ftp://ftp-mouse.sanger.ac.uk/REL-1505-SNPs_Indels/}) of the mouse genomes project (MGP) \citep{keane2011mouse}.
 
-Second, to perform base quality score recalibration (BQSR), our list of known INDELs was the same as that used for local INDEL realignment, and that of known SNPs was made of all the SNPs found between the B6 strain and any of the other 35 strains of the MGP\@.
+Second, to perform base quality score recalibration (BQSR), our list of known indels was the same as that used for local indel realignment, and that of known SNPs was made of all the SNPs found between the B6 strain and any of the other 35 strains of the MGP\@.
 
-Third, to perform variant quality score recalibration (VQSR), our list of true variant sites was made of all the sites (both SNPs and INDELs) found to vary between the B6 and the CAST strains by the MGP, and our list of both true variants and false positives of all the sites (both SNPs and INDELs) found to vary between the B6 strain and any of the other 16 strains of the MGP\@. 
+Third, to perform variant quality score recalibration (VQSR), our list of true variant sites was made of all the sites (both SNPs and indels) found to vary between the B6 and the CAST strains by the MGP, and our list of both true variants and false positives of all the sites (both SNPs and indels) found to vary between the B6 strain and any of the other 16 strains of the MGP\@. 
 The annotations we specified as covariates for the model were: the quality by read depth (QD), the overall mapping quality of reads supporting the variants called (MQ), the rank sum test for mapping qualities (MQRankSum), the rank sum test for the distance from the end of the reads (ReadPosRankSum), and two measures of strand bias (FS and SOR).
 Last, since VQSR classifies variants according to their confidence, we discarded all those which were marked as ‘LowQuality’.
 
@@ -265,7 +265,7 @@ However, the Phred scores produced by the sequencing machines are subject to var
 Thus, we used the base quality scores recalibrated by GATK to filter out base calls with high probabilities of error: all sites with a recalibrated quality below 20 (i.e.\ with a probability to be miscalled greater than 1\%) were discarded.\\
 
 
-We then genotyped each fragment at every of the remaining high-confidence variant sites that it overlapped by comparing its base call (or sequence of base calls in the case of INDELs) with that of the reference genome.
+We then genotyped each fragment at every of the remaining high-confidence variant sites that it overlapped by comparing its base call (or sequence of base calls in the case of indels) with that of the reference genome.
 Whenever the fragment bore an allele distinct from that of the reference genome, we checked that the allele born was that of the other parental genome to avoid misgenotyping any remaining erroneous base call.
 
 
@@ -361,11 +361,11 @@ Performing the whole procedure twice (once for each of the two parental genomes 
 % A l'echelle d'un mapping complet, pas grave. Mais dans notre cas, comme on recherche des evenements rares, cela est non-negligeable.
 % Pour contrebalancer ce biais, on a fait la procedure sur les deux genomes de reference.
 Indeed, when several alignment alternatives exist for a given fragment to map at a particular genomic location, aligners (like BWA) are programmed to select the alternative with the best score.
-But, for the similarity between the mapped fragment and the reference genome to be maximal \citep{smith1981identification}, the penalty associated to opening a gap (i.e.\ for an INDEL) is generally higher than that associated to a sequence of several mismatches.
-As a consequence, read extremities, especially when they encompass an INDEL, are generally misaligned in a way that better matches the sequence of the reference genome than they truly do.
+But, for the similarity between the mapped fragment and the reference genome to be maximal \citep{smith1981identification}, the penalty associated to opening a gap (i.e.\ for an indel) is generally higher than that associated to a sequence of several mismatches.
+As a consequence, read extremities, especially when they encompass an indel, are generally misaligned in a way that better matches the sequence of the reference genome than they truly do.
 In other words, mapping is biased towards the reference genome.
 
-In principle, local realignment around INDELs corrects a large part of these reference-biased misalignments.
+In principle, local realignment around indels corrects a large part of these reference-biased misalignments.
 Nevertheless, in view of the rarity of recombination events, a non-negligible portion of these misalignments remain and are likely to lead to spurious detections of recombination events.
 Therefore, to counterbalance this mapping bias, we decided to perform the whole procedure using consecutively the two parental genomes as the mapping reference.\\
 

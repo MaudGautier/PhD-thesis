@@ -50,9 +50,9 @@ In most types of analyses for which classical genomic tools (e.g.\ mappers, geno
 However, in particular cases — like ours — where rare events are the object of the analysis, their inherent biases can become critical.\\
 
 For instance, read mapping is based on a Smith-Waterman algorithm which basically consists in maximising the matching score between the read and the reference genome \citep{smith1981identification}.
-In particular, mappers are parameterised so that the penalty associated to opening a gap (i.e.\ for an INDEL) is generally higher than that associated to a sequence of several mismatches.
-Consequently, when reads encompass INDELs close to their edges, their extremities are often misaligned.
-This effect can be corrected by INDEL local realignment methods, which take into account the totality of reads mapping at a given region and select one consensus alignment that optimises the similarity of most reads with the reference genome.
+In particular, mappers are parameterised so that the penalty associated to opening a gap (i.e.\ for an indel) is generally higher than that associated to a sequence of several mismatches.
+Consequently, when reads encompass indels close to their edges, their extremities are often misaligned.
+This effect can be corrected by indel local realignment methods, which take into account the totality of reads mapping at a given region and select one consensus alignment that optimises the similarity of most reads with the reference genome.
 In both cases (mapping and local realignment), the goal of maximal similarity leads to instances where the reads better match the reference genome than they genuinely should.
 % In other words, mapping, — but also local realignment, — is biased towards the reference genome.
 
