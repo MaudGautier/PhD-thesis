@@ -678,8 +678,12 @@
 % \end{abstractseparate}
 %
 % \newgeometry{inner=2cm, outer=2cm, top=2cm, bottom=2cm}
-\thispagestyle{empty}\begin{alwayssingle}
+
+
+\begin{alwayssingle}
 \begingroup
+	% \thispagestyle{empty}
+	\pagenumbering{gobble}% Turn off page numbering for abstract and acknowlegements
 \begin{center}
 	\fontsize{25pt}{28pt}\selectfont
 	\textbf{Recombination as a driver of genome evolution:\\characterisation of biased gene conversion in mice}
@@ -790,6 +794,7 @@
 
 
 %%%%% CHAPTERS
+\pagenumbering{arabic} % Add page numbering after removing it for pre-textual pages
 % Add or remove any chapters you'd like here, by file name (excluding '.tex'):
 \flushbottom
 %\cpart{Bibliography}
