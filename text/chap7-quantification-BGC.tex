@@ -18,7 +18,7 @@
 
 \paragraph{This chapter in brief —}
 
-In order to shed new light into the relationship between the intensity of GC-biased gene conversion (gBGC) and the effective population size ($N_e$), we wanted to precisely quantify the transmission bias ($b_0$) in a mammalian species with low $N_e$: mice.
+In order to shed new light into the relationship between the intensity of GC-biased gene conversion (gBGC) and the effective population size ($N_e$), we wanted to precisely quantify the transmission bias ($b_0$) in a mammalian species with relatively high $N_e$: mice.
 We first quantified DSB-induced biased gene conversion (dBGC) in autosomal hotspots and observed that, in our B6xCAST F1 hybrid, dBGC hitchhiked the past gBGC that had occurred in the parental lineages.
 We then controlled for this confounding effect to quantify gBGC in both COs and NCOs.
 We found that the transmission bias ($b_0$) was null for COs and very weak for multiple-marker NCOs. 
@@ -76,7 +76,7 @@ when a peak was detected in one parental strain, the hotspot was necessarily tar
 % Like \citet{baker2015prdm9}, we set the threshold at 75\%: if more than 75\% of ChIP-seq reads mapped onto the B6 (resp.\ CAST) haplotype, we inferred that the cold haplotype was CAST (resp.\ B6).
 %
 
-When, however, no PRDM9 ChIP-seq peak was detected in either parent, knowing which allele targeted the hotspot was not straightforward.
+When, however, no PRDM9 ChIP-seq peak was detected in either parent (i.e.\ for novel hotspots detected only in the F1 hybrid), knowing which allele targeted the hotspot was not straightforward.
 % As a substitute, we used information from the strand-specific detection of PRDM9 ChIP-seq reads in the B6xCAST cross from \citet{baker2015prdm9} to predict which haplotype was hot, i.e.\ targeted by PRDM9, and which was cold, i.e.\ donor in the subsequent gene conversion event.
 % As a substitute, we used information from the strand-specific detection of PRDM9 ChIP-seq reads in the B6xCAST cross from \citet{baker2015prdm9}.
 As a substitute, we used information from the strand-specific detection of PRDM9 ChIP-seq reads \citep{baker2015prdm9}.
@@ -179,7 +179,6 @@ Using the assumption that the least bound haplotype had a lower affinity because
 
 We named the aforementioned class of hotspots displaying large haplotype biases (i.e.\ those with over 75\% of PRDM9 ChIP-seq tags mapping onto one haplotype) ‘asymmetric’ hotspots, and all the others ‘symmetric’ hotspots.
 % (i.e.\ those displaying no large haplotype bias)
-
 As mentioned above, such asymmetry materialises the erosion of the target motif in the parental lineage. 
 % We further subdivided the group of asymmetric hotspots into two subgroups, based on the extent of their erosion:
 % either they had undergone full erosion in the parental lineage and
@@ -308,8 +307,11 @@ we searched for them in control regions defined as sequences located 5-kb downst
 Next, we searched for occurrences of both these consensus motifs in the two haplotypes of each 1-kb long hotspot, using the FIMO tool \citep{grant2011fimo} with default parameters. 
 When more than one occurrence of the motif was found in a given hotspot, we retained solely the motif with the highest log-likelihood ratio score.
 
-Altogether, we found that, in hotspots predicted to be targeted by PRDM9\textsuperscript{Dom2}, the majority (88.75\%) of the haplotypes predicted to be cold (i.e.\ not targeted by PRDM9) on the basis of the strand-specific detection of PRDM9 ChIP-seq reads from \citet{baker2015prdm9} (see Subsection~\ref{chap7:PRDM9-target-inference}) indeed contained a \textit{Prdm9\textsuperscript{Dom2}} motif. 
-Conversely in hotspots predicted to be targeted by PRDM9\textsuperscript{Cst}, most (87.82\%) haplotypes predicted to be cold contained a \textit{Prdm9\textsuperscript{Cst}} motif.
+\begin{mccorrection}
+	% CF file:///Users/maudgautier/Documents/These/R_projects/02_Hotspots/02_Identification_motifs_copy.html
+Altogether, we found that, in hotspots predicted to be targeted by PRDM9\textsuperscript{Dom2}, the majority (76.25\%) of the haplotypes predicted to be hot (i.e.\ targeted by PRDM9) on the basis of the strand-specific detection of PRDM9 ChIP-seq reads from \citet{baker2015prdm9} (see Subsection~\ref{chap7:PRDM9-target-inference}) indeed contained a \textit{Prdm9\textsuperscript{Dom2}} motif. 
+Conversely in hotspots predicted to be targeted by PRDM9\textsuperscript{Cst}, most (72.44\%) haplotypes predicted to be hot contained a \textit{Prdm9\textsuperscript{Cst}} motif.
+\end{mccorrection}
 
 More precisely, the distribution of motif occurrences along both haplotypes of the hotspots predicted to be targeted by either one of the two \textit{Prdm9} alleles are reported in Figure~\ref{fig:motifs-in-hotspots}.
 As expected, occurrences of the \textit{Prdm9\textsuperscript{Dom2}} consensus motif were specific to hotspots predicted to be targeted by PRDM9\textsuperscript{Dom2} and, conversely, occurrences of the \textit{Prdm9\textsuperscript{Cst}} consensus motif were specific to hotspots predicted to be targeted by PRDM9\textsuperscript{Cst}.
@@ -350,7 +352,7 @@ Thus, we directly extrapolated the dBGC coefficient ($b_{dBGC}$) from the observ
 
 We looked at the distribution of the dBGC coefficient across four categories of hotspots (Figure~\ref{fig:dBGC-distribution}): 
 on the one hand, the PRDM9\textsuperscript{Dom2}-targeted hotspots which were either fully eroded or still present in the B6 lineage; and, on the other hand, the PRDM9\textsuperscript{Cst}-targeted hotspots completely eroded or still present in the CAST lineage.
-As expected, we observed that hotspots that were most eroded in the parental lineages were those for which the absolute dBGC coefficient was the greatest, while hotspots displaying a quasi-null dBGC coefficient corresponded to symmetric hotspots, i.e.\ targeted equally by PRDM9.
+As expected, we observed that hotspots that are eroded in the parental lineages were those for which the absolute dBGC coefficient was the greatest, while hotspots displaying a quasi-null dBGC coefficient corresponded to symmetric hotspots, i.e.\ targeted equally by PRDM9.
 
 
 \subsection{dBGC and the overtransmission of \textit{GC} alleles}
@@ -509,20 +511,30 @@ Using the $b_0$ values for Rec-1S and Rec-2S reported in Table~\ref{tab:gBGC-fre
 Therefore, COs do not contribute to gBGC in mice.
 
 As for NCOs, their contribution to gBGC could be directly extracted from that measured on Rec-2S events: $b_0^{NCO} = 0.0422$, i.e.\ a 52.11\% transmission of \textit{S} alleles.\\
-
-All in all thus, the transmission bias was null (or too weak to be detectable) for COs and extremely weak — albeit significant — for the NCOs we detected, i.e.\ those whose CT overlapped at least two markers.
-Nevertheless, since the CTs of NCOs are extremely short (36 bp on average, see Chapter~\ref{ch:6-recombination-parameters}), a significant proportion of them should overlap only 1 marker.
+\begin{mccorrection}
+All in all thus, the transmission bias was null (or too weak to be detectable) for COs and weak — albeit significant — for the NCOs we detected.
+One important limitation of our protocol is that we analysed only recombinant fragments overlapping at least two markers for each haplotype (to limit false positives).
+Hence, NCO events that overlap a single marker (NCO-1) were excluded from this analysis.
+Given the average length of NCO CTs (36 bp on average, see Chapter~\ref{ch:6-recombination-parameters}), NCO-1 events represent a large fraction of NCO events.
 Thus, we aimed at quantifying the transmission bias in single-marker NCOs as well, this time through an indirect approach that I describe in the following subsection.
 
+\end{mccorrection}
+
+
+% , i.e.\ those whose CT overlapped at least two markers.
+%
+% Nevertheless, since the CTs of NCOs are extremely short (36 bp on average, see Chapter~\ref{ch:6-recombination-parameters}), a significant proportion of them should overlap only 1 marker.
+% Thus, we aimed at quantifying the transmission bias in single-marker NCOs as well, this time through an indirect approach that I describe in the following subsection.
+%
 \subsection{Strong $b_0$ in single-marker NCOs}
 
-Briefly, estimating the contribution of single-marker NCO (NCO-1) events consisted in three main steps.
-First, we adapted the procedure developed in Chapter~\ref{ch:5-methodology} to fish out all events which were likely to be NCO-1 events (pot-NCO-1, for ‘potential NCO-1 events’).
-Second, since the large majority of them (90.0\%, Table~\ref{tab:NCO-1-FP-rate}) were false positives (FPs) and most of these FPs (66.7\%) arose from sequencing errors, we measured the sequencing error rate directly in our sequencing data to estimate, among the pot-NCO-1 events, the relative proportion of FPs displaying W\textrightarrow{} S and S\textrightarrow{} W erroneous conversion events.
-With this, we could finally deconvolute the fraction of the observed ratio of $\frac{SW}{WS+SW}$ due to FPs and to genuine NCO-1 events, and thus, extrapolate the transmission bias on single-marker NCOs.
-
-I detail these three steps in this subsection.
-
+% Briefly, estimating the contribution of single-marker NCO (NCO-1) events consisted in three main steps.
+% First, we adapted the procedure developed in Chapter~\ref{ch:5-methodology} to fish out all events which were likely to be NCO-1 events (pot-NCO-1, for ‘potential NCO-1 events’).
+% Second, since the large majority of them (90.0\%, Table~\ref{tab:NCO-1-FP-rate}) were false positives (FPs) and most of these FPs (66.7\%) arose from sequencing errors, we measured the sequencing error rate directly in our sequencing data to estimate, among the pot-NCO-1 events, the relative proportion of FPs displaying W\textrightarrow{} S and S\textrightarrow{} W erroneous conversion events.
+% With this, we could finally deconvolute the fraction of the observed ratio of $\frac{SW}{WS+SW}$ due to FPs and to genuine NCO-1 events, and thus, extrapolate the transmission bias on single-marker NCOs.
+%
+% I detail these three steps in this subsection.
+%
 
 % - 1) on extrait les NCO-1 (qui ont de nombreux FP principalement du a erreur de seq)
 % - 2) on estime le taux de WS du a erreur de sequencage seulement
@@ -530,29 +542,57 @@ I detail these three steps in this subsection.
 
 \subsubsection{Extraction of potential single-marker NCOs (pot-NCO-1 events)}
 
+% \begin{table}[b!]
+%     \centering
+%     \begin{adjustbox}{width = 1\textwidth}
+%         \begin{tabular}{rrrrrrrr}
+%             \toprule
+%             \multicolumn{3}{r}{} & \multicolumn{2}{c}{\textbf{Filter off}} & & \multicolumn{2}{c}{\textbf{Filter on}} \\
+%             \cmidrule{4-5}
+%             \cmidrule{7-8}
+%             \textbf{Target} & \textbf{Nb of} & \textbf{Nb of} & \textbf{Nb of} & \textbf{Event rate} & & \textbf{Nb of} & \textbf{Event rate} \\
+%
+%             \textbf{category} & \textbf{targets} & \textbf{fragments} & \textbf{events} & \textbf{($\times$ 10\textsuperscript{-6})} & & \textbf{events} & \textbf{($\times$ 10\textsuperscript{-6})} \\
+%
+%             \midrule
+%             Hotspots & 1,018 & 228,984,512 & 243,390 & 1062.9 & & 147,792 & 645.4 \\
+%             Controls & 500 & 106,850,906 & 110,615 & 1035.2 & & 62,074 & 580.9 \\
+%             \midrule
+%             \multicolumn{1}{r}{\textbf{FP rate}} & \multicolumn{4}{r}{\textbf{97.4 \%}} & & \multicolumn{2}{r}{\textbf{90.0 \%}} \\
+%             \bottomrule
+%         \end{tabular}
+%     \end{adjustbox}
+%     \caption[Number of pot-NCO-1 events detected in hotspot and control targets with and without the sequencing error filter]
+%     {\textbf{Number of pot-NCO-1 events detected in hotspot and control targets with and without the sequencing error filter.}
+%         \par Pot-NCO-1 events were detected with or without a sequencing error filter (see main text).
+%         All fragments or events overlapping at least 1 bp with a given target are counted in this table.
+%         The event rate corresponds to the ratio of candidate recombination events over the total number of fragments.
+%         The maximum false positive (FP) rate is the ratio of the event rate in control targets over that in hotspots.
+%     }
+% \label{tab:NCO-1-FP-rate}
+% \end{table}
+
+
 \begin{table}[b!]
 	\centering
-	\begin{adjustbox}{width = 1\textwidth}
-		\begin{tabular}{rrrrrrrr}
+	% \begin{adjustbox}{width = 1\textwidth}
+		\begin{tabular}{rrrrr}
 			\toprule
-			\multicolumn{3}{r}{} & \multicolumn{2}{c}{\textbf{Filter off}} & & \multicolumn{2}{c}{\textbf{Filter on}} \\
-			\cmidrule{4-5} 
-			\cmidrule{7-8} 
-			\textbf{Target} & \textbf{Nb of} & \textbf{Nb of} & \textbf{Nb of} & \textbf{Event rate} & & \textbf{Nb of} & \textbf{Event rate} \\
+			\textbf{Target} & \textbf{Nb of} & \textbf{Nb of} & \textbf{Nb of} & \textbf{Event rate} \\
 
-			\textbf{category} & \textbf{targets} & \textbf{fragments} & \textbf{events} & \textbf{($\times$ 10\textsuperscript{-6})} & & \textbf{events} & \textbf{($\times$ 10\textsuperscript{-6})} \\
+			\textbf{category} & \textbf{targets} & \textbf{fragments} & \textbf{events} & \textbf{($\times$ 10\textsuperscript{-6})} \\
 
 			\midrule
-			Hotspots & 1,018 & 228,984,512 & 243,390 & 1062.9 & & 147,792 & 645.4 \\
-			Controls & 500 & 106,850,906 & 110,615 & 1035.2 & & 62,074 & 580.9 \\
+			Hotspots & 1,018 & 228,984,512 & 147,792 & 645.4 \\
+			Controls & 500 & 106,850,906 & 62,074 & 580.9 \\
 			\midrule
-			\multicolumn{1}{r}{\textbf{FP rate}} & \multicolumn{4}{r}{\textbf{97.4 \%}} & & \multicolumn{2}{r}{\textbf{90.0 \%}} \\
+			\multicolumn{1}{r}{\textbf{FP rate}} & \multicolumn{4}{r}{\textbf{90.0 \%}} \\
 			\bottomrule
 		\end{tabular}
-	\end{adjustbox}
-	\caption[Number of pot-NCO-1 events detected in hotspot and control targets with and without the sequencing error filter]
-	{\textbf{Number of pot-NCO-1 events detected in hotspot and control targets with and without the sequencing error filter.}
-        \par Pot-NCO-1 events were detected with or without a sequencing error filter (see main text).
+	% \end{adjustbox}
+	\caption[Number of pot-NCO-1 events detected in hotspot and control targets]
+	{\textbf{Number of pot-NCO-1 events detected in hotspot and control targets.}
+        \par Pot-NCO-1 events were detected as detailed in the main text.
         All fragments or events overlapping at least 1 bp with a given target are counted in this table.
         The event rate corresponds to the ratio of candidate recombination events over the total number of fragments.
         The maximum false positive (FP) rate is the ratio of the event rate in control targets over that in hotspots.
@@ -562,110 +602,29 @@ I detail these three steps in this subsection.
 
 
 
-The procedure we implemented in Chapter~\ref{ch:5-methodology} to identify recombination events discarded (1) genotyping errors coming from alignment defects by mapping the reads on both the B6 and the CAST reference genomes and (2) genotyping errors coming from sequencing miscalls by requiring a minimum of 2 markers.
-% to confirm the genotype. 
-To uncover pot-NCO-1 events, we removed this second filter and replaced it with an alternative, less efficient filter to limit the number of sequencing miscalls: we checked that the allele supporting the genotype call with the mapping onto the B6 genome was identical to that based on the mapping onto the CAST genome.
-When setting this filter on, the NCO-1 FP error rate was lower than without the filter, but remained as high as 90.0\% (Table~\ref{tab:NCO-1-FP-rate}), which meant that as few as 14,766 of the pot-NCO-1 events detected within hotspots corresponded to genuine NCO-1 events.
+\begin{mccorrection}
+
+	To fish NCO-1 events out, we mapped all reads on both the B6 and the CAST reference genomes and checked, for all variants, (1) that the allele supporting the genotype call with the mapping onto the B6 genome was identical to that based on the mapping onto the CAST genome, (2) that the Phred quality score was greater than 20 and (3) that the allelic frequencies did not show a strong departure from the Mendelian transmission.
+We then designated all fragments containing one \textit{B6}-typed marker surrounded by \textit{CAST}-typed markers on both sides (resp.\ one \textit{CAST}-typed marker surrounded by \textit{B6}-typed markers on both sides) as potential NCO-1 events (‘pot-NCO-1’).
+We found 147,792 such pot-NCO-1 within hotspots and 62,074 within control regions.
+Taking into account the number of fragments in those regions, the NCO-1 FP error rate was as high as as 90.0\% (Table~\ref{tab:NCO-1-FP-rate}), which meant that as few as 14,766 of the pot-NCO-1 events detected within hotspots corresponded to genuine NCO-1 events.
+
+We next estimated the sequencing machine error rate by analysing the apparition of \textit{de novo} variants outside heterozygous sites directly in our sequencing data (see Appendix~\ref{app:data-and-figs}). 
+Using this knowledge, we extrapolated the proportion of errors coming from sequencing errors within the heterozygous sites of control regions. 
+This way, we estimated that the largest part of FPs (66.7\%, CI $= [60\%; 78\%$]) directly came from sequencing errors. 
+In particular, we found that S bases were more often mistakenly sequenced as W bases than the other way round, which implied that a greater number of FPs were detected as NCO-1 products with a S\textrightarrow{} W rather than with a W\textrightarrow{} S conversion event. 
+More precisely, sequencing errors, by themselves, were expected to lead to a $\frac{SW}{WS+SW}$ ratio of 0.39 (see Appendix~\ref{app:data-and-figs}).
+
+For pot-NCO-1 discoveries located within control regions, we found that the $\frac{SW}{WS+SW}$ ratio was 0.31. 
+As this value was slightly lower than that expected based on sequencing errors only, we believe that the remaining gap comes from the 34\% of FPs that do not originate from sequencing errors.
+
+% The procedure we implemented in Chapter~\ref{ch:5-methodology} to identify recombination events discarded (1) genotyping errors coming from alignment defects by mapping the reads on both the B6 and the CAST reference genomes and (2) genotyping errors coming from sequencing miscalls by requiring a minimum of 2 markers.
+% To uncover pot-NCO-1 events, we removed this second filter and replaced it with an alternative, less efficient filter to limit the number of sequencing miscalls: we checked that the allele supporting the genotype call with the mapping onto the B6 genome was identical to that based on the mapping onto the CAST genome.
+% When setting this filter on, the NCO-1 FP error rate was lower than without the filter, but remained as high as 90.0\% (Table~\ref{tab:NCO-1-FP-rate}), which meant that as few as 14,766 of the pot-NCO-1 events detected within hotspots corresponded to genuine NCO-1 events.
 % The NCO-1 FP error rate was as high as 90.0\% when this second filter whereas, without it, the error rate was even higher (Table~\ref{tab:NCO-1-FP-rate}).
 
 
-
-\subsubsection{Estimation of erroneous W\textrightarrow{} S and S\textrightarrow{} W conversion events}
-
-Quantifying gBGC comes back to measuring the $\frac{WS}{WS+SW}$ ratio.
-However, since the large majority of pot-NCO-1 events corresponded to FPs, we had to distinguish the (potential) contribution of FPs to this ratio from that of genuine NCO-1 events.
-In particular, this ratio may depart from the expected 50\% ratio if (1) a non-negligible proportion of FPs arise from sequencing miscalls and (2) W\textrightarrow{} S and S\textrightarrow{} W sequencing errors appear at different frequencies.\\
-
-% \paragraph{Proportion of FPs due to sequencing errors\\}
-First, we thus wanted to quantify the proportion of FPs due to sequencing miscalls.
-To do this, we estimated the sequencing error rate directly in our sequencing data by monitoring the apparition of \textit{de novo} variants:
-we assumed that, outside the polymorphic sites identified by variant-calling, any base call that differed from the nucleotide of the reference genome was a sequencing error and counted them to compute the conditional frequency matrix of sequencing errors\footnote{Matrix $M$ was computed based on the analysis of one chromosome (chromosome 10) for all of our 18 samples individually (because the sequencing errors may vary between the biological samples and sequencing runs). This matrix gives the probability of each erroneous base call, given the genuine nucleotide.} ($M$):
-
-\begin{equation*}
-M = \begin{bmatrix}
-\Pr( A\rightarrow A \mid A) & \Pr( A\rightarrow C \mid A) & \Pr( A\rightarrow G \mid A) & \Pr( A\rightarrow T \mid A) \\
-\Pr( C\rightarrow A \mid C) & \Pr( C\rightarrow C \mid C) & \Pr( C\rightarrow G \mid C) & \Pr( C\rightarrow T \mid C) \\
-\Pr( G\rightarrow A \mid G) & \Pr( G\rightarrow C \mid G) & \Pr( G\rightarrow G \mid G) & \Pr( G\rightarrow T \mid G) \\
-\Pr( T\rightarrow A \mid T) & \Pr( T\rightarrow C \mid T) & \Pr( T\rightarrow G \mid T) & \Pr( T\rightarrow T \mid T) 
-\end{bmatrix}
-\end{equation*}
-
-
-
-
-\newpage
-
-
-$\forall (i,j) \in \{A, C, G, T\}^2$, the number of NCO-1 FPs expected due to sequencing errors involving a genuine base $i$ mistakenly called as a $j$ base ($e_{i\rightarrow j}$) simply equalled the product of the number of central markers (i.e.\ markers \textit{not} located at the extremity of fragments) that were genuinely $i$ in $ij$ polymorphic sites ($g_{i}^{ij}$) by the conditional probability that a genuine $i$ would mistakenly be called a $j$ ($\Pr( i\rightarrow j \mid i )$):
-
-\begin{equation} \label{eq:nb-errors}
-	e_{i\rightarrow j} = g_{i}^{ij} \times \Pr( i\rightarrow j \mid i )
-\end{equation}
-
-
-$g_{i}^{ij}$ was not directly accessible from the data because we could not know which base calls were correctly sequenced.
-Though, this number was linked to the number of central markers containing an $i$ allele and involved in a polymorphic site $ij$ ($n_{i}^{ij}$) through the following equation:
-
-\begin{equation} \label{eq:genuine-to-called}
-	n_{i}^{ig} = g_{i}^{ij} \times ( 1 - \Pr( i\rightarrow j \mid i ) ) + g_{j}^{ij} \times \Pr( j\rightarrow i \mid j )
-\end{equation}
-
-
-When we computed the $M$ matrix, we found that the frequency of sequencing errors was very low ($\simeq 10^{-3}$).
-Thus, to approximate $g_{i}^{ij}$, we used the simplifying assumption that the frequency of wrong calls were close to zero and that of good calls close to 1:
-
-\begin{subequations} 
-	\begin{alignat}{5}
-		\forall &(i,j) &{}\in{}& \{A, C, G, T\}^2 \; \backslash \: i \neq j, &{}\Pr({}& i\rightarrow j \mid i ) \simeq 0,\label{eq:assumption-low-freqs}\\
-		\forall &i	   &{}\in{}& \{A, C, G, T\},							 &{}\Pr({}& i\rightarrow i \mid i ) \simeq 1
-	\end{alignat}
-\end{subequations}
-
-
-From equation~\ref{eq:assumption-low-freqs}, equation~\ref{eq:genuine-to-called} simplified to:
-
-\begin{equation} \label{eq:genuine-to-called-simplified}
-	n_{i}^{ij} \simeq g_{i}^{ij}
-\end{equation}
-
-And, by incorporating equation~\ref{eq:genuine-to-called-simplified} into equation~\ref{eq:nb-errors}, we had:
-
-\begin{equation*} \label{eq:nb-errors-with-only-known-parameters}
-	e_{i\rightarrow j} = n_{i}^{ij} \times \Pr( i\rightarrow j \mid i )
-\end{equation*}
-
-
-Finally, the total number of FPs that were expected due to sequencing errors ($E$) was the total sum of each type of sequencing error: 
-
-\begin{equation*} \label{eq:sum-all-NCOs-expected}
-	E = \underset{i \neq j} {\sum_{(i, j) \in \{A, C, G, T\}^2}} e_{i\rightarrow j}
-\end{equation*}
-
-
-
-
-This allowed us to predict that, among the total 287,577,349 fragments overlapping 3 markers or more, 231,905 were expected to be discovered as NCO-1 FPs due to sequencing errors only.
-This represented 66.7\% of the 347,652\footnote{The sequencing error estimate was calculated upon all sequenced fragments, i.e.\ before setting the sequencing error filter, and thus had to be compared to the total number of NCO-1 FPs obtained without the filter (Table~\ref{tab:NCO-1-FP-rate}).} NCO-1 FPs that we found in pot-NCO-1 events (110,615 in control regions + an estimate of 237,037 in hotspots, Table~\ref{tab:NCO-1-FP-rate}).
-
-We further evaluated the imprecision on this percentage by calculating, for each sample individually\footnote{With the exception of the four samples which were lowly sequenced}, the ratio between the latter number of FPs expected in the sample due to sequencing errors and the total number of fragments in the sample. 
-We sequentially applied the multiplier of each sample to the total number of fragments and finally determined that the proportion of FPs due to sequencing errors capped between 60 and 78\% of all FPs.\\
-
-
-Therefore, the largest part (66.7\%, CI $= [60\%; 78\%$]) of FPs arose from sequencing errors.
-The next step thus consisted in estimating the $\frac{WS}{WS+SW}$ ratio expected because of these sequencing errors.
-To do this, we simply computed the total number of FPs containing an erroneous W\textrightarrow{} S base call ($E_{W\rightarrow S}$) and the number containing an erroneousS\textrightarrow{} W base call ($E_{S\rightarrow W}$) as follows:
-
-\begin{align}
-        E_{W\rightarrow S}&= e_{A\rightarrow C} + e_{A\rightarrow G} + e_{T\rightarrow C} + e_{T\rightarrow G}, \\
-        E_{S\rightarrow W}&= e_{C\rightarrow A} + e_{C\rightarrow T} + e_{G\rightarrow A} + e_{G\rightarrow T}
-\end{align}
-
-Importantly, we found that $E_{S\rightarrow W}$ was greater than $E_{W\rightarrow S}$, i.e.\ S bases were more oftenly mistakenly sequenced as W bases than the other way round.
-More precisely, we found that the $\frac{WS}{WS+SW}$ ratio expected with such FPs (i.e.\ $\frac{E_{W\rightarrow S}}{E_{W\rightarrow S} + E_{S\rightarrow W}}$) equalled 0.39.
-
-We note that this estimate was slightly higher than the $\frac{WS}{WS+SW}$ observed in control regions (0.31), possibly because the non-negligible portion (33.3\%) of FPs that did not originate from these sequencing errors may somehow also bias the ratio.
-
-
+\end{mccorrection}
 
 
 \subsubsection{Extrapolation of the transmission bias for single-marker NCOs}
@@ -712,16 +671,12 @@ To estimate the overall contribution of NCOs to gBGC, we deconvoluted $b_0^{NCO}
 	b_{0}^{NCO} = b_{0}^{NCO_{1}} \times f^{NCO_{1}} + b_{0}^{NCO_{2+}} \times f^{NCO_{2+}} 
 \end{equation*}
 
-Though, the relative proportion of NCO-2+ events increases with marker density (Figure~\ref{fig:density-NCO}), and our experimental design required a high level of heterozygosity (see Chapter~\ref{ch:5-methodology}), not representative of the real heterozygosity in mouse populations.
-However, other studies have estimated the genome-wide polymorphism in wild \textit{Mus musculus domesticus} mice: using a 95\% sensitivity for SNP discovery, it was estimated to be around 0.47\% \citep{davies2015factors}, a result similar to the 0.55\% value previously found on a subset of the genome \citep{frazer2007sequencebased}.
+% Though, the relative proportion of NCO-2+ events increases with marker density (Figure~\ref{fig:density-NCO}), and our experimental design required a high level of heterozygosity (see Chapter~\ref{ch:5-methodology}), not representative of the real heterozygosity in mouse populations.
+% However, other studies have estimated the genome-wide polymorphism in wild \textit{Mus musculus domesticus} mice: using a 95\% sensitivity for SNP discovery, it was estimated to be around 0.47\% \citep{davies2015factors}, a result similar to the 0.55\% value previously found on a subset of the genome \citep{frazer2007sequencebased}.
 
+\begin{mccorrection}
+The genome-wide level of polymorphism in natural populations of \textit{Mus musculus domesticus} mice was estimated to be around 0.47\% \citep{davies2015factors}, a result similar to the 0.55\% value previously found on a subset of the genome \citep{frazer2007sequencebased}.
 With such SNP density, we would expect 74.75\% of NCO CT markers to come from NCO-1 events (representing 86.23\% of the NCOs overlapping at least one marker) and the remaining 25.25\% from NCO-2+ events (representing 13.77\% of the NCOs overlapping at least one marker) (Figure~\ref{fig:density-NCO}), which would result in an overall $b_0^{NCO}$ of 0.310.
+\end{mccorrection}
 
-
-
-
-
-
-
-\textbf{NOTES — voir avec Laurent comment quantifier le dBGC sur les hotspots, en tenant compte de l'erosion?}
 

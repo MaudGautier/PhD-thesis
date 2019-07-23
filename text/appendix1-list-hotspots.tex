@@ -52,10 +52,143 @@ The table below gives the list of mouse hotspots targeted by either PRDM9\textsu
 
 This work was performed using the computing facilities of the CC LBBE/PRABI\@.
 
-\subsection{Source code to reproduce figures}
 
-The source code to reproduce figures will be put online shortly.
+\subsection{Estimation of erroneous W\textrightarrow{} S and S\textrightarrow{} W conversion events}
 
+Quantifying gBGC comes back to measuring the $\frac{WS}{WS+SW}$ ratio.
+However, since the large majority of pot-NCO-1 events corresponded to FPs, we had to distinguish the (potential) contribution of FPs to this ratio from that of genuine NCO-1 events.
+In particular, this ratio may depart from the expected 50\% ratio if (1) a non-negligible proportion of FPs arise from sequencing miscalls and (2) W\textrightarrow{} S and S\textrightarrow{} W sequencing errors appear at different frequencies.\\
+
+% \paragraph{Proportion of FPs due to sequencing errors\\}
+First, we thus wanted to quantify the proportion of FPs due to sequencing miscalls.
+To do this, we estimated the sequencing error rate directly in our sequencing data by monitoring the apparition of \textit{de novo} variants:
+given that the mutation rate ($\sim$10\textsuperscript{-8}/bp) is much lower than the sequencing error rate ($\sim$10\textsuperscript{-3}/bp), we assumed that, outside the polymorphic sites identified by variant-calling, any base call that differed from the nucleotide of the reference genome was a sequencing error and counted them to compute the conditional frequency matrix of sequencing errors\footnote{Matrix $M$ was computed based on the analysis of one chromosome (chromosome 10) for all of our 18 samples individually (because the sequencing errors may vary between the biological samples and sequencing runs). This matrix gives the probability of each erroneous base call, given the genuine nucleotide.} ($M$):
+
+\begin{equation*}
+M = \begin{bmatrix}
+\Pr( A\rightarrow A \mid A) & \Pr( A\rightarrow C \mid A) & \Pr( A\rightarrow G \mid A) & \Pr( A\rightarrow T \mid A) \\
+\Pr( C\rightarrow A \mid C) & \Pr( C\rightarrow C \mid C) & \Pr( C\rightarrow G \mid C) & \Pr( C\rightarrow T \mid C) \\
+\Pr( G\rightarrow A \mid G) & \Pr( G\rightarrow C \mid G) & \Pr( G\rightarrow G \mid G) & \Pr( G\rightarrow T \mid G) \\
+\Pr( T\rightarrow A \mid T) & \Pr( T\rightarrow C \mid T) & \Pr( T\rightarrow G \mid T) & \Pr( T\rightarrow T \mid T) 
+\end{bmatrix}
+\end{equation*}
+
+
+
+
+
+
+$\forall (i,j) \in \{A, C, G, T\}^2$, the number of NCO-1 FPs expected due to sequencing errors involving a genuine base $i$ mistakenly called as a $j$ base ($e_{i\rightarrow j}$) simply equalled the product of the number of central markers (i.e.\ markers \textit{not} located at the extremity of fragments) that were genuinely $i$ in $ij$ polymorphic sites ($g_{i}^{ij}$) by the conditional probability that a genuine $i$ would mistakenly be called a $j$ ($\Pr( i\rightarrow j \mid i )$):
+
+\begin{equation} \label{eq:nb-errors}
+	e_{i\rightarrow j} = g_{i}^{ij} \times \Pr( i\rightarrow j \mid i )
+\end{equation}
+
+
+$g_{i}^{ij}$ was not directly accessible from the data because we could not know which base calls were correctly sequenced.
+Though, this number was linked to the number of central markers containing an $i$ allele and involved in a polymorphic site $ij$ ($n_{i}^{ij}$) through the following equation:
+
+\begin{equation} \label{eq:genuine-to-called}
+	n_{i}^{ig} = g_{i}^{ij} \times ( 1 - \Pr( i\rightarrow j \mid i ) ) + g_{j}^{ij} \times \Pr( j\rightarrow i \mid j )
+\end{equation}
+
+
+When we computed the $M$ matrix, we found that the frequency of sequencing errors was very low ($\simeq 10^{-3}$).
+Thus, to approximate $g_{i}^{ij}$, we used the simplifying assumption that the frequency of wrong calls were close to zero and that of good calls close to 1:
+
+\begin{subequations} 
+	\begin{alignat}{5}
+		\forall &(i,j) &{}\in{}& \{A, C, G, T\}^2 \; \backslash \: i \neq j, &{}\Pr({}& i\rightarrow j \mid i ) \simeq 0,\label{eq:assumption-low-freqs}\\
+		\forall &i	   &{}\in{}& \{A, C, G, T\},							 &{}\Pr({}& i\rightarrow i \mid i ) \simeq 1
+	\end{alignat}
+\end{subequations}
+
+
+From equation~\ref{eq:assumption-low-freqs}, equation~\ref{eq:genuine-to-called} simplified to:
+
+\begin{equation} \label{eq:genuine-to-called-simplified}
+	n_{i}^{ij} \simeq g_{i}^{ij}
+\end{equation}
+
+And, by incorporating equation~\ref{eq:genuine-to-called-simplified} into equation~\ref{eq:nb-errors}, we had:
+
+\begin{equation*} \label{eq:nb-errors-with-only-known-parameters}
+	e_{i\rightarrow j} = n_{i}^{ij} \times \Pr( i\rightarrow j \mid i )
+\end{equation*}
+
+
+Finally, the total number of FPs that were expected due to sequencing errors ($E$) was the total sum of each type of sequencing error: 
+
+\begin{equation*} \label{eq:sum-all-NCOs-expected}
+	E = \underset{i \neq j} {\sum_{(i, j) \in \{A, C, G, T\}^2}} e_{i\rightarrow j}
+\end{equation*}
+
+
+
+
+This allowed us to predict that, among the total 287,577,349 fragments overlapping 3 markers or more, 231,905 were expected to be discovered as NCO-1 FPs due to sequencing errors only.
+This represented 66.7\% of the 347,652\footnote{The sequencing error estimate was calculated upon all sequenced fragments, i.e.\ before setting the sequencing error filter, and thus had to be compared to the total number of NCO-1 FPs obtained without the filter (Table~\ref{tab:NCO-1-FP-rate-no-filter}).} NCO-1 FPs that we found in pot-NCO-1 events (110,615 in control regions + an estimate of 237,037 in hotspots, Table~\ref{tab:NCO-1-FP-rate-no-filter}).
+
+
+\begin{table}[t]
+    \centering
+    % \begin{adjustbox}{width = 1\textwidth}
+		\begin{tabular}{rrrrr}
+            \toprule
+            \textbf{Target} & \textbf{Nb of} & \textbf{Nb of} & \textbf{Nb of} & \textbf{Event rate} \\
+
+            \textbf{category} & \textbf{targets} & \textbf{fragments} & \textbf{events} & \textbf{($\times$ 10\textsuperscript{-6})} \\
+
+            \midrule
+            Hotspots & 1,018 & 228,984,512 & 243,390 & 1062.9 \\
+            Controls & 500 & 106,850,906 & 110,615 & 1035.2 \\
+            \midrule
+            \multicolumn{1}{r}{\textbf{FP rate}} & \multicolumn{4}{r}{\textbf{97.4 \%}} \\
+            \bottomrule
+        \end{tabular}
+    % \end{adjustbox}
+    \caption[Number of pot-NCO-1 events detected in hotspot and control targets without the sequencing error filter]
+    {\textbf{Number of pot-NCO-1 events detected in hotspot and control targets without the sequencing error filter.}
+        \par Pot-NCO-1 events were detected without the sequencing error filter controlling that the allele supporting the genotype call with the mapping onto the B6 genome is identical to that based on the mapping onto the CAST genome.
+        All fragments or events overlapping at least 1 bp with a given target are counted in this table.
+        The event rate corresponds to the ratio of candidate recombination events over the total number of fragments.
+        The maximum false positive (FP) rate is the ratio of the event rate in control targets over that in hotspots.
+    }
+\label{tab:NCO-1-FP-rate-no-filter}
+\end{table}
+
+
+
+We further evaluated the imprecision on this percentage by calculating, for each sample individually\footnote{With the exception of the four samples which were lowly sequenced}, the ratio between the latter number of FPs expected in the sample due to sequencing errors and the total number of fragments in the sample. 
+We sequentially applied the multiplier of each sample to the total number of fragments and finally determined that the proportion of FPs due to sequencing errors capped between 60 and 78\% of all FPs.\\
+
+
+Therefore, the largest part (66.7\%, CI $= [60\%; 78\%$]) of FPs arose from sequencing errors.
+The next step thus consisted in estimating the $\frac{WS}{WS+SW}$ ratio expected because of these sequencing errors.
+To do this, we simply computed the total number of FPs containing an erroneous W\textrightarrow{} S base call ($E_{W\rightarrow S}$) and the number containing an erroneousS\textrightarrow{} W base call ($E_{S\rightarrow W}$) as follows:
+
+\begin{align}
+        E_{W\rightarrow S}&= e_{A\rightarrow C} + e_{A\rightarrow G} + e_{T\rightarrow C} + e_{T\rightarrow G}, \\
+        E_{S\rightarrow W}&= e_{C\rightarrow A} + e_{C\rightarrow T} + e_{G\rightarrow A} + e_{G\rightarrow T}
+\end{align}
+
+Importantly, we found that $E_{S\rightarrow W}$ was greater than $E_{W\rightarrow S}$, i.e.\ S bases were more oftenly mistakenly sequenced as W bases than the other way round.
+More precisely, we found that the $\frac{WS}{WS+SW}$ ratio expected with such FPs (i.e.\ $\frac{E_{W\rightarrow S}}{E_{W\rightarrow S} + E_{S\rightarrow W}}$) equalled 0.39.
+
+We note that this estimate was slightly higher than the $\frac{WS}{WS+SW}$ observed in control regions (0.31), possibly because the non-negligible portion (33.3\%) of FPs that did not originate from these sequencing errors may somehow also bias the ratio.
+
+
+
+
+
+
+
+
+
+% \subsection{Source code to reproduce figures}
+%
+% The source code to reproduce figures will be put online shortly.
+%
 
 
 % SRA et reproductibilite des figures
@@ -86,12 +219,12 @@ The source code to reproduce figures will be put online shortly.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width = 1\textwidth]{figures/appendices/Recombination_rates_2_axes_sym_vs_Asym_DMC1_with_legend_and_outliers.eps}
+    \includegraphics[width = 1\textwidth]{figures/appendices/Recombination_rates_2_axes_sym_vs_Asym_DMC1_with_legend_and_outliers-corrected_CO_x2.eps}
     \caption[Asymmetric hotspots display lower recombinational activity than expected by their DMC1 binding affinity]
     {\textbf{Asymmetric hotspots display lower recombinational activity than expected by their DMC1 binding affinity.}
         \par All 1,018 hotspots were divided into 10 classes of increasing DMC1 signal (x-axis), i.e.\ the number of DMC1 ChIP-seq tags on each DMC1 ChIP-seq peak (DMC1 ChIP-seq data on B6xCAST hybrid mice from \citealp{smagulova2016evolutionary}).
         The observed number of recombination events identified per sequenced Mb (left y-axis) was converted into a CO rate (right y-axis) as detailed in Chapter~\ref{ch:6-recombination-parameters}.
-        Symmetric hotspots (green) were distinguished from asymmetric hotspots (orange) as detailed in Chapter~\ref{ch:7-quantification-BGC}.
+        Symmetric hotspots (green, $N = 650$) were distinguished from asymmetric hotspots (orange, $N = 236$) as detailed in Chapter~\ref{ch:7-quantification-BGC}.
         The linear regression model for symmetric (slope~$= 1.8$; intercept~$=0$; \textit{p}-val~$< 2.2 \times 10^{-16}$) and asymmetric (slope~$= 8.6$; intercept~$=0$; \textit{p}-val~$< 2.2 \times 10^{-16}$) hotspots are drawn as dotted lines.
     }
 \label{fig:asymmetry-and-DMC1}
