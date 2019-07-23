@@ -531,7 +531,7 @@ Thus, we aimed at quantifying the transmission bias in single-marker NCOs as wel
 % Briefly, estimating the contribution of single-marker NCO (NCO-1) events consisted in three main steps.
 % First, we adapted the procedure developed in Chapter~\ref{ch:5-methodology} to fish out all events which were likely to be NCO-1 events (pot-NCO-1, for ‘potential NCO-1 events’).
 % Second, since the large majority of them (90.0\%, Table~\ref{tab:NCO-1-FP-rate}) were false positives (FPs) and most of these FPs (66.7\%) arose from sequencing errors, we measured the sequencing error rate directly in our sequencing data to estimate, among the pot-NCO-1 events, the relative proportion of FPs displaying W\textrightarrow{} S and S\textrightarrow{} W erroneous conversion events.
-% With this, we could finally deconvolute the fraction of the observed ratio of $\frac{SW}{WS+SW}$ due to FPs and to genuine NCO-1 events, and thus, extrapolate the transmission bias on single-marker NCOs.
+% With this, we could finally deconvolute the fraction of the observed ratio of $\frac{WS}{WS+SW}$ due to FPs and to genuine NCO-1 events, and thus, extrapolate the transmission bias on single-marker NCOs.
 %
 % I detail these three steps in this subsection.
 %
@@ -613,9 +613,9 @@ We next estimated the sequencing machine error rate by analysing the apparition 
 Using this knowledge, we extrapolated the proportion of errors coming from sequencing errors within the heterozygous sites of control regions. 
 This way, we estimated that the largest part of FPs (66.7\%, CI $= [60\%; 78\%$]) directly came from sequencing errors. 
 In particular, we found that S bases were more often mistakenly sequenced as W bases than the other way round, which implied that a greater number of FPs were detected as NCO-1 products with a S\textrightarrow{} W rather than with a W\textrightarrow{} S conversion event. 
-More precisely, sequencing errors, by themselves, were expected to lead to a $\frac{SW}{WS+SW}$ ratio of 0.39 (see Appendix~\ref{app:data-and-figs}).
+More precisely, sequencing errors, by themselves, were expected to lead to a $\frac{WS}{WS+SW}$ ratio of 0.39 (see Appendix~\ref{app:data-and-figs}).
 
-For pot-NCO-1 discoveries located within control regions, we found that the $\frac{SW}{WS+SW}$ ratio was 0.31. 
+For pot-NCO-1 discoveries located within control regions, we found that the $\frac{WS}{WS+SW}$ ratio was 0.31. 
 As this value was slightly lower than that expected based on sequencing errors only, we believe that the remaining gap comes from the 34\% of FPs that do not originate from sequencing errors.
 
 % The procedure we implemented in Chapter~\ref{ch:5-methodology} to identify recombination events discarded (1) genotyping errors coming from alignment defects by mapping the reads on both the B6 and the CAST reference genomes and (2) genotyping errors coming from sequencing miscalls by requiring a minimum of 2 markers.
@@ -630,12 +630,12 @@ As this value was slightly lower than that expected based on sequencing errors o
 \subsubsection{Extrapolation of the transmission bias for single-marker NCOs}
 
 In spite of the high FP error rate, we found that the transmission of S alleles was significantly higher in hotspot regions (0.356, CI\textsubscript{95\%} $=[0.3532, 0.3594]$) than in control regions (0.317, CI\textsubscript{95\%} $=[0.3129,0.3220]$). 
-Assuming that the 133,026 FPs found in hotspot regions contributed to the $\frac{SW}{WS+SW}$ ratio in the same manner as those found in control regions, and that the contribution of the remaining 14,766 genuine NCO-1 events reflected the transmission bias of NCO-1 events, we could deconvolute both phenomena as such:
+Assuming that the 133,026 FPs found in hotspot regions contributed to the $\frac{WS}{WS+SW}$ ratio in the same manner as those found in control regions, and that the contribution of the remaining 14,766 genuine NCO-1 events reflected the transmission bias of NCO-1 events, we could deconvolute both phenomena as such:
 
 \begin{equation*}
 	n_{hotspots}^{NCO_1 + FP} \times r_{hotspots}^{NCO_1 + FP}  = n_{hotspots}^{NCO_1} \times r_{hotspots}^{NCO_1} + n_{hotspots}^{FP} \times r_{control}^{FP}
 \end{equation*}
-where $n_{j}^{i}$ corresponds to the counts of events $i$ in regions $j$, and $r_{j}^{i}$ to the observed ratio of $\frac{SW}{WS+SW}$ due to events $i$ in regions $j$.
+where $n_{j}^{i}$ corresponds to the counts of events $i$ in regions $j$, and $r_{j}^{i}$ to the observed ratio of $\frac{WS}{WS+SW}$ due to events $i$ in regions $j$.
 
 
 Using this formula, we predicted that $r_{hotspots}^{NCO_1}$ equalled 0.70 (i.e.\ that $b_0^{NCO_1}$ equalled 0.40). 
