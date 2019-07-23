@@ -14,19 +14,35 @@ The very mechanism of meiosis introduces genetic mixing in two separate ways.
 On the one hand, the paternal and maternal chromosomes are independently re-assorted during the first meiotic division.
 On the second hand, genetic content is exchanged during recombination at the points where homologues cross over (a.k.a.\ chiasmata).
 
-This genetic diversity instilled by meiosis forms the substratum upon which, according to Charles Darwin (1809--1882) himself, new species are ultimately generated — provided that a few conditions are met:
+% - Pour darwin, la formation des especes requiert plusieurs conditions, et l'un des principes importants est la divergence de caracteres (citation).
+% - la source originelle de divergence est la mutation, mais la meiose — et en particulier la recombinaison — est aussi une grande source de diversite gneetique, de deux facons.
+% -
+%
+% - meme si ce mecanisme de meiose n'etait pas connu au temps de darwin, il avait eu l'intuition que la diversite genetique, — dont la meiose est un des vectuers avec la mutation — etait essentiel a la formation des especes (citation)
+% - selon sa theorie, variete to speices du a
+% - as such, emergence d'espece est en lien fort avec le processus de recombinaison meiotique puisqu'il est au coeur du processus d'heredite et qu'il cree de la diversite.
+%
+\begin{mccorrection}
+Even if this phenomenon was not known in Charles Darwin's time, he had the intuition that genetic diversity — which meiosis participates in instilling — was essential to the formation of new species:
+%on the basis of existing mutations — was essential to the formation of new species:
+% This genetic diversity instilled by meiosis forms the substratum upon which, according to Charles Darwin (1809--1882) himself, new species are ultimately generated — provided that a few conditions are met:
 
 \begin{quote}
 	\textit{‘The principle, which I have designated by this term [ed.\ divergence of character], is of high importance on my theory, and explains, as I believe, several important facts. […] according to my view, varieties are species in the process of formation, or are, as I have called them, incipient species. How, then, does the lesser difference between varieties become augmented into the greater difference between species?’}
 	\qauthor{--- Charles Darwin, \textit{\usebibentry{darwin1859origin}{title}} \citeyearpar{darwin1859origin} }
 \end{quote}
 
-As enunciated by his theory, the prequisites to the variety-to-species transition also entail ‘a severe struggle for life [which] certainly cannot be disputed’, the occurrence of ‘variations useful to any organic being’ and ‘the strong principle of inheritance’ through which ‘they will tend to produce offspring similarly characterised’.
-The emergence of new species is therefore tightly linked to both what he calls ‘natural selection’ and to the process of meiotic recombination.
+As enunciated by his theory, the transition from varieties to species requires ‘a severe struggle for life [which] certainly cannot be disputed’ (natural selection), the occurrence of ‘variations useful to any organic being’ (mutations) and ‘the strong principle of inheritance’ through which ‘they will tend to produce offspring similarly characterised’ (heredity).
+As such, the emergence of new species is tightly linked to the process of meiotic recombination since it is a major vector of genetic variation at the heart of the process of heredity.
+% The emergence of new species is therefore tightly linked to both what he calls ‘natural selection’ and to the process of meiotic recombination.
+
+% As enunciated by his theory, the prequisites to the variety-to-species transition also entail ‘a severe struggle for life [which] certainly cannot be disputed’, the occurrence of ‘variations useful to any organic being’ and ‘the strong principle of inheritance’ through which ‘they will tend to produce offspring similarly characterised’.
+% The emergence of new species is therefore tightly linked to both what he calls ‘natural selection’ and to the process of meiotic recombination.
+\end{mccorrection}
 
 Furthermore, the notion of biological species itself, formally defined by Ernst Mayr (1904--2005) as ‘groups of interbreeding natural populations that are reproductively (genetically) isolated from other such groups’ \citep{mayr1999systematics}, rests on the ability to sexually reproduce and thus, to meiotically recombine.
 
-The relationship between these two concepts (further developed in \citealp{felsenstein1981skepticism} and \citealp{butlin2005recombination}) is such that, in the mammalian clade, the only speciation gene discovered so far is the one that controls the localisation of double-strand breaks (DSBs) on the genome.
+The relationship between these two concepts (further developed in \citealp{felsenstein1981skepticism} and \citealp{butlin2005recombination}) is such that, in the mammalian clade, the only speciation gene discovered so far (PRDM9) is the one that controls the localisation of double-strand breaks (DSBs) on the genome \citep{baudat2010prdm9,myers2010drive,parvanov2010prdm9}.
 
 I will come back to this essential gene and to its impact on the evolution of recombination rate in the third section of this chapter. 
 But prior to that, I will review the existing methods to detect recombination genome-wide, and the multiple layers of recombination rate (RR) variation that have been observed along genomes and across species.
@@ -43,7 +59,7 @@ The comprehension of genetic linkage by the group of Thomas Hunt Morgan (see Cha
 Basically, these maps abstractly represent the proportion of crossing-overs (COs) occurring between pairs of ‘genetic markers’, i.e.\ polymorphic\footnote{Which presents several forms. In other words: subject to inter-individual variability.} DNA sequences located at fixed genomic positions.
 
 Initially, genetic markers exclusively comprised genes coding for visually discernable phenotypes.
-Since their relatively wide genomic spacing granted a poor resolution to detect recombination, they were eventually supplanted by other types of markers: restriction fragment length polymorphisms (RFLPs) i.e.\ sequences enzymatically shortenable first used for linkage analysis by \citet{botstein1980construction}; minisatellites and microsatellites \citep{hamada1982potential} i.e.\ tandem repeats of short motifs highly variable in length \citep{ellegren2004microsatellites} and widely spread in eukaryotes \citep{hamada1982novel}; and single-nucleotide polymorphisms (SNPs) i.e.\ one-base sequence variations carried by at least 1\% of the population.\\
+Since their relatively wide genomic spacing granted a poor resolution to detect recombination, they were eventually supplanted by other types of markers: restriction fragment length polymorphisms (RFLPs) i.e.\ sequences enzymatically shortenable first used for linkage analysis by \citet{botstein1980construction}; minisatellites and microsatellites \citep{hamada1982potential} i.e.\ tandem repeats of short motifs highly variable in length \citep{ellegren2004microsatellites} and widely spread in eukaryotes \citep{hamada1982novel}; and single-nucleotide polymorphisms (SNPs) i.e.\ one-base sequence variations.\\
 
 When the two parental chromosomes carry distinct alleles at these loci\footnote{Fixed position of a genetic marker on a chromosome (from the Latin word \textit{locus}: ‘place’)}, one can track their transmission by genotyping the markers in the descendants.
 As such, the mosaic of paternal and maternal haplotypes — and thus, the positions of recombination exchange points — can be reconstituted using various statistical methods \citep[reviewed in \citealp{backstrom2009gene}]{haldane1919combination, kosambi1943estimation}.
@@ -126,8 +142,11 @@ To get insights into other stages of the recombination process, one can use chro
 The sites of recombination initiation have been identified by using this technique with Spo11 proteins in yeasts \citep{gerton2000global,mieczkowski2007loss,pan2011hierarchical} and mice \citep{lange2016landscape} and the repair sites with RPA proteins in yeasts \citep{borde2009histone} and RAD51 and DMC1 proteins in mice \citep{smagulova2011genomewide,brick2012genetic}.
 Alternatively, sites of recombination initiation have been mapped by analysing the enrichment of single-stranded DNA (ssDNA) in yeasts \citep{blitzblau2007mapping,buhler2007mapping} and mice \citep{khil2012sensitive}.
 
-These methods do not rely on the existence of polymorphic markers and, therefore, allow a resolution of a few hundreds of kb (i.e.\ the length of the sequenced fragments).\\
-
+\begin{mccorrection}
+These methods do not rely on the existence of polymorphic markers and, therefore, depend on the size of the region bound by the protein.
+As such, the resolution reaches up to $\sim$500 bp for DMC1, $\sim$50 bp for PRDM9 and a few base pairs for SPO11.\\
+% (i.e.\ a resolution of a few tens of pb).\\
+\end{mccorrection}
 
 All these approaches have contributed to a better understanding of recombination genome-wide.
 In particular, it was soon understood that COs do not appear at random locations on the genome.
@@ -144,11 +163,12 @@ The number and distribution of crossing-overs (COs) along the genome are subject
 
 \subsubsection{Crossing-over assurance (COA), or the ‘obligatory crossing-over’}
 Together with sister chromatid cohesion, COs hold the homologous chromosomes joint until anaphase I \citep[reviewed in][]{roeder1997meiotic} and are therefore essential to the proper disjunction of bivalents.
-Accordingly, in most sexually-reproducing organisms, the total number of COs ranges between one per chromosome and one per chromosome arm\footnote{With the notable exceptions of honey bees \citep{beye2006exceptionally} and birds \citep{groenen2009highdensity} which display higher numbers of COs per chromosome.}, irrespective of chromosome length \citep{dutrillaux1986role,pardo-manueldevillena2001recombination,dumas2002chromosomal,hillers2003chromosomewide,hassold2004cytological,dumont2017variation}.
+Accordingly, in most sexually-reproducing organisms, the total number of COs ranges between one per chromosome and one per chromosome arm\footnote{With the notable exceptions of honey bees \citep{beye2006exceptionally} and birds \citep{groenen2009highdensity} which display higher numbers of COs per chromosome, and of \textit{Drosophila melanogaster} males who do not display any CO throughout their genome \citep{mckee1998pairing}.}, irrespective of chromosome length \citep{dutrillaux1986role,pardo-manueldevillena2001recombination,dumas2002chromosomal,hillers2003chromosomewide,hassold2004cytological,dumont2017variation}.
 As such, mammalian genetic map lengths (which are proportional to CO numbers) can be predicted with the haploid number of chromosome arms (Figure~\ref{fig:correlation-CO-nb-chromosomes}).
 
 The sexual chromosomes also comply to this phenomenon: they systematically have one CO on their pseudoautosomal region (PAR), a feature likely facilitated by the much higher DSB rate on the PAR than on the autosomes \citep{kauppi2011distinct}.
-However, this ‘obligatory CO’ rule suffers exceptions: \textit{Drosophila melanogaster} does not display any CO on its tiny 4\textsuperscript{th} chromosome nor, in certain cases, on its X chromosome \citep{orr-weaver1995meiosis, koehler1998human} and neither do marsupial sex chromosomes \citep{sharp1982sex}.\\
+However, this ‘obligatory CO’ rule suffers exceptions: \textit{Drosophila melanogaster} females do not display any CO on their tiny 4\textsuperscript{th} chromosome nor, in certain cases, on their X chromosome \citep{orr-weaver1995meiosis, koehler1998human} and neither do marsupial sex chromosomes \citep{sharp1982sex}.\\
+% males do not display any CO \citep{mckee1998pairing} while females do, but not on their tiny 4\textsuperscript{th} chromosome nor, in certain cases, on their X chromosome \citep{orr-weaver1995meiosis, koehler1998human} and neither do marsupial sex chromosomes \citep{sharp1982sex}.\\
 
 \begin{figure}[h]
 	\centering
@@ -172,7 +192,7 @@ This phenomenon, called ‘interference’, also applies to COs, as reviewed in 
 \subsubsection{Crossing-over interference (COI)}
 Early studies on recombination \citep{sturtevant1915behavior,muller1916mechanism} have shown that, when more than one CO appears on a given chromosome, the chiasmata they form tend to be evenly spaced \citep{jones1967control, jones1974correlated, jones1984control,jones2006meiotic}.
 Indeed, the occurrence of a CO hampers the coincident formation of another one in the same pair of chromosomes \citep{vanveen2003meiosis,hillers2004crossover} — the physical length of prophase chromosomes, rather than the genomic (bp) or genetic (cM) distance, being the primary parameter \citep{zhang2014crossover,wang2015meiotic}.
-So far, COI has been noted in several species including \textit{Arabidopsis thaliana} \citep{drouaud2007sexspecific}, \textit{Homo sapiens} \citep{laurie1985further,broman2000characterization} and \textit{Mus musculus} \citep{lawrie1995chiasma,anderson1999distribution,broman2002crossover}.\\
+So far, COI has been noted in several species including \textit{Arabidopsis thaliana} \citep{drouaud2007sexspecific}, \textit{Saccharomyces cerevisiae} \citep{shinohara2003crossover}, \textit{Homo sapiens} \citep{laurie1985further,broman2000characterization} and \textit{Mus musculus} \citep{lawrie1995chiasma,anderson1999distribution,broman2002crossover}.\\
 
 The mechanism of COI remains unclear but several models have been proposed \citep[reviewed in][]{youds2011choice}.
 One early hypothesis, — the polymerisation model, — posits that the completion of a CO triggers the polymerisation of an inhibitor of recombination, thus preventing the formation of adjacent COs \citep{maguire1988crossover,king1990polymerization}.
@@ -233,11 +253,12 @@ The DSB-rich domains are associated with higher GC-content in yeasts \citep{gert
 In humans and chimpanzees, these domains are further enriched in 5’ and 3’ untranslated regions (UTRs) and CpG islands \citep{kong2002highresolution, auton2012finescale}.
 
 It was suggested early that these highly-recombinant regions may correspond to structural genes \citep{thuriaux1977recombination}, which is indeed the case in maize \citep[reviewed in \citealp{okagaki2018critical}]{nelson1959intracistron, nelson1962waxy, nelson1975waxy, dooner1997recombination, dooner2008maize}.
-Notwithstandingly, neither \textit{Arabidopsis thaliana} \citep{kim2007recombination,horton2012genomewide}, \textit{Schizosaccharomyces pombe} \citep{cromie2007discrete} nor mammals \citep{mcvean2004finescale,myers2005finescale,brick2012genetic} share this characteristic: in humans and mice, recombination correlates negatively with both gene content \citep{kong2002highresolution,jensen-seaman2004comparative} and gene transcription rate \citep{mcvicker2010genomic}.
+Notwithstandingly, neither \textit{Arabidopsis thaliana} \citep{kim2007recombination,horton2012genomewide}, \textit{Schizosaccharomyces pombe} \citep{cromie2007discrete} nor mammals \citep{mcvean2004finescale,myers2005finescale,brick2012genetic} share this characteristic: in humans and mice, recombination correlates negatively with both gene content \citep{kong2002highresolution,jensen-seaman2004comparative} and gene transcription rate \citep{mcvicker2010genomic,pouyet2017recombination}.
 
+\begin{mccorrection}
 Recently, \citet{halldorsson2019characterizing} argued that the mechanism guiding recombination away from genes may have emerged through evolution in order to reduce the deleterious effect of its inherent \textit{de novo} mutations (DNMs) on coding sequences. 
-The mutagenicity of recombination was indeed demonstrated in yeasts \citep{strathern1995dna} and humans \citep{arbeithuber2015crossovers} and explained the correlations found between recombination and genetic diversity in humans \citep{nachman2001single,lercher2002human,hellmann2003neutral,hellmann2005why,spencer2006influence,duret2008impact,montgomery2013origin} and other species \citep{begun1992levels,aquadro1997insights,webster2012direct,cutter2013genomic}.\\
-
+The mutagenicity of recombination was indeed demonstrated in yeasts \citep{strathern1995dna,rattray2015elevated} and humans \citep{arbeithuber2015crossovers,halldorsson2019characterizing} and explained, — together with Hill-Robertson effects, — the correlations found between recombination and genetic diversity in humans \citep{nachman2001single,lercher2002human,hellmann2003neutral,hellmann2005why,spencer2006influence,montgomery2013origin} and other species \citep{begun1992levels,aquadro1997insights,webster2012direct,cutter2013genomic}.\\
+\end{mccorrection}
 
 \begin{figure}[h]
 	\centering
@@ -252,12 +273,13 @@ The mutagenicity of recombination was indeed demonstrated in yeasts \citep{strat
 \end{figure}
 
 
-
-More generally, sites of recombination initiation seem to correspond to regions of open chromatin: highly active sites present trimethylation of the 4\textsuperscript{th} lysine of histone H3 (H3K4me3) marks in yeasts \citep{borde2009histone} and mice \citep{buard2009distinct}, and DNA methylation in humans \citep{sigurdsson2009hapmap}.
+\begin{mccorrection}
+More generally, sites of recombination initiation seem to correspond to regions of open chromatin: highly active sites present trimethylation of the 4\textsuperscript{th} lysine of histone H3 (H3K4me3) marks in yeasts \citep{borde2009histone} and mice \citep{buard2009distinct} and DNA hypomethylation in plants \citep{maloisel1998suppression,melamed-bessudo2012deficiency,mirouze2012loss}.
+Curiously though, in mammals, long-range recombination rates seem to be associated to DNA hypermethylation rather than hypomethylation \citep{sigurdsson2009hapmap,zeng2014specific}.
 
 Nucleosome-depleted regions (NDRs) are another typical feature of open chromatin and recombinational activity is stronger at these sites in mammals \citep[reviewed in \citealp{jabbari2019common}]{getun2010nucleosome,lange2016landscape,yamada2017genomic} as well as in \textit{Schizosaccharomyces pombe} \citep{decastro2012nucleosomal} and \textit{Saccharomyces cerevisiae} \citep{wu1994meiosisinduced,berchowitz2009positive} for which NDRs host most DSBs.
-More precisely, recombination is found near transcriptions start sites (TSSs) of gene promoters in \textit{Saccharomyces cerevisiae} \citep{baudat1997clustering, petes2001meiotic, mancera2008highresolution}, \textit{Canis lupus} \citep{auton2013genetic,campbell2016pedigreebased} and \textit{Arabidopsis thaliana} \citep{choi2018nucleosomes}.
-
+More precisely, recombination is found near transcription start sites (TSSs) of gene promoters in budding yeasts \citep{baudat1997clustering, petes2001meiotic, mancera2008highresolution}, dogs \citep{auton2013genetic,campbell2016pedigreebased}, plants \citep{hellsten2013finescale,choi2018nucleosomes} and birds \citep{singhal2015stable}.
+\end{mccorrection}
 
 
 
@@ -269,8 +291,9 @@ Indeed, at finer genomic scales of 1–10 kb, recombination rates considerably v
 Hotspots are generally defined as sequences that show a recombinational activity several times greater than the background rate \citep{crawford2004evidence,stapley2017variation}. 
 However, the activity of adjacent regions and the genome-wide average are alternately used as the comparative criterium \citep{demassy2013initiation}, which renders the delimitation and the number of hotspots slightly imprecise.
 
-Nevertheless, apart from \textit{Drosophila melanogaster} \citep{comeron2012many,manzano-winkler2013how} and \textit{Caenorhabditis elegans} \citep{kaur2014crossover} which lack them, recombination hotspots have been identified in a myriad of eukaryotes, including \textit{Saccharomyces cerevisiae} \citep{sun1989doublestrand,lichten1995meiotic}, \textit{Schizosaccharomyces pombe} \citep{steiner2005natural,cromie2007discrete}, \textit{Arabidopsis thaliana} \citep{drouaud2006variation}, \textit{Zea mays} \citep{brown1991recombination,dooner1997recombination,yao2002molecular,fu2002recombination}, \textit{Triticum aestivum} \citep{saintenac2011variation} and other plants \citep{mezard2006meiotic}, \textit{Canis lupus} \citep{axelsson2012death}, \textit{Mus musculus} \citep{guillon2002initiation,kauppi2007meiotic,smagulova2011genomewide}, \textit{Pan troglodytes} \citep{winckler2005comparison,auton2012finescale} and \textit{Homo sapiens} \citep{jeffreys2001intensely,myers2005finescale}.\\
-
+\begin{mccorrection}
+Nevertheless, apart from \textit{Drosophila melanogaster} \citep{comeron2012many,manzano-winkler2013how}, \textit{Caenorhabditis elegans} \citep{kaur2014crossover} and \textit{Apis mellifera} \citep{mougel2014highresolution,wallberg2015extreme} which lack them, recombination hotspots have been identified in a myriad of eukaryotes, including \textit{Saccharomyces cerevisiae} \citep{sun1989doublestrand,lichten1995meiotic}, \textit{Schizosaccharomyces pombe} \citep{steiner2005natural,cromie2007discrete}, \textit{Arabidopsis thaliana} \citep{drouaud2006variation}, \textit{Zea mays} \citep{brown1991recombination,dooner1997recombination,yao2002molecular,fu2002recombination}, \textit{Triticum aestivum} \citep{saintenac2011variation} and other plants \citep{mezard2006meiotic}, \textit{Canis lupus} \citep{axelsson2012death}, \textit{Mus musculus} \citep{guillon2002initiation,kauppi2007meiotic,smagulova2011genomewide}, \textit{Pan troglodytes} \citep{winckler2005comparison,auton2012finescale} and \textit{Homo sapiens} \citep{jeffreys2001intensely,myers2005finescale}.\\
+\end{mccorrection}
 
 
 The first experimental evidence for hotspots was found serendipitously in the H2 region (i.e.\ major histocompatibility complex, MHC) of mouse chromosome 17 \citep{steinmetz1982molecular}.
@@ -295,15 +318,21 @@ These relative differences in hotspot activity come from their both \textit{cis-
 Sex differences in recombination were discovered over a century ago with the first linkage studies in \textit{Drosophila melanogaster} \citep{morgan1912complete,morgan1914no}, \textit{Bombyx mori} \citep{takanaytianzhong1914sexualWITHJAP} and \textit{Gammarus chevreuxi} \citep{huxley1928sexual}. 
 Since then, several levels of sexual dimorphism have been unveiled.
 
+\begin{mccorrection}
 First, as compared to males, the overall recombinational activity is greater in females\footnote{This feature (a species with different RRs in both sexes) is termed ‘heterochiasmy’.} for most mammals \citep{dunn1967sex} including mice \citep{shifman2006highresolution} and humans \citep{donis-keller1987genetic,broman1998comprehensive} — a result consistent with the fact that the genetic maps are longer in females than in males in these two species \citep{lynn2004variation,cox2009new} as well as in pigs \citep{mikawa1999linkage}, dogs \citep{neff1999secondgeneration} and thale cresses \citep{drouaud2007sexspecific}. 
-In mammals, this observation is likely due to the fact that female meiosis entails a dictyate arrest which can last for decades (from the fetal age to ovulation), thus leaving time for spontaneous DSBs to arise and to be repaired as complex COs (see Chapter~\ref{ch:2-recombination-mechanistics}).
-However, this effect is reversed in sheeps \citep{maddox2001enhanced}, flycatchers \citep{backstrom2008genebased} and most marsupials \citep{bennett1986novel,hayman1988further,hayman1990meiosis} but not visible in one marsupial \citep{hayman1990comparative} nor cattle \citep{kappes1997secondgeneration}.
+% In mammals, this observation is likely due to the fact that female meiosis entails a dictyate arrest which can last for decades (from the fetal age to ovulation), thus leaving time for spontaneous DSBs to arise and to be repaired as complex COs (see Chapter~\ref{ch:2-recombination-mechanistics}).
+In mammals, this observation could be partly due to the fact that female meiosis entails a dictyate arrest which can last for decades (from the fetal age to ovulation), thus leaving time for spontaneous DSBs to arise and to be repaired as complex COs (see Chapter~\ref{ch:2-recombination-mechanistics}).
+But it has also been argued that the synaptonemal complex (SC) length \textit{per se} could play a major role in determining recombination rate differences, since the SC is much longer — and the DNA loops much shorter — in occytes than in spermatocytes \citep{tease2004intersex}.
+Of note, this effect is reversed in sheeps \citep{maddox2001enhanced}, flycatchers \citep{backstrom2008genebased} and most marsupials \citep{bennett1986novel,hayman1988further,hayman1990meiosis} and it not visible in one marsupial \citep{hayman1990comparative} nor cattle \citep{kappes1997secondgeneration}.
 
 Second, sexual differences are regionalised: CO rates in men are several times lower near centromeres and higher near telomeres than in women \citep[reviewed in][]{buard2007playing}, arguably because the SC is shorter in males \citep{tease2004intersex} and their synapsis preferentially initiates at subtelomeric regions \citep{brown2005meiotic}.
 Contrariwise, females display more numerous interstitial initiation sites and their recombination landscape is thus generally flatter \citep{paigen2008recombinational}.
 
-Third, nearly all hotspots are shared \citep{bherer2017refined} but some are perceived as sex-specific because of differences in usage \citep{shiroishi1990recombinational,shiroishi1991genetic}.
+Despite these sexual differences in hotspot usage — which can be so strong that a few hotspots are sometimes perceived as entirely sex-specific \citep{shiroishi1990recombinational,shiroishi1991genetic}, — nearly all hotspots are shared by both males and females \citep{bherer2017refined}.
+
+% Third, nearly all hotspots are shared \citep{bherer2017refined} but some are perceived as sex-specific because of differences in usage \citep{shiroishi1990recombinational,shiroishi1991genetic}.
 % Third, differences in hotspot usage can be so strong that a few hotspots are perceived as entirely sex-specific \citep{shiroishi1990recombinational,shiroishi1991genetic}.
+\end{mccorrection}
 
 Altogether, this sexual dimorphism mainly results from disparities in hotspot usage \citep{brick2018extensive} possibly coming from haploid selection \citep{lenormand2005recombination}, imprinting \citep{lercher2003imprinted} or sex-based differences in chromatin structure \citep{gerton2005homologous} and SC length \citep{petkov2007crossover}.
 
@@ -363,7 +392,16 @@ Hotspots are also defined independently of PRDM9 in canids \citep{axelsson2012de
 
 \subsubsection{Structure of the protein}
 
-\begin{figure}[h]
+PRDM9 determines the precise localisation of hotspots thanks to its carboxy-terminal tandem array of 8 to over 20 Cys\textsubscript{2}-His\textsubscript{2} (C2H2) zinc fingers (Znf) \citep[reviewed in][]{paigen2018prdm9}: the residues -1, +3 and +6 (relative to the alpha helix) of each Znf specify the DNA trinucleotide to bind and thus, altogether, the sequence target of the Znf array \citep{neale2010prdm9}.
+A few fingers contribute preponderantly to the principal motif recognised (Figure~\ref{fig:PRDM9-structure}.B.) and one Znf is separated from the rest of the array and closer to the central region (Figure~\ref{fig:PRDM9-structure}.A.).
+
+The central region also contains the histone methyltransferase PR/SET domain which is distantly related to the family of Suppressor of variegation 3–9, Enhancer of Zeste and Trithorax (SET) domains \citep[reviewed in][]{grey2018prdm9}.
+Thanks to this domain required for DSB formation \citep{diagouraga2018prdm9}, PRDM9 can catalyse the mono-, di- and trimethylation of H3K4 and H3K36\footnote{H3K4, H3K36: Lysine 4 (resp.\ 36) of histone H3.} \citep{wu2013molecular,powers2016meiotic} but also its own authomethylation \citep{koh-stenta2017discovery} which may help to regulate its activity by modulating the folding of the PR/SET domain.
+
+The N-terminus hosts the Kr\"uppel-associated box (KRAB)–related domain involved in protein:protein interactions \citep{parvanov2016prdm9,parvanov2017prdm9,imai2017prdm9}, and a synovial sarcoma X repression domain (SSXRD).
+These two domains are also known to be involved in transcriptional repression \citep{margolin1994kruppelassociated,lim1998krabrelated} but no such activity was identified in human PRDM9 \citep{born2014bsubdomain}, and they both seem essential to the hotspot-targeting role of PRDM9 \citep{baker2017repeated,thibault-sennett2018interrogating}.
+
+\begin{figure}[t]
 	\centering
 	\includegraphics[width = 1\textwidth]{figures/chap3/PRDM9-structure.eps}
 	\caption[Molecular structure of PRDM9]
@@ -378,21 +416,13 @@ Hotspots are also defined independently of PRDM9 in canids \citep{axelsson2012de
 \label{fig:PRDM9-structure}
 \end{figure}
 
-PRDM9 determines the precise localisation of hotspots thanks to its carboxy-terminal tandem array of 8 to over 20 Cys\textsubscript{2}-His\textsubscript{2} (C2H2) zinc fingers (Znf) \citep[reviewed in][]{paigen2018prdm9}: the residues -1, +3 and +6 (relative to the alpha helix) of each Znf specify the DNA trinucleotide to bind and thus, altogether, the sequence target of the Znf array \citep{neale2010prdm9}.
-A few fingers contribute preponderantly to the principal motif recognised (Figure~\ref{fig:PRDM9-structure}.b.) and one Znf is separated from the rest of the array and closer to the central region (Figure~\ref{fig:PRDM9-structure}.a.).
-
-The central region also contains the methyltransferase PR/SET domain which is distantly related to the family of Suppressor of variegation 3–9, Enhancer of Zeste and Trithorax (SET) domains \citep[reviewed in][]{grey2018prdm9}.
-Thanks to this domain required for DSB formation \citep{diagouraga2018prdm9}, PRDM9 can catalyse the mono-, di- and trimethylation of H3K4 and H3K36\footnote{H3K4, H3K36: Lysine 4 (resp.\ 36) of histone H3.} \citep{wu2013molecular,powers2016meiotic} but also its own authomethylation \citep{koh-stenta2017discovery} which may help to regulate its activity by modulating the folding of the PR/SET domain.
-
-The N-terminus hosts the Kr\"uppel-associated box (KRAB)–related domain involved in protein:protein interactions \citep{parvanov2016prdm9,parvanov2017prdm9,imai2017prdm9}, and a synovial sarcoma X repression domain (SSXRD).
-These two domains are also known to be involved in transcriptional repression \citep{margolin1994kruppelassociated,lim1998krabrelated} but no such activity was identified in human PRDM9 \citep{born2014bsubdomain}, and they both seem essential to the hotspot-targeting role of PRDM9 \citep{baker2017repeated,thibault-sennett2018interrogating}.
 
 
 \subsubsection{Multimerisation and hybrid sterility}
 
 PRDM9 likely acts as a multimer \citep{baker2015multimer,altemose2017map,schwarz2018prdm9} which may explain the dominance of certain alleles reported for human \textit{C} over \textit{A} \citep{pratto2014recombination} and \textit{I} over \textit{A} alleles \citep{baudat2010prdm9}, as well as mouse \textit{13R} over \textit{9R} \citep{brick2012genetic} and \textit{Cst} over \textit{Dom2} alleles \citep{smagulova2011genomewide, baker2015prdm9, baker2015multimer}.
 
-Multimer formation certainly plays a role in PRDM9-mediated homologue pairing \citep{davies2016reengineering} and dominance may affect the dosage sensitivity of PRDM9 \citep{flachs2012interallelic, segurel2011case} and thus participate in hybrid infertility which was observed long before the known implication of \textit{Prdm9} \citep{forejt1974genetic} and in speciation \citep{mihola2009mouse}.
+Multimer formation certainly plays a role in PRDM9-mediated homologue pairing \citep{davies2016reengineering} and dominance may affect the dosage sensitivity of PRDM9 \citep{flachs2012interallelic, segurel2011case} and thus participate in both hybrid infertility — which was observed long before the known implication of \textit{Prdm9} \citep{forejt1974genetic} — and in speciation \citep{mihola2009mouse}.
 
 Given its critical role in fertility, one might expect PRDM9 to be under strong purifying selection and thus to be highly conserved. 
 But, counterintuitively, it seems to evolve rapidly.
@@ -404,7 +434,7 @@ The Znf array forms a vast reservoir of variability since it may differ both in 
 
 Indeed, a large number of \textit{Prdm9} alleles have been uncovered in primates \citep{groeneveld2012high,heerschop2016pioneering} and ruminants \citep{ahlawat2016zinc}.
 As for mice, over 100 distinct alleles have been detected thus far \citep{buard2014diversity, kono2014prdm9}.
-Most laboratory inbred strains derived from the \textit{Mus musculus domesticus} subspecies carry either the \textit{Dom2} or \textit{Dom3} allele while those derived from \textit{Mus musculus musculus} carry the \textit{Msc} allele and those derived from \textit{Mus musculus castaneus} the \textit{Cst} allele (Figure~\ref{fig:PRDM9-structure}.b.).
+Most laboratory inbred strains derived from the \textit{Mus musculus domesticus} subspecies carry either the \textit{Dom2} or \textit{Dom3} allele while those derived from \textit{Mus musculus musculus} carry the \textit{Msc} allele and those derived from \textit{Mus musculus castaneus} the \textit{Cst} allele (Figure~\ref{fig:PRDM9-structure}.B.).
 
 Human populations also vary in their PRDM9 allelic composition \citep{berg2010prdm9, berg2011variants, fledel-alon2011variation}: African populations have $\sim$50\% of allele \textit{A}, 13\% of allele \textit{C} and the rest composed of other minor alleles \citep{berg2011variants}; non-African populations mainly encompass allele \textit{A} and, to a smaller extent, allele \textit{B} \citep{baudat2010prdm9,berg2010prdm9,hinch2011landscape}; and the Neanderthal and Denisovan samples studied so far exhibit yet other alleles \citep{schwartz2014primate,lesecque2014red}.\\
 
@@ -423,15 +453,115 @@ However, a skewed CO exchange point distribution appeared in a few hotspots \cit
 
 Indeed, PRDM9 can \textit{a priori} bind its target on either homologue (‘haplotype’ henceforth). 
 However, if one haplotype has a higher PRDM9-binding affinity, it hosts more DSBs and is thus ‘hotter’ \citep{zelazowski2016marks}.
-Therefore, the other, ‘colder’ haplotype is used as a template to repair the DSB, which results in the hot haplotype being frequently replaced by the cold one. 
+Therefore, the other, ‘colder’ haplotype is used as a template to repair the DSB, which results in the hot haplotype being frequently converted by the cold one. 
 This meiotic initiation bias thus yields biased gene conversion (BGC) recombination events and, since this phenomenon is induced by the preferential placement of DSBs on one haplotype, I will henceforth call it ‘DSB-induced BGC’ (dBGC), as others before \citep{lesecque2014biased, grey2018prdm9}.
 
-A differential binding affinity between the two haplotypes arises when one target motif acquires mutations — a plausible conjuncture since recombination is mutagenic \citep{arbeithuber2015crossovers,rattray2015elevated}.
-The more affinity-disruptive mutations the targeted motif gains (i.e.\ the more eroded the hotspot), the more asymmetrically the DSBs initiate (i.e.\ the more asymmetric the hotspot), and the stronger the dBGC effect \citep[reviewed in][]{tiemann-boege2017consequences}.
+A differential binding affinity between the two haplotypes arises when one target motif acquires mutations:
+%— a plausible conjuncture since recombination is mutagenic \citep{arbeithuber2015crossovers,rattray2015elevated}.
+the more affinity-disruptive mutations the targeted motif gains (i.e.\ the more eroded the hotspot), the more asymmetrically the DSBs initiate (i.e.\ the more asymmetric the hotspot), and the stronger the dBGC effect \citep[reviewed in][]{tiemann-boege2017consequences}.
 
 
 
 \subsubsection{The hotspot paradox}
+
+\begin{mccorrection}
+
+As just stated, during the repair of the DSB, the hot (recombination-activating) haplotype is converted into the cold (recombination-suppressing) haplotype from the other chromosome \citep{gutz1971site,schuchert1988ade6m26,jeffreys2009rise} and therefore suffers a meiotic drive against itself.
+Consequently, in the long-term, the very mechanism of recombination is expected to lead to the self-destruction of hotspots — a prediction that seems antipodal with the observation that hotspots are abundant in sexually active eukaryotes.
+This dilemma has been called the ‘hotspot paradox’ \citep{boulton1997hotspot}: individually, hotspots are suicidal but, collectively, they are maintained.\\
+
+Over the decade following the discovery of that paradox, several theoretical studies have been conducted to try and understand how hotspots are maintained despite their self-destruction \citep{boulton1997hotspot,pineda-krch2005persistence,coop2007live}.
+Three main hypotheses were put forward by these studies to justify the maintenance of hotspots.
+
+First, all three studies have proposed that recombination-activating back-mutations could arise in hotspots to counteract their extinction by dBGC\@. Though, all three conclude that the mutation rate required in face of the intensity of gene conversion would need to be unfeasibly large for them to be likely to be observed.
+
+Second, the authors suggested that, given the benefits of recombination on fertility and viability, there could be a selective force opposing the spread of recombination-suppressing haplotypes: to ensure the correct segregation of alleles, recombination hotspot alleles could be directly selected for. However, for such a selective force to be strong enough to counterbalance hotspot extinction, DSBs would have to resolve into COs with a much higher probability than is observed in reality.
+% there could be a selective force acting antagonistically to dBGC: to ensure the correct segregation of alleles and thus fertility, recombination hotspot alleles could be directly selected for. However, for such a selective force to be strong enough to counterbalance hotspot extinction, the simulations showed that it would require DSBs to resolve into COs with a much higher probability than is observed in reality.
+
+The third main hypothesis put forward was arguably the most plausible one: hotspots appear to compete for a finite amount of recombination with other adjacent hotspots.
+As such, it may be possible for them to increase their activity — and thus to start experiencing drive — only when nearby ones have been lost.
+This inter-hotspot competition drastically slowed down the expected rate of extinction. Still, it did not allow hotspots to persist indefinitely.
+As such, at that time, the mystery remained complete as to the way the paradox could be solved. 
+
+
+
+% Given the benefits of recombination on fertility and viability, it has been suggested that natural selection may oppose the spread of recombination-suppressing haplotypes.
+% Though, simulations proved that this sole incent was insufficient to maintain hotspots in the face of their loss by gene conversion \citep{boulton1997hotspot,pineda-krch2005persistence}.
+
+
+% - hotspot paradox: boulton
+% - coop and myers: essayent des modeles (developper)
+% - 2010: decouverte de PRDM9 qui permet de resoudre + Myers qui mentionne l'idee d'un metiotic drive
+% - puis Ubeda et Wilkins developpe l'idee
+% - Pontig dvlppe l'hp et emet des doutes
+% - lesecque quantifie
+% - thib dynamique
+%
+% - baker
+% - les raisons de l'asymmetrie
+%
+
+% As just stated, during the repair of the DSB, the hot (recombination-activating) haplotype is converted into the cold (recombination-suppressing) haplotype from the other chromosome \citep{gutz1971site,schuchert1988ade6m26,jeffreys2009rise} and therefore suffers a meiotic drive against itself.
+% Consequently, in the long-term, the very mechanism of recombination is expected to lead to the self-destruction of hotspots — a prediction that seems antipodal with the observation that hotspots are abundant in sexually active eukaryotes.
+% This dilemma has been called the ‘hotspot paradox’ \citep{boulton1997hotspot,coop2007live,lesecque2014red}: individually, hotspots are suicidal but, collectively, they are maintained.
+%
+% However, hotspot deprivation leads to recombination defects.
+% More particularly, a shortage of symmetric hotspots causes asynapsis, possibly because of a concomittant asymmetry in PRDM9-dependent chromatin remodelling \citep{davies2016reengineering} or of an excessively high level of heterozygosity impeding recombination \citep{gregorova2018modulation}.
+%
+% Given the benefits of recombination on fertility and viability, it has been suggested that natural selection may oppose the spread of recombination-suppressing haplotypes.
+% Though, simulations proved that this sole incent was insufficient to maintain hotspots in the face of their loss by gene conversion \citep{boulton1997hotspot,pineda-krch2005persistence}.
+%
+%
+\end{mccorrection}
+
+
+\begin{mccorrection}
+
+
+\subsubsection{Determinants of the Red Queen dynamics}
+
+\begin{figure}[b!]
+	\centering
+	\includegraphics[width = 1\textwidth]{figures/chap3/Alice-red-queen-BW.eps}
+	\caption[Original drawing of Alice and the Red Queen by John Tenniel]
+	{\textbf{Original drawing of Alice and the Red Queen by John Tenniel.}
+		\par The ‘Red Queen dynamics’ term is derived from a statement of the Red Queen in Lewis Carroll's \textit{\usebibentry{carroll1871lookingglass}{title}} \citeyearpar{carroll1871lookingglass} about the nature of her world: \textit{‘Now, \textit{here}, you see, it takes all the running \textit{you} can do, to keep in the same place. If you want to get somewhere else, you must run at least twice as fast as that!’.}
+		\par This figure is free of rights and was reproduced from \citet{carroll1871lookingglass}.
+	}
+\label{fig:Alice-red-queen-BW}
+\end{figure}
+
+
+Further progress in solving the hotspot paradox came in 2010 with the discovery of PRDM9 as the determinant of hotspot localisation \citep{baudat2010prdm9,myers2010drive,parvanov2010prdm9}.
+Indeed, it had been mentionned two years before that the hotspot paradox could theroretically be resolved if a \textit{trans}-acting modifier (thus escaping gene conversion) had the ability to activate or inactivate the hotspots \citep{peters2008combination,friberg2008cut}.
+
+
+\citet{ubeda2011red} formally formulated the model involving PRDM9 as the \textit{trans}-acting protein solving the paradox under the form of a race for evolution termed a ‘Red Queen dynamics’ \citep{vanvalen1973new}, after the words of the Red Queen in the \textit{\usebibentry{carroll1871lookingglass}{title}} book by Lewis Caroll \citeyearpar{carroll1871lookingglass} (Figure~\ref{fig:Alice-red-queen-BW}).
+
+In their model (Figure~\ref{fig:hotspot-paradox}), owing to dBGC, the target loci lose their propensity to be bound by PRDM9, thereby reducing the overall recombination rate and creating a selective pressure for PRDM9 alleles to evolve and target a new set of binding sites.
+This intragenomic conflict leads to a never-ending situation where recombinogenic PRDM9 alleles continually chase their target motifs and evolve into other allelic variants as soon as their targeted sites are sufficiently eroded.
+
+% Such race for evolution has been termed a ‘Red Queen dynamics’ \citep{vanvalen1973new}, after the words of the Red Queen in the \textit{\usebibentry{carroll1871lookingglass}{title}} book by Lewis Caroll \citeyearpar{carroll1871lookingglass} (Figure~\ref{fig:Alice-red-queen-BW}).\\
+
+More recently, \citet{latrille2017red} formalised a quantitative population-genetic model accounting for all possible actors of the Red Queen model.
+Their mathematical developments led to the identification that both an extremely high mutation rate of PRDM9 and a strong dBGC eroding its target motifs are required for the model to be valid.\\
+
+
+
+However, \citet{ponting2011what} questioned this theory on the basis that the number of recombination hotspots ($\sim$25,000 in humans) far exceeds the number of chromosome arms ($\sim$40) and proposed four explanations justifying the strong and sustained positive selection on the DNA-binding determinant sites of PRDM9.
+
+First, it could be that only a portion of the hotspots are bound by PRDM9 with strong affinity and that PRDM9 could evolve to keep a high binding affinity with a maximum number of these strong sites.
+
+Second, since the PAR of sexual chromosomes is very short and is the only region where COs can form between these chromosomes, PRDM9 may be driven to evolve rapidly to ensure their correct segregation.
+
+Third, if multiple weakly deleterious alleles accumulate in a non-recombining region, PRDM9 may be driven to evolve and target this particular region to break down the detrimental linkage in it.
+
+Last, PRDM9 may evolve so as to prevent diseases, since increased CO rates in certain regions can lead individuals to certain diseases.
+
+% % First, the number of hotspots creating the selective pressure could be downsized to only those with strong PRDM9-binding affinity
+% there could be a selective pressure to maximise the number of strong affinity sites bound by PRDM9
+% maximise the number of ‘strong’ binding
+% , since PRDM9 binds preferentially sites of strong affinity,
 
 \begin{figure}[p]
     \centering
@@ -449,57 +579,47 @@ The more affinity-disruptive mutations the targeted motif gains (i.e.\ the more 
 \end{figure}
 
 
-As just stated, during the repair of the DSB, the hot (recombination-activating) haplotype is converted into the cold (recombination-suppressing) haplotype from the other chromosome \citep{gutz1971site,schuchert1988ade6m26,jeffreys2009rise} and therefore suffers meiotic drive against itself.
-Consequently, in the long-term, the very mechanism of recombination is expected to lead to the self-destruction of hotspots — a prediction that seems antipodal with the observation that hotspots are abundant in sexually active eukaryotes.
-This dilemma has been called the ‘hotspot paradox’ \citep{boulton1997hotspot,coop2007live,lesecque2014red}: individually, hotspots are suicidal but, collectively, they are maintained.
 
-However, hotspot deprivation leads to recombination defects.
-More particularly, a shortage of symmetric hotspots causes asynapsis, possibly because of a concomittant asymmetry in PRDM9-dependent chromatin remodelling \citep{davies2016reengineering} or of an excessively high level of heterozygosity impeding recombination \citep{gregorova2018modulation}.
+\subsubsection{Experimental proofs of the Red Queen model}
 
-Given the benefits of recombination on fertility and viability, it has been suggested that natural selection may oppose the spread of recombination-suppressing haplotypes. 
-Though, simulations proved that this sole incent was insufficient to maintain hotspots in the face of their loss by gene conversion \citep{boulton1997hotspot,pineda-krch2005persistence}. 
+Whichever the reason driving PRDM9 to evolve, all hypotheses rest on the following assumption of the Red Queen model: that the destruction of PRDM9 targets \textit{via} dBGC is at the origin of the raise in frequency of new PRDM9 variants.
+Though, for this model to be plausible, dBGC must be strong enough to lead to a significant loss of hotspots genome-wide.
+Therefore, \citet{lesecque2014red} experimentally quantified the dynamics of hotspot turnover by estimating the age and life expectancy of human hotspots.
+Their estimates showed that human hotspots were both much younger and much shorter-lived than had previsouly been suggested, and that dBGC was extremely high in certain hotspots.
+As such, they experimentally proved that dBGC was indeed sufficiently strong to explain the rapid loss of hotspots.
 
+Further experimental testings of PRDM9 driving the evolutionary erosion of hotspots were carried in mice by \citet{baker2015prdm9}.
+They indeed compared the activity of a \textit{Prdm9} allele originating from the \textit{Mus musculus castaneus} subspecies (\textit{Prdm9\textsuperscript{Cst}}) in both \textit{Mus musculus castaneus} and \textit{Mus musculus domesticus}.
+They found that most variants affecting PRDM9\textsuperscript{Cst} binding had arisen specifically in the \textit{Mus musculus castaneus} subspecies in which it had evolved and that hotspots had thus been greatly eroded in that lineage, which confirmed experimentally the predictions of the Red Queen model.
 
-\subsubsection{Determinants of the Red Queen dynamics}
+As a consequence of this haplotype difference, F1 hybrids between the two subspecies showed large haplotype biases in PRDM9 binding.
+The latter were sometimes so large that novel hotspots appeared in the hybrid, as a result of the interplay between one parent's \textit{Prdm9} allele and the other parent's chromosome (for the hotspot on the ‘self’ chromosome had eroded).
 
-\begin{figure}[!b]
-	\centering
-	\includegraphics[width = 1\textwidth]{figures/chap3/Alice-red-queen-BW.eps}
-	\caption[Original drawing of Alice and the Red Queen by John Tenniel]
-	{\textbf{Original drawing of Alice and the Red Queen by John Tenniel.}
-		\par The ‘Red Queen dynamics’ term is derived from a statement of the Red Queen in Lewis Carroll's \textit{\usebibentry{carroll1871lookingglass}{title}} \citeyearpar{carroll1871lookingglass} about the nature of her world: \textit{‘Now, \textit{here}, you see, it takes all the running \textit{you} can do, to keep in the same place. If you want to get somewhere else, you must run at least twice as fast as that!’.}
-		\par This figure is free of rights and was reproduced from \citet{carroll1871lookingglass}.
-	}
-\label{fig:Alice-red-queen-BW}
-\end{figure}
+\citet{smagulova2016evolutionary} further analysed the consequences of such sequence divergence generated by hotspot turnover in mouse hybrids and suggested that, because COs are disfavoured at the hotspots showing large haplotype biases, this may lead to reduced fertility and, ultimately, to speciation.
+The precise reasons why a shortage of symmetric hotspots can cause asynapsis remain to be elucidated, but it has been proposed that it may be due to a concomittant asymmetry in PRDM9-dependent chromatin remodelling \citep{davies2016reengineering} or to an excessively high level of heterozygosity impeding recombination \citep{gregorova2018modulation}.\\
 
 
-The hotspot paradox can theroretically be resolved if a \textit{trans}-acting modifier (which can escape gene conversion) has the ability to activate or inactivate the hotspot \citep{peters2008combination,friberg2008cut}.
-
-\citet{ubeda2011red} formally formulated a model involving such a \textit{trans}-acting protein (PRDM9) that induces DSBs at multiple target loci.
-Owing to dBGC, the latter lose their propensity to be bound by PRDM9, thereby reducing the overall recombination rate and creating a selective pressure for PRDM9 alleles to evolve and target a new set of binding sites. 
-This intragenomic conflict leads to a never-ending situation where recombinogenic PRDM9 alleles continually chase their target motifs and evolve into other allelic variants as soon as their targeted sites are sufficiently eroded.
-Such race for evolution has been termed a ‘Red Queen dynamics’ \citep{vanvalen1973new}, after the words of the Red Queen in the \textit{\usebibentry{carroll1871lookingglass}{title}} book by Lewis Caroll \citeyearpar{carroll1871lookingglass} (Figure~\ref{fig:Alice-red-queen-BW}).
-
-For hotspots to persist under such a model, both a very high mutation rate of PRDM9 and a strong dBGC eroding its target motifs are required \citep{latrille2017red}.\\
+% and found that haplotype differences at hotspots led to both quantitative and qualitative differences.
+% More precisely, they found that most variants
 
 
-
-Altogether, DSB-induced biased gene conversion (dBGC) is an important drive for the evolution of the recombination landscape.
+Altogether, DSB-induced biased gene conversion (dBGC) is an important driver for the evolution of the recombination landscape.
 Though, it is not the only one: another form of meiotic drive (GC-biased gene conversion, gBGC) also shapes the genome around recombination hotspots. 
 I will review it in the following chapter.
+\end{mccorrection}
 
-\textbf{FIN CHAPITRE 3}\\
+% However, hotspot deprivation leads to recombination defects.
+% More particularly, a shortage of symmetric hotspots causes asynapsis, possibly because of a concomittant asymmetry in PRDM9-dependent chromatin remodelling \citep{davies2016reengineering} or of an excessively high level of heterozygosity impeding recombination \citep{gregorova2018modulation}.
+
+
+
 
 
 
 \textbf{NOTES A MOI-MEME} 
-
 \textbf{Ajouter une figure pour les differentes methodes d'etude de la recombi (partie 1)}
-% Ajouter une figure page entiere pour les differentes methodes d'etude de la recombinaison.
 %% NOTE A MOI-MEME: voir la figure donnee dans these de Hinch — figure 1.10 (qui vient de May 2007) pour m'en inspirer quand ferai la figure sur toutes ces methodes.
 
-\textbf{Ajouter une figure de l'erosion des hotspots // montee en frequence de nouveaux alleles P9}
 
 % Ajouter une figure de l'erosion des hotspots %en lien avec le ciblage par PRDM9 (cf inspiration de PRDM9 marks the spot Zelazowski) et avec la difference entre mutations suppressives ou augmentatrices
 
