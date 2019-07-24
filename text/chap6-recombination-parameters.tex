@@ -26,11 +26,10 @@ Overall, this study provides the first global picture of recombination patterns 
 \newpage
 
 
-\begin{mccorrection}
 Although many of the molecular details of the recombination process have been dissected (see Chapter~\ref{ch:2-recombination-mechanistics}) and the recombinational activity is known to vary by orders of magnitude across mouse individual hotspots \citep{paigen2008recombinational}, the properties determining this variation are still poorly understood.
-So far, in mice, only a handful of recombination hotspots have been directly characterised \citep{yauk2003highresolution,bois2007highly,baudat2007cis,ng2008quantitative,cole2010comprehensive,cole2014mouse}.
+So far, in mice, only a handful of recombination hotspots have been directly characterised by sequencing recombination products in sperm or oocytes \citep{yauk2003highresolution,bois2007highly,baudat2007cis,ng2008quantitative,cole2010comprehensive,cole2014mouse}.
 
-These are generally mapped thanks to a ChIP-seq against either PRDM9 \citep{baker2015prdm9}, RAD51 or DMC1 \citep{smagulova2011genomewide} or thanks to the sequencing-based detection of DMC1-bound ssDNA \citep{khil2012sensitive, brick2012genetic} or SPO11 oligos \citep{lange2016landscape}.
+Recently, several genome-wide hotspot maps have been obtained, either by ChIP-seq against either PRDM9 \citep{baker2015prdm9}, RAD51 or DMC1 \citep{smagulova2011genomewide} or thanks to the sequencing-based detection of DMC1-bound ssDNA \citep{khil2012sensitive, brick2012genetic} or SPO11 oligos \citep{lange2016landscape}.
 However, all these techniques give only indirect information on recombination:
 ChIP-seq against PRDM9 reflects its binding affinity to a given locus but does not indicate the associated recombination rate;
 ChIP-seq against DMC1 reveals both the DSB rate and the repair efficiency, but the two phenomena are indistinctable with this sole method;
@@ -41,7 +40,6 @@ Therefore, to characterise recombination, it appeared essential to use another m
 % on the intermediary steps of recombination, but none on its outcome.
 % On top of that, the DMC1 ChIP-seq reflects indistinctly the DSB rate and the repair efficiency, while the sequencing-based detection of SPO11 oligos requires an extremely large amount of material and, thus, is only avaliable for one dataset of \textit{Mus musculus domesticus} mice.
 % Therefore, to characterise recombination, it appeared essential to use another approach allowing to directly study the products of recombination.
-\end{mccorrection}
 
 % - Pour voir les hotspots, on peut utiliser un ChIP-seq PRDM9: affinite mais ne donne pas d'info sur le taux de CO
 % - Spo11: taux DSB mais lourd a mettre en oeuvre
@@ -89,12 +87,11 @@ In this chapter, I show how the set of recombination events detected with the ap
 \label{fig:correlation-paigen}
 \end{figure}
 
-\begin{mccorrection}
 
 To determine whether the recombination rates we observed with our approach were quantitatively accurate, we aimed at comparing our results with those of more classical approaches.
 We thus used data from \citet{paigen2008recombinational} who examined in detail the recombinational activity of chromosome one in a mouse exhibiting the same genetic background as ours (B6xCAST).
 They particularly focused on the telomere-proximal 24.7 Mb, which was cut into 65 intervals ($median$ $length = 205$~kb) encompassing a total of 130 \textit{Prdm9} hotspots. 
-Under the asumption that the recombination rate is null outside hotspots, the recombination rate they measured equalled:
+Under the asumption that the recombination rate is null outside hotspots, the recombination rate they measured should equal:
 
 \begin{equation}
 	\label{eq:paigen}
@@ -119,7 +116,6 @@ Therefore, the recombination events we detected are highly reliable since they c
 % cut -f9 $DATA/2_dBGC/6_ThirdSequencing/08_Compare_with_Paigen/01_Original_Paigen_Data/PositiveControls.txt|sed '1,1d'|paste -sd+|bc
 % 130
 
-\end{mccorrection}
 
 % \subsection{PRDM9 and DMC1 signals predict hotspot intensity}%Correlation with PRDM9 hotspot intensity}
 \subsection{Predictors of hotspot intensity}%Correlation with PRDM9 hotspot intensity}
@@ -132,13 +128,15 @@ Therefore, the recombination events we detected are highly reliable since they c
     \centering
     \begin{subfigure}[b]{0.75\textwidth}
         % \subcaption{PRDM9 binding affinity as a predictor of hotspot intensity}
-		\includegraphics[width = 1\textwidth]{figures/chap6/Correlation_intensity_PRDM9-corrected_CO_x2.eps}
+		% \includegraphics[width = 1\textwidth]{figures/chap6/Correlation_intensity_PRDM9-corrected_CO_x2.eps}
+		\includegraphics[width = 1\textwidth]{figures/chap6/Correlation_intensity_PRDM9_with_lm_0.eps}
     \end{subfigure}
 
     \vspace{0.5cm}
 	\begin{subfigure}[b]{0.75\textwidth}
         % \subcaption{DMC1 binding affinity as a predictor of hotspot intensity}
-		\includegraphics[width = 1\textwidth]{figures/chap6/Correlation_intensity_DMC1-corrected_CO_x2.eps}
+		% \includegraphics[width = 1\textwidth]{figures/chap6/Correlation_intensity_DMC1-corrected_CO_x2.eps}
+		\includegraphics[width = 1\textwidth]{figures/chap6/Correlation_intensity_DMC1_with_lm_0.eps}
 	\end{subfigure}
 
 	\caption[Proportionality between the recombination rate and either PRDM9 or DMC1 binding intensity]
@@ -146,17 +144,16 @@ Therefore, the recombination events we detected are highly reliable since they c
 		\par All 1,018 hotspots were divided into 10 classes of either increasing PRDM9 signal (top), i.e.\ the number of PRDM9 ChIP-seq tags on each PRDM9 ChIP-seq peak, brought back to the width of the peak (PRDM9 ChIP-seq data on B6xCAST hybrid mice from \citealp{baker2015prdm9}), or increasing DMC1 signal (bottom), i.e.\ the number of DMC1 ChIP-seq tags on each PRDM9 ChIP-seq peak (DMC1 ChIP-seq data on B6xCAST hybrid mice from \citealp{smagulova2016evolutionary}).
 		The observed number of recombination events identified per sequenced Mb (left y-axis) was converted into a CO rate (right y-axis) as detailed in Subsection~\ref{chap6:extrapolation-CO-rate}.
 		The points and error bars respectively represent the mean number of events (or CO rate) and the standard error on the mean for hotspots of each class.
+		The linear regression model for PRDM9 (slope $=1047$; intercept $=0$; \textit{p}-val~$= 4.21 \times 10^{-8}$) and DMC1 (slope $=0.027$; intercept $=15$; \textit{p}-val~$= 3.8 \times 10^{-5}$) were drawn as dotted lines.
     }
 \label{fig:correlation-PRDM9-standard-error}
 \end{figure}
 
-\begin{mccorrection}
-Next, since PRDM9 \citep{baker2015prdm9} and DMC1 \citep{smagulova2016evolutionary} ChIP-seq data are available for mice exhibiting the same genetic background (B6xCAST) as ours, we analysed the relationship between thse two signals on the one hand, and the recombinational activity of the hotspots we selected on the other hand (Figure~\ref{fig:correlation-PRDM9-standard-error}).
+Next, since PRDM9 \citep{baker2015prdm9} and DMC1 \citep{smagulova2016evolutionary} ChIP-seq data are available for mice exhibiting the same genetic background (B6xCAST) as ours, we analysed the relationship between these two signals on the one hand, and the recombinational activity of the hotspots we selected on the other hand (Figure~\ref{fig:correlation-PRDM9-standard-error}).
 
-Overall, we found that both PRDM9 and DMC1 binding affinity (which are both proxies of the propensity for a hotspot to form DSBs, as stated in the introduction) are accurate predictors of recombinational activity.
-Of note, the relationship with PRDM9 binding affinity is linear (linear regression: \textit{p}-val $= 4.2 \times 10^{-8}$) but that with DMC1 signal is not (Figure~\ref{fig:correlation-PRDM9-standard-error}.b.), possibly because DMC1 ChIP-seq reflects not only the DSB rate but also the efficiency of the repair of the DSB\@.
+Overall, we found that both PRDM9 and DMC1 binding affinity (both proxies of the propensity for a hotspot to form DSBs) are accurate predictors of recombinational activity.
+Of note, the relationship with PRDM9 binding affinity is linear (regression: \textit{p}-val $= 4.2 \times 10^{-8}$) but that with DMC1 signal is not (Figure~\ref{fig:correlation-PRDM9-standard-error}.b.), possibly because DMC1 ChIP-seq reflects not only the DSB rate but also the efficiency of the repair of the DSB which varies among hotspots \citep{lange2016landscape,davies2016reengineering}.
 
-\end{mccorrection}
 
 \subsection{Lower recombination rate of asymmetric hotspots}
 % \subsection{DMC1 hostpot intensity: a good predictor of activity}%Correlation with DMC1 hotspot intensity}
@@ -232,18 +229,18 @@ instead, the sampling variance (i.e.\ the limited number of of events per hotspo
 \end{figure}
 
 
-\begin{mccorrection}
 To characterise the recombination events we observed, we needed to localise the position of their conversion tracts (CTs).
 Though, the latter are not directly observable in the data, but they can be \textit{inferred} from ‘haplotype switches’, i.e.\ changes of haplotype along a DNA fragment.
 To avoid any confusion between the real CT and the inferred CT, we decided to denote the latter CT\textsuperscript{$\star$}.
 
-To infer the position of CTs\textsuperscript{$\star$}, we defined ‘switch intervals’ (black segments in Figure~\ref{fig:terminology}) as sequence segments delineated by two consecutive markers, one of which being a \textit{B6} variant and the other a \textit{CAST} variant.
+To infer the position of CTs\textsuperscript{$\star$}, we defined ‘switch intervals’ (black segments in Figure~\ref{fig:terminology}) as sequence segments delineated by two consecutive markers with distinct genotypes (\textit{B6}-\textit{CAST} or \textit{CAST}-\textit{B6}).
+% , one of which being a \textit{B6} variant and the other a \textit{CAST} variant.
 We also defined the ‘switch point’ as the midpoint of the switch interval.\\
 
 We could distinguish three types of recombination events in our data: 
 11,665 events including strictly one switch point, which we called ‘single-switch recombination events’ (‘Rec-1S’);
 5,932 events including strictly two switch points, which we called ‘double-switch recombination events’ (‘Rec-2S’);
-and 1,224 events ncluding more than two switch points, which we called ‘multiple-switch recombination events’ (‘Rec-MS’).
+and 1,224 events including more than two switch points, which we called ‘multiple-switch recombination events’ (‘Rec-MS’).
 
 Rec-2S events most probably correspond to NCO events. 
 Rec-1S events may correspond to either CO events or to fragments that partially overlap a NCO\@.
@@ -263,7 +260,6 @@ Finally, for Rec-MS fragments, the CT\textsuperscript{$\star$} cannot be inferre
 
 
 
-\end{mccorrection}
 
 % The terms used to describe recombination events are illustrated in Figure~\ref{fig:terminology}.
 % An ‘interval’ (i.e.\ a sequence delineated by two consecutive markers) is either delimited by two \textit{B6} variants, two \textit{CAST} variants or one \textit{B6} and one \textit{CAST} variant.
@@ -302,8 +298,7 @@ Finally, for Rec-MS fragments, the CT\textsuperscript{$\star$} cannot be inferre
 \end{figure}
 
 
-\begin{mccorrection}
-The conversion tracts that we inferred (CT\textsuperscript{$\star$}) directly determine which haplotype (B6 or CAST) is the donor in the gene conversion event (Figure~\ref{fig:Terminology}).
+The conversion tracts that we inferred (CT\textsuperscript{$\star$}) directly determine which haplotype (B6 or CAST) is the donor in the gene conversion event (Figure~\ref{fig:terminology}).
 
 \citet{smagulova2016evolutionary} measured the relative proportion of DSB initiation on each haplotype of thousands of hotspots in a mouse exhibiting the same genetic background as ours (B6xCAST).
 Thus, to assess the accuracy of our inference, we wanted to compare the proportion of B6- and CAST-donor fragments we inferred in each of the hotspot we studied to what would be expected based on their DMC1 ssDNA-sequencing (SSDS) data (Figure~\ref{fig:correl-donor-DMC1}).
@@ -311,7 +306,6 @@ Thus, to assess the accuracy of our inference, we wanted to compare the proporti
 Overall, we found a strong positive correlation between the expected and the observed proportions of CAST-donor fragments (Pearson correlation: $R^2 = 0.66$; {\textit{p}-val $< 2.2 \times 10^{-16}$}).
 Our simple and intuitive way of assigning its donor to each fragment was thus sufficient to explain, at the hotspot-scale, most of the variance due to DSB initiation bias.
 
-\end{mccorrection}
 
 
 % % - pour verifier si inf correctes, on compare l'inf a des donnees experimentales
@@ -542,12 +536,10 @@ Combining equations~\ref{eq:recombination-rate} and~\ref{eq:detectability}, we g
     R = \frac{n}{d \times N_g}
 \end{equation*}
 
-\begin{mccorrection}
 In the 4,997 simulations selected by the ABC, 6.7\% of simulated recombination events were discovered, which gave us a direct estimate for $d$. 
 As for $n$ and $N_g$, we observed 18,821 recombination events out of 228,984,512 fragments analysed. 
 Using these values, we found that the recombination rate in 1-kb long hotspots was $1.23 \times 10^{-3}$.
 Since 0.119 of all recombination events corresponded to COs (see Table~\ref{tab:ABC-results}), the CO rate in 1-kb long hotspots was $1.46 \times 10^{-4}$ per gamete or also $2.92 \times 10^{-4}$ per bivalent, i.e.\ an average recombination rate of 29.2 cM/Mb across all analysed hotspots.
-\end{mccorrection}
 
 \begin{figure}[p]
 	\centering
