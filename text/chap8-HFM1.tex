@@ -34,15 +34,21 @@
 
 \paragraph{This chapter in brief —}
 
-The classical approach to understand the specific role of a given recombination-dependent gene consists in studying individuals with an inactivated version of the gene.
-% Even though many of the actors of the recombination process are known, the specific role of some of them remains to be elucidated.
-% Classically, this can be done by studying individuals for which a given recombination-dependent gene has been inactivated.
-Such introgression of a knocked-in (KI) gene into a hybrid can be done by crossing one of its ancestors with a third strain containing the non-functional allele.
-Thus, recombination events should be searched for in the hotspots of a F2 individual containing three distinct genetic backgrounds.
-Here, we adapted the method we implemented for simple F1 hybrids to such design.
+\mccorrect{The method we previously implemented to detect recombination in single individuals could be used to study the role of genes essential to the process of recombination.
+% We previously implemented an approach allowing to detect recombination in single individuals which could be useful to study the role of genes essential to recombination.
+This requires the use of individuals homozygous for the inactivated version of the gene but nonetheless displaying a high level of heterozygosity for recombination to be detectable.
+As this can only be achieved with F2 individuals,
+% As such, recombination events should be searched for in the hotspots of F2 individuals fulfilling these criteria.
+% The classical approach to understand the specific role of a given recombination-dependent gene consists in studying individuals with an inactivated version of the gene.
+% % Even though many of the actors of the recombination process are known, the specific role of some of them remains to be elucidated.
+% % Classically, this can be done by studying individuals for which a given recombination-dependent gene has been inactivated.
+% Such introgression of a knocked-in (KI) gene into a hybrid can be done by crossing one of its ancestors with a third strain containing the non-functional allele.
+% Thus, recombination events should be searched for in the hotspots of a F2 individual containing three distinct genetic backgrounds.
+%
+we adapted the method we implemented for simple F1 hybrids to such design.}
 Basically, we had to distinguish the polymorphic sites expressing variation between the two parental genomes from those originating from the third introgressed genome.
 % In the end, our method was as powerful as the original one for simple F1 hybrids.
-This implementation was as powerful as the original method and we could thus study the role of \textit{Hfm1}, a DNA helicase important for CO control: we observed that its KI led to increased recombination rate and shortened CO conversion tracts.
+This implementation was as powerful as the original method and we could thus study the role of \textit{Hfm1}, a DNA helicase important for CO control: we observed that its inactivation led to increased recombination rate and shortened CO conversion tracts.
 
 }
 
