@@ -97,10 +97,8 @@ In particular, single-marker NCO (NCO-1) events cannot be detected directly with
 As for multiple-marker NCO (NCO-2+) events, their level of detectability depends on marker density, which can vary across — but also along — hotspots.
 To make this along-hotspot fluctuation visible, we added that information (the maximum number of Rec-1S and Rec-2S switch points detectable) for each existing marker-marker interval (Figure~\ref{fig:example-recombinants}).\\
 
-\begin{mccorrection}
 Given that many events are undetectable, we used an approximate bayesian computation (ABC) approach to estimate the genuine values of certain recombination parameters: the lengths of CO and NCO conversion tracts (CTs) and the CO:NCO ratio.
 Since the estimates that we obtained with the ABC were extremely close to the direct observations of CO and NCO CT lengths in a few mouse hotspots and to the CO:NCO ratio predicted on the basis of cytological estimates of DSBs (see Chapter~\ref{ch:6-recombination-parameters}), we are confident that this approach was globally valid.
-\end{mccorrection}
 
 % In the end, this NCO detectability issue was problematic mainly to estimate the genuine CT lengths of recombination events, but we could solve it indirectly \textit{via} the use of an approximate bayesian computation (ABC) approach.
 Still, it should be noted that the validity of the ABC rests on the assumptions that were made to simulate recombination events. 
@@ -131,7 +129,6 @@ To better understand how it evolved in mammals, we next compared our results wit
 
 
 
-\begin{mccorrection}
 
 Using the approach previously described by \citet{glemin2015quantification}, Brice Letcher, an intern in our lab, measured the population-scaled gBGC coefficient ($B$) in humans and in the two subspecies from which the parents of the hybrid mice we studied originated.
 He found that $B$ is 1.5 to 3.5 times lower in humans than in mice (Table~\ref{tab:estimation-variation-b}).
@@ -167,7 +164,7 @@ Indeed, the gBGC coefficient ($b$) can be decomposed as:
 	     &={}& ( b_{0}^{CO} \times &r^{CO} \times L^{CO}  )  &{}+{}& ( b_{0}^{NCO} \times &r^{NCO}& \times L^{NCO}  )
 \end{alignat*}
 
-where $r^{i}$, $L^{i}$ and $b_0^{i}$ respectively represent the rate, conversion tract length and transmission bias on recombination events $i$ ($i$ corresponding either to COs or NCOs).\\
+where $r^{i}$, $L^{i}$ and $b_0^{i}$ respectively represent the rate, conversion tract length and transmission bias on recombination events $i$ ($i$ corresponding either to CO or NCO events).\\
 % where the $r^{CO}$ and $r^{NCO}$ represent the CO and NCO rates, $L^{CO}$ and $L^{NCO}$ the conversion tract lengths of COs and NCOs, and $b_0^{CO}$ and $b_0^{NCO}$ the transmission bias on COs and NCOs.
 % into the recombination rate $r$, the conversion tract length $L$ and transmission bias $b_0$ of COs and NCOs in the following way:
 
@@ -180,8 +177,7 @@ where $r^{i}$, $L^{i}$ and $b_0^{i}$ respectively represent the rate, conversion
 % Under the assumption that, like in humans, females would contribute more than males to gBGC (Table~\ref{tab:estimation-gBGC-values}) and thus that the sex-averaged $b$ would be slightly higher than the male $b$, the estimate would fit well with the observed sex-averaged $B$.\\
 % % If this were true, it could mean that any sexual difference concerning gBGC in humans may also exist in mice.\\
 %
-In the remaining portion of the discussion, I will go through all the parameters on which $b$ depends to try and identify which contribute more to the decrease of $b$ in the species with larger $N_e$, and thus, which contribute most to the aforementioned stability of $B$ among mammals.
-\end{mccorrection}
+In the remaining portion of the discussion, I will go through all the parameters on which $b$ depends to try and identify which contribute more to the difference in $b$ between humans and mice.
 
 
 
@@ -312,11 +308,13 @@ The estimates for $b_{0}^{CO}$ and $b_{0}^{NCO}$ were based on the direct observ
 The latter depend largely on the correctness in the identification of the donor in the gene conversion event.
 Indeed, if the inferred donor were \textit{not} accurate, results for the defective fragment would be reversed: all polymorphic sites within the CT\textsuperscript{$\star$} would be designated as being outside CTs\textsuperscript{$\star$}, and conversely.
 
-Regarding Rec-2S events, since both edges of its CTs\textsuperscript{$\star$} were directly observable, the position of multiple-marker (NCO-2+) CTs was unambiguous and there should not have been any mistake on the measure of $b_0^{NCO_{2+}}$.
+\begin{mccorrection}
+Regarding Rec-2S events (NCO-2+ and NCO-1 events), since both edges of its CTs\textsuperscript{$\star$} were directly observable, there should not have been any mistake on their orientation.
+\end{mccorrection}
 
-Concerning NCO-1 events, we grossly estimated $b_0^{NCO_1}$ by monitoring the number and direction (S\textrightarrow{} W or W\textrightarrow{} S) of erroneous base calls in all fragments potentially corresponding to NCO-1 events.
-In view of the fact that the value we found for $b_0^{NCO_1}$ was extremely close to that of human $b_0$ \citep{williams2015noncrossover,halldorsson2016rate} and very close to the one measured by \citet{li2018highresolution} on mice, we are confident that our estimate is roughly correct.
-
+% Concerning NCO-1 events, we grossly estimated $b_0^{NCO_1}$ by monitoring the number and direction (S\textrightarrow{} W or W\textrightarrow{} S) of erroneous base calls in all fragments potentially corresponding to NCO-1 events.
+% In view of the fact that the value we found for $b_0^{NCO_1}$ was extremely close to that of human $b_0$ \citep{williams2015noncrossover,halldorsson2016rate} and very close to the one measured by \citet{li2018highresolution} on mice, we are confident that our estimate is roughly correct.
+%
 As for Rec-1S events, we reduced their genuine CT to the segment (CT\textsuperscript{$\star$}) located between the switch point and the PRDM9 ChIP-seq peak summit (see Chapter~\ref{ch:6-recombination-parameters}).
 But, if the DSB site were located outside this CT\textsuperscript{$\star$} (for example, in the portion of the CT on the opposite side of the unambiguous CT\textsuperscript{$\star$} edge), donor inference would be erroneous.
 It was previously shown that the position of the DSB may vary by up to 30 bp from the consensus motif \citep{lange2016landscape} and we thus performed simulations in which the genuine position of the DSB was 30 bp away from its inference (the PRDM9 ChIP-seq peak summit).
@@ -346,7 +344,6 @@ Whatsoever, even under a worst-case scenario where the donor would be erroneousl
 \subsection{Role of CO and NCO events in limiting $B$}
 
 
-\begin{mccorrection}
 
 Since the transmission bias on NCOs ($b_0^{NCO}$) is similar for humans and mice (Table~\ref{tab:estimation-gBGC-values}), this parameter does not participate in the disparity regarding $b$ between the two species.
 
@@ -356,21 +353,7 @@ In contrast, in humans, \citet{halldorsson2016rate} observed that the transmissi
 It should be noted, however, that \citet{halldorsson2016rate} measured $b_0^{CO}$ only for COs displaying complex conversion tracts, which represent only about 0.31\% and 1.33\% of male and female COs, respectively \citep{webb2008sperm, halldorsson2016rate}.
 As the repair mechanism which leads to the formation of these complex COs might be different from that leading to the formation of those with simple conversion tracts, whether or not simple COs display the same transmission bias remains unknown.
 
-As such, aside from the recombination rate and conversion tract lengths, the factors explaining the $b$ difference between mice and humans are still unclear.\\
-
-Interestingly, in mice, the transmission bias on multiple-marker NCOs ($b_0^{NCO_{2+}}$) is extremely weak as compared to that for single-marker NCOs ($b_0^{NCO_{1}}$) (see Chapter~\ref{ch:7-quantification-BGC}) whereas, in humans, it is similar to the transmission bias on single-marker NCOs \citep{halldorsson2016rate}.
-This suggests that the repair mechanism leading to NCOs might differ between humans and mice.
-
-However, as, in \textit{Homo sapiens}, most of the NCO-2+ events come from women (Table~\ref{tab:analysis-halldorsson}), the difference between $b_0^{NCO_{2+}}$ and $b_0^{NCO_{1}}$ may reflect a sex-based rather than an interspecific discrepancy.
-But it is presently impossible to discriminate between these two possible explanations since no data is yet available in female mice.
-% Presently, there is no data available in female mice allowing to discriminate between an interspecific (between mice and humans) or an intersexual (between males and females) for this observed difference between $b_0^{NCO_{2+}}$ and $b_0^{NCO_{1}}$.
-
-
-% However, as, in \textit{Homo sapiens}, most of the NCO-2+ events come from women (Table~\ref{tab:analysis-halldorsson}), the difference between $b_0^{NCO_{2+}}$ and $b_0^{NCO_{1}}$ may reflect a sex-based discrepancy.
-% But, presently, there is no data available in female mice allowing to discriminate between an interspecific or an intersexual origin for this observed difference between $b_0^{NCO_{2+}}$ and $b_0^{NCO_{1}}$.
-
-\end{mccorrection}
-
+As such, aside from the recombination rate and conversion tract lengths, the factors explaining the $b$ difference between mice and humans are still unclear.
 
 
 % The contribution of COs to gBGC seems to differ qualitatively between \textit{Homo sapiens} and \textit{Mus musculus}.
@@ -396,6 +379,104 @@ But it is presently impossible to discriminate between these two possible explan
 
 % Therefore, either markers involved in human NCO-2+ events do not display a transmission bias decrease as compared to those involved in NCO-1 events — in that case, gBGC proceeds differently for NCOs in \textit{Homo sapiens} and in \textit{Mus musculus} — or markers involved in NCO-2+ events in men indeed display a transmission bias decrease as compared to NCO-1 events — in that case, it cannot be excluded that inter-sexual differences exist, since women clearly do not display such decrease (Table~\ref{tab:analysis-halldorsson}) but the latter assumption cannot be tested in mice since no data is available for female mice.
 
+
+
+
+
+% Thus, because the transmission bias decreases for NCO-2+ events as compared to NCO-1 events in men (and male mice) but not in women, the consequences of gBGC on genomes differ between sexes.
+
+
+
+% - pourrait etre les CO, car 0 chez souris, mais chez Halldorsson oui sur les complexes et sait pas sur les autres (mais on ne peut pas exclure)
+% - on a donc une diff qualitative, mais ca pourrait n'etre du qu'aux complexes (qui n'existent pas chez souris et qui existent chez sapiens) et ca pourrait meme n'etre du qu'aux femmes, car elles ont plus de CO complexes (mais on ne peut pas tester chez souris femelles si effet BGC sur leurs COs).
+
+% - qund on regarde les NCO, le b0 est globalement similaire entre humain et souris
+% - mais pas rxL, donc ce parametre joue directement et on bserve donc une difference quantitative
+% - en particulier, les NCO-1 sont les plus importants, et on observe une decroissance des NCO-2+ dans la participation au BGC
+% - li disent que idem chez homme, et femme. Ttoutefois, pas de decrease si on garde toutes les donnees (cf table), et la decroissance est difficile a ascertain pour l'homme car tres peu d'evenements.
+% - Donc, possible que effet de NCO-2+ qui differe entre souris et sapiens, ou du seulement a femme
+
+
+
+
+\subsection{A selective pressure restraining gBGC?}
+
+All in all, both qualitative and quantitative differences exist between humans and mice for males, and likely between men and women too (but data is lacking to verify this in mice).
+This suggests that the DSB repair machinery leading to gBGC proceeds differently in these two species and, thus, that this machinery evolved rapidly within the mammalian clade.\\
+
+As gBGC is known to promote the fixation of \textit{G} and \textit{C} alleles even when they are deleterious \citep{galtier2009gcbiased, necsulea2011meiotic}, the burden of this force at the population-scale should be higher in species with large $N_e$. Nonetheless, $B$ remains in a small range, irrespective of the effective population size ($N_e$). It is thus tempting to suggest that there may be a selective pressure on the DSB repair machinery to minimise $b$ in species with large $N_e$, as has already been proposed by \citet{galtier2018codon}.
+
+Given our observations, it seems that several parameters would allow to restrain $B$ in species — like mice — where the effective population size is high.
+Indeed, both the recombination rate and the lengths of NCO CTs are smaller in mice than in humans and thus participate in lessening $b$.\\
+
+\begin{mccorrection}
+In addition, since $b_0^{NCO_1}$ is much greater than $b_0^{NCO_{2+}}$ in mice, the relative proportion of NCO-1 and NCO-2+ events — which depends on the level of polymorphism — has an impact on $b$ (see Chapter~\ref{ch:6-recombination-parameters}): the more polymorphic, the greater proportion of NCO-2+ events, and thus the lower $b$. 
+
+Interestingly, in mice, the transmission bias on multiple-marker NCOs ($b_0^{NCO_{2+}}$) is extremely weak as compared to that for single-marker NCOs ($b_0^{NCO_{1}}$) (see Chapter~\ref{ch:7-quantification-BGC}).
+To find out whether this was the case in humans, we reanalysed data from \citet{halldorsson2016rate} and found that the transmission bias on multiple-marker NCOs is similar to the transmission bias on single-marker NCOs (Table~\ref{tab:analysis-halldorsson-all}).
+This suggests that the repair mechanism leading to NCOs might differ between humans and mice.
+However, as, in \textit{Homo sapiens}, most of the NCO-2+ events come from women (Table~\ref{tab:analysis-halldorsson}), the difference between $b_0^{NCO_{2+}}$ and $b_0^{NCO_{1}}$ may reflect a sex-based rather than an interspecific discrepancy.
+But it is presently impossible to discriminate between these two possible explanations since no data is yet available in female mice.
+
+More generally, since species with large $N_e$ are more polymorphic and thus entail more NCO-2+ events, the fact that $b_0^{NCO_{2+}}$ is much smaller than $b_0^{NCO_1}$ may be interpreted as another manifestation of the existence of a selective pressure acting to restrain $B$ in large-$N_e$ populations.
+\end{mccorrection}
+
+% Presently, there is no data available in female mice allowing to discriminate between an interspecific (between mice and humans) or an intersexual (between males and females) for this observed difference between $b_0^{NCO_{2+}}$ and $b_0^{NCO_{1}}$.
+
+
+% However, as, in \textit{Homo sapiens}, most of the NCO-2+ events come from women (Table~\ref{tab:analysis-halldorsson}), the difference between $b_0^{NCO_{2+}}$ and $b_0^{NCO_{1}}$ may reflect a sex-based discrepancy.
+% But, presently, there is no data available in female mice allowing to discriminate between an interspecific or an intersexual origin for this observed difference between $b_0^{NCO_{2+}}$ and $b_0^{NCO_{1}}$.
+
+
+\begin{table}[t]
+	% \small
+	\centering
+	\begin{adjustbox}{width=0.581\textwidth}
+	\begin{tabular}{rrrrr}
+
+		\toprule
+		& \multicolumn{4}{c}{\textbf{All NCO events}} \\
+		\cmidrule(l){2-5}
+		CT class & \# CTs & \# W\textrightarrow{}S & \# S\textrightarrow{}W & $b_0$ \\
+
+		\cmidrule(l){1-1} \cmidrule(l){2-5} 
+
+		1 marker   & 1818 & 1192 & 554 & 0.37 \\
+		2 markers  & 150  & 187  & 95  & 0.33 \\
+		3 markers  & 53   & 106   & 47   & 0.39 \\
+		>4 markers & 119  & 731  & 357  & 0.35 \\
+		\midrule
+		All CTs     & 2140 & 2216 & 1053 & 0.36 \\
+		%\textbf{All CTs}     & \textbf{875} & \textbf{605} & \textbf{346} & \textbf{0.27} & \textbf{1265} & \textbf{1611} & \textbf{707} & \textbf{0.39} \\
+
+		\bottomrule
+
+	\end{tabular}
+	\end{adjustbox}
+	\caption[Transmission biases for all human NCOs]
+	{\textbf{Transmission biases for all human NCOs.}
+		\par The data used in this table correspond to the NCO events in the ChIP-seq dataset of \citet{halldorsson2016rate}.
+		Similar results were obtained for the NCO events coming from the sequencing dataset of \citet{halldorsson2016rate} (data not shown).
+	}
+\label{tab:analysis-halldorsson-all}
+\end{table}
+
+
+
+
+
+\subsection{dBGC hitchhiking in structured populations}
+
+
+
+Finally, the other fact of biased gene conversion — dBGC — also seems to play a significant role in genome evolution, particularly in experimental designs such as ours, and this should also be discussed.
+Indeed, the hybrid mice that we analysed descended from crosses between two strains derived from subspecies which displayed distinct \textit{Prdm9} alleles.
+Thus, their respective hotspots specifically underwent gBGC and got GC-enriched as compared to the genome of the other (‘nonself’) strain:
+in the B6 (resp.\ CAST) lineage, PRDM9\textsuperscript{Dom2}-targeted (resp.\ PRDM9\textsuperscript{Cst}-targeted) hotspots locally enriched in GC while these positions in the CAST (resp.\ B6) lineage did not.
+% in the B6 lineage, PRDM9\textsuperscript{Dom2}-targeted hotspots locally enriched in GC while these positions in the CAST lineage did not;
+% and, conversely, in the CAST lineage, PRDM9\textsuperscript{Cst}-targeted hotspots enriched more their GC-content than the B6 lineage did.
+% while in the CAST lineage, PRDM9\textsuperscript{Cst}-targeted hotspots got GC-enriched.
+In parallel, the targeted hotspots got eroded in the ‘self’ lineage, as predicted by the hotspot conversion paradox \citep{boulton1997hotspot}.
 
 
 \begin{table}[t]
@@ -424,7 +505,7 @@ But it is presently impossible to discriminate between these two possible explan
 		\toprule
 		& \multicolumn{4}{c}{\textbf{Paternal NCO events}} &  \multicolumn{4}{c}{\textbf{Maternal NCO events}}  \\
 		\cmidrule(l){2-5} \cmidrule(l){6-9}
-		CT class & \# CTs & \# W\textrightarrow{}S & \# S\textrightarrow{}W & $b_0$ & \# CTs & \# W\textrightarrow{}S & \# S\textrightarrow{} W & $b_0$ \\
+		CT class & \# CTs & \# W\textrightarrow{}S & \# S\textrightarrow{}W & $b_0$ & \# CTs & \# W\textrightarrow{}S & \# S\textrightarrow{}W & $b_0$ \\
 
 		\cmidrule(l){1-1} \cmidrule(l){2-5} \cmidrule(l){6-9}
 
@@ -440,8 +521,8 @@ But it is presently impossible to discriminate between these two possible explan
 
 	\end{tabular}
 	\end{adjustbox}
-	\caption[Transmission biases for human NCOs]
-	{\textbf{Transmission biases for human NCOs.}
+	\caption[Transmission biases for human paternal and maternal NCOs]
+	{\textbf{Transmission biases for human paternal and maternal NCOs.}
 		\par The data used in this table correspond to the NCO events in the ChIP-seq dataset of \citet{halldorsson2016rate}.
 		Similar results were obtained for the NCO events coming from the sequencing dataset of \citet{halldorsson2016rate} (data not shown).
 	}
@@ -450,47 +531,14 @@ But it is presently impossible to discriminate between these two possible explan
 
 
 
-% Thus, because the transmission bias decreases for NCO-2+ events as compared to NCO-1 events in men (and male mice) but not in women, the consequences of gBGC on genomes differ between sexes.
 
+Consequently, when the two strains were crossed into a hybrid, each hotspot had been eroded in the locally GC-enriched (self) haplotype.
+Thus, the DSB initiated preferentially on the other (nonself), non-eroded and GC-poorer haplotype.
+In turn, this led the eroded, GC-richer (self) haplotype to be the donor during the gene conversion event and its \textit{GC} alleles to be overtransmitted into the pool of gametes.\\
 
+Such interplay between dBGC (targeting the non-eroded haplotype) and past gBGC (local enrichment in \textit{GC} alleles) can be extended to any more general case of structured population:
+if two populations with distinct \textit{Prdm9} alleles have evolved independently during a length of time sufficient for the hotspots targeted by each allele to erode specifically in their lineage, crossing them together will end in dBGC hitchhiking past gBGC\@ (Figure~\ref{fig:dBGC-hitchhiking}).\\
 
-% - pourrait etre les CO, car 0 chez souris, mais chez Halldorsson oui sur les complexes et sait pas sur les autres (mais on ne peut pas exclure)
-% - on a donc une diff qualitative, mais ca pourrait n'etre du qu'aux complexes (qui n'existent pas chez souris et qui existent chez sapiens) et ca pourrait meme n'etre du qu'aux femmes, car elles ont plus de CO complexes (mais on ne peut pas tester chez souris femelles si effet BGC sur leurs COs).
-
-% - qund on regarde les NCO, le b0 est globalement similaire entre humain et souris
-% - mais pas rxL, donc ce parametre joue directement et on bserve donc une difference quantitative
-% - en particulier, les NCO-1 sont les plus importants, et on observe une decroissance des NCO-2+ dans la participation au BGC
-% - li disent que idem chez homme, et femme. Ttoutefois, pas de decrease si on garde toutes les donnees (cf table), et la decroissance est difficile a ascertain pour l'homme car tres peu d'evenements.
-% - Donc, possible que effet de NCO-2+ qui differe entre souris et sapiens, ou du seulement a femme
-
-
-
-
-\subsection{A selective pressure restraining gBGC?}
-
-All in all, both qualitative and quantitative differences exist between humans and mice for males, and likely between men and women too (but data is lacking to verify this in mice).
-This suggests that the DSB repair machinery leading to gBGC proceeds differently in these two species and, thus, that this machinery evolved rapidly within the mammalian clade.
-
-As gBGC is known to promote the fixation of \textit{G} and \textit{C} alleles even when they are deleterious \citep{galtier2009gcbiased, necsulea2011meiotic}, the burden of this force at the population-scale should be higher in species with large $N_e$. Nonetheless, $B$ remains in a small range, irrespective of the effective population size ($N_e$). It is thus tempting to suggest that there may be a selective pressure on the DSB repair machinery to minimise $b$ in species with large $N_e$, as has already been proposed by \citet{galtier2018codon}.
-
-Given our observations, it seems that several parameters would allow to restrain $B$ in species — like mice — where the effective population size is high.
-Indeed, both the recombination rate and the lengths of NCO CTs are smaller in mice than in humans and thus participate in lessening $b$.
-
-In addition, since $b_0^{NCO_1}$ is much greater than $b_0^{NCO_{2+}}$ in mice, the relative proportions of NCO-1 and NCO-2+ events, determined by the polymorphism, impact $b$ (see Chapter~\ref{ch:6-recombination-parameters}): the more polymorphic, the greater proportion of NCO-2+ events, and thus the lower $b$. Since species with large $N_e$ are more polymorphic and thus entail more NCO-2+ events, the fact that $b_0^{NCO_{2+}}$ is much smaller than $b_0^{NCO_1}$ may be interpreted as another manifestation of the existence of a selective pressure acting to restrain $B$ in large-$N_e$ populations.
-
-
-
-
-\subsection{dBGC hitchhiking in structured populations}
-
-Finally, the other fact of biased gene conversion — dBGC — also seems to play a significant role in genome evolution, particularly in experimental designs such as ours, and this should also be discussed.
-Indeed, the hybrid mice that we analysed descended from crosses between two strains derived from subspecies which displayed distinct \textit{Prdm9} alleles.
-Thus, their respective hotspots specifically underwent gBGC and got GC-enriched as compared to the genome of the other (‘nonself’) strain:
-in the B6 (resp.\ CAST) lineage, PRDM9\textsuperscript{Dom2}-targeted (resp.\ PRDM9\textsuperscript{Cst}-targeted) hotspots locally enriched in GC while these positions in the CAST (resp.\ B6) lineage did not.
-% in the B6 lineage, PRDM9\textsuperscript{Dom2}-targeted hotspots locally enriched in GC while these positions in the CAST lineage did not;
-% and, conversely, in the CAST lineage, PRDM9\textsuperscript{Cst}-targeted hotspots enriched more their GC-content than the B6 lineage did.
-% while in the CAST lineage, PRDM9\textsuperscript{Cst}-targeted hotspots got GC-enriched.
-In parallel, the targeted hotspots got eroded in the ‘self’ lineage, as predicted by the hotspot conversion paradox \citep{boulton1997hotspot}.
 
 
 \begin{figure}[p]
@@ -509,13 +557,6 @@ In parallel, the targeted hotspots got eroded in the ‘self’ lineage, as pred
 \end{figure}
 
 
-
-Consequently, when the two strains were crossed into a hybrid, each hotspot had been eroded in the locally GC-enriched (self) haplotype.
-Thus, the DSB initiated preferentially on the other (nonself), non-eroded and GC-poorer haplotype.
-In turn, this led the eroded, GC-richer (self) haplotype to be the donor during the gene conversion event and its \textit{GC} alleles to be overtransmitted into the pool of gametes.\\
-
-Such interplay between dBGC (targeting the non-eroded haplotype) and past gBGC (local enrichment in \textit{GC} alleles) can be extended to any more general case of structured population:
-if two populations with distinct \textit{Prdm9} alleles have evolved independently during a length of time sufficient for the hotspots targeted by each allele to erode specifically in their lineage, crossing them together will end in dBGC hitchhiking past gBGC\@ (Figure~\ref{fig:dBGC-hitchhiking}).\\
 
 
 
