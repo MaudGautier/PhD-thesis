@@ -34,7 +34,7 @@
 
 \paragraph{This chapter in brief —}
 
-\mccorrect{The method we previously implemented to detect recombination in single individuals could be used to study the role of genes essential to the process of recombination.
+The method we previously implemented to detect recombination in single individuals can be used to study the role of genes essential to the process of recombination.
 % We previously implemented an approach allowing to detect recombination in single individuals which could be useful to study the role of genes essential to recombination.
 This requires the use of individuals homozygous for the inactivated version of the gene but nonetheless displaying a high level of heterozygosity for recombination to be detectable.
 As this can only be achieved with F2 individuals,
@@ -45,7 +45,7 @@ As this can only be achieved with F2 individuals,
 % Such introgression of a knocked-in (KI) gene into a hybrid can be done by crossing one of its ancestors with a third strain containing the non-functional allele.
 % Thus, recombination events should be searched for in the hotspots of a F2 individual containing three distinct genetic backgrounds.
 %
-we adapted the method we implemented for simple F1 hybrids to such design.}
+we adapted the method we implemented for simple F1 hybrids to such design.
 Basically, we had to distinguish the polymorphic sites expressing variation between the two parental genomes from those originating from the third introgressed genome.
 % In the end, our method was as powerful as the original one for simple F1 hybrids.
 This implementation was as powerful as the original method and we could thus study the role of \textit{Hfm1}, a DNA helicase important for CO control: we observed that its inactivation led to increased recombination rate and shortened CO conversion tracts.
@@ -62,8 +62,7 @@ This implementation was as powerful as the original method and we could thus stu
 % - possible en faisant plusieurs croisements mais implique de modifier le protocole d'analyse
 
 
-\begin{mccorrection}
-As the method we implemented in Chapter~\ref{ch:5-methodology} allows to detect recombination in single individuals, it could be used to study the individual role of genes involved in the process of recombination.
+As the method we implemented in Chapter~\ref{ch:5-methodology} allows to detect recombination in single individuals, it can be used to study the individual role of genes involved in the process of recombination.
 In particular, Bernard de Massy and Valérie Borde are interested in the specific role of the mouse gene \textit{Hfm1}.
 Indeed, its yeast homologue (\textit{MER3}) codes for a meiosis-specific DNA helicase \citep{nakagawa1999saccharomyces,nakagawa2002saccharomyces} that participates in CO control and in DNA heteroduplex extension \citep{mazina2004saccharomyces,nakagawa2002mer3}.
 This gene is also essential to CO formation in other fungi \citep{sugawara2009coprinus}, plants \citep{mercier2005two,chen2005arabidopsis}, humans \citep{tanaka2006hfm1} and mice \citep{guiraldelli2013mouse}.
@@ -84,7 +83,6 @@ I thus describe in the last two sections of this chapter how we worked this out 
 %
 % Though, as compared to the
 
-\end{mccorrection}
 
 % Even though it is nowadays largely acknowledged that the formation of recombination events (COs and NCOs) depends on a complex network of proteins (see Chapter~\ref{ch:2-recombination-mechanistics}), the specific role and impact of many of these actors has not been elucidated yet.
 % In particular, the yeast gene \textit{MER3} (mouse homologue: \textit{Hfm1}) codes for a meiosis-specific DNA helicase \citep{nakagawa1999saccharomyces,nakagawa2002saccharomyces} that participates in CO control and in DNA heteroduplex extension \citep{mazina2004saccharomyces,nakagawa2002mer3}.
@@ -200,13 +198,11 @@ I thus describe in the last two sections of this chapter how we worked this out 
 \end{table}
 
 
-\begin{mccorrection}
-A point mutation on \textit{Hfm1} (\textit{Hfm1\textsuperscript{-}}) was introduced in the zygote of a cross between two F1 mice deriving from hybridisations between two \textit{Mus musculus domesticus} strains: strain C57BL/6J, hereafter called B6 and strain DBA/2J, hereafter called DBA2.
+A mutant \textit{Hfm1} allele (\textit{Hfm1\textsuperscript{-}}) was introduced in the zygote of a cross between two F1 mice deriving from hybridisations between two \textit{Mus musculus domesticus} strains: strain C57BL/6J, hereafter called B6 and strain DBA/2J, hereafter called DBA2.
 The resulting founder mice (F0\#2 and F0\#3) were thus heterozygous for the \textit{Hfm1} gene (\textit{Hfm1\textsuperscript{+/-}}) and their genetic backgrounds were composed of 50\% DBA2 and 50\% B6 genomes.
 Further crosses with other B6 and \textit{Mus musculus castaneus} (strain CAST/EiJ, hereafter called CAST) mice resulted in individuals carrying either two inactivated alleles for \textit{Hfm1} (\textit{Hfm1\textsuperscript{-/-}}), two WT (i.e.\ activated) alleles (\textit{Hfm1\textsuperscript{+/+}}) or one allele of each (\textit{Hfm1\textsuperscript{+/-}}).
 The genetic backgrounds for these mice were composed of a mixture of B6, DBA2 and CAST genomes (Table~\ref{tab:genealogies}).
-Of these, two \textit{hfm1} mutant (28353 and 28367) and two WT (28355 and 28371) male mice were selected for further analysis: their sperm DNA was extracted and sonicated to produce fragments of a mean size of 450 bp.
-\end{mccorrection}
+Of these, two \textit{hfm1} homozygous mutant (28353 and 28367) and two WT (28355 and 28371) male mice were selected for further analysis: their sperm DNA was extracted and sonicated to produce fragments of a mean size of 450 bp.
 
 
 \subsection{Target selection, DNA capture and sequencing}
@@ -275,7 +271,6 @@ on the other hand, other 75\%-B6/25\%-DBA2 mice were crossed with CAST mice to y
 Each of the four selected mice (28353, 28355, 28367 and 28371) were then obtained by crossing the two aforementioned parents together.
 Thus, their background encompassed 56.25\% B6, 18.75\% DBA2 and 25\% CAST genomes.
 
-More precisely, the expected genomic proportion (and thus, the expected proportion of hotspots) of each genetic background were those reported in Table~\ref{tab:background-expected}.
 
 
 \begin{table}[t]
@@ -307,7 +302,7 @@ More precisely, the expected genomic proportion (and thus, the expected proporti
     \caption[Expected distribution of genetic backgrounds in the mice analysed]
 	{\textbf{Expected distribution of genetic backgrounds in the mice analysed.}
 		\par Because the B6 and DBA2 genomes present high sequence conservation \citep{davis2005genomewide}, we regrouped them under the label ‘DOM’.
-		The expected genomic proportion (and thus proportion of hotspots) in each of the six possible ‘detailed’ backgrounds were reported on the left panel and the expected proportions in each of the three ‘simplified’ backgrounds were reported on the right panel.
+		The expected genomic proportion (and thus proportion of targets) in each of the six possible ‘detailed’ backgrounds were reported on the left panel and the expected proportions in each of the three ‘simplified’ backgrounds were reported on the right panel.
 	} 
 \label{tab:background-expected}
 \end{table}
@@ -353,17 +348,30 @@ More precisely, the expected genomic proportion (and thus, the expected proporti
 
 
 
-\begin{mccorrection}
-The recombination events of interest in this analysis were those arising between a CAST haplotype and a B6 or a DBA2 haplotype.
-What's more, the B6 and the DBA2 genomes present a low sequence divergence of 0.2\% \citep{keane2011mouse} because they were obtained from the same mouse subspecies (\textit{Mus musculus domesticus}) from which they inherited large genomic regions \citep{davis2005genomewide}, whereas the B6 and CAST strains which diverged about 350,000 to 500,000 years ago \citep{geraldes2008inferring} present a much higher genome-wide divergence of 0.74\% \citep{keane2011mouse}.
-Thus, for the sake of simplicity, we chose \textit{not} to distinguish between the B6 and the DBA2 backgrounds and, instead, grouped these two haplotypes under the label ‘DOM’.
-With this simplified notation, an expected 50\% of the hotspots of the analysed mice should be in a DOM/DOM background, and the other 50\% in a DOM/CAST background (Table~\ref{tab:background-expected}).\\
-\end{mccorrection}
+	
+More precisely, the expected genomic proportion (and therefore, the expected proportion of targets) of each genetic background were those reported in Table~\ref{tab:background-expected}.
+Overall, 68.75\% of the targeted loci were expected to be heterozygous (either B6/DBA2, B6/CAST or DBA2/CAST) and could, in principle, be used to detect recombination events.
 
-The background composition of hotspots made a noteworthy difference with the dataset analysed in Chapter~\ref{ch:5-methodology}, in which all hotspots were heterozygous.
-%because the individual analysed was a F1 hybrid.
-But the most critical difference was the presence of a third genomic origin (DBA2): the polymorphic sites between DBA2 and B6 haplotypes would undoubtedly lead to spurious genotype calls and thus, to false positive discoveries.
-Therefore, prior to searching for recombination events in this dataset, it was necessary to distinguish the B6-DBA2 polymorphic sites from the DOM-CAST polymorphic sites, in order to base the genotyping solely on the latter class of markers.
+However, the power to detect recombination depends on the density of heterozygous sites, and the latter is much lower at B6/DBA2-background targets than at B6/CAST- or DBA2/CAST-background loci.
+Indeed, the B6 and the DBA2 genomes present a low sequence divergence of 0.2\% \citep{keane2011mouse} because these two strains derive from the same mouse subspecies (\textit{Mus musculus domesticus}) from which they inherited large genomic regions \citep{davis2005genomewide}.
+We note that, since the latter two strains derive from the same subspecies, we will regroup the labels B6 and DBA2 under a more general notation: ‘DOM’.
+In comparison, as the DOM (B6 or DBA2) and CAST strains derive from two distinct subspecies which diverged about 350,000 to 500,000 years ago \citep{geraldes2008inferring}, they present a much higher genome-wide divergence of 0.74\% \citep{keane2011mouse}.
+
+Therefore, in order to avoid any spurious fluctuation in detectability between individuals and to thus allow the comparison of recombination rates across samples, we chose to search for recombination events exclusively in one type of heterozygous background.
+And, so as to maximise the detectability of recombination events, we focused on the background displaying the highest rate of polymorphism: DOM/CAST-background targets.
+The following section will be dedicated to detailing the procedure we implemented to identify them specifically.
+
+
+
+% The recombination events of interest in this analysis were those arising between a CAST haplotype and a B6 or a DBA2 haplotype.
+% What's more, the B6 and the DBA2 genomes present a low sequence divergence of 0.2\% \citep{keane2011mouse} because they were obtained from the same mouse subspecies (\textit{Mus musculus domesticus}) from which they inherited large genomic regions \citep{davis2005genomewide}, whereas the B6 and CAST strains which diverged about 350,000 to 500,000 years ago \citep{geraldes2008inferring} present a much higher genome-wide divergence of 0.74\% \citep{keane2011mouse}.
+% Thus, for the sake of simplicity, we chose \textit{not} to distinguish between the B6 and the DBA2 backgrounds and, instead, grouped these two haplotypes under the label ‘DOM’.
+% With this simplified notation, an expected 50\% of the hotspots of the analysed mice should be in a DOM/DOM background, and the other 50\% in a DOM/CAST background (Table~\ref{tab:background-expected}).\\
+
+% The background composition of hotspots made a noteworthy difference with the dataset analysed in Chapter~\ref{ch:5-methodology}, in which all hotspots were heterozygous.
+% %because the individual analysed was a F1 hybrid.
+% But the most critical difference was the presence of a third genomic origin (DBA2): the polymorphic sites between DBA2 and B6 haplotypes would undoubtedly lead to spurious genotype calls and thus, to false positive discoveries.
+% Therefore, prior to searching for recombination events in this dataset, it was necessary to distinguish the B6-DBA2 polymorphic sites from the DOM-CAST polymorphic sites, in order to base the genotyping solely on the latter class of markers.
 
 
 
@@ -403,26 +411,34 @@ Therefore, prior to searching for recombination events in this dataset, it was n
 
 
 
-\begin{mccorrection}
 % - dans le cas a trois genomes, on a trois haplotypes possibles B, C, D et donc des marqueurs entre B et C, B et D et C et D (cf figure). Or, ces marqueurs sont presents a des frequences differentes car les taux de divergence varient entre les trois genomes.
 % - Donc, a priori, la detectabilite sera differente selon le type de background dans lequel on est (et donc de la densite en SNP)
 % - Or, comme on va comparer la recombinaison entre individus (qui n'ont pas forcement le meme background), on ne veut pas avoir de telles differences de detectabilite
 % - donc, on choisit de se focaliser uniquement sur les marqueurs les plus requents: ceux DOM/CAST
 
-Since the F2 individuals originate from crosses between three different strains (B6, DBA2 and CAST), three types of polymorphic sites may occur, provided that the principle of parsimony applies: either the B6, the DBA2 or the CAST genome carries an allele different from that of the other two (Figure~\ref{fig:marker-origin}).
-Though, since the genome-wide divergence between the B6 and the DBA2 strains is much lower (0.2\%) than that between the CAST and one of the two DOM (B6 or DBA2) strains (0.74\%), the frequency of DOM-CAST markers (i.e.\ polymorphic sites for which the CAST strain carries an allele different than that carried by the B6 and the DBA2 strains) is higher than that of B6-DBA2 markers (i.e.\ polymorphic sites for which the B6 and the DBA2 strains carry distinct alleles).
-And, since the detectability of recombination events relies upon marker density, detectability would vary according to the genetic background if both types of markers (DOM/CAST and B6/DBA2) were to be considered.
-Therefore, in order to avoid any spurious fluctuation in detectability between individuals, we chose to restrict our analysis to only one type of markers: the DOM-CAST markers, which are the most frequent ones.
+Distinguish the targets of interest (DOM/CAST-background targets) from others (DOM/DOM-background targets) comes back to genotyping the DOM-CAST markers (i.e.\ the polymorphic sites for which the CAST strain carries an allele different from that carried by the B6 and the DBA2 strains).
+% determine whether hotspots are in a DOM/DOM or in a DOM/CAST genetic background, it is necessary to genotype the DOM-CAST markers (i.e.\ polymorphic sites for which the CAST strain carries an allele different from that carried by the B6 and the DBA2 strains).
+Though, given that the F2 individuals carry a mosaic of three genomes, three types of polymorphic sites can occur: either the B6, the DBA2 or the CAST genome carries an allele different from that of the other two (Figure~\ref{fig:marker-origin}).
+Therefore, prior to genotyping targets, the DOM-CAST markers must be distinguished from the other (B6-DBA2) markers.
+
+% To do this, DOM-CAST markers must be identified
+% This requires to first distinguish between the DOM-CAST markers and other types of markers.
+% Indeed, three types of polymorphic sites may occur: either the B6, the DBA2 or the CAST genome carries an allele different from that of the other two (Figure~\ref{fig:marker-origin}).
+% Given the divergence between the three strains (0.2\% between B6 and DBA2 and 0.74\% between the two DOM (B6 or DBA2) and CAST), the frequency of DOM-CAST markers is higher than that of B6-DBA2 markers (i.e.\ polymorphic sites for which the B6 and the DBA2 strains carry distinct alleles).
+
+% Since the F2 individuals originate from crosses between three different strains (B6, DBA2 and CAST), three types of polymorphic sites may occur: either the B6, the DBA2 or the CAST genome carries an allele different from that of the other two (Figure~\ref{fig:marker-origin}).
+% Though, since the genome-wide divergence between the B6 and the DBA2 strains is much lower (0.2\%) than that between the CAST and one of the two DOM (B6 or DBA2) strains (0.74\%), the frequency of DOM-CAST markers (i.e.\ polymorphic sites for which the CAST strain carries an allele different than that carried by the B6 and the DBA2 strains) is higher than that of B6-DBA2 markers (i.e.\ polymorphic sites for which the B6 and the DBA2 strains carry distinct alleles).
+% And, since the detectability of recombination events relies upon marker density, detectability would vary according to the genetic background if both types of markers (DOM/CAST and B6/DBA2) were to be considered.
+% Therefore, in order to avoid any spurious fluctuation in detectability between individuals, we chose to restrict our analysis to only one type of markers: the DOM-CAST markers, which are the most frequent ones.
 
 % - il faut donc identifier les marqueurs DOM/CAST
 % - comme CA/CA n'existe pas (cf table), tout site variant (soit DOM/CAST soit B6/DBA2) pour lequel au moins un individu est homozygote pour la reference du genome CAST est forcement un marqueur entre B6 et DBA2
 % - donc, sur cette base, on peut identifier tous les sites qui sont B6/DBA2, et les exclure.
+% To distinguish between DOM-CAST markers and B6-DBA2 markers (i.e.\ polymorphic sites for which the B6 and the DBA2 strains carry distinct alleles), we proceeded as follows.
 Given the crosses made, no portion of the genome of the F2 individuals could display a CAST/CAST background (Table~\ref{tab:background-expected}).
 Therefore, if, at a given polymorphic site, at least one of the four individuals is homozygous for the allele carried by the CAST strain, the site necessarily corresponds to a B6-DBA2 marker (Figure~\ref{fig:marker-origin}).
-We thus distinguished between B6-DBA2 and DOM-CAST markers on this basis.
+We distinguished between B6-DBA2 and DOM-CAST markers on this basis.
 % It was therefore on this basis that we distinguished between B6-DBA2 and DOM-CAST markers.
-
-\end{mccorrection}
 
 
 
@@ -473,16 +489,20 @@ We thus distinguished between B6-DBA2 and DOM-CAST markers on this basis.
 % - pour ce faire, on regarde tous les sites DOM/CAST et on regarde le genotype de l'individu a ces marqueurs. Si plus de 90 donc HET ou DOM
 % - on verifie en meme temps que Prdm9 est bien heterozygote
 
-To further assess whether the distinction we made between B6-DBA2 and DOM-CAST markers was correct, we wanted to deduce the genetic background of each hotspot on the basis of the marker classification we made (see above) and to verify whether the alternance of DOM/DOM and DOM/CAST genetic backgrounds fitted the expectations. 
+
+% To further assess whether the distinction we made between B6-DBA2 and DOM-CAST markers was correct, we wanted to deduce the genetic background of each hotspot on the basis of the marker classification we made (see above) and to verify whether the alternance of DOM/DOM and DOM/CAST genetic backgrounds fitted the expectations.
 	
-Since hotspots located in a DOM/DOM genetic background should be heterozygous at all its B6-DBA2 markers and homozygous at all its DOM-CAST markers whereas hotspots located in a DOM/CAST background should be homozygous at all its B6-DBA2 markers and heterozygous at all its DOM-CAST markers (Figure~\ref{fig:marker-origin}), we used the following criteria to infer their backgrounds:
+% Since hotspots located in a DOM/DOM genetic background should be heterozygous at all its B6-DBA2 markers and homozygous at all its DOM-CAST markers whereas hotspots located in a DOM/CAST background should be homozygous at all its B6-DBA2 markers and heterozygous at all its DOM-CAST markers (Figure~\ref{fig:marker-origin}), we used the following criteria to infer their backgrounds:
 % To further assess whether the distinction we made between B6-DBA2 and DOM-CAST markers was correct, we aimed at genotyping the genetic background of each hotspot on the basis
 % wanted to deduce from them the genetic background of each hotspot and verify whether or not the alternance of DOM/DOM and DOM/CAST genetic backgrounds fitted the expectations.
 % To do this, we inferred the genetic backgrounds using stringent criteria:
+
+Next, we inferred the genetic backgrounds using the following criteria:
 if more than 90\% of the DOM-CAST markers of a given hotspot were genotyped as heterozygous in a given individual, a DOM/CAST background was inferred;
-if more than 90\% of the DOM-CAST markers were genotyped as homozygous for the DOM allele, a DOM/DOM background was inferred;
+if more than 90\% of the DOM-CAST markers were genotyped as homozygous, a DOM/DOM background was inferred;
 in any other case, the background was not inferred.
-Last, we refined the analysis for the targets whose genetic background could not be inferred with the criterium aforementioned: if they were flanked on both the 5’ and the 3’ sides by at least 5 targets with a DOM/DOM (resp.\ DOM/CAST) genetic background, we attributed the DOM/DOM (resp.\ DOM/CAST) background to them.
+
+% Last, we refined the analysis for the targets whose genetic background could not be inferred with the criterium aforementioned: if they were flanked on both the 5’ and the 3’ sides by at least 5 targets with a DOM/DOM (resp.\ DOM/CAST) genetic background, we attributed the DOM/DOM (resp.\ DOM/CAST) background to them.
 
 
 
@@ -501,25 +521,40 @@ Last, we refined the analysis for the targets whose genetic background could not
 % NA dans 23 hotspots out of $1390 \times 4$ individuals
 % awk -v OFS="\t" 'NR>1 {print $5,$6,$7,$8}' ../HFM1_pour_laurent/List_genotypes_hotspots_refined.txt|cut -f1|grep NOCOV|wl
 % NOCOV dans 168 hotspots de plus
-This \textit{modus operandi} allowed us to genotype 97\% of all hotspots and ended in a mosaic of DOM/DOM and DOM/CAST genetic backgrounds consistent with 0 or 1 (and sometimes 2) crossing-overs per chromosome in each individual (Figure~\ref{fig:mosaic-backgrounds} and Appendix~\ref{app:data-and-figs}), which provided strong support that our inferrence was correct.
-We note that, aside from the fraction of hotspots which could not be labeled because read coverage was too low, the totality of the remaining 3\% ambiguous hotspots were surrounded by DOM/DOM-background hotspots, which suggests that they most probably corresponded to regions encompassing many B6-DBA2 polymorphic sites leading to ambiguous genotype calls.
+
+% Refait avec le NOT refined
+% awk -v OFS="\t" 'NR>1 {print $5,$6,$7,$8}' ../HFM1_pour_laurent/List_genotypes_hotspots_not_refined.txt|cut -f1|grep NA|wl
+% awk -v OFS="\t" 'NR>1 {print $5,$6,$7,$8}' ../HFM1_pour_laurent/List_genotypes_hotspots_not_refined.txt|cut -f2|grep NA|wl
+% awk -v OFS="\t" 'NR>1 {print $5,$6,$7,$8}' ../HFM1_pour_laurent/List_genotypes_hotspots_not_refined.txt|cut -f3|grep NA|wl
+% awk -v OFS="\t" 'NR>1 {print $5,$6,$7,$8}' ../HFM1_pour_laurent/List_genotypes_hotspots_not_refined.txt|cut -f4|grep NA|wl
+% NA dans 135 hotspots out of $1390 \times 4$ individuals
+% awk -v OFS="\t" 'NR>1 {print $5,$6,$7,$8}' ../HFM1_pour_laurent/List_genotypes_hotspots_not_refined.txt|cut -f1|grep NOCOV|wl
+% NOCOV dans 145 de plus
+% (5560-280)/5560
+% 0.9496402877697842
+
+
+Out of the 4$\times$1390 targeted loci, 145 (2.6\%) had a read coverage too low for the target to be genotyped.
+Aside from those, the aforementioned \textit{modus operandi} allowed us to genotype 97.5\% of all the targets presenting sufficient coverage and ended in a mosaic of DOM/DOM and DOM/CAST genetic backgrounds consistent with 0 or 1 (and sometimes 2) crossing-overs per chromosome (Figure~\ref{fig:mosaic-backgrounds} and Appendix~\ref{app:data-and-figs}). 
+This provided strong support that our inferrence was correct.
+% , half of which being in a heterozygous DOM/CAST background, and the other half in a homozygous DOM/DOM background (Table~\ref{tab:proportion-het-backgrounds}).
+Among the remaining 2.5\% (135) ambiguous targets, 6 (4\%) were flanked by DOM/DOM-background targets on one side and by DOM/CAST-background targets on the other side: these most likely corresponded to sites where recombination occurred in one of the parents.
+All other ambiguous targets (94\%) were flanked on both sides by DOM/DOM-background targets: these were most likely erroneously inferred because some B6/DBA2 markers were erroneously classified as DOM/CAST markers.
+
+
+% Aside from the 2.6\% (145 out of 4$\times$1390) of hotspots which had a too low coverage to be genotyped, the aforementioned \textit{modus operandi} allowed us to genotype 97.5\% of all hotspots with sufficient coverage and ended in a mosaic of DOM/DOM and DOM/CAST genetic backgrounds consistent with 0 or 1 (and sometimes 2) crossing-overs per chromosome in each individual (Figure~\ref{fig:mosaic-backgrounds} and Appendix~\ref{app:data-and-figs}), which provided strong support that our inferrence was correct.
+% Among the 5\% of hotspots which were ambiguous,
+%
+
+% We note that, aside from the fraction of hotspots which could not be labeled because read coverage was too low, the totality of the remaining 3\% ambiguous hotspots were surrounded by DOM/DOM-background hotspots, which suggests that they most probably corresponded to regions encompassing many B6-DBA2 polymorphic sites leading to ambiguous genotype calls.
 All in all, across all 1,390 loci of the 4 mice, 7 were incongruent with the surrounding genetic background (either because they were subject to a double crossing-over, or because our inferrence was incorrect at these sites). We thus chose to remove them from the analysis.
-Altogether, the proportion of heterozygous (i.e.\ DOM/CAST-background) targets (Table~\ref{tab:proportion-het-backgrounds}) was close to the expected 50\% (Table~\ref{tab:background-expected}).
+Altogether, the proportion of heterozygous DOM/CAST-background targets (Table~\ref{tab:proportion-het-backgrounds}) was close to the expected 50\% (Table~\ref{tab:background-expected}).
 To further verify that these observed proportions fitted what was expected, we simulated a DOM/CAST$\times$DOM/DOM cross in which COs (number given by the sex-averaged genetic length) were drawn randomly along each chromosome. We found that the distribution of the expected proportion of heterozygous targets (data not shown) fitted with the observations (Table~\ref{tab:proportion-het-backgrounds}).
 
-On top of that, this genotyping map allowed to control that the \textit{Prdm9} was located in a DOM/CAST background for all four mice and thus, that all four mice were heterozygous for \textit{Prdm9}.
+This genotyping map also allowed to control that all four mice were heterozygous for \textit{Prdm9} since this gene was located in a DOM/CAST background in all samples.
+% the \textit{Prdm9} was located in a DOM/CAST background for all four mice and thus, that all four mice were heterozygous for \textit{Prdm9}.
 
 \end{mccorrection}
-
-
-
-\subsection{Detection of events in heterozygous hotspots}
-
-Finally, we applied the unique-molecule genotyping pipeline described in Chapter~\ref{ch:5-methodology} to all the heterozygous targets and we found that the maximum FP error rate for this readaptation of our approach (3.22\%, Table~\ref{tab:HFM1-FP-rate}) was similar to that from Chapter~\ref{ch:5-methodology} (3.73\%, Table~\ref{tab:FP-rate}).
-
-Altogether thus, our procedure was as efficient to detect recombination events in F2 individuals containing a third genetic background introducing genotyping errors as it was for F1 hybrids.
-From this point on, we could thus assess the impact of the \textit{hfm1} mutation on several aspects of recombination.
-
 
 
 
@@ -538,7 +573,7 @@ From this point on, we could thus assess the impact of the \textit{hfm1} mutatio
         \multirow{2}{*}{Mutant}  & 28353    & 663   & 669  & 49.77 \\ 
         & 28367    & 624   & 693  & 47.38 \\ 
         \midrule
-		\multicolumn{2}{r}{\textbf{Average}} & \textbf{724} & \textbf{596} & \textbf{54.85} \\
+		\multicolumn{2}{r}{\textbf{Total}} & \textbf{2896} & \textbf{2384} & \textbf{54.85} \\
         \bottomrule
     \end{tabular}
     \caption[Observed proportion of heterozygous targets in the studied mice]
@@ -592,7 +627,7 @@ From this point on, we could thus assess the impact of the \textit{hfm1} mutatio
     }
 \label{tab:HFM1-FP-rate}
 \end{table}
-\clearpage
+% \clearpage
 % TOT NB FRAGS HOTSPOTS
 % >>> 56461842+62197113
 % 118658955
@@ -615,6 +650,16 @@ From this point on, we could thus assess the impact of the \textit{hfm1} mutatio
 % RATIO (FP RATE)
 % >>> 2.3648717411022922e-06/7.342892915246051e-05
 % 0.03220626758960502
+
+
+\subsection{Detection of events in heterozygous hotspots}
+
+Finally, for each individual, we applied the unique-molecule genotyping pipeline described in Chapter~\ref{ch:5-methodology} to all the heterozygous targets and we found that the maximum FP error rate for this re-adaptation of our approach (3.22\%, Table~\ref{tab:HFM1-FP-rate}) was similar to that from Chapter~\ref{ch:5-methodology} (3.73\%, Table~\ref{tab:FP-rate}).
+
+Altogether thus, our procedure was as efficient to detect recombination events in F2 individuals containing three genetic backgrounds as it was for F1 hybrids.
+From this point on, we could thus assess the impact of the \textit{hfm1} mutation on several aspects of recombination.
+
+
 
 
 
@@ -718,11 +763,11 @@ Because CO and NCO CT lengths are not directly observable from the data, we perf
 
 
 
-Altogether, the CO:NCO ratio and the NCO CT length estimated for WT mice were strikingly close to those measured on the WT mice of Chapter~\ref{ch:6-recombination-paremeters} (Table~{tab:ABC-results}).
+Altogether, the CO:NCO ratio and the NCO CT length estimated for WT mice were strikingly close to those measured on the WT mice of Chapter~\ref{ch:6-recombination-parameters} (Table~\ref{tab:ABC-results}).
 CO CTs were slightly longer (albeit \textit{not} significantly) than those found in the previous ABC, which likely comes from the fact that the targeted regions were wider in this experiment whereas the maximum distance between DSB sites and CO switch points was limited in the previous one.
 
 Interestingly, we found a clear CO CT length reduction in \textit{hfm1} mutant mice as compared to WT mice (Table~\ref{tab:HFM1-ABC-results}).
-Because the observed recombination rates varied greatly between the two mutants (Subsection~\ref{chap8:recombination-rate}), we checked whether this effect was also visible in single individuals and found that, indeed, the inferred conversion tract lengths were stable, no matter the recombination rate.
+Because the observed recombination rates varied greatly between the two mutants (see Subsection~\ref{chap8:recombination-rate}), we checked whether this effect was also visible in single individuals and found that, indeed, the inferred conversion tract lengths were stable, no matter the recombination rate.
 This observation was consistent with the idea that, in mice, the \textit{Hfm1} gene plays a role in extending the DNA heteroduplex.\\
 
 
