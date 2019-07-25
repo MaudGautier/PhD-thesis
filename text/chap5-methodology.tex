@@ -16,7 +16,7 @@
 
 \paragraph{This chapter in brief —}
 
-Because the existing approaches to study recombination at high resolution are extremely resource-intensive, we implemented a novel approach based on the unique-molecule genotyping of recombination-enriched sperm from single highly heterozygous individuals.
+Because the existing approaches to study recombination at high resolution are extremely resource-intensive, we implemented a novel approach based on the unique-molecule genotyping of recombination-enriched sperm DNA from single highly heterozygous individuals.
 % Basically, we obtained the highly heterozygous individuals by crossing highly divergent subspecies of mice; we enriched the sperm (i.e.\ the products of meiosis) extracted from these F1 hybrids by performing DNA capture of over 1,000 SNP-rich recombination hotspots; and we detected the recombination events by implementing a pipeline genotyping unique fragments of DNA\@.
 We found that the main source of errors when genotyping unique recombinant molecules of DNA did not come from sequencing errors, but from alignment ambiguities — for the aligners are biased towards the reference genome.
 Thus, searching for events after mapping fragments onto both parental genomes proved to be the most critical step of our pipeline.
@@ -27,14 +27,24 @@ In the end, our approach proved 100 times more powerful than current methods to 
 
 \newpage
 
+\begin{mccorrection}
+
 The existing approaches to study recombination events at high resolution are limited (see Chapter~\ref{ch:3-recombination-variation}).
 % : pedigree analyses are extremely resource-intensive in that they require a large number of individuals
-For instance, approaches like pedigree analyses are well suited to studies on species presenting both a short generation time and a large progeny, like yeasts \citep{mancera2008highresolution}, but do not scale well for mammals. 
-Indeed, studies that have used such methods in humans require a large number of individuals but result in only a limited amount (a few hundreds at best) of detected recombination events \citep{williams2015noncrossover, halldorsson2016rate}.
+% For instance, approaches like pedigree analyses are well suited to studies on species presenting both a short generation time and a large progeny, like yeasts \citep{mancera2008highresolution}, but do not scale well for mammals.
+% Indeed, studies that have used such methods in humans require a large number of individuals but result in only a limited amount (a few hundreds at best) of detected recombination events \citep{williams2015noncrossover, halldorsson2016rate}.
+For instance, the total number of events detectable with approaches like pedigree analyses is capped by the restricted number of meioses that can be analysed (one meiosis per individual sequenced).
+In addition, since whole genomes are sequenced to retrieve these events, the cost/benefit ratio is particularly elevated for species with large genomes, like mammals.
+% since each sequenced individual provides information for only one meiosis, the number of events per indivi
 
+% are well suited to studies on species presenting both a short generation time and a large progeny, like yeasts \citep{mancera2008highresolution}, but do not scale well for mammals.
+% Indeed, studies that have used such methods in humans require a large number of individuals but result in only a limited amount (a few hundreds at best) of detected recombination events \citep{williams2015noncrossover, halldorsson2016rate}.
+%
+
+\end{mccorrection}
 % We thus propose a different procedure which combines the DNA capture of recombination hotspots from sperm of highly heterozygous hybrids and the genotyping of unique molecules.
 
-Here, we propose a different procedure which rests on the unique-molecule genotyping of recombination-enriched sperm from single highly heterozygous individuals (Figure~\ref{fig:experimental-design}).
+Here, we propose a different procedure which rests on the unique-molecule genotyping of recombination-enriched sperm DNA from single highly heterozygous individuals (Figure~\ref{fig:experimental-design}).
 In this chapter, I first describe how our experimental design led to an enrichment in detectable recombination events and how we implemented our unique-genotyping pipeline to identify such events and then discuss the impact of each component of our workflow onto the detectability of events.
 
 \begin{figure}[p]
@@ -79,9 +89,11 @@ The extracted DNA from both biological replicates was then sonicated to produce 
 
 \subsection{Enrichment in detectable recombination events}%Selection of target loci and DNA capture}
 
-
-Since hotspots host the large majority of recombination events (see Chapter~\ref{ch:3-recombination-variation}), we wanted to enrich our pool of DNA in fragments originating from these regions (so as to increase the proportion of sequenced fragments corresponding to recombination events).
+\begin{mccorrection}
+Since the recombination rate is relatively weak genome-wide, we wanted to target specifically recombination hotspots, i.e.\ regions of the genome where recombination massively occurs.
+% Since hotspots host the large majority of recombination events (see Chapter~\ref{ch:3-recombination-variation}), we wanted to enrich our pool of DNA in fragments originating from these regions (so as to increase the proportion of sequenced fragments corresponding to recombination events).
 This required two steps: selecting hotspots, and performing DNA capture (i.e.\ hybridisation-based targeted-DNA enrichment) of these loci \citep[reviewed in \citealp{horn2012target}]{gnirke2009solution,hodges2007genomewide}.
+\end{mccorrection}
 
 \subsubsection{Selection of targets}
 
@@ -115,7 +127,7 @@ These were positioned randomly both across and along chromosomes (Figure~\ref{fi
 
 
 
-In addition, we selected 500 1-kb control regions which displayed genomic characteristics similar to those of the 1,018 hotspots (in terms of GC-content, SNP density, sequence quality and TE content) but which did not belong to the list of known recombination hotspots.
+In addition, we selected 500 1-kb control regions which displayed genomic characteristics similar to those of the 1,018 hotspots (in terms of GC-content, SNP density, sequence quality and content in transposable elements) but which did not belong to the list of known recombination hotspots.
 
 \subsubsection{DNA capture}
 
@@ -141,7 +153,10 @@ We next monitored the existence of any capture bias by looking at the origin of 
 Indeed, as recombination is rare, the vast majority of sequenced fragments do not correspond to recombination events and thus, half of all non-recombinant fragments should come from the B6 haplotype (and consequently, the other half from the CAST haplotype).
 We found that this was indeed the case since the proportion of fragments containing only \textit{B6}-typed markers (i.e.\ coming from the B6 haplotype) revolved around 50\% for nearly all targets: 95\% of targets held in a [43.4\%; 55.6\%] range (Figure~\ref{fig:prop-B6-in-targets}).
 
-
+\begin{mccorrection}
+This demonstrated that, overall, there was no large capture bias among hotspots.
+But a few of them nevertheless displayed a haplotype bias, most likely because one of the two baits better matched one of the two haplotypes in certain hotspots.
+\end{mccorrection}
 
 
 
@@ -163,7 +178,6 @@ This resulted in a substantial coverage of the targeted loci: the mean sequencin
 
 The variation in coverage across hotspots was similar to that across control regions (data not shown) and it was rather limited as the variation in coverage of 90\% of hotspots held in a 7:1 ratio ([5; 95] quantiles = [18,877; 128,293] reads).
 Nonetheless, we found that the variation in coverage across hotspots was highly correlated to the mean GC-content of the targets (Pearson correlation: ${r = -0.641}$; \textit{p}-val $< 2.2 \times 10^{-16}$).
-
 Thus, apart from a GC-content effect, there was no large capture nor mapping bias across hotspots.
 
 
@@ -226,7 +240,7 @@ Thus, apart from a GC-content effect, there was no large capture nor mapping bia
 \label{sec:pipeline}
 
 Since recombination ends in the juxtaposition of DNA from the two parental haplotypes, discerning recombination events comes back to spotting fragments presenting both \textit{B6}-typed and \textit{CAST}-typed genetic markers.
-This requires two steps: disclosing the position of polymorphic sites and identifying the allele born by a given fragment at all the markers it overlaps.
+This requires two steps: disclosing the position of polymorphic sites and identifying the allele carried by a given fragment at all the markers it overlaps.
 
 
 \subsection{Identification of polymorphic sites}
@@ -252,28 +266,34 @@ Last, since VQSR classifies variants according to their confidence, we discarded
 
 \subsection{Genotyping of individual DNA fragments}
 
-Genotyping basically consists in comparing the allele born by the analysed fragment at a given polymorphic site with those of the parental genomes.
-Consequently, the accuracy of genotyping depends on the confidence we have in both the polymorphic sites genotyped and in the base call at those sites (i.e.\ the nucleotide read by the sequencing machine).
+\begin{mccorrection}
+Genotyping basically consists in comparing the allele carried by the analysed fragment at a given polymorphic site with those of the parental genomes.
+Though, the accuracy of genotyping is subject to two main types of errors.
+% Consequently, the accuracy of genotyping depends on the confidence we have in both the polymorphic sites genotyped and in the base call at those sites (i.e.\ the nucleotide read by the sequencing machine).
 
+First, the variant-calling step can output a small proportion of false positives (FPs), for instance because of mapping artifacts in the vicinity of indels.
+In that case, even if a fragment is correctly sequenced, a genotyping error may arise from these FP markers.
 Since recombination is rare ($\ll 1\%$), the allelic frequencies at genuine polymorphic sites should comply with the Mendelian transmission of alleles.
-Thus, we applied a hard filter on these frequencies: only sites with allelic frequencies within the [36\%; 64\%]\footnote{The values of that range have no real biological meaning and could legitimately be disputed. They were chosen after the visual inspection of the distribution of allelic frequencies of data from the pilot experiment (data not shown) and principally aimed at avoiding frequencies far from a normal stochasticity around a 50:50 transmission of alleles.} range were retained.
+To avoid any error coming from the aforementioned FPs, we thus applied a hard filter on these frequencies: only sites with allelic frequencies within the [36\%; 64\%]\footnote{The values of that range were deliberately set as relatively large to account for any difference in capture efficiency at individual hotspots (Figure~\ref{fig:prop-B6-in-targets})} were retained.
+%The values of that range have no real biological meaning and could legitimately be disputed. They were chosen after the visual inspection of the distribution of allelic frequencies of data from the pilot experiment (data not shown) and principally aimed at avoiding frequencies far from a normal stochasticity around a 50:50 transmission of alleles.} range were retained.
 We additionally applied a hard filter on read coverage: any called variant supported by fewer than 100 reads was automatically discarded.
 % , which we set to a strict minimum of 100 reads supporting the variant called.
 
-As for the confidence in the base call, it is provided by the sequencer \textit{via} the Phred quality score which is logarithmically related to the probability for the base call to be incorrect \citep{ewing1998basecalling,ewing1998basecallinga}.
-However, the Phred scores produced by the sequencing machines are subject to various sources of systematic technical error and sequencing machines generally underestimate the error probability \citep{gatk2012base}.
-Thus, we used the base quality scores recalibrated by GATK to filter out base calls with high probabilities of error: all sites with a recalibrated quality below 20 (i.e.\ with a probability to be miscalled greater than 1\%) were discarded.\\
-
+Second, sequencing errors directly lead to genotyping errors.
+To avoid that, one can use the information provided by the sequencer: the Phred quality score which is logarithmically related to the probability for the base call to be incorrect \citep{ewing1998basecalling,ewing1998basecallinga}.
+However, the Phred scores produced by the sequencing machines are subject to various sources of systematic technical error and sequencing machines generally underestimate the probability of error \citep{gatk2012base}.
+Thus, we used the base quality scores recalibrated by GATK to filter out base calls with high probabilities of error: all sites with a recalibrated quality below 20 (i.e.\ with a probability to be miscalled greater than 1\%) were discarded.
+\end{mccorrection}
 
 We then genotyped each fragment at every of the remaining high-confidence variant sites that it overlapped by comparing its base call (or sequence of base calls in the case of indels) with that of the reference genome.
-Whenever the fragment bore an allele distinct from that of the reference genome, we checked that the allele born was that of the other parental genome to avoid misgenotyping any remaining erroneous base call.
+Whenever the fragment carried an allele distinct from that of the reference genome, we checked that the allele carried was that of the other parental genome to avoid misgenotyping any remaining erroneous base call.
 
 
 
 \subsection{Identification of recombination events}
 
 A simple way to test for the accuracy of our genotyping was to monitor the polymophic sites overlapped by the two reads of a given fragment: in principle, such markers should have the same genotype call on both reads.
-In our data, only 0.3\%\footnote{Markers overlapped by both reads correspond to markers that are located at the end of reads. Since read extremities are more prone to both misalignments and sequencing errors \citep{kircher2009improved,minoche2011evaluation,abnizova2012analysis,wang2012estimation,laehnemann2016denoising}, the genotyping error rate provided here is likely to be overestimated.} of all such markers were genotyped discordingly. 
+In our data, only 0.3\%\footnote{Markers overlapped by both reads correspond to markers that are located at the end of reads. Since read extremities are more prone to both misalignments and sequencing errors \citep{kircher2009improved,minoche2011evaluation,abnizova2012analysis,wang2012estimation,laehnemann2016denoising}, the genotyping error rate provided here is likely to be overestimated.} (97 out of 32114) of all such markers were genotyped discordingly. 
 Even if this seems to be a low error rate, it is not negligible in view of the scarcity of recombination events.
 %cut -f13 $DATA/2_dBGC/6_ThirdSequencing/05_Analyses_of_Recombinants/02_Recombinants_and_False_Positives_Dataset/Recombinants_dataset.txt|sed '1,1d' | paste -s -d";"| awk '{print gsub(/1.01/, "")}'
 %32114
@@ -330,18 +350,29 @@ All in all, 18,821 recombination events were retrieved in the 1,018 selected hot
 \label{tab:FP-rate}
 \end{table}
 
+\begin{mccorrection}
+Altogether, our approach displayed a much better efficiency/cost ratio than comparable methods to characterise recombination events at high resolution.
 
-Altogether, our approach displayed a much better efficiency/cost ratio than comparable methods to obtain high-resolution maps of recombination events.
+Indeed, in a recent study carried on mice by \citet{li2018highresolution}, the sequencing of 119 genomes of mice at a 12--30-\textit{x} coverage (which corresponds to about 6,742 Gb sequenced) ended in the identification of 4,075 recombination events.
+In contrast, our approach required the sequencing of a total of 980 million 250-bp long reads (which corresponds to 244 Gb sequenced) to retrieve 18,821 recombination events.
+Thus, the number of recombination events detected per Gb sequenced was over 100 times superior with our method (77.1 events/Gb) than in that by \citet{li2018highresolution} (0.604 events/Gb).
 
-Indeed, in one such study, \citet{halldorsson2016rate} sequenced 530 whole human genomes with a sequencing depth higher than 30-\textit{x} (which corresponds to approximately 50,000 Gb sequenced) and detected 485 recombination events (after applying very stringent selection criteria).
-In another, \citet{smeds2016highresolution} sequenced the genomes of 11 birds at a mean 42-\textit{x} coverage (which, since the flycatcher genome is 1.1 Gb long \citep{ellegren2012genomic}, corresponds to about 500 Gb sequenced) and identified 592 events.
-As for the study by \citet{li2018highresolution}, the sequencing of 119 genomes of mice at a 12--30-\textit{x} coverage (which corresponds to about 6,742 Gb sequenced) ended in the identification of 4,075 recombination events.
+Despite the fact that humans and flycatchers have a recombination rate respectively twice and six times as high as mice \citep{kawakami2014highdensity,kawakami2017wholegenome}, our approach remained largely more powerful than what two other recent studies achieved on these species \textit{via} a pedigree analysis.
+Indeed, \citet{halldorsson2016rate} sequenced 530 whole human genomes with a sequencing depth of over 30-\textit{x} (which corresponds to approximately 50,000 Gb sequenced) and detected 485 recombination events (after applying very stringent selection criteria); 
+and \citet{smeds2016highresolution} sequenced the genomes of 11 birds at a mean 42-\textit{x} coverage (which, since the flycatcher genome is 1.1 Gb long \citep{ellegren2012genomic}, corresponds to about 500 Gb sequenced) and identified 592 events.
+Therefore, their approaches respectively led to the detection of only 0.00970 and 1.18 events per Gb sequenced.
 
-In contrast, our approach required the sequencing of a total of 976,826,736 250-bp long reads (which corresponds to 244 Gb sequenced) to retrieve 18,821 recombination events. 
-Thus, the number of recombination events detected per Gb sequenced was largely superior with our method (77.1 events/Gb) than in the other three studies (respectively 0.00970, 1.18 and 0.604 events/Gb). 
+Altogether thus, our approach was indisputably much more powerful than comparable studies in detecting recombination events.
 
-Therefore, our method proved to be 100 times more powerful than comparable studies in detecting recombination events.
+% Indeed, in one such study, \citet{halldorsson2016rate} sequenced 530 whole human genomes with a sequencing depth higher than 30-\textit{x} (which corresponds to approximately 50,000 Gb sequenced) and detected 485 recombination events (after applying very stringent selection criteria).
+% In another, \citet{smeds2016highresolution} sequenced the genomes of 11 birds at a mean 42-\textit{x} coverage (which, since the flycatcher genome is 1.1 Gb long \citep{ellegren2012genomic}, corresponds to about 500 Gb sequenced) and identified 592 events.
+% As for the study by \citet{li2018highresolution}, the sequencing of 119 genomes of mice at a 12--30-\textit{x} coverage (which corresponds to about 6,742 Gb sequenced) ended in the identification of 4,075 recombination events.
+%
+% In contrast, our approach required the sequencing of a total of 980 million 250-bp long reads (which corresponds to 244 Gb sequenced) to retrieve 18,821 recombination events.
+% Thus, the number of recombination events detected per Gb sequenced was largely superior with our method (77.1 events/Gb) than in the other three studies (respectively 0.00970, 1.18 and 0.604 events/Gb).
 
+% Therefore, our method proved to be 100 times more powerful than comparable studies in detecting recombination events.
+\end{mccorrection}
 
 
 
@@ -369,10 +400,14 @@ In principle, local realignment around indels corrects a large part of these ref
 Nevertheless, in view of the rarity of recombination events, a non-negligible portion of these misalignments remain and are likely to lead to spurious detections of recombination events.
 Therefore, to counterbalance this mapping bias, we decided to perform the whole procedure using consecutively the two parental genomes as the mapping reference.\\
 
-
+\begin{mccorrection}
 We found this \textit{modus operandi} to be crucial to the specificity of our method.
-Indeed, all else being equal (same values for all the other filters), performing the procedure using only the B6 genome as a reference resulted in 1,088,237 events found in the hotspots and 686,595 in the control regions. Brought back to the number of fragments\footnote{Fragments overlapping at least 4 markers, i.e.\ candidate recombination events.} mapping on these targets, this corresponded to a FP rate of 123\% \textbf{VOIR avec Laurent si plus de 100\% est problematique}.
-In other words, all (or nearly all) detected events did \textit{not} correspond to recombination events when using only one parental genome as a reference.
+% Indeed, all else being equal (same values for all the other filters), performing the procedure using only the B6 genome as a reference resulted in 1,088,237 events found in the hotspots and 686,595 in the control regions. Brought back to the number of fragments\footnote{Fragments overlapping at least 4 markers, i.e.\ candidate recombination events.} mapping on these targets, this corresponded to a FP rate of 123\% \textbf{VOIR avec Laurent si plus de 100\% est problematique}.
+% In other words, all (or nearly all) detected events did \textit{not} correspond to recombination events when using only one parental genome as a reference.
+Indeed, all else being equal (same values for all the other filters), performing the procedure using only the B6 genome as a reference resulted in 1,088,237 events found in the hotspots.
+This meant that only 1.7\% (18,821 out of 1,088,237) of all the events detected on the B6 genome were validated on the CAST genome and thus, that over 98\% of the events detected with only one genome used as a reference likely corresponded to FPs.
+% Brought back to the number of fragments\footnote{Fragments overlapping at least 4 markers, i.e.\ candidate recombination events.} mapping on these targets, this corresponded to a FP rate of 123\% \textbf{VOIR avec Laurent si plus de 100\% est problematique}.
+% In other words, 98\% of all events on the B6 genome were not validated when using the CAST genome as a reference and thus likely corresponded to FPs.
 % >>> 1088237/176039928
 % 0.006181762355640137
 % >>> 686595/89697868
@@ -381,6 +416,7 @@ In other words, all (or nearly all) detected events did \textit{not} correspond 
 % 0.807595312787856
 % >>> 0.00765452975983777/0.006181762355640137
 % 1.238243937483929
+\end{mccorrection}
 
 In contrast, when the procedure was repeated onto the other reference genome (CAST), the FP rate dropped down to below 5\% (Table~\ref{tab:FP-rate}).
 Thus, identifying events based on the mapping onto \textit{both} parental genomes was, by far, the most crucial step to the specific detection of recombination events.
@@ -389,12 +425,12 @@ Thus, identifying events based on the mapping onto \textit{both} parental genome
 
 \subsection{Impact of the filters on the false positive (FP) rate} 
 
-The shortness of sequenced read pairs circumscribed the number of polymorphic sites accessible on each fragment ($median = 7$; $mean = 7.66$) and, to the difference of pedigree analyses where all fragments bear the same allele because they all arise from the same recombination event, the fragments in the sperm we analysed originated from millions of recombination events and were thus to be genotyped individually.
+The shortness of sequenced read pairs circumscribed the number of polymorphic sites accessible on each fragment ($median = 7$; $mean = 7.66$) and, to the difference of pedigree analyses where all fragments bear the same allele because they all arise from the same recombination event, the DNA fragments in the sperm we analysed originated from millions of distinct meioses and were thus to be genotyped individually.
 Therefore, any sequencing error made by the Illumina device — which occurs at low \citep{fox2014accuracy,pfeiffer2018systematic} but non-negligible rates as compared to that of recombination events — may be fatal to the accurate genotyping of unique molecules.
 The several filtering steps we added all along our pipeline to ensure genotyping a high accuracy all had an impact on the sensitivity and the specificity of our method, as discussed hereunder.\\
 
 
-First, the filters set for variant selection (no departure from the Mendelian transmission of alleles and a minimal number of reads supporting the variant) were not stringent: 30\% of all called variants were discarded but, since these corresponded principally to variants located at the extremities of target regions\footnote{The targets spanned 1 kb, but our analysis extended to an additional 1 kb on both the 5’- and the 3’-end of each target, so as to include all sequenced fragments overlapping at least 1 bp of the target (\textit{NB}: the maximum framgent length was 800 bp).}, only 7\% of all ‘genotypable’ markers (i.e.\ the total number of markers across all sequenced fragments) were eliminated.
+First, the filters set for variant selection (no strong departure from the Mendelian transmission of alleles and a minimal number of reads supporting the variant) were not stringent: only 7\% of all markers across all sequenced fragments were eliminated, and these corresponded principally to variants located at the extremities of target regions\footnote{The targets spanned 1 kb, but our analysis extended to an additional 1 kb on both the 5’- and the 3’-end of each target, so as to include all sequenced fragments overlapping at least 1 bp of the target (\textit{NB}: the maximum fragment length was 800 bp).}.
 
 The filter on the base quality score had a greater impact on the specificity of our method.
 Indeed, all else being equal, not setting this filter resulted in a 32\% rate of FPs (as compared to the 3.7\% rate when the filter was on).
