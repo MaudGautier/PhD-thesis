@@ -153,10 +153,10 @@ We next monitored the existence of any capture bias by looking at the origin of 
 Indeed, as recombination is rare, the vast majority of sequenced fragments do not correspond to recombination events and thus, half of all non-recombinant fragments should come from the B6 haplotype (and consequently, the other half from the CAST haplotype).
 We found that this was indeed the case since the proportion of fragments containing only \textit{B6}-typed markers (i.e.\ coming from the B6 haplotype) revolved around 50\% for nearly all targets: 95\% of targets held in a [43.4\%; 55.6\%] range (Figure~\ref{fig:prop-B6-in-targets}).
 
-\begin{mccorrection}
-This demonstrated that, overall, there was no large capture bias among hotspots.
-But a few of them nevertheless displayed a haplotype bias, most likely because one of the two baits better matched one of the two haplotypes in certain hotspots.
-\end{mccorrection}
+Thus, although a small fraction of hotspots displayed a haplotype bias (possibly because one of the two baits better matched one of the two haplotypes), overall, there was no systematic bias favouring the capture of one haplotype relative to the other.
+	
+% This demonstrated that, overall, there was no large capture bias among hotspots.
+% But a few of them nevertheless displayed a haplotype bias, most likely because one of the two baits better matched one of the two haplotypes in certain hotspots.
 
 
 
@@ -266,7 +266,6 @@ Last, since VQSR classifies variants according to their confidence, we discarded
 
 \subsection{Genotyping of individual DNA fragments}
 
-\begin{mccorrection}
 Genotyping basically consists in comparing the allele carried by the analysed fragment at a given polymorphic site with those of the parental genomes.
 Though, the accuracy of genotyping is subject to two main types of errors.
 % Consequently, the accuracy of genotyping depends on the confidence we have in both the polymorphic sites genotyped and in the base call at those sites (i.e.\ the nucleotide read by the sequencing machine).
@@ -283,7 +282,6 @@ Second, sequencing errors directly lead to genotyping errors.
 To avoid that, one can use the information provided by the sequencer: the Phred quality score which is logarithmically related to the probability for the base call to be incorrect \citep{ewing1998basecalling,ewing1998basecallinga}.
 However, the Phred scores produced by the sequencing machines are subject to various sources of systematic technical error and sequencing machines generally underestimate the probability of error \citep{gatk2012base}.
 Thus, we used the base quality scores recalibrated by GATK to filter out base calls with high probabilities of error: all sites with a recalibrated quality below 20 (i.e.\ with a probability to be miscalled greater than 1\%) were discarded.
-\end{mccorrection}
 
 We then genotyped each fragment at every of the remaining high-confidence variant sites that it overlapped by comparing its base call (or sequence of base calls in the case of indels) with that of the reference genome.
 Whenever the fragment carried an allele distinct from that of the reference genome, we checked that the allele carried was that of the other parental genome to avoid misgenotyping any remaining erroneous base call.
@@ -350,7 +348,6 @@ All in all, 18,821 recombination events were retrieved in the 1,018 selected hot
 \label{tab:FP-rate}
 \end{table}
 
-\begin{mccorrection}
 Altogether, our approach displayed a much better efficiency/cost ratio than comparable methods to characterise recombination events at high resolution.
 
 Indeed, in a recent study carried on mice by \citet{li2018highresolution}, the sequencing of 119 genomes of mice at a 12--30-\textit{x} coverage (which corresponds to about 6,742 Gb sequenced) ended in the identification of 4,075 recombination events.
@@ -372,7 +369,6 @@ Altogether thus, our approach was indisputably much more powerful than comparabl
 % Thus, the number of recombination events detected per Gb sequenced was largely superior with our method (77.1 events/Gb) than in the other three studies (respectively 0.00970, 1.18 and 0.604 events/Gb).
 
 % Therefore, our method proved to be 100 times more powerful than comparable studies in detecting recombination events.
-\end{mccorrection}
 
 
 
@@ -400,7 +396,6 @@ In principle, local realignment around indels corrects a large part of these ref
 Nevertheless, in view of the rarity of recombination events, a non-negligible portion of these misalignments remain and are likely to lead to spurious detections of recombination events.
 Therefore, to counterbalance this mapping bias, we decided to perform the whole procedure using consecutively the two parental genomes as the mapping reference.\\
 
-\begin{mccorrection}
 We found this \textit{modus operandi} to be crucial to the specificity of our method.
 % Indeed, all else being equal (same values for all the other filters), performing the procedure using only the B6 genome as a reference resulted in 1,088,237 events found in the hotspots and 686,595 in the control regions. Brought back to the number of fragments\footnote{Fragments overlapping at least 4 markers, i.e.\ candidate recombination events.} mapping on these targets, this corresponded to a FP rate of 123\% \textbf{VOIR avec Laurent si plus de 100\% est problematique}.
 % In other words, all (or nearly all) detected events did \textit{not} correspond to recombination events when using only one parental genome as a reference.
@@ -416,7 +411,6 @@ This meant that only 1.7\% (18,821 out of 1,088,237) of all the events detected 
 % 0.807595312787856
 % >>> 0.00765452975983777/0.006181762355640137
 % 1.238243937483929
-\end{mccorrection}
 
 In contrast, when the procedure was repeated onto the other reference genome (CAST), the FP rate dropped down to below 5\% (Table~\ref{tab:FP-rate}).
 Thus, identifying events based on the mapping onto \textit{both} parental genomes was, by far, the most crucial step to the specific detection of recombination events.
