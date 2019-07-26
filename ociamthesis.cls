@@ -259,7 +259,7 @@
 % on its own page.
 
 \newenvironment{acknowledgements}%
-{   \begin{alwayssingle}\chapter*{Acknowledgements}
+{   \begin{alwayssingle}\chapter*{Remerciements}
     \thispagestyle{empty}
 	\pagestyle{empty}
 	\setlength{\baselineskip}{\frontmatterbaselineskip}
