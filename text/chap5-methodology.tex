@@ -136,7 +136,7 @@ In addition, we selected 500 1-kb control regions which displayed genomic charac
 	\includegraphics[width = 1\textwidth]{figures/chap5/Absence_capture_bias_non_recombinant_B6.eps}
 	\caption[Absence of capture bias between the B6 and CAST haplotypes]
 	{\textbf{Absence of capture bias between the B6 and CAST haplotypes.}
-		\par All fragments exclusively containing B6-typed markers were designed as non-recombining fragments coming from the B6 haplotype. 
+		\par All fragments exclusively containing B6-typed markers were designed as non-recombinant fragments coming from the B6 haplotype. 
 		The distribution of the proportion of such fragments across targets is reported in this figure. 
 		The dashed line corresponds to the median proportion of B6-genotyped fragments across targets and the two dotted lines correspond to the 2.5 and 97.5 percentiles (i.e.\ the delimitation of the proportion for 95\% of targets).
 	}
@@ -146,7 +146,7 @@ In addition, we selected 500 1-kb control regions which displayed genomic charac
 
 To enrich the sequencing data in fragments coming from the 1,518 aforementioned loci (hereafter called targets), we performed either one or two rounds of DNA capture targeting them.
  % \citep[reviewed in \citealp{horn2012target}]{gnirke2009solution,hodges2007genomewide}.
-Since our final aim was to detect recombination events, i.e.\ fragments bearing both a portion of the B6 haplotype and a portion of the CAST haplotype, it was essential that the efficiency of the capture be similar for both haplotypes.
+Since our final aim was to detect recombination events, i.e.\ fragments carrying both a portion of the B6 haplotype and a portion of the CAST haplotype, it was essential that the efficiency of the capture be similar for both haplotypes.
 We thus designed two baits (one for each of the two haplotypes) for every target.
 
 We next monitored the existence of any capture bias by looking at the origin of all the non-recombinant fragments.
@@ -173,10 +173,10 @@ PCR duplicates were marked thanks to picardTools (version 1.98(1547)) \citep{pic
 
 Overall, sequenced reads mapped equally well to both the B6 and the CAST reference genome assemblies (Table~\ref{tab:characteristics-seq-mapping-capture}).
 In addition, DNA capture was efficient since 72\% of sequenced fragments mapped within the selected targets.
-This resulted in a substantial coverage of the targeted loci: the mean sequencing depth on 1-kb long targets was 97,340 $x$, and it raised up to above 926,800 $x$ in certain regions.
+This resulted in a substantial coverage of the targeted loci: the mean sequencing depth on 1-kb long targets was 97,177 $x$, and it raised up to above 941,737 $x$ in certain regions.
 %% OU mean sequencing depth on 1-kb long loci: 95,810 $x$ ??)
 
-The variation in coverage across hotspots was similar to that across control regions (data not shown) and it was rather limited as the variation in coverage of 90\% of hotspots held in a 7:1 ratio ([5; 95] quantiles = [18,877; 128,293] reads).
+The variation in coverage across hotspots was similar to that across control regions (data not shown) and it was rather limited as the variation in coverage of 80\% of hotspots held in a 5:1 ratio ([10; 90] quantiles = [71,745; 385,412] reads).
 Nonetheless, we found that the variation in coverage across hotspots was highly correlated to the mean GC-content of the targets (Pearson correlation: ${r = -0.641}$; \textit{p}-val $< 2.2 \times 10^{-16}$).
 Thus, apart from a GC-content effect, there was no large capture nor mapping bias across hotspots.
 
@@ -419,7 +419,7 @@ Thus, identifying events based on the mapping onto \textit{both} parental genome
 
 \subsection{Impact of the filters on the false positive (FP) rate} 
 
-The shortness of sequenced read pairs circumscribed the number of polymorphic sites accessible on each fragment ($median = 7$; $mean = 7.66$) and, to the difference of pedigree analyses where all fragments bear the same allele because they all arise from the same recombination event, the DNA fragments in the sperm we analysed originated from millions of distinct meioses and were thus to be genotyped individually.
+The shortness of sequenced read pairs circumscribed the number of polymorphic sites accessible on each fragment ($median = 7$; $mean = 7.66$) and, to the difference of pedigree analyses where all fragments carry the same allele because they all arise from the same recombination event, the DNA fragments in the sperm we analysed originated from millions of distinct meioses and were thus to be genotyped individually.
 Therefore, any sequencing error made by the Illumina device — which occurs at low \citep{fox2014accuracy,pfeiffer2018systematic} but non-negligible rates as compared to that of recombination events — may be fatal to the accurate genotyping of unique molecules.
 The several filtering steps we added all along our pipeline to ensure genotyping a high accuracy all had an impact on the sensitivity and the specificity of our method, as discussed hereunder.\\
 

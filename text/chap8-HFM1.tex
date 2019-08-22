@@ -238,13 +238,13 @@ Overall, read mapping statistics and capture efficiency were similar to what was
         \textbf{ID} & \textbf{size} & \textbf{B6} & \textbf{CAST} & \textbf{Fragments} & \textbf{targets} & \textbf{targets} \\
 		\midrule
         % \cmidrule(l){1-1} \cmidrule(l){2-7} \cmidrule(l){8-9} \cmidrule(l){10-12}
-        28355 & 14,977,880 & 99.87 & 99.76 & 7,206,235 & 86.09 & 6,203,730 \\
-        28371 & 14,977,880 & 99.87 & 99.76 & 7,206,235 & 86.09 & 6,203,730 \\
-		\textbf{Total WT} & \textbf{} & \textbf{99.71} & \textbf{99.68} & \textbf{} & \textbf{48.06} & \textbf{161,564,743} \\
+        28355 & 164,210,468 & 98.76 & 98.00 & 162,168,344 & 48.62 & 78,851,718 \\
+        28371 & 171,930,499 & 98.25 & 98.20 & 170,081,808 & 48.63 & 82,713,025 \\
+		\textbf{Total WT} & \textbf{336,140,967} & \textbf{98.84} & \textbf{98.10} & \textbf{332,250,152} & \textbf{48.63} & \textbf{161,564,743} \\
 		\\
-        28353 & 14,977,880 & 99.87 & 99.76 & 7,206,235 & 86.09 & 6,203,730 \\
-        28367 & 14,977,880 & 99.87 & 99.76 & 7,206,235 & 86.09 & 6,203,730 \\
-		\textbf{Total mutants} & \textbf{} & \textbf{99.48} & \textbf{99.44} & \textbf{} & \textbf{47.86} & \textbf{186,150,465} \\
+        28353 & 161,294,272 & 99.15 & 98.35 & 159,920,297 & 48.62 & 78,851,718 \\
+        28367 & 227,590,570 & 97.91 & 97.18 & 222,826,196 & 37.11 & 82,713,025 \\
+		\textbf{Total mutants} & \textbf{388,884,842} & \textbf{98.42} & \textbf{97.67} & \textbf{382,746,493} & \textbf{48.63} & \textbf{186,150,465} \\
         % \textbf{Total} & \textbf{-} & \textbf{-} & \textbf{-} & \textbf{-} & \textbf{-} & \textbf{976,826,736} & \textbf{99.68} & \textbf{99.37} & \textbf{468,513,483} & \textbf{71.63} & \textbf{335,605,734} \\
         \bottomrule
     \end{tabular}
@@ -257,6 +257,105 @@ Overall, read mapping statistics and capture efficiency were similar to what was
 \label{tab:HFM1-statistics-seq-mapping-capture}
 \end{table}
 
+%
+% # TOUT CELA SUREMENT PAS LES BONS CHIFFRES.... (VOIR COMMENT FAIT DANS LE CHAP 5)
+% pbil-deb ➜  3_Working_directory cat $DATA/5_HFM1/Sequencing_1/BEFORE_05_Analyses_of_Recombinants/03_General_Statistics/02_Bias_checks/1_Mapping/01_domesticus/Bamtools_stats/S28353*bamtools_counts.txt|paste -sd+|bc
+% 161294272
+% pbil-deb ➜  3_Working_directory cat $DATA/5_HFM1/Sequencing_1/BEFORE_05_Analyses_of_Recombinants/03_General_Statistics/02_Bias_checks/1_Mapping/01_domesticus/Bamtools_stats/S28355*bamtools_counts.txt|paste -sd+|bc
+% 164210468
+% pbil-deb ➜  3_Working_directory cat $DATA/5_HFM1/Sequencing_1/BEFORE_05_Analyses_of_Recombinants/03_General_Statistics/02_Bias_checks/1_Mapping/01_domesticus/Bamtools_stats/S28367*bamtools_counts.txt|paste -sd+|bc
+% 227590570
+% pbil-deb ➜  3_Working_directory cat $DATA/5_HFM1/Sequencing_1/BEFORE_05_Analyses_of_Recombinants/03_General_Statistics/02_Bias_checks/1_Mapping/01_domesticus/Bamtools_stats/S28371*bamtools_counts.txt|paste -sd+|bc
+% 171930499
+%
+% pbil-deb ➜  3_Working_directory cat $DATA/5_HFM1/Sequencing_1/BEFORE_05_Analyses_of_Recombinants/03_General_Statistics/02_Bias_checks/1_Mapping/01_domesticus/Bamtools_stats/S28353*.bamtools_stats.txt|grep Proper
+% 'Proper-pairs':    37937381	(99.0255%)
+% 'Proper-pairs':    38687806	(98.9575%)
+% 'Proper-pairs':    41273169	(99.3141%)
+% 'Proper-pairs':    42021941	(99.2724%)
+% pbil-deb ➜  3_Working_directory cat $DATA/5_HFM1/Sequencing_1/BEFORE_05_Analyses_of_Recombinants/03_General_Statistics/02_Bias_checks/1_Mapping/01_domesticus/Bamtools_stats/S28355*.bamtools_stats.txt|grep Proper
+% 'Proper-pairs':    40670865	(98.9692%)
+% 'Proper-pairs':    41412074	(98.9033%)
+% 'Proper-pairs':    39693167	(98.6611%)
+% 'Proper-pairs':    40392238	(98.4867%)
+% pbil-deb ➜  3_Working_directory cat $DATA/5_HFM1/Sequencing_1/BEFORE_05_Analyses_of_Recombinants/03_General_Statistics/02_Bias_checks/1_Mapping/01_domesticus/Bamtools_stats/S28367*.bamtools_stats.txt|grep Proper
+% 'Proper-pairs':    65968009	(99.2325%)
+% 'Proper-pairs':    66943830	(99.1935%)
+% 'Proper-pairs':    44628688	(96.1375%)
+% 'Proper-pairs':    45285669	(95.9392%)
+% pbil-deb ➜  3_Working_directory cat $DATA/5_HFM1/Sequencing_1/BEFORE_05_Analyses_of_Recombinants/03_General_Statistics/02_Bias_checks/1_Mapping/01_domesticus/Bamtools_stats/S28371*.bamtools_stats.txt|grep Proper
+% 'Proper-pairs':    42446254	(98.9801%)
+% 'Proper-pairs':    43273542	(98.8626%)
+% 'Proper-pairs':    41772008	(98.9598%)
+% 'Proper-pairs':    42590004	(98.8984%)
+%
+% >>> 37937381+38687806+41273169+42021941
+% 159920297
+% >>> 40670865+41412074+39693167+40392238
+% 162168344
+% >>> 65968009+66943830+44628688+45285669
+% 222826196
+% >>> 42446254+43273542+41772008+42590004
+% 170081808
+% >>>
+% >>> 159920297/161294272
+% 0.9914815635858414
+% >>> 162168344/164210468
+% 0.9875639840451584
+% >>> 222826196/227590570
+% 0.979066030723505
+% >>> 170081808/171930499
+% 0.9892474516694097
+% >>>
+% >>> (162168344+170081808)/(164210468+171930499)
+% 0.9884250496607871
+% >>> (159920297+222826196)/(161294272+227590570)
+% 0.9842155097420845
+%
+% ## CAST
+% >>> 37946282+38695093+41289188+42036366
+% 159966929
+% >>> 40659331+41399188+39667619+40363612
+% 162089750
+% >>> 66024330+67000106+44576996+45230530
+% 222831962
+% >>> 42423366+43247282+41767287+42584094
+% 170022029
+% pbil-deb ➜  3_Working_directory cat $DATA/5_HFM1/Sequencing_1/BEFORE_05_Analyses_of_Recombinants/03_General_Statistics/02_Bias_checks/1_Mapping/02_castaneus//Bamtools_stats/S28353*bamtools_counts.txt|paste -sd+|bc
+% 162652742
+% pbil-deb ➜  3_Working_directory cat $DATA/5_HFM1/Sequencing_1/BEFORE_05_Analyses_of_Recombinants/03_General_Statistics/02_Bias_checks/1_Mapping/02_castaneus//Bamtools_stats/S28355*bamtools_counts.txt|paste -sd+|bc
+% 165395876
+% pbil-deb ➜  3_Working_directory cat $DATA/5_HFM1/Sequencing_1/BEFORE_05_Analyses_of_Recombinants/03_General_Statistics/02_Bias_checks/1_Mapping/02_castaneus//Bamtools_stats/S28367*bamtools_counts.txt|paste -sd+|bc
+% 229294851
+% pbil-deb ➜  3_Working_directory cat $DATA/5_HFM1/Sequencing_1/BEFORE_05_Analyses_of_Recombinants/03_General_Statistics/02_Bias_checks/1_Mapping/02_castaneus//Bamtools_stats/S28371*bamtools_counts.txt|paste -sd+|bc
+% 173131818
+%
+% >>> 159966929/162652742
+% 0.983487440992541
+% >>> 162089750/165395876
+% 0.9800108317090083
+% >>> 222831962/229294851
+% 0.9718140683412032
+% >>> 170022029/173131818
+% 0.9820380272330993
+% >>>
+% >>>
+% >>> (159966929+222831962)/(162652742+229294851)
+% 0.9766583539141673
+% >>> (162089750+170022029)/(165395876+173131818)
+% 0.9810475919290668
+%
+%
+% # IN TARGETS
+% pbil-deb ➜  3_Working_directory awk 'NR>1 {print $5}' $DATA/5_HFM1/Sequencing_1/BEFORE_05_Analyses_of_Recombinants/03_General_Statistics/02_Bias_checks/2_Targetting/Tot_nb_fragments_per_hotspot_MUT_S28353.txt|paste -sd+|bc
+% 78851718
+% pbil-deb ➜  3_Working_directory awk 'NR>1 {print $5}' $DATA/5_HFM1/Sequencing_1/BEFORE_05_Analyses_of_Recombinants/03_General_Statistics/02_Bias_checks/2_Targetting/Tot_nb_fragments_per_hotspot_MUT_S28367.txt|paste -sd+|bc
+% 82713025
+% pbil-deb ➜  3_Working_directory awk 'NR>1 {print $5}' $DATA/5_HFM1/Sequencing_1/BEFORE_05_Analyses_of_Recombinants/03_General_Statistics/02_Bias_checks/2_Targetting/Tot_nb_fragments_per_hotspot_WT_S28371.txt|paste -sd+|bc
+% 82713025
+% pbil-deb ➜  3_Working_directory awk 'NR>1 {print $5}' $DATA/5_HFM1/Sequencing_1/BEFORE_05_Analyses_of_Recombinants/03_General_Statistics/02_Bias_checks/2_Targetting/Tot_nb_fragments_per_hotspot_WT_S28355.txt|paste -sd+|bc
+% 78851718
+%
 
 
 
@@ -380,7 +479,7 @@ The following section will be dedicated to detailing the procedure we implemente
 
 
 \section{Detection of recombination in F2 individuals}
-\subsection{Inferrence of the origin of polymorphic sites}
+\subsection{Inference of the origin of polymorphic sites}
 
 % - dans le cas a trois genomes, on a trois haplotypes possibles B, C, D et donc des marqueurs entre B et C, B et D et C et D (cf figure). Or, ces marqueurs sont presents a des frequences differentes car les taux de divergence varient entre les trois genomes.
 % - Donc, a priori, la detectabilite sera differente selon le type de background dans lequel on est (et donc de la densite en SNP)
@@ -416,7 +515,7 @@ The following section will be dedicated to detailing the procedure we implemente
 % - Or, comme on va comparer la recombinaison entre individus (qui n'ont pas forcement le meme background), on ne veut pas avoir de telles differences de detectabilite
 % - donc, on choisit de se focaliser uniquement sur les marqueurs les plus requents: ceux DOM/CAST
 
-Distinguish the targets of interest (DOM/CAST-background targets) from others (DOM/DOM-background targets) comes back to genotyping the DOM-CAST markers (i.e.\ the polymorphic sites for which the CAST strain carries an allele different from that carried by the B6 and the DBA2 strains).
+Distinguishing the targets of interest (DOM/CAST-background targets) from others (DOM/DOM-background targets) comes back to genotyping the DOM-CAST markers (i.e.\ the polymorphic sites for which the CAST strain carries an allele different from that carried by the B6 and the DBA2 strains).
 % determine whether hotspots are in a DOM/DOM or in a DOM/CAST genetic background, it is necessary to genotype the DOM-CAST markers (i.e.\ polymorphic sites for which the CAST strain carries an allele different from that carried by the B6 and the DBA2 strains).
 Though, given that the F2 individuals carry a mosaic of three genomes, three types of polymorphic sites can occur: either the B6, the DBA2 or the CAST genome carries an allele different from that of the other two (Figure~\ref{fig:marker-origin}).
 Therefore, prior to genotyping targets, the DOM-CAST markers must be distinguished from the other (B6-DBA2) markers.
@@ -536,18 +635,18 @@ in any other case, the background was not inferred.
 
 Out of the 4$\times$1390 targeted loci, 145 (2.6\%) had a read coverage too low for the target to be genotyped.
 Aside from those, the aforementioned \textit{modus operandi} allowed us to genotype 97.5\% of all the targets presenting sufficient coverage and ended in a mosaic of DOM/DOM and DOM/CAST genetic backgrounds consistent with 0 or 1 (and sometimes 2) crossing-overs per chromosome (Figure~\ref{fig:mosaic-backgrounds} and Appendix~\ref{app:data-and-figs}). 
-This provided strong support that our inferrence was correct.
+This provided strong support that our inference was correct.
 % , half of which being in a heterozygous DOM/CAST background, and the other half in a homozygous DOM/DOM background (Table~\ref{tab:proportion-het-backgrounds}).
 Among the remaining 2.5\% (135) ambiguous targets, 6 (4\%) were flanked by DOM/DOM-background targets on one side and by DOM/CAST-background targets on the other side: these most likely corresponded to sites where recombination occurred in one of the parents.
-All other ambiguous targets (94\%) were flanked on both sides by DOM/DOM-background targets: these were most likely erroneously inferred because some B6/DBA2 markers were erroneously classified as DOM/CAST markers.
+All other ambiguous targets (94\%) were flanked on both sides by DOM/DOM-background targets: these were most likely erroneously inferred because some B6-DBA2 markers were erroneously classified as DOM-CAST markers.
 
 
-% Aside from the 2.6\% (145 out of 4$\times$1390) of hotspots which had a too low coverage to be genotyped, the aforementioned \textit{modus operandi} allowed us to genotype 97.5\% of all hotspots with sufficient coverage and ended in a mosaic of DOM/DOM and DOM/CAST genetic backgrounds consistent with 0 or 1 (and sometimes 2) crossing-overs per chromosome in each individual (Figure~\ref{fig:mosaic-backgrounds} and Appendix~\ref{app:data-and-figs}), which provided strong support that our inferrence was correct.
+% Aside from the 2.6\% (145 out of 4$\times$1390) of hotspots which had a too low coverage to be genotyped, the aforementioned \textit{modus operandi} allowed us to genotype 97.5\% of all hotspots with sufficient coverage and ended in a mosaic of DOM/DOM and DOM/CAST genetic backgrounds consistent with 0 or 1 (and sometimes 2) crossing-overs per chromosome in each individual (Figure~\ref{fig:mosaic-backgrounds} and Appendix~\ref{app:data-and-figs}), which provided strong support that our inference was correct.
 % Among the 5\% of hotspots which were ambiguous,
 %
 
 % We note that, aside from the fraction of hotspots which could not be labeled because read coverage was too low, the totality of the remaining 3\% ambiguous hotspots were surrounded by DOM/DOM-background hotspots, which suggests that they most probably corresponded to regions encompassing many B6-DBA2 polymorphic sites leading to ambiguous genotype calls.
-All in all, across all 1,390 loci of the 4 mice, 7 were incongruent with the surrounding genetic background (either because they were subject to a double crossing-over, or because our inferrence was incorrect at these sites). We thus chose to remove them from the analysis.
+All in all, across all 1,390 loci of the 4 mice, 7 were incongruent with the surrounding genetic background (either because they were subject to a double crossing-over, or because our inference was incorrect at these sites). We thus chose to remove them from the analysis.
 Altogether, the proportion of heterozygous DOM/CAST-background targets (Table~\ref{tab:proportion-het-backgrounds}) was close to the expected 50\% (Table~\ref{tab:background-expected}).
 To further verify that these observed proportions fitted what was expected, we simulated a DOM/CAST$\times$DOM/DOM cross in which COs (number given by the sex-averaged genetic length) were drawn randomly along each chromosome. We found that the distribution of the expected proportion of heterozygous targets (data not shown) fitted with the observations (Table~\ref{tab:proportion-het-backgrounds}).
 
@@ -700,7 +799,7 @@ In the following subsection, I describe how we thus controlled for such technica
     \end{subfigure}
     \caption[Correlation of the number of recombination events in shared hotspots for the two WT and the two mutant mice]
 	{\textbf{Correlation of the number of recombination events in shared hotspots for the two WT (a) and the two mutant (b) mice.}
-		\par The linear regression was significant for the WT mice (slope $=1.03$; \textit{p}-val $< 2 \times 10^{-16}$; $n_{hotspots} = 257$) and for the two mutant mice (slope = $0.69$; \textit{p}-val $< 2 \times 10^{-16}$; $n_{hotspots} = 241$).
+		\par The linear regression was significant for the two WT mice (slope $=1.03$; \textit{p}-val~$<~2~\times~10^{-16}$; $n_{hotspots} = 257$) and for the two mutant mice (slope = $0.69$; \textit{p}-val $< 2 \times 10^{-16}$; $n_{hotspots}~=~241$).
 		Figures for all other pairwise correlations are reported in Appendix~\ref{app:data-and-figs}.
 		Results of the linear correlation were similar for Rec-1S and Rec-2S events, as well as when controlling for the total number of events sequenced at each hotspot (data not shown).
 	}
@@ -712,11 +811,11 @@ To test whether the variation in overall recombination rate (RR) across mice was
 We found that the difference in recombination rates between WT and mutant mice was observed even for shared hotspots, which proved that the effect was not due to a differential sampling of heterozygous loci.
 
 In addition, since \textit{Hfm1} is known to be involved in CO formation \citep{mazina2004saccharomyces} — but not, to our knowledge, in NCO formation, — and because the effect in previous studies was only reported for COs \citep{guiraldelli2013mouse,mercier2005two,borner2004crossover}, we reproduced the pairwise comparisons separately for Rec-1S and Rec-2S events (Appendix~\ref{app:data-and-figs}).
-We found that the results were similar for both Rec-1S and Rec-2S, which showed that both COs and NCOs were affected.
+We found that the results were similar for both Rec-1S and Rec-2S events, which showed that both COs and NCOs were affected.
 
-All in all, the RR for the two WT mice were extremely close (Figure~\ref{fig:pairwise-RR-shared}.a.): the slope of the linear regression was almost 1 (slope $=1.03$; \textit{p}-val $<2 \times 10^{-16}$).
+All in all, the RRs for the two WT mice were extremely close (Figure~\ref{fig:pairwise-RR-shared}.a.): the slope of the linear regression was almost 1 (slope $=1.03$; \textit{p}-val $<2 \times 10^{-16}$).
 However, the recombination rates between the two mutant mice was extremely variable (Table~\ref{tab:HFM1-FP-rate} and Figure~\ref{fig:pairwise-RR-shared}.b.).
-What drives such variability among \textit{hfm1} mutants remains, at this stage, unknown: to get more insight on this topic, it would be necessary to analyse the data from additional mutant mice displaying distinct mosaics of genetic backgrounds, and see, for instance, if the increased RR is associated to a given locus in the DOM/DOM or DOM/CAST background.
+What drives such variability among \textit{hfm1} mutants remains, at this stage, unknown: to get more insight into this topic, it would be necessary to analyse the data from additional mutant mice displaying distinct mosaics of genetic backgrounds, and see, for instance, if the increased RR is associated to a given locus in the DOM/DOM or DOM/CAST background.
 
 
 \subsection{Impact on CO tract length}
@@ -748,7 +847,7 @@ What drives such variability among \textit{hfm1} mutants remains, at this stage,
 	\end{adjustbox}
 	\caption[Recombination parameters inferred from an approximate bayesian computation for WT and mutant mice]
 	{\textbf{Recombination parameters inferred from an approximate bayesian computation for WT and mutant mice.} 
-		\par Parameters (CO:NCO ratio and CO and NCO conversion tract (CT) length reported in bp) were estimated for both WT and both mutant mice.
+		\par Parameters (CO:NCO ratio and CO and NCO conversion tract (CT) length reported in bp) were estimated for the two WT and the two mutant mice.
 	95\% confidence intervals were reported between brackets.
 	Because the observed recombination rate varied greatly between the two mutants (Subsection~\ref{chap8:recombination-rate}), we also reported than point estimates for all single individuals.
 	}
@@ -756,7 +855,7 @@ What drives such variability among \textit{hfm1} mutants remains, at this stage,
 \end{table}
 
 
-Finally, because, the \textit{Hfm1} yeast homologue (\textit{MER3}) has been shown to play a role in DNA heteroduplex extension \citet{mazina2004saccharomyces}, we wanted to assess whether tract lengths differed between the \textit{hfm1} mutant and the WT mice.
+Finally, because, the \textit{Hfm1} yeast homologue (\textit{MER3}) has been shown to play a role in DNA heteroduplex extension \citep{mazina2004saccharomyces}, we wanted to assess whether tract lengths differed between the WT and the \textit{hfm1} mutant mice.
 
 Because CO and NCO CT lengths are not directly observable from the data, we performed an approximate bayesian computation (ABC) similar to what was described in Chapter~\ref{ch:6-recombination-parameters}, based on 50,000 simulations reproducing this experiment (thus, as compared to Chapter~\ref{ch:6-recombination-parameters}, we modified hotspot width, fragment start and stop positions and polymorphic sites to fit with this experiment).\\
 
@@ -771,7 +870,7 @@ Because the observed recombination rates varied greatly between the two mutants 
 This observation was consistent with the idea that, in mice, the \textit{Hfm1} gene plays a role in extending the DNA heteroduplex.\\
 
 
-In summary, the method we implemented to detect recombination was adaptable to cases where other genomes had been introgressed into the hybrid and allowed to gain new insight onto recombination in mice.
+In summary, the method we implemented to detect recombination was adaptable to cases where other genomes had been introgressed into the hybrid and allowed to gain new insight into recombination in mice.
 Though, as any approach, it had inherent limitations, which I will discuss in the following chapter, together with the scientific implications of the whole work done in the context of this thesis.
 
 

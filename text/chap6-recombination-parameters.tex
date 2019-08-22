@@ -59,7 +59,7 @@ Therefore, to characterise recombination, it appeared essential to use another m
 
 Here, to better understand the extent of the variation in recombinational activity and the factors governing it, we precisely characterised recombination in 1,018 hotspots of a mouse F1 hybrid descended from a cross between \textit{Mus musculus domesticus} (strain C57BL/6J, hereafter called B6) and \textit{Mus musculus castaneus} (strain CAST/EiJ, hereafter called CAST).
 % we propose to account for this lack by precisely recombination activity in over 1,000 mouse hotspots.
-In this chapter, I show how the set of recombination events detected with the approach developed in Chapter~\ref{ch:5-methodology} allowed us to describe some of the determinants of recombinational activity, better characterise recombination and infer its hidden parameters \textit{via} inferrential approaches.
+In this chapter, I show how the set of recombination events detected with the approach developed in Chapter~\ref{ch:5-methodology} allowed us to describe some of the determinants of recombinational activity, better characterise recombination and infer its hidden parameters \textit{via} inferential approaches.
 % describe what the determinants of recombinational activity are
 % show that the set of recombination events that we found with the approach developed in Chapter~\ref{ch:5-methodology} is reliable to characterise recombination and infer its hidden parameters \textit{via} inferrential approaches.
 %
@@ -77,7 +77,7 @@ In this chapter, I show how the set of recombination events detected with the ap
 
 \begin{figure}[b!]
     \centering
-    \includegraphics[width = 1\textwidth]{figures/chap6/Correl-paigen-log-events-vs-RR-correction-Laurent-transformed.eps}
+    \includegraphics[width = 1\textwidth]{figures/chap6/Correl-paigen-log-events-vs-RR-correction-Laurent-transformed_log_instead_log10_label.eps}
 	\caption[Correlation between the expected recombination rate and the observed number of events on the 33 intervals analysed by \citet{paigen2008recombinational}]
 	{\textbf{Correlation between the expected recombination rate and the observed number of events on the 33 intervals analysed by \citet{paigen2008recombinational}.}
 		\par We compared the recombination rates of 33 intervals defined by \citet{paigen2008recombinational} to the total number of events we detected on these intervals, brought back to the length of each interval (see main text).
@@ -89,7 +89,7 @@ In this chapter, I show how the set of recombination events detected with the ap
 
 
 To determine whether the recombination rates we observed with our approach were quantitatively accurate, we aimed at comparing our results with those of more classical approaches.
-We thus used data from \citet{paigen2008recombinational} who examined in detail the recombinational activity of chromosome one in a mouse exhibiting the same genetic background as ours (B6xCAST).
+We thus used data from \citet{paigen2008recombinational} who examined in detail the recombinational activity of chromosome 1 in a mouse exhibiting the same genetic background as ours (B6xCAST).
 They particularly focused on the telomere-proximal 24.7 Mb, which was cut into 65 intervals ($median$ $length = 205$~kb) encompassing a total of 130 \textit{Prdm9} hotspots. 
 Under the asumption that the recombination rate is null outside hotspots, the recombination rate they measured should equal:
 
@@ -172,7 +172,7 @@ We found that, for a given PRDM9 or DMC1 signal, the number of recombination eve
 As hypothesised by \citet{li2018highresolution}, this relationship can be explained if these asymmetric hotspots are repaired using the sister chromatid~instead~of~the~homologue:
 since one haplotype is not bound by PRDM9 in such asymmetric hotspots, it is possible that the presence of PRDM9 on both homologues may play a role in homology search.
 Yet, hotspot asymmetry does not account for all the variation (see the width of boxplots in Figure~\ref{fig:asymmetry-and-PRDM9}): 
-instead, the sampling variance (i.e.\ the limited number of of events per hotspot) and most likely a biological factor not yet identified may explain the residual variation.
+instead, the sampling variance (i.e.\ the limited number of events per hotspot) and most likely a biological factor not yet identified may explain the residual variation.
 % instead, the random sampling of hotspots, or another (unknown) source of variability may explain the residual variation.
 
 % Yet, there remains a residual variation that cannot be explained by hotspot asymmetry, and may alternatively come from the random sampling of hotspots or from a large genuine variability between hotspots.
@@ -194,9 +194,9 @@ instead, the sampling variance (i.e.\ the limited number of of events per hotspo
 		\includegraphics[width = 1\textwidth]{figures/chap6/Recombination_rates_2_axes_sym_vs_Asym_DMC1_with_legend_and_outliers-corrected_CO_x2.eps}
 	\end{subfigure}    
 
-\caption[Asymmetric hotspots display lower recombinational activity than expected by their PRDM9 binding affinity]
-    {\textbf{Asymmetric hotspots display lower recombinational activity than expected by their PRDM9 binding affinity.}
-		\par All 1,018 hotspots were divided into 10 classes of increasing PRDM9 signal (x-axis), i.e.\ the number of PRDM9 ChIP-seq tags on each PRDM9 ChIP-seq peak, brought back to the width of the peak (PRDM9 ChIP-seq data on B6xCAST hybrid mice from \citealp{baker2015prdm9}).
+	\caption[Asymmetric hotspots display lower recombinational activity than expected by their PRDM9 or DMC1 binding affinity]
+	{\textbf{Asymmetric hotspots display lower recombinational activity than expected by their PRDM9 (top) or DMC1 (bottom) binding affinity.}
+		\par All 1,018 hotspots were divided into 10 classes of increasing PRDM9 signal (top), i.e.\ the number of PRDM9 ChIP-seq tags brought back to the width of the peak (data from \citealp{baker2015prdm9}), or increasing DMC1 signal (bottom) (data from \citealp{smagulova2016evolutionary}).
 		The observed number of recombination events identified per sequenced Mb (left y-axis) was converted into a CO rate (right y-axis) as detailed in Subsection~\ref{chap6:extrapolation-CO-rate}.
 		Symmetric hotspots (green, $N = 650$) were distinguished from asymmetric hotspots (orange, $N=236$) as detailed in Chapter~\ref{ch:7-quantification-BGC}.
 		The linear regression model with the PRDM9 signal for symmetric (slope~$= 18$; intercept~$=0$; \textit{p}-val~$< 2.2 \times 10^{-16}$) and asymmetric (slope~$= 7.9$; intercept~$=0$; \textit{p}-val~$= 9.21 \times 10^{-7}$) hotspots and with the DMC1 signal for symmetric (slope~$= 1.8$; intercept~$=0$; \textit{p}-val~$< 2.2 \times 10^{-16}$) and asymmetric (slope~$= 8.6$; intercept~$=0$; \textit{p}-val~$< 2.2 \times 10^{-16}$) hotspots are drawn as dotted lines.
@@ -287,8 +287,8 @@ Finally, for Rec-MS fragments, the CT\textsuperscript{$\star$} cannot be inferre
 \begin{figure}[b!]
     \centering
     \includegraphics[width = 1\textwidth]{figures/chap6/CorrelationDMC1_FINAL_BIS_on_lab_computer.eps}
-	\caption[Correlation between the expected and observed proportions of CAST-donor fragments across hotspots displaying at least 5 events]
-	{\textbf{Correlation between the expected and observed proportions of CAST-donor fragments across hotspots displaying at least 5 events.}
+	\caption[Correlation between the expected and the observed proportions of CAST-donor fragments across hotspots displaying at least 5 events]
+	{\textbf{Correlation between the expected and the observed proportions of CAST-donor fragments across hotspots displaying at least 5 events.}
 		\par The expected proportion of CAST-donor fragments (x-axis) was based on the probability that the DSB initiates on the B6 haplotype from DMC1 ssDNA-sequencing (SSDS) data by \citet{smagulova2016evolutionary} (see main text).
 		Only the 582 hotspots displaying a minimum of 5 recombination events were reported in this figure.
 		The Pearson correlation between the two measures gave: $R^2 = 0.66$; {\textit{p}-val $< 2.2 \times 10^{-16}$}.
@@ -332,7 +332,7 @@ Our simple and intuitive way of assigning its donor to each fragment was thus su
 \subsection{Description of the recombination events} 
 
 Among the 18,821 recombination events detected across 898 hotspots (median~$= 10$; max $= 327$ events per hotspot), 11,665 corresponded to Rec-1S events, 5,932 to Rec-2S events and 1,224 to Rec-MS events.
-The CTs\textsuperscript{$\star$} of Rec-1S events (median~$= 97$~bp; mean~$= 142$~bp) were longer — and, consequently, somewhat more spread (Figure~\ref{fig:example-recombinants} and Appendix~\ref{app:data-and-figs}) — than the CTs\textsuperscript{$\star$} of Rec-2S events (median~$= 78$ bp; mean~$= 90$ bp).
+The CTs\textsuperscript{$\star$} of Rec-1S events (median~$=~97$~bp; mean~$= 142$~bp) were longer — and, consequently, somewhat more spread (Figure~\ref{fig:example-recombinants} and Appendix~\ref{app:data-and-figs}) — than the CTs\textsuperscript{$\star$} of Rec-2S events (median~$= 78$ bp; mean~$=~90$~bp).
 % awk '$26=="NCO" {print}' $DATA/2_dBGC/6_ThirdSequencing/05_Analyses_of_Recombinants/02_Recombinants_and_False_Positives_Dataset/Recombinants_dataset.txt|cut -f24|Rscript -e 'summary(as.numeric(readLines("stdin")))'
 %    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
 %    9.00   54.00   78.00   90.36  113.00  475.00
@@ -349,7 +349,7 @@ These features of Rec-1S and Rec-2S are reminiscent of those of COs and NCOs, re
 % some NCOs are intrinsically undetectable due to
 %
 
-However, our data revealed about twice as many Rec-1S as Rec-2S — an observation much different from the expected CO:NCO ratio.
+However, our data revealed about twice as many Rec-1S as Rec-2S events — an observation much different from the expected CO:NCO ratio.
 Indeed, in mice, among the 200--300 DSBs formed per meiosis, 20 are expected to be repaired as COs and the remaining 180--280 as NCOs \citep{baudat2007regulating, martinez-perez2009distribution}. 
 Since NCOs affect only one of four chromatids (while COs affect two), one would \textit{a priori} expect to identify only one quarter of NCOs (i.e.\ 45--70) and half of COs ($\approx$10), hence a CO:NCO ratio ranging between 1:4.5 and 1:7. 
 
@@ -412,7 +412,7 @@ In short, an ABC consists in creating a simulator that reproduces at best the bi
 
 \subsubsection{Implementation of the simulator}
 We built a simulator that mimicked the formation of recombination events, their sequencing and their genotyping.
-Briefly, all simulated recombination events were distributed across the 1,018 hotspots proportionately to their predicted propensity to form DSBs, which we approximated by their PRDM9 signal intensity (i.e.\ the number of tags per kb on each PRDM9 ChIP-seq peak from \citet{baker2015prdm9}).
+Briefly, all simulated recombination events were distributed across the 1,018 hotspots proportionately to their predicted propensity to form DSBs, which we approximated by their PRDM9 signal intensity (i.e.\ the number of tags per kb on each PRDM9 ChIP-seq peak from \citealp{baker2015prdm9}).
 For each simulated hotspot, the ratio of CO over NCO recombination events was $r_{CO:NCO}$.
 
 SNPs, insertions and deletions were positioned along each hotspot at the exact locations were they were found by variant-calling on our sequencing data (see Chapter~\ref{ch:5-methodology}). 
@@ -427,10 +427,10 @@ We ran our unique-molecule genotyping pipeline (see Chapter~\ref{ch:5-methodolog
 \subsubsection{Selection of the simulations compatible with the experimental data}
 In total, we simulated 100,000 datasets $\mathcal{D^{*}}$ by assigning a value taken from the following prior distributions to each of the input parameters: 
 \begin{itemize}
-    \item $m_{CO} \hookrightarrow \mathcal{U}([100, 1000])$, 
-    \item $sd_{CO} \hookrightarrow \mathcal{U}([50, 300])$,
-    \item $m_{NCO} \hookrightarrow \mathcal{U}([1, 300])$, 
-    \item $sd_{NCO} \hookrightarrow \mathcal{U}([1, 100])$,
+    \item $m_{CO} \hookrightarrow \mathcal{U}([100, 1000])$ bp, 
+    \item $sd_{CO} \hookrightarrow \mathcal{U}([50, 300])$ bp,
+    \item $m_{NCO} \hookrightarrow \mathcal{U}([1, 300])$ bp, 
+    \item $sd_{NCO} \hookrightarrow \mathcal{U}([1, 100])$ bp,
     \item and $r_{CO:NCO} = 10^{r}$ with $r \hookrightarrow \mathcal{U}([-2, 1])$,
 \end{itemize}
 where $\mathcal{U}$ represents the uniform distribution.\\
@@ -473,7 +473,7 @@ We then used the R package ‘abc’ \citep{csillery2012abc} to select the simul
 	\end{adjustbox}
 	\caption[Consistency between the recombination parameters inferred \textit{via} our ABC approach and those directly measured by independent studies]
 	{\textbf{Consistency between the recombination parameters inferred \textit{via} our ABC approach and those directly measured by independent studies.}
-		\par References from which the values were extracted are given inside superscript brackets: [1] corresponds to \citet{cole2010comprehensive} and [2] corresponds to \citet{cole2014mouse}. 
+		\par References from which the values were extracted are given inside superscript brackets: [1]~corresponds to \citet{cole2010comprehensive} and [2] corresponds to \citet{cole2014mouse}. 
 		CT stands for ‘conversion tract’ and CT\textsuperscript{$\star$} for ‘inferred (or observable) conversion tract’. 
 		Only a portion of NCOs are detectable by tetrad analyses (those whose CT\textsuperscript{$\star$} overlaps at least 1 marker). 
 Thus, we report the CT\textsuperscript{$\star$} length of both this subset of detectable NCOs that have been analysed by tetrad analyses, but also report the mean CT length of all NCOs (both detectable and undetectable). 
@@ -530,7 +530,7 @@ As for the recombination rate ($R$), it corresponded to the proportion of recomb
 %     d = \frac{n}{N_r}
 % \end{equation}
 
-Combining equations~\ref{eq:recombination-rate} and~\ref{eq:detectability}, we get:
+Combining equations~\ref{eq:detectability} and~\ref{eq:recombination-rate}, we get:
 
 \begin{equation*}
     R = \frac{n}{d \times N_g}
@@ -576,7 +576,7 @@ We found a remarkable adequacy between those two independent ways of extrapolati
 
 % However, when comparing either of these extrapolated CO rates to the CO rate measured by \citet{paigen2008recombinational} on the 33 intervals of chromosome 1,
 However, even if these two independent extrapolated estimates of CO rates concorded well, they were 10 times lower than those measured by \citet{paigen2008recombinational} on chromosome 1 (data not shown). 
-As such, our extrapolation may underestimate the actual CO rate by a factor 20. Though, if it is indeed the case, we do not know where the gap comes from.
+As such, our extrapolation may underestimate the actual CO rate by a factor 10. Though, if it is indeed the case, we do not know where the gap comes from.
 
 
 
