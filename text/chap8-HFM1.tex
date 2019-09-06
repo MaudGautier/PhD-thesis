@@ -36,7 +36,7 @@
 
 The method we previously implemented to detect recombination in single individuals can be used to study the role of genes essential to the process of recombination.
 % We previously implemented an approach allowing to detect recombination in single individuals which could be useful to study the role of genes essential to recombination.
-This requires the use of individuals homozygous for the inactivated version of the gene but nonetheless displaying a high level of heterozygosity for recombination to be detectable.
+This requires the use of individuals homozygous for the \mccorrect{mutant} version of the gene but nonetheless displaying a high level of heterozygosity for recombination to be detectable.
 As this can only be achieved with F2 individuals,
 % As such, recombination events should be searched for in the hotspots of F2 individuals fulfilling these criteria.
 % The classical approach to understand the specific role of a given recombination-dependent gene consists in studying individuals with an inactivated version of the gene.
@@ -48,7 +48,9 @@ As this can only be achieved with F2 individuals,
 we adapted the method we implemented for simple F1 hybrids to such design.
 Basically, we had to distinguish the polymorphic sites expressing variation between the two parental genomes from those originating from the third introgressed genome.
 % In the end, our method was as powerful as the original one for simple F1 hybrids.
-This implementation was as powerful as the original method and we could thus study the role of \textit{Hfm1}, a DNA helicase important for CO control: we observed that its inactivation led to increased recombination rate and shortened CO conversion tracts.
+\mccorrect{This implementation was as powerful as the original method and we could thus study the role of the interaction between HFM1 and MLH1:
+% , a DNA helicase important for CO control: we observed that its inactivation led to increased recombination rate and shortened CO conversion tracts.
+we observed that impeding this interaction led to an increased recombination rate and shortened CO conversion tracts.}
 
 }
 
@@ -63,15 +65,26 @@ This implementation was as powerful as the original method and we could thus stu
 
 
 As the method we implemented in Chapter~\ref{ch:5-methodology} allows to detect recombination in single individuals, it can be used to study the individual role of genes involved in the process of recombination.
-In particular, Bernard de Massy and Valérie Borde are interested in the specific role of the mouse gene \textit{Hfm1}.
-Indeed, its yeast homologue (\textit{MER3}) codes for a meiosis-specific DNA helicase \citep{nakagawa1999saccharomyces,nakagawa2002saccharomyces} that participates in CO control and in DNA heteroduplex extension \citep{mazina2004saccharomyces,nakagawa2002mer3}.
+In particular, Bernard de Massy and Valérie Borde are interested in the specific role of the mouse gene \textit{Hfm1} whose yeast homologue (\textit{MER3}) codes for a meiosis-specific DNA helicase \citep{nakagawa1999saccharomyces,nakagawa2002saccharomyces} that participates in CO control and in DNA heteroduplex extension \citep{mazina2004saccharomyces,nakagawa2002mer3}.
 This gene is also essential to CO formation in other fungi \citep{sugawara2009coprinus}, plants \citep{mercier2005two,chen2005arabidopsis}, humans \citep{tanaka2006hfm1} and mice \citep{guiraldelli2013mouse}.
-Though, even if it has been shown that it diminishes the recombination rate in mice \citep{guiraldelli2013mouse}, its impact on other parameters of recombination, like the length of conversion tracts, has not been established yet.
 
-To analyse its impact on recombination, it is necessary to have individuals that are homozygous for the inactivated version of the gene (\textit{Hfm1\textsuperscript{-/-}}) but which nonetheless exhibit a high level of heterozygosity (for recombination to be detectable).
-This was achieved in the laboratories of Bernard de Massy and Valérie Borde by introgressing the mutant gene into F2 individuals, as I detail in the first section of this chapter.
-Though, this novel experimental design required to refactor our method to study recombination in these F2 individuals containing a third genetic background. 
-I thus describe in the last two sections of this chapter how we worked this out and what the preliminary results of this analysis were.
+\begin{mccorrection}
+It was recently shown that, in yeasts, Mer3 can connect the MutL\textgreek{b} heterodimer of Mlh1-Mlh2 and that this interaction limits CT lengths genome-wide \citep{duroc2017concerted}.
+In mice, the interplay between HFM1 and MLH1 is conserved, but whether or not its role in regulating CT length is also maintained remains a mystery.
+% A recent study on yeasts showed that Mer3 can connect the MutL\textgreek{b} heterodimer of Mlh1-Mlh2, that this interaction limits CT lengths genome-wide and that, in mice, the interplay between HFM1 and MLH1 is conserved \citep{duroc2017concerted}.
+% In mice, the interaction between HFM1 and MLH1 is conserved \citep{duroc2017concerted} but whether or not its role in regulating CT length also applies to mice remains a mystery.
+% Though, even if it has been shown that it diminishes the recombination rate in mice \citep{guiraldelli2013mouse}, its impact on other parameters of recombination, like the length of conversion tracts, has not been established yet.%\paragraphbreak
+% To analyse its impact on recombination, it is necessary to have individuals that are homozygous for the inactivated version of the gene (\textit{Hfm1\textsuperscript{-/-}}) but which nonetheless exhibit a high level of heterozygosity (for recombination to be detectable).
+% This was achieved in the laboratories of Bernard de Massy and Valérie Borde by introgressing the mutant gene into F2 individuals, as I detail in the first section of this chapter.
+To find that out, the laboratories of Valérie Borde and Bernard de Massy introgressed a punctual mutation that impedes the interaction between HFM1 and MLH1 (\textit{Hfm1\textsuperscript{KI}}) into F2 individuals, as I detail in the first section of this chapter.
+% exhibiting a high level of heterozygosity.
+In this experimental design, the individuals studied contain three genetic backgrounds and thus, our method to detect recombination needs to be refactored.
+%, which calls and thus required to refactor our method to study recombination.
+% To analyse its impact on recombination, it is necessary to have individuals that are homozygous for the mutant version of the gene but which nonetheless exhibit a high level of heterozygosity (for recombination to be detectable).
+% % Thus, the \textit{Hfm1\textsuperscript{KI}} mutation was introgressed into F2 individuals as detailed in the first section of this chapter.
+% Though, this novel experimental design required to refactor our method to study recombination in these F2 individuals containing a third genetic background.
+I describe in the last two sections of this chapter how we worked this out and what the preliminary results of this analysis were.
+\end{mccorrection}
 
 % In this chapter, I first detail how this was achieved in the laboratories of Bernard de Massy and Valérie Borde by introgressing the mutant gene into F2 individuals
 % Next, I describe how we refactored our method to study recombination in these F2 individuals containing a third genetic background and what the primary results of this analysis were.
@@ -113,16 +126,16 @@ I thus describe in the last two sections of this chapter how we worked this out 
 				\textbf{Mouse ID} & \textbf{Relationship} & \textbf{\% B6} & \textbf{\% DBA2} & \textbf{\% CAST} & \textbf{HFM1} & \textbf{Mother} & \textbf{Father} \\
 
 				\midrule
-				39856   & Maternal grandmother  & 0.0   & 0.0   & 100.0 & +/+ & N/A    & N/A \\
-				28130   & Maternal grandfather  & 75.0  & 25.0  & 0.0   & +/~- & 72205 & N/A \\
-				F0\#2 (72205)   & Paternal grandmother  & 50.0  & 50.0  & 0.0   & +/~- & N/A    & N/A \\
-				N/A      & Paternal grandfather  & 100.0 & 0.0   & 0.0   & +/+ & N/A    & N/A \\
+				39856   & Maternal grandmother  & 0.0   & 0.0   & 100.0 & WT/WT & N/A    & N/A \\
+				28130   & Maternal grandfather  & 75.0  & 25.0  & 0.0   & KI/WT & 72205 & N/A \\
+				F0\#2 (72205)   & Paternal grandmother  & 50.0  & 50.0  & 0.0   & KI/WT & N/A    & N/A \\
+				N/A      & Paternal grandfather  & 100.0 & 0.0   & 0.0   & WT/WT & N/A    & N/A \\
 				\midrule
-				22228   & Mother                & 37.5  & 12.5  & 50.0  & +/~- & 39856 & 28130 \\
-				28196   & Father                & 75.0  & 25.0  & 0.0   & +/~- & 72205 & N/A \\
+				22228   & Mother                & 37.5  & 12.5  & 50.0  & KI/WT & 39856 & 28130 \\
+				28196   & Father                & 75.0  & 25.0  & 0.0   & KI/WT & 72205 & N/A \\
 				\midrule
-				28353   & Mutant analysed       & 56.25 & 18.75 & 25.0  & -/~- & 22228 & 28196 \\
-				28355   & WT analysed           & 56.25 & 18.75 & 25.0  & +/+ & 22228 & 28196 \\
+				28353   & Mutant analysed       & 56.25 & 18.75 & 25.0  & KI/KI & 22228 & 28196 \\
+				28355   & WT analysed           & 56.25 & 18.75 & 25.0  & WT/WT & 22228 & 28196 \\
 				\bottomrule
 
 			\end{tabular}
@@ -143,15 +156,15 @@ I thus describe in the last two sections of this chapter how we worked this out 
 				\textbf{Mouse ID} & \textbf{Relationship} & \textbf{\% B6} & \textbf{\% DBA2} & \textbf{\% CAST} & \textbf{HFM1} & \textbf{Mother} & \textbf{Father} \\
 
 				\midrule
-				F0\#3 (72212)  & Maternal grandmother  & 50.0  & 50.0  & 0.0   & +/~- & N/A    & N/A \\
-				N/A      & Maternal grandfather  & 100.0 & 0.0   & 0.0   & +/+ & N/A    & N/A \\
-				28163   & Paternal grandmother  & 75.0  & 25.0  & 0.0   & +/~- & 72205 & N/A \\
-				39978   & Paternal grandfather  & 0.0   & 0.0   & 100.0 & +/+ & N/A    & N/A \\
+				F0\#3 (72212)  & Maternal grandmother  & 50.0  & 50.0  & 0.0   & KI/WT & N/A    & N/A \\
+				N/A      & Maternal grandfather  & 100.0 & 0.0   & 0.0   & WT/WT & N/A    & N/A \\
+				28163   & Paternal grandmother  & 75.0  & 25.0  & 0.0   & KI/WT & 72205 & N/A \\
+				39978   & Paternal grandfather  & 0.0   & 0.0   & 100.0 & WT/WT & N/A    & N/A \\
 				\midrule
-				28172   & Mother                & 75.0  & 25.0  & 0.0   & +/~- & 72212 & N/A \\
-				28238   & Father                & 37.5  & 12.5  & 50.0  & +/~- & 28163 & 39978 \\
+				28172   & Mother                & 75.0  & 25.0  & 0.0   & KI/WT & 72212 & N/A \\
+				28238   & Father                & 37.5  & 12.5  & 50.0  & KI/WT & 28163 & 39978 \\
 				\midrule
-				28371   & Mutant analysed       & 56.25 & 18.75 & 25.0  & -/~- & 28172 & 28238 \\
+				28371   & Mutant analysed       & 56.25 & 18.75 & 25.0  & KI/KI & 28172 & 28238 \\
 				\bottomrule
 
 			\end{tabular}
@@ -172,15 +185,15 @@ I thus describe in the last two sections of this chapter how we worked this out 
 				\textbf{Mouse ID} & \textbf{Relationship} & \textbf{\% B6} & \textbf{\% DBA2} & \textbf{\% CAST} & \textbf{HFM1} & \textbf{Mother} & \textbf{Father} \\
 
 				\midrule
-				39856   & Maternal grandmother  & 0.0   & 0.0   & 100.0 & +/+ & N/A    & N/A \\
-				28130   & Maternal grandfather  & 75.0  & 25.0  & 0.0   & +/~- & 72205 & N/A \\
-				F0\#2 (72205)  & Paternal grandmother  & 50.0  & 50.0  & 0.0   & +/~- & N/A    & N/A \\
-				N/A      & Paternal grandfather  & 100.0 & 0.0   & 0.0   & +/+ & N/A    & N/A \\
+				39856   & Maternal grandmother  & 0.0   & 0.0   & 100.0 & WT/WT & N/A    & N/A \\
+				28130   & Maternal grandfather  & 75.0  & 25.0  & 0.0   & KI/WT & 72205 & N/A \\
+				F0\#2 (72205)  & Paternal grandmother  & 50.0  & 50.0  & 0.0   & KI/WT & N/A    & N/A \\
+				N/A      & Paternal grandfather  & 100.0 & 0.0   & 0.0   & WT/WT & N/A    & N/A \\
 				\midrule
-				28250   & Mother                & 37.5  & 12.5  & 50.0  & +/~- & 39856 & 28130 \\
-				28198   & Father                & 75.0  & 25.0  & 0.0   & +/~- & 72205 & N/A \\
+				28250   & Mother                & 37.5  & 12.5  & 50.0  & KI/WT & 39856 & 28130 \\
+				28198   & Father                & 75.0  & 25.0  & 0.0   & KI/WT & 72205 & N/A \\
 				\midrule
-				28371   & WT analysed           & 56.25 & 18.75 & 25.0  & +/+ & 28250 & 28198 \\
+				28371   & WT analysed           & 56.25 & 18.75 & 25.0  & WT/WT & 28250 & 28198 \\
 				\toprule
 
 			\end{tabular}
@@ -192,18 +205,18 @@ I thus describe in the last two sections of this chapter how we worked this out 
 
 	\caption[Genealogy of the four mice analysed]
 	{\textbf{Genealogy of the four mice analysed.}
-		\par The genealogies (parents and grandparents) of each of the two mutant mice (IDs: 28353 and 28371) and of the two wild-type (WT) mice (IDs: 28355 and 28367) analysed in this study, as well as the characteristics (background composition in B6, CAST and DBA2 genomes, and the \textit{Hfm1} alleles carried: either the inactivated (-) or the activated (+) allele) of all the individuals involved in the ancestry are reported in the subtables above: \textbf{(a)} 28353 and 28353; \textbf{(b)} 28367; \textbf{(c)} 28371.
+		\par The genealogies (parents and grandparents) of each of the two mutant mice (IDs: 28353 and 28371) and of the two wild-type (WT) mice (IDs: 28355 and 28367) analysed in this study, as well as the characteristics (background composition in B6, CAST and DBA2 genomes, and the \textit{Hfm1} alleles carried: either \mccorrect{the mutant impeding the interaction between HFM1 and MLH1 (KI)} or the wild-type (WT) allele) of all the individuals involved in the ancestry are reported in the subtables above: \textbf{(a)} 28353 and 28353; \textbf{(b)} 28367; \textbf{(c)} 28371.
 	}
 \label{tab:genealogies}
 \end{table}
 
-
-A mutant \textit{Hfm1} allele (\textit{Hfm1\textsuperscript{-}}) was introduced in the zygote of a cross between two F1 mice deriving from hybridisations between two \textit{Mus musculus domesticus} strains: strain C57BL/6J, hereafter called B6 and strain DBA/2J, hereafter called DBA2.
-The resulting founder mice (F0\#2 and F0\#3) were thus heterozygous for the \textit{Hfm1} gene (\textit{Hfm1\textsuperscript{+/-}}) and their genetic backgrounds were composed of 50\% DBA2 and 50\% B6 genomes.
-Further crosses with other B6 and \textit{Mus musculus castaneus} (strain CAST/EiJ, hereafter called CAST) mice resulted in individuals carrying either two inactivated alleles for \textit{Hfm1} (\textit{Hfm1\textsuperscript{-/-}}), two WT (i.e.\ activated) alleles (\textit{Hfm1\textsuperscript{+/+}}) or one allele of each (\textit{Hfm1\textsuperscript{+/-}}).
+\begin{mccorrection}
+A mutant \textit{Hfm1} allele (\textit{Hfm1\textsuperscript{KI}}) was introduced in the zygote of a cross between two F1 mice deriving from hybridisations between two \textit{Mus musculus domesticus} strains: strain C57BL/6J, hereafter called B6 and strain DBA/2J, hereafter called DBA2.
+The resulting founder mice (F0\#2 and F0\#3) were thus heterozygous for the \textit{Hfm1} gene (\textit{Hfm1\textsuperscript{WT/KI}}) and their genetic backgrounds were composed of 50\% DBA2 and 50\% B6 genomes.
+Further crosses with other B6 and \textit{Mus musculus castaneus} (strain CAST/EiJ, hereafter called CAST) mice resulted in individuals carrying either two mutant alleles for \textit{Hfm1} (\textit{Hfm1\textsuperscript{KI/KI}}), two WT alleles (\textit{Hfm1\textsuperscript{WT/WT}}) or one allele of each (\textit{Hfm1\textsuperscript{WT/KI}}).
 The genetic backgrounds for these mice were composed of a mixture of B6, DBA2 and CAST genomes (Table~\ref{tab:genealogies}).
 Of these, two \textit{hfm1} homozygous mutant (28353 and 28367) and two WT (28355 and 28371) male mice were selected for further analysis: their sperm DNA was extracted and sonicated to produce fragments of a mean size of 450 bp.
-
+\end{mccorrection}
 
 \subsection{Target selection, DNA capture and sequencing}
 % \subsection{Selection of target hotspots}
@@ -762,15 +775,18 @@ From this point on, we could thus assess the impact of the \textit{hfm1} mutatio
 
 
 
-\section{Impact of the \textit{Hfm1} gene on recombination}
+\section{Impact of the mutation on recombination}
 \subsection{Impact on the recombination rate (RR)}
 \label{chap8:recombination-rate}
 
 We observed that the recombination rate (RR) was, on average, almost twice as high for mutants as for WT mice (Table~\ref{tab:HFM1-FP-rate}).
-Surprisingly, this effect was the opposite of what others had previously found.
-Indeed, another study in mice observed a reduction by 20\% in the number of bivalents in \textit{hfm1} mutants \citep{guiraldelli2013mouse} and the formation of COs was reduced by 38\% in \textit{Arabidopsis} \textit{mer3} mutants \citep{mercier2005two} and by 50--60\% in \textit{Saccharomyces cerevisiae} \textit{mer3} mutants \citep{borner2004crossover,jessop2006meiotic}.
+\begin{mccorrection}
+This finding was unexpected since the only effect of the interaction between Mer3 and Mlh1 that was reported in yeasts concerned the length of gene conversion tracts, but not the recombination rate \citep{duroc2017concerted}.
+% Surprisingly, this effect was the opposite of what others had previously found.
+% Indeed, another study in mice observed a reduction by 20\% in the number of bivalents in \textit{hfm1} mutants \citep{guiraldelli2013mouse} and the formation of COs was reduced by 38\% in \textit{Arabidopsis} \textit{mer3} mutants \citep{mercier2005two} and by 50--60\% in \textit{Saccharomyces cerevisiae} \textit{mer3} mutants \citep{borner2004crossover,jessop2006meiotic}.
+\end{mccorrection}
 
-In our case, this effect was majoritarily driven by the extremely high recombination rate of mouse 28353 (136 events per million of sequenced fragments, Table~\ref{tab:HFM1-FP-rate}), which was over twice that of the other mutant mouse 28367 (67.4 events per million of sequenced fragments).
+In our case, this modification of the RR was majoritarily driven by the extremely high recombination rate of mouse 28353 (136 events per million of sequenced fragments, Table~\ref{tab:HFM1-FP-rate}), which was over twice that of the other mutant mouse 28367 (67.4 events per million of sequenced fragments).
 
 Though, if, say, the subset of heterozygous hotspots of mouse 28353 were more intense (i.e.\ displayed higher recombinational activity on average than other hotspots), this observation would not correspond to a genuine biological effect.
 In the following subsection, I describe how we thus controlled for such technical biases.
@@ -808,8 +824,11 @@ In the following subsection, I describe how we thus controlled for such technica
 To test whether the variation in overall recombination rate (RR) across mice was due to the fact that the sets of hotspots analysed (i.e.\ heterozygous hotspots) were different between mice, we performed comparisons of the RR in shared hotspots for all pairs of mice (Figure~\ref{fig:pairwise-RR-shared} and Appendix~\ref{app:data-and-figs}).
 We found that the difference in recombination rates between WT and mutant mice was observed even for shared hotspots, which proved that the effect was not due to a differential sampling of heterozygous loci.
 
-In addition, since \textit{Hfm1} is known to be involved in CO formation \citep{mazina2004saccharomyces} — but not, to our knowledge, in NCO formation, — and because the effect in previous studies was only reported for COs \citep{guiraldelli2013mouse,mercier2005two,borner2004crossover}, we reproduced the pairwise comparisons separately for Rec-1S and Rec-2S events (Appendix~\ref{app:data-and-figs}).
+\begin{mccorrection}
+% In addition, since \textit{Hfm1} is known to be involved in CO formation \citep{mazina2004saccharomyces} — but not, to our knowledge, in NCO formation, — and because the effect in previous studies was only reported for COs \citep{guiraldelli2013mouse,mercier2005two,borner2004crossover}, we reproduced the pairwise comparisons separately for Rec-1S and Rec-2S events (Appendix~\ref{app:data-and-figs}).
+In addition, to see whether the difference in RR applied specifically to one type of recombination products (either COs or NCOs), we reproduced the pairwise comparisons separately for Rec-1S and Rec-2S events (Appendix~\ref{app:data-and-figs}).
 We found that the results were similar for both Rec-1S and Rec-2S events, which showed that both COs and NCOs were affected.
+\end{mccorrection}
 
 All in all, the RRs for the two WT mice were extremely close (Figure~\ref{fig:pairwise-RR-shared}.a.): the slope of the linear regression was almost 1 (slope $=1.03$; \textit{p}-val $<2 \times 10^{-16}$).
 However, the recombination rates between the two mutant mice was extremely variable (Table~\ref{tab:HFM1-FP-rate} and Figure~\ref{fig:pairwise-RR-shared}.b.).
@@ -853,7 +872,9 @@ What drives such variability among \textit{hfm1} mutants remains, at this stage,
 \end{table}
 
 
-Finally, because, the \textit{Hfm1} yeast homologue (\textit{MER3}) has been shown to play a role in DNA heteroduplex extension \citep{mazina2004saccharomyces}, we wanted to assess whether tract lengths differed between the WT and the \textit{hfm1} mutant mice.
+\begin{mccorrection}
+Finally, because the interaction between the HFM1 yeast homologue (Mer3) and the MLH1 yeast homologue (Mlh1) has been shown to play a role in DNA heteroduplex extension \citep{duroc2017concerted}, we wanted to assess whether tract lengths differed between the WT and the \textit{hfm1} mutant mice.
+\end{mccorrection}
 
 Because CO and NCO CT lengths are not directly observable from the data, we performed an approximate bayesian computation (ABC) similar to what was described in Chapter~\ref{ch:6-recombination-parameters}, based on 50,000 simulations reproducing this experiment (thus, as compared to Chapter~\ref{ch:6-recombination-parameters}, we modified hotspot width, fragment start and stop positions and polymorphic sites to fit with this experiment).\\
 
@@ -865,7 +886,10 @@ CO CTs were slightly longer (albeit \textit{not} significantly) than those found
 
 Interestingly, we found a clear CO CT length reduction in \textit{hfm1} mutant mice as compared to WT mice (Table~\ref{tab:HFM1-ABC-results}).
 Because the observed recombination rates varied greatly between the two mutants (see Subsection~\ref{chap8:recombination-rate}), we checked whether this effect was also visible in single individuals and found that, indeed, the inferred conversion tract lengths were stable, no matter the recombination rate.
-This observation was consistent with the idea that, in mice, the \textit{Hfm1} gene plays a role in extending the DNA heteroduplex.\\
+% This observation was consistent with the idea that, in mice, the \textit{Hfm1} gene plays a role in extending the DNA heteroduplex.\\
+\begin{mccorrection}
+This observation was consistent with the idea that, in mice, like in yeasts \citep{duroc2017concerted}, the interaction between HFM1 and MLH1 plays a role in extending the DNA heteroduplex.\\
+\end{mccorrection}
 
 
 In summary, the method we implemented to detect recombination was adaptable to cases where other genomes had been introgressed into the hybrid and allowed to gain new insight into recombination in mice.
