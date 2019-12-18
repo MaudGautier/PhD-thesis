@@ -115,18 +115,18 @@ Nous avons donc mis au point une nouvelle approche permettant de détecter plusi
 % Afin de maximiser le nombre de recombinants détectables, nous avons, au préalable, réalisé une étape de capture ciblée d'ADN provenant de 1 018 points chauds de recombinaison particulièrement denses en marqueurs hétérozygotes.
 % Brièvement, notre approche repose sur le génotypage de molécules d'ADN uniques issues du sperme de souris hybrides enrichi en événements de recombinaison gr\^ace au ciblage spécifique de 1 018 points chauds de recombinaison denses en sites polymorphes.
 Concrètement, notre approche repose sur deux étapes principales.
-Premièrement, puisque la recombinaison n'est identifiable qu'à partir du génotypage de marqueurs hétérozygotes, nous avons croisé deux races de souris (C57BL/6J que nous noterons ‘B6’ et CAST/EiJ que nous appellerons ‘CAST’) issues de deux sous-espèces (\textit{Mus musculus domesticus} et \textit{Mus musculus castaneus}) présentant un fort taux de polymorphisme de 0.74\% \citep{keane2011mouse,yalcin2012nextgeneration}.
+Premièrement, puisque la recombinaison n'est identifiable qu'à partir du génotypage de marqueurs hétérozygotes, nous avons croisé deux lignées de souris (C57BL/6J que nous noterons ‘B6’ et CAST/EiJ que nous appellerons ‘CAST’) issues de deux sous-espèces (\textit{Mus musculus domesticus} et \textit{Mus musculus castaneus}) présentant un fort taux de polymorphisme de 0.74\% \citep{keane2011mouse,yalcin2012nextgeneration}.
 Les points chauds de recombinaison chez l'hybride F1 qui résulte de ce croisement (B6xCAST) ont déjà été identifiés par d'autres que nous \citep{baker2015prdm9}.
 Afin de maximiser le nombre de recombinants détectables, nous en avons donc sélectionné 1 018 qui sont particulièrement denses en marqueurs hétérozygotes.
 Nous avons ensuite enrichi l'ADN du sperme de cet hybride en fragments provenant de ces loci gr\^ace à une technique de ciblage spécifique suivie de séquençage haut-débit (capture-seq).
 
 La deuxième étape de notre procédure consiste à génotyper les molécules séquencées de façon individuelle, et d'identifier, parmi ces dernières, celles correspondant à des événements de recombinaison.
 Toute la difficulté de cette analyse réside dans le fait que les molécules sont uniques: dès lors, toute erreur de séquençage ou toute ambiguïté d'alignement peut devenir une source d'erreur à l'origine de faux positifs (i.e.\ de fragments détectés comme recombinants alors qu'ils ne le sont pas).
-Lors de la mise en œuvre de notre approche, nous nous sommes rendus compte que les anomalies les plus critiques à cet égard provenaient de l'étape d'alignement car celui-ci est biaisé vers le génome de référence.
+Lors de la mise en œuvre de notre approche, nous nous sommes rendus compte que les anomalies les plus critiques à cet égard provenaient de l'étape d'alignement car celle-ci est biaisée vers le génome de référence.
 L'étape cruciale de notre méthode a donc été d'effectuer la procédure en utilisant successivement les deux génomes parentaux comme référence.
 
 Au final, notre approche s'est révélée extrêmement performante.
-A titre de comparaison, les études récentes ayant obtenu des cartes de recombinaison à haute résolution chez l'Homme, la souris ou l'oiseau \citep{halldorsson2016rate,smeds2016highresolution,li2018highresolution} se sont montrées plus de cent fois moins puissantes que notre approche pour détecter ces événements.\\
+A titre de comparaison, les études récentes ayant obtenu des cartes de recombinaison à haute résolution chez l'Homme, la souris ou l'oiseau \citep{halldorsson2016rate,smeds2016highresolution,li2018highresolution} se sont montrées plus de cent fois moins puissantes que notre méthode pour détecter ces événements.\\
 
 
 L'approche que nous avons mise au point nous a permis de détecter 18 821 événements de recombinaison chez la souris et donc de caractériser précisément la recombinaison sur environ un millier de points chauds (jusqu'alors, ceci n'avait été fait que sur une poignée de points chauds).
