@@ -16,7 +16,7 @@ First, clone the repository:
 git clone https://github.com/MaudGautier/PhD-dissertation.git
 ```
 
-Second, download the figures from [this link](https://drive.google.com/file/d/1oddHgXKHOWaA5CWVew40tFYwp7X0de7v/view?usp=sharing).
+Second, download the figures from [this link](https://drive.google.com/file/d/1IZKU3mR3yS3XeDWsDx0acAj7uOKOXZWc/view?usp=sharing).
 Unzip the file and put the `figures` folder in the root directory of the cloned repository.
 
 
