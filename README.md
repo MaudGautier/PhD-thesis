@@ -1,7 +1,7 @@
-PhD dissertation
-================
+PhD thesis
+==========
 
-This repo contains the source code for my PhD dissertation entitled "Recombination as a driver of genome evolution: characterisation of biased gene conversion in mice". 
+This repo contains the source code for my PhD dissertation entitled *Recombination as a driver of genome evolution: characterisation of biased gene conversion in mice*. 
 The final work is available [online](https://tel.archives-ouvertes.fr/tel-02435079) (and [here](https://tel.archives-ouvertes.fr/tel-02435079/document) is the direct access to the resulting .pdf file).
 
 
@@ -22,10 +22,11 @@ Unzip the file and put the `figures` folder in the root directory of the cloned 
 
 Third, run the following command lines to get the final .pdf file:
 ```
-pdflatex main.tex
-bibtex main.aux 
-pdflatex main.tex 
-pdflatex main.tex
+pdflatex main.tex # Create main.aux (from \cite{...} arguments)
+bibtex main.aux   # Create main.bbl (from .bib files and main.aux)
+pdflatex main.tex # Include .bbl items in bibliography 
+pdflatex main.tex # Include correct labels to \cite{...} arguments in main.pdf
+pdflatex main.tex # Add citation page number within references
 ```
 
 Note that it is necessary to run `pdflatex` three times to have the correct final result (for a more detailed explanation, read [this page](https://tex.stackexchange.com/questions/53235/why-does-latex-bibtex-need-three-passes-to-clear-up-all-warnings)).
