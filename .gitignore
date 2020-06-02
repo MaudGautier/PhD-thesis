@@ -1,0 +1,32 @@
+# General
+**/.DS_Store
+
+# Figures
+figures/
+
+# Compilation files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.brf
+*.dvi
+*.glo
+*.glsdefs
+*.ist
+*.lof
+*.log
+*.lot
+*.maf
+*.mtc
+*.mtc[0-9]
+*.mtc1[0-9]
+*.out
+*.pdf
+*.run.xml
+*.toc
+main.synctex.gz(busy)
+
+# Swap files
+**/.*.swp
+
