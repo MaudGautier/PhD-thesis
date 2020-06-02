@@ -52,3 +52,35 @@ If you use any of the content of this work, please cite:
 You are free to use the template and make it your own!
 
 
+
+## Versions of pdflatex and bibtex
+
+Information on the version of pdflatex used (`pdflatex --version`):
+```
+pdfTeX 3.14159265-2.6-1.40.17 (TeX Live 2016)
+kpathsea version 6.2.2
+Copyright 2016 Han The Thanh (pdfTeX) et al.
+There is NO warranty.  Redistribution of this software is
+covered by the terms of both the pdfTeX copyright and
+the Lesser GNU General Public License.
+For more information about these matters, see the file
+named COPYING and the pdfTeX source.
+Primary author of pdfTeX: Han The Thanh (pdfTeX) et al.
+Compiled with libpng 1.6.21; using libpng 1.6.21
+Compiled with zlib 1.2.8; using zlib 1.2.8
+Compiled with xpdf version 3.04
+```
+
+Information on the version of bibtex used (`bibtex --version`)
+```
+BibTeX 0.99d (TeX Live 2016)
+kpathsea version 6.2.2
+Copyright 2016 Oren Patashnik.
+There is NO warranty.  Redistribution of this software is
+covered by the terms of both the BibTeX copyright and
+the Lesser GNU General Public License.
+For more information about these matters, see the file
+named COPYING and the BibTeX source.
+Primary author of BibTeX: Oren Patashnik.
+```
+
