@@ -46,7 +46,7 @@ I then modified it to get the result available in this repo.
 
 If you use any of the content of this work, please cite:
 
-> Gautier, M. (2019). \textit{Recombination as a driver of genome evolution: characterisation of biased gene conversion in mice.} PhD thesis, Universit\'e Claude Bernard - Lyon I.
+> Gautier, M. (2019). *Recombination as a driver of genome evolution: characterisation of biased gene conversion in mice.* PhD thesis, Universit\'e Claude Bernard - Lyon I.
 
 You are free to use the template and make it your own!
 
