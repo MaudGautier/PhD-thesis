@@ -1,41 +1,27 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% OXFORD THESIS TEMPLATE
 
-% Use this template to produce a standard thesis that meets the Oxford University requirements for DPhil submission
-%
 % Originally by Keith A. Gillow (gillow@maths.ox.ac.uk), 1997
 % Modified by Sam Evans (sam@samuelevansresearch.org), 2007
 % Modified by John McManigle (john@oxfordechoes.com), 2015
+% Modified by Maud Gautier (https://github.com/MaudGautier), 2019
 %
-% This version Copyright (c) 2015-2017 John McManigle
+% This version Copyright (c) 2019 Maud Gautier
 %
 % Broad permissions are granted to use, modify, and distribute this software
 % as specified in the MIT License included in this distribution's LICENSE file.
-%
 
-% I've (John) tried to comment this file extensively, so read through it to see how to use the various options.  Remember
-% that in LaTeX, any line starting with a % is NOT executed.  Several places below, you have a choice of which line to use
-% out of multiple options (eg draft vs final, for PDF vs for binding, etc.)  When you pick one, add a % to the beginning of
-% the lines you don't want.
 
 
 %%%%% CHOOSE PAGE LAYOUT
-% The most common choices should be below.  You can also do other things, like replacing "a4paper" with "letterpaper", etc.
-
-% This one will format for two-sided binding (ie left and right pages have mirror margins; blank pages inserted where needed):
 \documentclass[a4paper,twoside]{ociamthesis}
-% This one will format for one-sided binding (ie left margin > right margin; no extra blank pages):
-%\documentclass[a4paper]{ociamthesis}
-% This one will format for PDF output (ie equal margins, no extra blank pages):
-%\documentclass[a4paper,nobind]{ociamthesis} 
+
 
 
 %%%%% SOME PERSONNAL SETTINGS
-% Add greek character
-% From: https://texblog.org/2012/03/15/greek-letters-in-text-without-changing-to-math-mode/
-\usepackage[euler]{textgreek}
+% Special characters
+\usepackage[euler]{textgreek} % Greek
 \usepackage[greek]{babel}
-% \usepackage[polutonikogreek]{babel}
 \usepackage{CJKutf8} % Kanji
 
 % Caption
@@ -60,68 +46,28 @@
 \usepackage{rotating}
 \usepackage{floatpag}
 
-
-% Center figures larger than textwidth (https://tex.stackexchange.com/questions/16582/center-figure-that-is-wider-than-textwidth)
+% Center figures larger than textwidth
 \usepackage[export]{adjustbox}[2011/08/13]
 
 % To add blank lines
 \usepackage{parselines} 
 
-
-% To add a blank figure (Figure not created yet)
+% To add a blank figure
 \usepackage{todonotes}
 
-
-
-% To keep my old font size even if not the case in cover page
-% from: https://tex.stackexchange.com/questions/423334/how-to-store-and-restore-the-current-font-size
+% To keep old font size even if not the case in cover page
 \makeatletter
 \newcommand{\savefont}{\xdef\oldfontsize{\f@size}\xdef\oldblskip{\f@baselineskip}}
 \newcommand{\backtoppevfont}{\fontsize{\oldfontsize}{\oldblskip}\selectfont}
 \makeatother
 
-
-
-
 % Align equations
 \usepackage{amsmath}
-
-
-
 
 % spacing lines
 \usepackage{setspace}
 
-
-% \usepackage[nottoc]{tocbibind}
-
-
-% \renewcommand{\bibsection}{%
-% \part*{\bibname}
-% \bibmark
-% \ifnobibintoc\else
-% \phantomsection
-% \addcontentsline{toc}{part}{\bibname}
-% \fi
-% \prebibhook}
-%
-
 \newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
-
-% \usepackage[notocbib]{apacite}
-% \usepackage[notbib]{tocbibind}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -140,299 +86,66 @@
 % \correctionstrue
 
 
+
+
 %%%%% BIBLIOGRAPHY SETUP
-% Note that your bibliography will require some tweaking depending on your department, preferred format, etc.
-% The options included below are just very basic "sciencey" and "humanitiesey" options to get started.
-% If you've not used LaTeX before, I recommend reading a little about biblatex/biber and getting started with it.
-% If you're already a LaTeX pro and are used to natbib or something, modify as necessary.
-% Either way, you'll have to choose and configure an appropriate bibliography format...
-
-% The science-type option: numerical in-text citation with references in order of appearance.
-\usepackage{natbib} % ajouter [numbers] si je veux les compter
-% \usepackage[style=numeric-comp, sorting=none, backend=biber, doi=false, isbn=false]{biblatex}
+\usepackage{natbib} % add [numbers] if I want to count them
 \newcommand*{\bibtitle}{References}
-
-% The humanities-type option: author-year in-text citation with an alphabetical works cited.
-%\usepackage[style=authoryear, sorting=nyt, backend=biber, maxcitenames=2, useprefix, doi=false, isbn=false]{biblatex}
-%\newcommand*{\bibtitle}{Works Cited}
-
-% This makes the bibliography left-aligned (not 'justified') and slightly smaller font.
-% \renewcommand*{\bibfont}{\raggedright\small}
-
-% Change this to the name of your .bib file (usually exported from a citation manager like Zotero or EndNote).
-% \addbibresource{references.bib}
-
 
 % Uncomment this if you want equation numbers per section (2.3.12), instead of per chapter (2.18):
 %\numberwithin{equation}{subsection}
 
+% refs and backref
 \usepackage{usebib}
 \usepackage{backref}
 \usepackage{hyperref}
 \hypersetup{colorlinks, linkcolor=black, citecolor=titlepagecolorsection, urlcolor=titlepagecolorsection} % Color citation links in purple
-% To use usebib
-% \usepackage{keyval}
 \renewcommand*{\backrefsep}{,~}%
 \renewcommand*{\backreftwosep}{,~}% ', and~'
 \renewcommand*{\backreflastsep}{,~}% ' and~'
-%
-% \renewcommand*{\backrefalt}[4]{%
-% \ifcase #1 %
-% No citations.%
-% \or
-% \(\rightarrow\) page #2%
-% \else
-% \(\rightarrow\) pages #2%
-% \fi
-% }
-%
 
-% DEPUIS: http://monbloginformatique.blogspot.com/2010/03/hyperref-avec-backref-comment-afficher.html
+% Deal with backreferences in bibliography
 \newcommand{\mapolicebackref}[1]{\hspace*{\fill} \mbox{\textit {\small #1}}}
-%pour gérer les backref dans la bibliographie
 \renewcommand*{\backref}[1]{}
 \renewcommand*{\backrefalt}[4]{%
 \ifcase #1 \mapolicebackref{Not cited}
-% \or \mapolicebackref{Cited on page \href[page={#2}]{#2}}
-% \or \mapolicebackref{Cited on page \hyperlink{page.{#2}}{#2}}
-% \or \mapolicebackref{Cited on page \hyperlink{page.{#2}}{page.#2}}
-% \or \mapolicebackref{Cited on page \hyperlink{page.22}{#2}}
-% \or \mapolicebackref{Cited on page \bookmark[page={#2}]{#2}}
 \or \mapolicebackref{Cited at page #2}
     \else \mapolicebackref{Cited at pages #2}
 \fi
 }
-% %redéfinir les séparateurs en français :
-% \renewcommand*{\backreftwosep}{ et~ }
-% \renewcommand*{\backreflastsep}{, et~}
 
-
-
-% \renewcommand\backrefpagesname{\(\rightarrow\) p.~}
 \bibinput{references}
 
-%
-%% FROM = https://tex.stackexchange.com/questions/159551/customizing-part-style-with-tikz
-%\usepackage{tikz}
-%\usepackage[explicit]{titlesec}
-%
-%\definecolor{mybluei}{RGB}{0,173,239}
-%\definecolor{myblueii}{RGB}{63,200,244}
-%\definecolor{myblueiii}{RGB}{199,234,253}
-%
-%\renewcommand\thepart{\arabic{part}}
-%
-%\newcommand\partnumfont{% font specification for the number
-%  \fontsize{380}{130}\color{myblueii}\selectfont%
-%}
-%
-%\newcommand\partnamefont{% font specification for the name "PART"
-%  \normalfont\color{white}\scshape\small\bfseries 
-%}
-%
-%\titleformat{\part}
-%  {\normalfont\huge\filleft}
-%  {}
-%  {20pt}
-%  {\begin{tikzpicture}[remember picture,overlay]
-%  \fill[myblueiii] 
-%    (current page.north west) rectangle ([yshift=-13cm]current page.north east);   
-%  \node[
-%      fill=mybluei,
-%      text width=2\paperwidth,
-%      rounded corners=6cm,
-%      text depth=18cm,
-%      anchor=center,
-%      inner sep=0pt] at (current page.north east) (parttop)
-%    {\thepart};%
-%  \node[
-%      anchor=south east,
-%      inner sep=0pt,
-%      outer sep=0pt] (partnum) at ([xshift=-20pt]parttop.south) 
-%    {\partnumfont\thepart};
-%  \node[
-%      anchor=south,
-%      inner sep=0pt] (partname) at ([yshift=2pt]partnum.south)   
-%  {\partnamefont PART};
-%  \node[
-%      anchor=north east,
-%      align=right,
-%      inner xsep=0pt] at ([yshift=-0.5cm]partname.east|-partnum.south) 
-%  {\parbox{.7\textwidth}{\raggedleft#1}};
-%  \end{tikzpicture}%
-%  }
-%
-%% END FROM = https://tex.stackexchange.com/questions/159551/customizing-part-style-with-tikz
-
-
-% FROM = https://tex.stackexchange.com/questions/263130/customizing-part-style
-
+% Misc
 \usepackage{tikz}
 \usetikzlibrary{calc}
 \usepackage{lipsum}
-%
-%\makeatletter
-%\@addtoreset{chapter}{part}
-%\makeatother  
-%
-%\renewcommand{\thepart}{\arabic{part}}
-%\def\topleft{4}
-%
-%\newcommand{\cpart}[1]{
-%\clearpage
-%\stepcounter{part}
-%\pagestyle{empty}
-%\begin{tikzpicture}[overlay,remember picture]
-%\coordinate(ptopleft) at ($(current page.north west)+(\topleft,0)$);
-%\foreach \i in{0,.1,.2,.3,.5,.6,.9,1.1,1.2,1.3,1.5,1.6,1.8,1.9,2}
-%\draw[gray!70]($(ptopleft)+(\i,0)$)--+(0,-\paperheight);
-%\node[white,fill=black,minimum size=1.5cm](A) at ($(ptopleft)+(1,-2)$){\huge\thepart};
-%\node [anchor=south,ultra thick,yshift=-1mm]at(A.north){\Large PART};
-%\node [fill=white,anchor=north,very thick,right=-2mm,inner sep=5mm]at($(ptopleft)+(0,-0.5\paperheight)$){\Huge #1};
-%\end{tikzpicture}
-%\addcontentsline{toc}{part}{\thepart\hspace{1em}#1}
-%\clearpage
-%\pagestyle{plain}
-%}
-
-%\pagestyle{empty}
-
-% END FROM = https://tex.stackexchange.com/questions/263130/customizing-part-style
-
-
-
-%% FROM = https://tex.stackexchange.com/questions/86294/trying-to-do-graphical-decorations-in-classicthesis-style/86310#86310
-%
-%
-%\usepackage[eulerchapternumbers,pdfspacing]{classicthesis}
-%\usepackage{arsclassica}
-%\usepackage{tikz}
-%\usepackage{changepage}
-%\usepackage{lipsum}% just to generate text for the example
-%
-%\strictpagecheck
-%
-%\definecolor{halfgray}{gray}{0.55}
-%\usepackage{titlesec}
-%\titleformat{\part}[block]%
-%        {\normalfont\Large\sffamily}%
-%        {{\color{halfgray}\partNumber\thechapter%
-%        \hspace{10pt}\vline}  }{10pt}%
-%        {\spacedallcaps}[\partdecoration]
-%
-%
-%
-%\newcommand\anglei{-45}
-%\newcommand\angleii{45}
-%\newcommand\angleiii{225}
-%\newcommand\angleiv{135}
-%
-%\newcommand\partdecoration{%
-%\begin{tikzpicture}[remember picture,overlay,shorten >= -10pt]
-%\coordinate (aux1) at ([yshift=-15pt]current page.north east);
-%\coordinate (aux2) at ([yshift=-410pt]current page.north east);
-%\coordinate (aux3) at ([xshift=-4.5cm]current page.north east);
-%\coordinate (aux4) at ([yshift=-150pt]current page.north east);
-%\checkoddpage
-%\ifoddpage
-%\else
-%\coordinate (aux1) at ([yshift=-15pt]current page.north west);
-%\coordinate (aux2) at ([yshift=-410pt]current page.north west);
-%\coordinate (aux3) at ([xshift=4.5cm]current page.north west);
-%\coordinate (aux4) at ([yshift=-150pt]current page.north west);
-%\renewcommand\anglei{-135}
-%\renewcommand\angleii{135}
-%\renewcommand\angleiii{-45}
-%\renewcommand\angleiv{45}
-%\fi
-%\begin{scope}[halfgray!40,line width=12pt,rounded corners=12pt]
-%\draw
-%  (aux1) -- coordinate (a)
-%  ++(\angleiii:5) --
-%  ++(\anglei:5.1) coordinate (b);
-%\draw[shorten <= -10pt]
-%  (aux3) --
-%  (a) --
-%  (aux1);
-%\draw[opacity=0.6,halfgray,shorten <= -10pt]
-%  (b) --
-%  ++(\angleiii:2.2) --
-%  ++(\anglei:2.2);
-%\end{scope}
-%\draw[halfgray,line width=8pt,rounded corners=8pt,shorten <= -10pt]
-%  (aux4) --
-%  ++(\angleiii:0.8) --
-%  ++(\anglei:0.8);
-%\begin{scope}[halfgray!70,line width=6pt,rounded corners=8pt]
-%\draw[shorten <= -10pt]
-%  (aux2) --
-%  ++(\angleiii:3) coordinate[pos=0.45] (c) --
-%  ++(\anglei:3.1);
-%\draw
-%  (aux2) --
-%  (c) --
-%  ++(\angleiv:2.5) --
-%  ++(\angleii:2.5) --
-%  ++(\anglei:2.5) coordinate[pos=0.3] (d);   
-%\draw 
-%  (d) -- +(\angleii:1);
-%\end{scope}
-%\end{tikzpicture}%
-%}
-
-%% END FROM = https://tex.stackexchange.com/questions/86294/trying-to-do-graphical-decorations-in-classicthesis-style/86310#86310
-
-
-% used: https://tex.stackexchange.com/questions/85904/showcase-of-beautiful-title-page-done-in-tex
-% used: https://latex.org/forum/viewtopic.php?t=22554
-
-
-
 \usepackage{titlesec}
 
-%\definecolor{titlepagecolor}{cmyk}{1,.60,0,.40}
-%\definecolor{titlepagecolor}{cmyk}{0,0,0,0.55}
-%\definecolor{titlepagecolor}{rgb}{0.6,0.2,0.2}
+% Define colors
+\definecolor{titlepagecolor}{cmyk}{0, 0.5, 0, 0.7} % Purple
+\definecolor{titlepagecolorlight}{cmyk}{0, 0.12, 0, 0.2} % Purple
+\definecolor{titlepagecolorsection}{cmyk}{0, 0.5, 0, 0.55} % Purple
+\definecolor{greydark}{cmyk}{0, 0, 0, 0.8} % Grey
 
-\definecolor{titlepagecolor}{cmyk}{0, 0.5, 0, 0.7} % Rose
-\definecolor{titlepagecolorlight}{cmyk}{0, 0.12, 0, 0.2} % Rose
-\definecolor{titlepagecolorsection}{cmyk}{0, 0.5, 0, 0.55} % Rose
-
-%\definecolor{titlepagecolor}{cmyk}{0, 0, 0, 0.8} % Gris
-\definecolor{greydark}{cmyk}{0, 0, 0, 0.8}
-
-\titleclass{\part}{top} % make part like a chapter
+% make part like a chapter
+\titleclass{\part}{top} 
 \titleformat{\part}
 [display]
 {\centering\fontsize{40}{20}\normalfont}
 {\color{titlepagecolorsection} \bfseries\filleft\fontsize{46}{0}{\partname} \thepart}
 {100pt}
 {\color{titlepagecolor} \filleft}[\titlepagedecoration]
-%\titlespacing*{\part}{0pt}{0pt}{20pt}
 
-%\titleclass{\chapter}{top} % make part like a chapter
-%\titleformat{\chapter}[\otherpagedecoration]
-%[display]
-%{\centering\fontsize{40}{20}\normalfont}
-%{\bfseries\filleft\fontsize{46}{0}{\chaptername} \thechapter}
-%{100pt}
-%{\filleft}[\otherpagedecoration]
-%\titlespacing*{\part}{0pt}{0pt}{20pt}
-
-
-
-
+% Epigraphs
 \usepackage{epigraph}
-
 \renewcommand\epigraphflush{flushright}
 \renewcommand\epigraphsize{\normalsize}
 \setlength\epigraphwidth{0.7\textwidth}
 
-
-
 \DeclareFixedFont{\titlefont}{T1}{ppl}{b}{it}{0.5in}
 
-
+% Author
 \makeatletter                       
 \def\printauthor{%                  
     {\large \@author}}              
@@ -447,6 +160,10 @@
     }
 
 
+
+%%%%% PAGE DECORATION AND FORMATTING
+
+% Decorate title pages (for parts)
 \newcommand\titlepagedecoration{%
 \begin{tikzpicture}[remember picture,overlay,shorten >= -10pt]
 
@@ -491,6 +208,7 @@
 }
 
 
+% Decorate other pages
 \newcommand\otherpagedecoration{%
 \begin{tikzpicture}[remember picture,overlay,shorten >= -10pt]
 
@@ -521,15 +239,12 @@
 }
 
 
-
-
-
 % Modify chapter color
 \colorlet{chaptergrey}{titlepagecolorlight}
 \renewcommand*\sectfont{\color{titlepagecolor}}
 
 
-
+% Format titles
 \titleformat{\section}
 {\color{titlepagecolorsection}\normalfont\Large\bfseries}
 {\color{titlepagecolorsection}\thesection}{1em}{}
@@ -542,18 +257,14 @@
 {\color{titlepagecolorsection}\normalfont\bfseries}
 {\color{titlepagecolorsection}\thesubsubsection}{1em}{}
 
-%\titleformat*{\paragraph}{\large\bfseries}
-%\titleformat*{\subparagraph}{\large\bfseries}
 
-
-
-\usepackage{titletoc} % pourquoi besoin ???
-
+% Titles for toc
+\usepackage{titletoc}
 \usepackage{minitoc}
 \usepackage{xcolor}
 \usepackage{colortbl}
 
-% If redo it, then rules in tables are in purple
+% If uncommented, then rules in tables are in purple
 % \makeatletter
 % \arrayrulecolor{titlepagecolorsection}
 % \def\mtc@bottom@rule{%
@@ -567,7 +278,6 @@
 \renewcommand*\rhead{\textcolor{titlepagecolor}}
 
 
-
 % Change appendix title page (+ some modif in ociamthesis.cls to remove from toc + added in toc via adding doubleclearpage and phantomsection and line toc when calling \startappendices — see below)
 \makeatletter
 \renewcommand{\@chap@pppage}{}
@@ -577,70 +287,33 @@
 
 
 %%%%% THESIS / TITLE PAGE INFORMATION
-% Everybody needs to complete the following:
 \title{Recombination as a driver of genome evolution: characterisation of biased gene conversion in mice}
 \author{Your Name}
 \college{Your College}
 
-% Master's candidates who require the alternate title page (with candidate number and word count)
-% must also un-comment and complete the following three lines:
-%\masterssubmissiontrue
-%\candidateno{933516}
-%\wordcount{28,815}
-
-% Uncomment the following line if your degree also includes exams (eg most masters):
-%\renewcommand{\submittedtext}{Submitted in partial completion of the}
-% Your full degree name.  (But remember that DPhils aren't "in" anything.  They're just DPhils.)
 \degree{Doctor of Philosophy}
-% Term and year of submission, or date if your board requires (eg most masters)
 \degreedate{Michaelmas 2014}
 
 
-%%%%% YOUR OWN PERSONAL MACROS
-% This is a good place to dump your own LaTeX macros as they come up.
 
+%%%%% ADD YOUR PERSONAL MACROS
 % To make text superscripts shortcuts
 	\renewcommand{\th}{\textsuperscript{th}} % ex: I won 4\th place
 	\newcommand{\nd}{\textsuperscript{nd}}
 	\renewcommand{\st}{\textsuperscript{st}}
 	\newcommand{\rd}{\textsuperscript{rd}}
 
+
+
+
 %%%%% THE ACTUAL DOCUMENT STARTS HERE
 \begin{document}
-% \savefont
 \include{text/0_cover}
-% \backtoppevfont
 
 
-%
-%\begin{titlepage}
-%
-%\noindent
-%\titlefont Hardy's Theorem\par
-%\epigraph{Pure mathematics is on the whole distinctly more useful than applied. For what is useful above all is technique, and mathematical technique is taught mainly through pure mathematics.}%
-%{\textit{London 1941}\\ \textsc{G. H. Hardy}}
-%\null\vfill
-%\vspace*{1cm}
-%\noindent
-%\hfill
-%\begin{minipage}{0.35\linewidth}
-%    \begin{flushright}
-%        \printauthor
-%    \end{flushright}
-%\end{minipage}
-%%
-%\begin{minipage}{0.02\linewidth}
-%    \rule{1pt}{125pt}
-%\end{minipage}
-%\titlepagedecoration
-%\end{titlepage}
-%
 
 %%%%% CHOOSE YOUR LINE SPACING HERE
-% This is the official option.  Use it for your submission copy and library copy:
 \setlength{\textbaselineskip}{22pt plus2pt}
-% This is closer spacing (about 1.5-spaced) that you might prefer for your personal copies:
-%\setlength{\textbaselineskip}{18pt plus2pt minus1pt}
 
 % You can set the spacing here for the roman-numbered pages (acknowledgements, table of contents, etc.)
 \setlength{\frontmatterbaselineskip}{17pt plus1pt minus1pt}
@@ -649,19 +322,17 @@
 \setlength{\baselineskip}{\textbaselineskip}
 
 
-%%%%% CHOOSE YOUR SECTION NUMBERING DEPTH HERE
-% You have two choices.  First, how far down are sections numbered?  (Below that, they're named but
-% don't get numbers.)  Second, what level of section appears in the table of contents?  These don't have
-% to match: you can have numbered sections that don't show up in the ToC, or unnumbered sections that
-% do.  Throughout, 0 = chapter; 1 = section; 2 = subsection; 3 = subsubsection, 4 = paragraph...
 
+
+%%%%% CHOOSE YOUR SECTION NUMBERING DEPTH HERE
 % The level that gets a number:
 \setcounter{secnumdepth}{2}
 % The level that shows up in the ToC:
 \setcounter{tocdepth}{2}
 
 
-%%%%% DEDICACE 
+
+%%%%% DEDICATION
 \begin{dedication}
 	\slshape{\`A Loïc Rajjou,}\\
 	\slshape{qui, le premier, m'a donné goût à la recherche}\\
@@ -670,13 +341,13 @@
 \end{dedication}
 
 
-%%%% EPIGRAPHE
+
+%%%% EPIGRAPH
 
 % Add epigraph
 \begin{alwayssingle}
 	\thispagestyle{empty}
 	\vspace*{\fill}
-	% \begin{savequote}[8cm]
 	\makebox[\textwidth][r] {
 		\begin{minipage}[t]{8cm}
 			\hfill \slshape{‘Ibergekumene tsores iz gut tsu dertseylin.’}\\
@@ -684,8 +355,6 @@
 			\hfill \qauthor{--- Proverbe yiddish, placé en épigraphe de Primo Levi, \textit{\usebibentry{levi1975systeme}{title}} \citeyearpar{levi1975systeme}}
 		\end{minipage}
 	}
-	% \end{savequote}
-
 
 	\vspace*{\fill}
 	\vspace*{\fill} 
@@ -705,77 +374,37 @@
 
 \begin{alwayssingle}
 \begingroup
-	% \thispagestyle{empty}
 	\pagenumbering{gobble}% Turn off page numbering for abstract and acknowlegements
 \begin{center}
 	\fontsize{25pt}{28pt}\selectfont
-	% \fontsize{20pt}{23pt}\selectfont
 	\textbf{Recombination as a driver of genome evolution:\\characterisation of biased gene conversion in mice}
 \end{center}
-   %  \begin{center}
-	  %   \Large \bfseries Recombination as a driver of genome evolution: characterisation of biased gene conversion in mice
-
-	% \end{center}
 
 \endgroup
 
 \begingroup
 \setlength{\parskip}{0.5em}
-% \renewcommand{\baselinestretch}{1.5}
 {\setstretch{1.0325}
 \input{text/abstract}
 }
 \endgroup
 \end{alwayssingle}
-% \restoregeometry
+
 
 % JEM: Pages are roman numbered from here, though page numbers are invisible until ToC.  This is in
 % keeping with most typesetting conventions.
 \begin{romanpages}
 
-% Title page is created here
-% \maketitle
 
-% % Add epigraph
-% \begin{alwayssingle}
-%     \thispagestyle{empty}
-%     \vspace*{\fill}
-%     % \begin{savequote}[8cm]
-%     \makebox[\textwidth][r] {
-%         \begin{minipage}[t]{8cm}
-%             \hfill \slshape{‘Ibergekumene tsores iz gut tsu dertseylin.’}\\
-%             \hfill (C'est un plaisir de raconter les ennuis passés.)\\
-%             \hfill \qauthor{--- Proverbe yiddish, placé en épigraphe de Primo Levi, \textit{\usebibentry{levi1975systeme}{title}} \citeyearpar{levi1975systeme}}
-%         \end{minipage}
-%     }
-%     % \end{savequote}
-%
-%
-%     \vspace*{\fill}
-%     \vspace*{\fill}
-% \end{alwayssingle}
-
-%%%%% DEDICATION -- If you'd like one, un-comment the following.
-% \begin{dedication}
-% This thesis is dedicated to\\
-% someone\\
-% for some special reason\\
-% \end{dedication}
-
+	
 %%%%% ACKNOWLEDGEMENTS -- Nothing to do here except comment out if you don't want it.
 \begin{acknowledgements}%\otherpagedecoration
 	 \input{text/acknowledgements}
 \end{acknowledgements}
-%
-% %%%%% ABSTRACT -- Nothing to do here except comment out if you don't want it.
-% \begin{abstract}%\otherpagedecoration
-%     \input{text/abstract}
-% \end{abstract}
-%
+
+
+
 %%%%% MINI TABLES
-% This lays the groundwork for per-chapter, mini tables of contents.  Comment the following line
-% (and remove \minitoc from the chapter files) if you don't want this.  Un-comment either of the
-% next two lines if you want a per-chapter list of figures or tables.
 \dominitoc % include a mini table of contents
 %\dominilof  % include a mini list of figures
 %\dominilot  % include a mini list of tables
@@ -783,10 +412,6 @@
 % This aligns the bottom of the text of each page.  It generally makes things look better.
 \flushbottom
 
-% \addcontentsline{toc}{chapter}{Abstract}
-% \addcontentsline{toc}{chapter}{R\'esum\'e en francais}
-% \addcontentsline{toc}{chapter}{Remerciements}
-% \addcontentsline{toc}{chapter}{R\'esum\'e \'etendu en francais}
 % This is where the whole-document ToC appears:
 \tableofcontents%\otherpagedecoration
 
@@ -807,21 +432,19 @@
 \listoftables
 	\mtcaddchapter
 
+
+
+
 %%%%% LIST OF ABBREVIATIONS
-% This example includes a list of abbreviations.  Look at text/abbreviations.tex to see how that file is
-% formatted.  The template can handle any kind of list though, so this might be a good place for a
-% glossary, etc.
 \include{text/abbreviations}
 
-% The Roman pages, like the Roman Empire, must come to its inevitable close.
 \end{romanpages}
 
 
+
 %%%%% CHAPTERS
-\pagenumbering{arabic} % Add page numbering after removing it for pre-textual pages
-% Add or remove any chapters you'd like here, by file name (excluding '.tex'):
+\pagenumbering{arabic} 
 \flushbottom
-%\cpart{Bibliography}
 \part*{Preamble}
 \addcontentsline{toc}{part}{Preamble}
 \include{text/preamble}
@@ -848,71 +471,33 @@
 \addcontentsline{toc}{part}{Conclusion}
 \include{text/conclusion}
 
-%\cpart{PART 1}
-% \include{text/ch1-intro}
-%\cpart{PART 2}
-% \part{The name of that part is that}
-%\cpart{PART 2}
-% \include{text/ch2-litreview}
 
 
 %% APPENDICES %% 
-% Starts lettered appendices, adds a heading in table of contents, and adds a
-%    page that just says "Appendices" to signal the end of your main text.
 \cleardoublepage\phantomsection
 \startappendices
 \part*{Appendices}
 \addcontentsline{toc}{part}{Appendices}
-% Add or remove any appendices you'd like here:
-% \include{text/appendix-1}
 \include{text/appendix1-list-hotspots}
 \include{text/appendix2-permissions}
 
+
+
 %%%%% REFERENCES
 
-% JEM: Quote for the top of references (just like a chapter quote if you're using them).  Comment to skip.
-% \begin{savequote}[8cm]
-% The first kind of intellectual and artistic personality belongs to the hedgehogs, the second to the foxes \dots
-%   \qauthor{--- Sir Isaiah Berlin \cite{berlin_hedgehog_2013}}
-% \end{savequote}
-%
 \setlength{\baselineskip}{0pt} % JEM: Single-space References
 
-% {\renewcommand*\MakeUppercase[1]{#1}%
-% \printbibliography[heading=bibintoc,title={\bibtitle}]}
-
-% \bibintoc
-% % Inspire de https://tex.stackexchange.com/questions/75621/remove-bibliography-entry-from-toc-or-change-the-way-it-is-displayed
 \renewcommand{\bibname}{References}
-% \part*{References}
-% \addcontentsline{toc}{part}{References}
 
-% % \bibmark
-% % \ifnobibintoc\else
-% \addcontentsline{toc}{part}{References}
-% % \fi
-% \phantomsection
-% \makeatletter
-% \makeatother
-
-% \renewcommand{\bibname}{References}
-% \bibintoc
-% \part*{References}
-% \addcontentsline{toc}{part}{References}
 \begin{savequote}[8cm]
 
 	‘Of course, trying to keep an intellectual away from literature works about as well as recommending chastity to \textit{Homo sapiens}, the sexiest primate of all.’
 	\qauthor{--- Stephen Jay Gould, \textit{\usebibentry{gould1985median}{title}} \citeyearpar{gould1985median} }
 \end{savequote}
 
-% % Add blank lines before starting
-% \begin{parse lines}[\noindent]{#1\\}
-%
-%
-%
-% \end{parse lines}
 \bibliographystyle{apalike}
 \bibliography{references,bibliography_additional/Bibtex/01_chronology_recombination,bibliography_additional/Bibtex/chap3_RR_variation_and_evolution,bibliography_additional/Bibtex/chap4_gBGC,bibliography_additional/Bibtex/chap5_methodology,bibliography_additional/Bibtex/chap6_recombination_parameters,bibliography_additional/Bibtex/chap7_quantification_BGC,bibliography_additional/Bibtex/chap8_HFM1,bibliography_additional/Bibtex/chap10_philosophising,bibliography_additional/Bibtex/chap1_section3,bibliography_additional/Bibtex/chap9_discussion}
 
 
 \end{document}
+

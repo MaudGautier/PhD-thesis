@@ -6,8 +6,6 @@
 \end{savequote}
 
 \chapter{\label{ch:5-methodology}High-resolution detection of recombination in single individuals}
-% High-resolution recombination events in single individuals}
-% Detection of high-resolution recombination events in single individuals}
 %\otherpagedecoration
 
 \minitoc{}
@@ -17,10 +15,8 @@
 \paragraph{This chapter in brief —}
 
 Because the existing approaches to study recombination at high resolution are extremely resource-intensive, we implemented a novel approach based on the unique-molecule genotyping of recombination-enriched sperm DNA from single highly heterozygous individuals.
-% Basically, we obtained the highly heterozygous individuals by crossing highly divergent subspecies of mice; we enriched the sperm (i.e.\ the products of meiosis) extracted from these F1 hybrids by performing DNA capture of over 1,000 SNP-rich recombination hotspots; and we detected the recombination events by implementing a pipeline genotyping unique fragments of DNA\@.
 We found that the main source of errors when genotyping unique recombinant molecules of DNA did not come from sequencing errors, but from alignment ambiguities — for the aligners are biased towards the reference genome.
 Thus, searching for events after mapping fragments onto both parental genomes proved to be the most critical step of our pipeline.
-% double-mapping, i.e.\ mapping and performing the whole procedure on both parental genomes.
 In the end, our approach proved 100 times more powerful than current methods to detect recombination: it allowed to identify several thousands of recombination events in single individuals, with a false positive rate below 5\%.
 
 }
@@ -29,18 +25,9 @@ In the end, our approach proved 100 times more powerful than current methods to 
 
 
 The existing approaches to study recombination events at high resolution are limited (see Chapter~\ref{ch:3-recombination-variation}).
-% : pedigree analyses are extremely resource-intensive in that they require a large number of individuals
-% For instance, approaches like pedigree analyses are well suited to studies on species presenting both a short generation time and a large progeny, like yeasts \citep{mancera2008highresolution}, but do not scale well for mammals.
-% Indeed, studies that have used such methods in humans require a large number of individuals but result in only a limited amount (a few hundreds at best) of detected recombination events \citep{williams2015noncrossover, halldorsson2016rate}.
 For instance, the total number of events detectable with approaches like pedigree analyses is capped by the restricted number of meioses that can be analysed (one meiosis per individual sequenced).
 In addition, since whole genomes are sequenced to retrieve these events, the cost/benefit ratio is particularly elevated for species with large genomes, like mammals.
-% since each sequenced individual provides information for only one meiosis, the number of events per indivi
 
-% are well suited to studies on species presenting both a short generation time and a large progeny, like yeasts \citep{mancera2008highresolution}, but do not scale well for mammals.
-% Indeed, studies that have used such methods in humans require a large number of individuals but result in only a limited amount (a few hundreds at best) of detected recombination events \citep{williams2015noncrossover, halldorsson2016rate}.
-%
-
-% We thus propose a different procedure which combines the DNA capture of recombination hotspots from sperm of highly heterozygous hybrids and the genotyping of unique molecules.
 
 Here, we propose a different procedure which rests on the unique-molecule genotyping of recombination-enriched sperm DNA from single highly heterozygous individuals (Figure~\ref{fig:experimental-design}).
 In this chapter, I first describe how our experimental design led to an enrichment in detectable recombination events and how we implemented our unique-genotyping pipeline to identify such events and then discuss the impact of each component of our workflow onto the detectability of events.
@@ -48,7 +35,6 @@ In this chapter, I first describe how our experimental design led to an enrichme
 \begin{figure}[p]
 	\centering
 	\includegraphics[width = 0.9\textwidth]{figures/inkscape/experimental-design-with-text.eps}
-	% \missingfigure[figwidth=14cm, figheight = 15cm]{Schema du design experimental}
 	\caption[Overview of the experimental design]
 	{\textbf{Overview of the experimental design.}
 		\par We performed a cross between a \textit{Mus musculus domesticus} (B6) and a \textit{Mus musculus castaneus} (CAST) mouse individual to obtain a F1 hybrid, from which we extracted sperm DNA, i.e.\ the substrate of recombination products.
@@ -59,18 +45,6 @@ In this chapter, I first describe how our experimental design led to an enrichme
 \label{fig:experimental-design}
 \end{figure}
 
-%
-% Studies of recombination events
-%
-%
-% Un mini-blabla sur pourquoi on cree cette approche? Car les autres etudes qui ont etudier les evenements de facon directe son limitees: soit sperm-typing avec peu de hotspots, soit pedigree mais dans plein d'individus pas un seul. (ou uniquement dans le paragraphe de resume en haut)
-% Ici, je vais decrire d'abord le design experimental (et donc l'acquisition des données), puis comment on fait pour detecter les recombinants (pipeline bioinformatique), puis l'importance relative des differents aspects de la methode sur la detectabilite d'evenements de recombinaison.
-%
-% DISCUSSIOn (epistemo): necessite de regarder les donnees pour mettre en place le pipeline qui soit correct.
-% DISCUSSion: redire l'aspect crucial du mapping et de tenir compte des biais existants. Ils ne sont pas problematiques quand on fait le mapping pour ce pour quoi il a ete fait. En revanche, dans notre cas de figure, vu qu'on detecte des evenements rares, c'est un biais. Il faudra aussi discuter de son implication quand on le fait sur l'autre approche: en particulier, sur le hotspots ou un individu est genotype B6/B6 et l'autre est genotype B6/CAST — dans ce cas de figure, ca permettrait de quantifier les erreurs sur B6/B6 (et, de memoire, on trouve peu de faux positifs) et s'il y a un lien avec le nombre de faux positifs et la densite en SNP, le nombre d'INDELs…
-% limitations a redire sur la detectabilite donc transi vers discussion
-% DISCUSSion: preciser que puisqu'on a mis un filtre sur le nombre de markers, on aura des hotspots plus asymetriques (plsu riches en markers).
-%
 
 
 \section{Overview of the experimental design}
@@ -88,7 +62,6 @@ The extracted DNA from both biological replicates was then sonicated to produce 
 \subsection{Enrichment in detectable recombination events}%Selection of target loci and DNA capture}
 
 Since the recombination rate is relatively weak genome-wide, we wanted to target specifically recombination hotspots, i.e.\ regions of the genome where recombination massively occurs.
-% Since hotspots host the large majority of recombination events (see Chapter~\ref{ch:3-recombination-variation}), we wanted to enrich our pool of DNA in fragments originating from these regions (so as to increase the proportion of sequenced fragments corresponding to recombination events).
 This required two steps: selecting hotspots, and performing DNA capture (i.e.\ hybridisation-based targeted-DNA enrichment) of these loci \citep[reviewed in \citealp{horn2012target}]{gnirke2009solution,hodges2007genomewide}.
 
 \subsubsection{Selection of targets}
@@ -141,7 +114,6 @@ In addition, we selected 500 1-kb control regions which displayed genomic charac
 
 
 To enrich the sequencing data in fragments coming from the 1,518 aforementioned loci (hereafter called targets), we performed either one or two rounds of DNA capture targeting them.
- % \citep[reviewed in \citealp{horn2012target}]{gnirke2009solution,hodges2007genomewide}.
 Since our final aim was to detect recombination events, i.e.\ fragments carrying both a portion of the B6 haplotype and a portion of the CAST haplotype, it was essential that the efficiency of the capture be similar for both haplotypes.
 We thus designed two baits (one for each of the two haplotypes) for every target.
 
@@ -151,26 +123,19 @@ We found that this was indeed the case since the proportion of fragments contain
 
 Thus, although a small fraction of hotspots displayed a haplotype bias (possibly because one of the two baits better matched one of the two haplotypes), overall, there was no systematic bias favouring the capture of one haplotype relative to the other.
 	
-% This demonstrated that, overall, there was no large capture bias among hotspots.
-% But a few of them nevertheless displayed a haplotype bias, most likely because one of the two baits better matched one of the two haplotypes in certain hotspots.
-
 
 
 
 \subsection{Ultra deep-sequencing and mapping of captured DNA}
 
 Libraries were sequenced by an Illumina device using a 250-bp paired-end protocol, except for 4 small libraries (out of 18) which contributed to 6\% of the total number of fragments and which were sequenced as a pilot experiment using a 100-bp paired-end protocol (Table~\ref{tab:characteristics-seq-mapping-capture}). 
-% The sequencing data is available under the accession \textbf{AJOUTER LE NUMERO SRA}.
 
 We then mapped the sequenced reads to both the GRCm38/mm10 version of the B6 genome (\url{ftp://ftp-mouse.sanger.ac.uk/ref/}) and to the CAST/EiJ draft reference genome (\url{ftp://ftp-mouse.sanger.ac.uk/REL-1509-Assembly/}), using BWA-MEM \citep{li2009fast, li2013aligning} with default parameters and marking shorter split hits as secondary.
 PCR duplicates were marked thanks to picardTools (version 1.98(1547)) \citep{picard2018toolkit} and pairs of reads which were either marked as unmapped, as secondary alignment\footnote{BWA marks a read as secondary-aligned in cases where it can align at several locations. The best hit (i.e.\ location with the best alignment score) is marked as primary alignment, while all others are marked as secondary alignment.} or as mapping in an improper pair\footnote{A proper pair flag is attributed by the aligner (here, BWA) to a pair of reads if the reads are oriented in an inward-facing direction and are mapped within 4 standard-deviations of the mean insert size of the block of $10^6$ read pairs to which they belong.} were filtered out, for they were not likely to be real fragments.\\
-% https://sourceforge.net/p/bio-bwa/mailman/message/26893153/ — info proper reads
-% https://www.biostars.org/p/149883/ — secondary alignment
 
 Overall, sequenced reads mapped equally well to both the B6 and the CAST reference genome assemblies (Table~\ref{tab:characteristics-seq-mapping-capture}).
 In addition, DNA capture was efficient since 72\% of sequenced fragments mapped within the selected targets.
 This resulted in a substantial coverage of the targeted loci: the mean sequencing depth on 1-kb long targets was 97,177 $x$, and it raised up to above 941,737 $x$ in certain regions.
-%% OU mean sequencing depth on 1-kb long loci: 95,810 $x$ ??)
 
 The variation in coverage across hotspots was similar to that across control regions (data not shown) and it was rather limited as the variation in coverage of 80\% of hotspots held in a 5:1 ratio ([10; 90] quantiles = [71,745; 385,412] reads).
 Nonetheless, we found that the variation in coverage across hotspots was highly correlated to the mean GC-content of the targets (Pearson correlation: ${r = -0.641}$; \textit{p}-val $< 2.2 \times 10^{-16}$).
@@ -264,15 +229,12 @@ Last, since VQSR classifies variants according to their confidence, we discarded
 
 Genotyping basically consists in comparing the allele carried by the analysed fragment at a given polymorphic site with those of the parental genomes.
 Though, the accuracy of genotyping is subject to two main types of errors.
-% Consequently, the accuracy of genotyping depends on the confidence we have in both the polymorphic sites genotyped and in the base call at those sites (i.e.\ the nucleotide read by the sequencing machine).
 
 First, the variant-calling step can output a small proportion of false positives (FPs), for instance because of mapping artifacts in the vicinity of indels.
 In that case, even if a fragment is correctly sequenced, a genotyping error may arise from these FP markers.
 Since recombination is rare ($\ll 1\%$), the allelic frequencies at genuine polymorphic sites should comply with the Mendelian transmission of alleles.
 To avoid any error coming from the aforementioned FPs, we thus applied a hard filter on these frequencies: only sites with allelic frequencies within the [36\%; 64\%]\footnote{The values of that range were deliberately set as relatively large to account for any difference in capture efficiency at individual hotspots (Figure~\ref{fig:prop-B6-in-targets})} were retained.
-%The values of that range have no real biological meaning and could legitimately be disputed. They were chosen after the visual inspection of the distribution of allelic frequencies of data from the pilot experiment (data not shown) and principally aimed at avoiding frequencies far from a normal stochasticity around a 50:50 transmission of alleles.} range were retained.
 We additionally applied a hard filter on read coverage: any called variant supported by fewer than 100 reads was automatically discarded.
-% , which we set to a strict minimum of 100 reads supporting the variant called.
 
 Second, sequencing errors directly lead to genotyping errors.
 To avoid that, one can use the information provided by the sequencer: the Phred quality score which is logarithmically related to the probability for the base call to be incorrect \citep{ewing1998basecalling,ewing1998basecallinga}.
@@ -298,7 +260,6 @@ Therefore, to avoid false positives (FPs) due to genotyping errors, we identifie
 
 Last, since targets were sequenced deeply, a non-negligible portion of the fragments sequenced were likely to have arisen from PCR duplicates. 
 Therefore, we discarded all events which showed an homologue both starting and ending at the same genomic position, so as to be sure to retain only one copy of any given recombination event in our dataset.\\
-% Finally, to be sure to have only unique events, we discarded all the events which we suspected to have arisen from PCR duplicates: all the fragments having
 
 Finally, aside from sequencing errors, alignment ambiguities can lead to false positive calls (see Section~\ref{sec:determinants}).
 These depend on the aligner and its parameters, — among which the reference genome.
@@ -357,15 +318,6 @@ Therefore, their approaches respectively led to the detection of only 0.00970 an
 
 Altogether thus, our approach was indisputably much more powerful than comparable studies in detecting recombination events.
 
-% Indeed, in one such study, \citet{halldorsson2016rate} sequenced 530 whole human genomes with a sequencing depth higher than 30-\textit{x} (which corresponds to approximately 50,000 Gb sequenced) and detected 485 recombination events (after applying very stringent selection criteria).
-% In another, \citet{smeds2016highresolution} sequenced the genomes of 11 birds at a mean 42-\textit{x} coverage (which, since the flycatcher genome is 1.1 Gb long \citep{ellegren2012genomic}, corresponds to about 500 Gb sequenced) and identified 592 events.
-% As for the study by \citet{li2018highresolution}, the sequencing of 119 genomes of mice at a 12--30-\textit{x} coverage (which corresponds to about 6,742 Gb sequenced) ended in the identification of 4,075 recombination events.
-%
-% In contrast, our approach required the sequencing of a total of 980 million 250-bp long reads (which corresponds to 244 Gb sequenced) to retrieve 18,821 recombination events.
-% Thus, the number of recombination events detected per Gb sequenced was largely superior with our method (77.1 events/Gb) than in the other three studies (respectively 0.00970, 1.18 and 0.604 events/Gb).
-
-% Therefore, our method proved to be 100 times more powerful than comparable studies in detecting recombination events.
-
 
 
 \subsection{The critical step: mapping onto both genomes}
@@ -373,16 +325,6 @@ Altogether thus, our approach was indisputably much more powerful than comparabl
 
 Performing the whole procedure twice (once for each of the two parental genomes used as reference) was absolutely critical to the specificity of our approach.
 
-% Indeed, after simulating a dataset of
-% we simulated a dataset of
-% - l'etape de double mapping est cruciale car c'est celle qui enleve la tres large majorite des micalls.
-% - pour le voir, on a fait des simul ou on cree des sequences FASTQ qui sont non recombinantes. et on refait la procedure entiere: mapping, variant calling, detection des recombinants.
-% On se rend compte que 100% des erreurs viennent de l'autre genome.
-% En effet, l'aligner est biase pour faire coller l'alignement au genome de reference.
-% Car il y a un score d'alignement, et en particulier, le cout d'ouverture du gap est eleve, et peu interessant quand on est au bord des reads.
-% Donc, beaucoup de bordures mal alignees.
-% A l'echelle d'un mapping complet, pas grave. Mais dans notre cas, comme on recherche des evenements rares, cela est non-negligeable.
-% Pour contrebalancer ce biais, on a fait la procedure sur les deux genomes de reference.
 Indeed, when several alignment alternatives exist for a given fragment to map at a particular genomic location, aligners (like BWA) are programmed to select the alternative with the best score.
 But, for the similarity between the mapped fragment and the reference genome to be maximal \citep{smith1981identification}, the penalty associated to opening a gap (i.e.\ for an indel) is generally higher than that associated to a sequence of several mismatches.
 As a consequence, read extremities, especially when they encompass an indel, are generally misaligned in a way that better matches the sequence of the reference genome than they truly do.
@@ -393,12 +335,8 @@ Nevertheless, in view of the rarity of recombination events, a non-negligible po
 Therefore, to counterbalance this mapping bias, we decided to perform the whole procedure using consecutively the two parental genomes as the mapping reference.\\
 
 We found this \textit{modus operandi} to be crucial to the specificity of our method.
-% Indeed, all else being equal (same values for all the other filters), performing the procedure using only the B6 genome as a reference resulted in 1,088,237 events found in the hotspots and 686,595 in the control regions. Brought back to the number of fragments\footnote{Fragments overlapping at least 4 markers, i.e.\ candidate recombination events.} mapping on these targets, this corresponded to a FP rate of 123\% \textbf{VOIR avec Laurent si plus de 100\% est problematique}.
-% In other words, all (or nearly all) detected events did \textit{not} correspond to recombination events when using only one parental genome as a reference.
 Indeed, all else being equal (same values for all the other filters), performing the procedure using only the B6 genome as a reference resulted in 1,088,237 events found in the hotspots.
 This meant that only 1.7\% (18,821 out of 1,088,237) of all the events detected on the B6 genome were validated on the CAST genome and thus, that over 98\% of the events detected with only one genome used as a reference likely corresponded to FPs.
-% Brought back to the number of fragments\footnote{Fragments overlapping at least 4 markers, i.e.\ candidate recombination events.} mapping on these targets, this corresponded to a FP rate of 123\% \textbf{VOIR avec Laurent si plus de 100\% est problematique}.
-% In other words, 98\% of all events on the B6 genome were not validated when using the CAST genome as a reference and thus likely corresponded to FPs.
 % >>> 1088237/176039928
 % 0.006181762355640137
 % >>> 686595/89697868
@@ -424,14 +362,12 @@ First, the filters set for variant selection (no strong departure from the Mende
 
 The filter on the base quality score had a greater impact on the specificity of our method.
 Indeed, all else being equal, not setting this filter resulted in a 32\% rate of FPs (as compared to the 3.7\% rate when the filter was on).
-% - le filtre sur la qualite: celui la est important. (TAB)
 % >>> (717/182991)/(3492/281537)
 % 0.31590075853166194
 % >>> (155/173494)/(2693/263187)
 % 0.0873122778380181
 % >>> (17/67747)/(1046/116352)
 % 0.027912646876675138
-% ../Discussions_avec_Laurent/2017_05_19/numbers_Cov_100.Freq_64.Real_NONE.INDEL_0.Qual_20.weighted_variants_changed
 This shows that most genotyping errors, aside from those originating from misalignments, arose from sequencing miscalls.
 
 As for the removal of PCR duplicates, it divided the total number of events by a factor 2.
@@ -443,18 +379,14 @@ We note that the fragments we discarded at this step (i.e.\ those starting and e
 	\centering
 	\begin{adjustbox}{width = 1\textwidth}
 		\begin{tabular}{rrrrrrrr}
-			%\hline
-			%\textbf{} & \textbf{} & \textbf{HOTSPOTS} & \textbf{} & \textbf{CONTROL} & \textbf{REGIONS} & \textbf{} & \textbf{} \\
 			\toprule
 			\textbf{} & \multicolumn{3}{c}{\textbf{Hotspot targets}} & \multicolumn{3}{c}{\textbf{Control targets}} & \textbf{} \\
 			\cmidrule(l){2-4} \cmidrule(l){5-7} 
 			\textbf{Threshold} & \textbf{\# Fragments} & \textbf{\# Events} & \textbf{\textperthousand} & \textbf{\# Fragments} & \textbf{\# Events} & \textbf{\textperthousand} & \textbf{FP (\%)} \\
-			% \textbf{hold} & \textbf{} & \textbf{} & \textbf{Rate (\textperthousand)} & \textbf{(control)} & \textbf{(control)} & \textbf{Rate (\textperthousand)} & \textbf{Rate (\%)} \\
 
 
 			\midrule
 			1+1  & 28,282,623 & 172,414 & 6.10 & 14,154,263 & 59,550 & 4.21 & 69 \\
-			% 1D+1D & 25,006,027 & 44,811 & 1.79 & 12,853,122 & 12,775 & 0.994 & 56 \\
 			\textbf{2+2}  & \textbf{19,965,597} & \textbf{11,059} & \textbf{0.554} & \textbf{10,563,573} & \textbf{75} & \textbf{0.0071} & \textbf{1.3} \\
 			3+3  & 12,105,005 & 3,101 & 0.256 & 6,734,622 & 6 & 0.00089 & 0.35 \\
 			4+4  & 6,378,813 & 874 & 0.137 & 3,840,375 & 0 & 0.00 & 0.0 \\
@@ -464,7 +396,6 @@ We note that the fragments we discarded at this step (i.e.\ those starting and e
 	\caption[Impact of the minimum requirement of \textit{B6}- and \textit{CAST}-typed markers on the FP rate]
 	{\textbf{Impact of the minimum requirement of \textit{B6}- and \textit{CAST}-typed markers on the FP rate.}
 		\par A threshold $n_1+n_2$ corresponds to a minimum requirement of $n_1$ \textit{B6}-typed and $n_2$ \textit{CAST}-typed markers for a fragment to be identified as an event (FP or genuine recombination event).
-		% ‘1D’ stands for ‘1 marker doubled’, i.e.\ 1 marker genotyped twice (on the two reads) or 2 markers.
 		The event rate corresponds to the ratio of candidate recombination events over the total number of fragments.
 		The maximum false positive (FP) rate is the ratio of the event rate in control targets over that in hotspots.
 		The line in bold corresponds to the selected threshold: 2 \textit{B6}-typed and 2 \textit{CAST}-typed markers.
@@ -480,7 +411,6 @@ This was a minimum requirement, since applying a less stringent filter of only o
 This means that, in spite of all the filters that were set, the genotyping error rate remained sufficiently high to call spurious recombination events and thus needed to be double-checked (by requiring at least two genotype calls).\\
 
 
-% - filtre sur 2+2 essentiel aussi(TAB) 1D+1D vs 2+2 donc, une fois les problemes d'alignement enleves, ce sont bien les erreurs de genotypage (du a sequencage miscall) qui sont problematiques
 
 However, the obvious limitation of this filter is that it prevents the retrieval of events with conversion tracts overlapping only one polymorphic site.
 More generally, the detectability of recombination events depends on the polymorphism: the lower the SNP density, the fewer events are detectable.
@@ -491,152 +421,6 @@ This limitation calls for the use of inferential methods to obtain the real (and
 
 
 
-
-
-
-% chap 6: (plan a revoir)
-% High-confidence and determinants (correl DMC1 + correl Paigen) + avant parler des cartes DMC1 Spo11 et correlation PRDM9 donc expliquer le meilleur descripteur (sachant que Prdm9 moins precis)
-% Inferrence des CT et donneur (avec analyse de ssDNA DMC1) + description du jeu de donnees (Rec-1)
-% Inference des parametres reels de recombinaison par ABC (simul + selection + comparaison litterature et extrapolation du taux de CO et de la proportion de CO/NCO dans Rec-1S).
-% + qq part la relation entre CO/NCO et le nbre de SNPs
-
-% intro: souris avec les infos connues dedans sur la recombi (DCM1, les cartes PRDM9 ChIP-seq Baker, Spo11…) — differences entre tous ces descripteurs de la recombinaison et ce qui est su chez la souris
-% high confidence + determinants (trouves dans les hotspots intenses en relation avec DMC1) et inferrence des CT + donneur et description du jeu de donnees
-% ABC et inference des parametres reels de recombinaison chez la souris (mise au point des simulations + selection des simul + resultats sur les param de recombi)
-
-% chap7:
-% clasification des hotspots cibles par B6 ou CAST
-% population structuree hitchhinking
-% quantification du BGC (g et d)
-% + qqpart le fait que BGC regarde sur les bouts de tracts et rien de vu.
-%
-% chap8:
-% design experimental avec l'introgression
-% adaptation de la methode + ABC
-% premiers resultats sur la recombinaison
-
-
-
-
-% chap9:
-% methode (powerful et adaptable a d'autres etudes de la recombinaison + mais limite majeure de detectabilite, en particulier, on rate les NCO1 qui semblent cruciaux pour l'etude du BGC (seulement mesure indirecte) + qqch en lien avec chap8? ou rare events a chercher change completement la donne avec l'utilisation des outils: tous les biais qui peuvent exister ou les imperfections deviennent critiques. e.g. misalignments par des INDELs, les erreurs de sequencage peu nombreuses mais trop elevees quand meme, error rate degenotypage…)
-% recombinants et dBGC (hotspot asymmetry et favoured direction dBGC + dBGC hitchhiking + parametres identifies proches de ce que vu chez la souris et si on compare avec l'humain on trouve que CO/NCO de 1/10)
-% gBGC (confidence b + comparaison CO/NCO + comparaison humain/souris avec possibilite que evolution de la machinerie molec de formation BGC et transition epistemologie)
-
-% chap10:
-% epistemologie (proprietes emergentes ou pas + toute la fin de mes notes Notes_for_discussion_personnal.txt sur microevol/macroevol et fonctionnel vs mecanismes)
-% comment la science avance (role des differents scientifiques qui ont apporte des nouvelles theories sont mieux connus que ceux qui font les decouvertes + analyse de l'evolution des recherches en evolution notamment avec apport de techniques comme genetique et ordis pour bioinfo + share knowledge gnomics.io)
-% bioinformaticien (regarder les donnees (importance sur les emthodes, en aprticulier vu que realignement et teste des choses comme filtres, jusqu'a ce que validation par des simul) + seulement des tendances, jamais reels biologiques donc faut passer par inferences — en particulier, important dans le cas des evolutionnistes, car on interprete le passe sans pouvoir le demontrer (cf Jay Gould) et ses imperfections sont utiles poour comprendre de nouvelles choses).
-
-
-
-
-
-
-
-
-
-% TABLES NON-UTILISEES MAIS A NE PAS PERDRE SI CHANGEMENT LAURENT
-
-% \begin{table}[h]
-%     \centering
-%     \begin{adjustbox}{width = 1\textwidth}
-%     \begin{tabular}{rrrrrrrrr}
-%         \toprule
-%         \textbf{} & \multicolumn{6}{c}{\textbf{Sample and sequencing characteristics}} & \multicolumn{2}{c}{\textbf{Mapping (\%)}} \\
-%         \cmidrule(l){2-7} \cmidrule(l){8-9}
-%         \textbf{Library} & \textbf{Mouse} & \textbf{\#DNA-} & \textbf{Rep.} & \textbf{Lane} & \textbf{Read} & \textbf{Library} & \textbf{Ref.} & \textbf{Ref.} \\
-%         \textbf{ID} & \textbf{ID} & \textbf{capture} & \textbf{} & \textbf{ID} & \textbf{length} & \textbf{size} & \textbf{B6} & \textbf{CAST} \\
-%         % \midrule
-%         \cmidrule(l){1-1} \cmidrule(l){2-7} \cmidrule(l){8-9}
-%         A-1 & 1 & 2 & NA & NA & 100 bp & 14,977,880 & 99.87 & 99.76 \\
-%         A-2 & 1 & 1 & NA & NA & 100 bp & 12,457,816 & 99.75 & 99.27 \\
-%         A-3 & 2 & 2 & NA & NA & 100 bp & 16,000,000 & 99.85 & 99.73 \\
-%         A-4 & 2 & 1 & NA & NA & 100 bp & 13,291,526 & 99.74 & 99.24 \\
-%         % \midrule
-%         \cmidrule(l){1-1} \cmidrule(l){2-7} \cmidrule(l){8-9}
-%         B-1 & 1 & 2 & NA & NA & 250 bp & 51,923,148 & 99.76 & 99.74 \\
-%         B-2 & 1 & 1 & NA & NA & 250 bp & 64,260,092 & 99.72 & 99.66 \\
-%         B-3 & 2 & 2 & NA & NA & 250 bp & 98,238,822 & 99.64 & 99.61 \\
-%         B-4 & 2 & 1 & NA & NA & 250 bp & 130,482,992 & 99.60 & 99.52 \\
-%         % \midrule
-%         \cmidrule(l){1-1} \cmidrule(l){2-7} \cmidrule(l){8-9}
-%         C-1 & 1 & 2 & 1 & 1 & 250 bp & 67,775,154 & 99.79 & 99.75 \\
-%         C-2 & 1 & 2 & 1 & 2 & 250 bp & 69,564,748 & 99.78 & 99.75 \\
-%         C-3 & 1 & 2 & 2 & 1 & 250 bp & 79,002,218 & 99.79 & 99.75 \\
-%         C-4 & 1 & 2 & 2 & 2 & 250 bp & 81,074,012 & 99.77 & 99.74 \\
-%         C-5 & 2 & 2 & 1 & 1 & 250 bp & 60,911,138 & 99.71 & 99.68 \\
-%         C-6 & 2 & 2 & 1 & 2 & 250 bp & 62,042,362 & 99.71 & 99.67 \\
-%         C-7 & 2 & 2 & 2 & 1 & 250 bp & 66,489,166 & 99.77 & 99.74 \\
-%         C-8 & 2 & 2 & 2 & 2 & 250 bp & 68,382,888 & 99.76 & 99.73 \\
-%         C-9 & NA & 2 & 1\&2 & 1 & 250 bp & 9,796,678 & 83.27 & 84.44 \\
-%         C-10 & NA & 2 & 1\&2 & 2 & 250 bp & 10,156,096 & 82.77 & 84.93 \\
-%         % \midrule
-%         \cmidrule(l){1-1} \cmidrule(l){2-7} \cmidrule(l){8-9}
-%         \textbf{Total} & \textbf{-} & \textbf{-} & \textbf{-} & \textbf{-} & \textbf{-} & \textbf{976,826,736} & \textbf{99.68} & \textbf{99.37} \\
-%         \bottomrule
-%     \end{tabular}
-%     \end{adjustbox}
-%     \caption[Sequencing characteristics and mapping summary metrics]
-%     {\textbf{Sequencing characteristics and mapping summary metrics.}
-%         \par The sperm from the two individuals was sequenced three times (horizontal panels): ‘A-libraries’ correspond to a pilot where reads were sequenced with a 2 $\times$ 100-bp protocol and at low coverage; ‘B-libraries’ correspond to the first part of the real experiment where we sequenced deeply with a 2 $\times$ 250-bp protocol and where samples were either enriched in recombination events \textit{via} either one or two rounds of DNA-capture; ‘C-libraries’ were sequenced after having analysed results of the ‘B-libraries’ to increase the total number of recombination events (using only the samples with two rounds of DNA-capture).
-%         \par The second vertical panel recaps all the biological and sequencing characteristics of the samples studied. The library size corresponds to the total number of reads sequenced.
-%         \par The third vertical panel recaps the percentage of reads mapping on either of the two reference genomes (B6 and CAST).
-%     }
-% \label{tab:characteristics-seq-mapping}
-% \end{table}
-%
-
-
-
-% Table avant d'enlever la colonne des fragments (ATTENTION: legende incomplete)
-% \begin{sidewaystable}[p]
-%     \centering
-%     \begin{adjustbox}{width = 1\textwidth}
-%     \begin{tabular}{rrrrrrrrrrrrr}
-%         \toprule
-%         \textbf{} & \multicolumn{6}{c}{\textbf{Sample and sequencing characteristics}} & \multicolumn{2}{c}{\textbf{Mapping (\%)}} & \multicolumn{4}{c}{\textbf{Capture efficiency}} \\
-%         \cmidrule(l){2-7} \cmidrule(l){8-9} \cmidrule(l){10-13}
-%         \textbf{Library} & \textbf{Mouse} & \textbf{\#DNA-} & \textbf{Rep.} & \textbf{Lane} & \textbf{Read} & \textbf{Library} & \textbf{Ref.} & \textbf{Ref.} & \textbf{\# Potential} & \textbf{\# Selected} & \textbf{Capture} & \textbf{\# Fragments} \\
-%         \textbf{ID} & \textbf{ID} & \textbf{capture} & \textbf{} & \textbf{ID} & \textbf{length} & \textbf{size} & \textbf{B6} & \textbf{CAST} & \textbf{Fragments} & \textbf{Fragments} & \textbf{Efficiency (\%)} & \textbf{in targets} \\
-%         % \midrule
-%         \cmidrule(l){1-1} \cmidrule(l){2-7} \cmidrule(l){8-9} \cmidrule(l){10-13}
-%         A-1 & 1 & 2 & NA & NA & 100 bp & 14,977,880 & 99.87 & 99.76 & 7,488,940 & 7,206,235 & 86.09 & 6,203,730 \\
-%         A-2 & 1 & 1 & NA & NA & 100 bp & 12,457,816 & 99.75 & 99.27 & 6,228,908 & 5,813,649 & 26.86 & 1,561,461 \\
-%         A-3 & 2 & 2 & NA & NA & 100 bp & 16,000,000 & 99.85 & 99.73 & 8,000,000 & 7,631,724 & 84.88 & 6,478,370 \\
-%         A-4 & 2 & 1 & NA & NA & 100 bp & 13,291,526 & 99.74 & 99.24 & 6,645,763 & 6,110,086 & 24.29 & 1,484,199 \\
-%         % \midrule
-%         \cmidrule(l){1-1} \cmidrule(l){2-7} \cmidrule(l){8-9} \cmidrule(l){10-13}
-%         B-1 & 1 & 2 & NA & NA & 250 bp & 51,923,148 & 99.76 & 99.74 & 25,961,574 & 24,887,319 & 85.95 & 21,391,551 \\
-%         B-2 & 1 & 1 & NA & NA & 250 bp & 64,260,092 & 99.72 & 99.66 & 32,130,046 & 29,732,709 & 26.67 & 7,927,136 \\
-%         B-3 & 2 & 2 & NA & NA & 250 bp & 98,238,822 & 99.64 & 99.61 & 49,119,411 & 46,831,049 & 84.87 & 39,749,391 \\
-%         B-4 & 2 & 1 & NA & NA & 250 bp & 130,482,992 & 99.60 & 99.52 & 65,241,496 & 59,942,764 & 24.52 & 14,700,518 \\
-%         % \midrule
-%         \cmidrule(l){1-1} \cmidrule(l){2-7} \cmidrule(l){8-9} \cmidrule(l){10-13}
-%         C-1 & 1 & 2 & 1 & 1 & 250 bp & 67,775,154 & 99.79 & 99.75 & 33,887,577 & 33,221,010 & 82.54 & 27,421,183 \\
-%         C-2 & 1 & 2 & 1 & 2 & 250 bp & 69,564,748 & 99.78 & 99.75 & 34,782,374 & 34,102,906 & 82.65 & 28,185,446 \\
-%         C-3 & 1 & 2 & 2 & 1 & 250 bp & 79,002,218 & 99.79 & 99.75 & 39,501,109 & 38,818,821 & 84.05 & 33,013,536 \\
-%         C-4 & 1 & 2 & 2 & 2 & 250 bp & 81,074,012 & 99.77 & 99.74 & 40,537,006 & 39,841,630 & 85.14 & 33,921,167 \\
-%         C-5 & 2 & 2 & 1 & 1 & 250 bp & 60,911,138 & 99.71 & 99.68 & 30,455,569 & 29,876,369 & 85.45 & 25,530,140 \\
-%         C-6 & 2 & 2 & 1 & 2 & 250 bp & 62,042,362 & 99.71 & 99.67 & 31,021,181 & 30,437,699 & 85.55 & 26,039,414 \\
-%         C-7 & 2 & 2 & 2 & 1 & 250 bp & 66,489,166 & 99.77 & 99.74 & 33,244,583 & 32,701,170 & 86.18 & 28,182,084 \\
-%         C-8 & 2 & 2 & 2 & 2 & 250 bp & 68,382,888 & 99.76 & 99.73 & 34,191,444 & 33,636,524 & 86.28 & 29,022,692 \\
-%         C-9 & NA & 2 & 1\&2 & 1 & 250 bp & 9,796,678 & 83.27 & 84.44 & 4,898,339 & 3,801,189 & 62.12 & 2,361,438 \\
-%         C-10 & NA & 2 & 1\&2 & 2 & 250 bp & 10,156,096 & 82.77 & 84.93 & 5,078,048 & 3,920,630 & 62.04 & 2,432,278 \\
-%         % \midrule
-%         \cmidrule(l){1-1} \cmidrule(l){2-7} \cmidrule(l){8-9} \cmidrule(l){10-13}
-%         \textbf{Total} & \textbf{-} & \textbf{-} & \textbf{-} & \textbf{-} & \textbf{-} & \textbf{976,826,736} & \textbf{99.68} & \textbf{99.37} & \textbf{488,413,368} & \textbf{468,513,483} & \textbf{71.63} & \textbf{335,605,734} \\
-%         \bottomrule
-%     \end{tabular}
-%     \end{adjustbox}
-%     \caption[Sequencing characteristics and mapping summary metrics]
-%     {\textbf{Sequencing characteristics and mapping summary metrics.}
-%         \par The sperm from the two individuals was sequenced three times (horizontal panels): ‘A-libraries’ correspond to a pilot where reads were sequenced with a 2 $\times$ 100-bp protocol and at low coverage; ‘B-libraries’ correspond to the first part of the real experiment where we sequenced deeply with a 2 $\times$ 250-bp protocol and where samples were either enriched in recombination events \textit{via} either one or two rounds of DNA-capture; ‘C-libraries’ were sequenced after having analysed results of the ‘B-libraries’ to increase the total number of recombination events (using only the samples with two rounds of DNA-capture).
-%         \par The second vertical panel recaps all the biological and sequencing characteristics of the samples studied. The library size corresponds to the total number of reads sequenced.
-%         \par The third vertical panel recaps the percentage of reads mapping on either of the two reference genomes (B6 and CAST).
-%     }
-% \label{tab:characteristics-seq-mapping}
-% \end{sidewaystable}
 
 
 

@@ -10,37 +10,20 @@
 	
 \end{savequote}
 
-% \chapter{\label{ch:9-discussion}Implications for mouse genome evolution}
 \chapter{\label{ch:9-discussion}Implications for mammalian genome evolution}
 %\otherpagedecoration
 
 
 \minitoc{}
 
-% CONCLU
-% The aim of this thesis was to study the role of recombination on genome evolution.
 
-% This thesis aimed at better comprehending recombination and its impact on genome evolution, which was made possible by analysing
 The work presented in this thesis allowed to better comprehend recombination and its impact on genome evolution: 
 in brief, we precisely characterised patterns of recombination in mice, brought preliminary answers to the specific role of one gene essential to recombination, and quantified the contribution of all types of recombination products to GC-content evolution \textit{via} biased gene conversion.
 
 The progress we made on this topic principally rested on the analysis of the recombination events we could detect in mouse autosomal hotspots with the approach we developed. 
-% It principally rested on the analysis of the recombination events detected in mouse autosomal hotspots with the method we implemented.
 In this chapter, I will first discuss both the significance and the limitations of our method in the context of studies on recombination.
 Next, I will try and give answers upon the original motivation for this work: figuring out the interplay between the effective population size ($N_e$) and the gBGC coefficient ($b$), by comparing our findings in mice to those of others in humans.
 Last, I will provide more speculative interpretations about this interplay and the evolution of biased gene conversion in general.
-
-% Next, I will focus on our findings concerning recombination and more particularly on the hitchhiking effect of DSB-induced biased gene conversion (dBGC) onto past GC-biased gene conversion (gBGC).
-% Last, I will try and give answers upon the original motivation for this work: figuring out the interplay between the effective population size ($N_e$) and the gBGC coefficient ($b$), by comparing our findings in mice to those of others in humans.
-
-% En resume,
-% Intro on a mis au point une methode qui permet d'etudier la recombinaison a high resolution chez des single hybrids, either simple hybrids with two genomes or F2 individuals with a third introgressed genome.
-% Avec elle, on a pu caracteriser la recombinaison chez la souris, et comparer chez un mutant donc comprendre le role d'un gene, et de plus, quantifier le gBGC
-%
-% Mais cette methode presente neanmoins des limitations, je vais donc discuter de son interet et de ses limites
-% Puis, je vais discuter des infos sur recombinaison et en particulier, du phenomene qu'on a mis en evidence: le hitchhiking
-%
-% Enfin, je repondrai a la questino qu'on s'etait pose a la base concernant la relation entre b et Ne, en comparant avec l'homme et en expliquant les implications sur l'evolution du BGC
 
 
 \section{Significance and limitations of our method}
@@ -74,11 +57,7 @@ Thus, the overall recombination rate we extrapolated from our data is likely to 
 
 What's more, by definition, hotspot asymmetry implies a haplotype bias for PRDM9 binding.
 As such, our enrichment of targets in asymmetric hotspots likely amplified dBGC, and thus, the variations in dBGC intensity we observed may be somewhat more extreme than what would be expected on average hotspots.\\
-% In addition, since the majority of hotspots in the B6xCAST hybrid is targeted by PRDM9\textsuperscript{Cst} \citep{smagulova2016evolutionary}, dBGC in that hybrid mainly operates in one direction: the favoured transmission of the CAST haplotype (see Chapter~\ref{ch:7-quantification-BGC}).
-% This is particularly important, considering that dBGC impacts the observed gBGC\@.
 
-% Finally, our approach is only applicable to males
-% Therefore, because of the hotspot selection step, the results obtained with our approach are not necessarily representative of all recombination events that could occur, but solely those occurring in the close vicinity of highly polymorphic hotspots.
 Therefore, because of the hotspot selection step, the recombination events directly observable with our approach are those occurring in the close vicinity of highly polymorphic hotspots and, if their characteristics differ from those of the other, non-observable events, they may not be representative of the totality of recombination events.
 
 In addition, our approach necessitates a large quantity of gametes to be analysed.
@@ -100,20 +79,12 @@ To make this along-hotspot fluctuation visible, we added that information (the m
 Given that many events are undetectable, we used an approximate bayesian computation (ABC) approach to estimate the genuine values of certain recombination parameters: the lengths of CO and NCO conversion tracts (CTs) and the CO:NCO ratio.
 Since the estimates that we obtained with the ABC were extremely close to the direct observations of CO and NCO CT lengths in a few mouse hotspots and to the CO:NCO ratio predicted on the basis of cytological estimates of DSBs (see Chapter~\ref{ch:6-recombination-parameters}), we are confident that this approach was globally valid.
 
-% In the end, this NCO detectability issue was problematic mainly to estimate the genuine CT lengths of recombination events, but we could solve it indirectly \textit{via} the use of an approximate bayesian computation (ABC) approach.
 Still, it should be noted that the validity of the ABC rests on the assumptions that were made to simulate recombination events. 
 Notably, we hypothesised that the CO:NCO ratio was identical for all hotspots, that both CO and NCO CTs were centred on the DSB and that their CT lengths were arranged according to a unimodal distribution, i.e.\ that the resolution process was \textit{not} perceptibly different for any subclass of COs or NCOs.
 But, since the process of recombination has not been completely elucidated yet, we cannot know whether the latter assumptions were biologically accurate nor whether other hypotheses could be more relevant to simulate these events.
-% If not, it could be relevant to use other assumptions to simulate events.
 Nevertheless, based on these assumptions, the ABC allowed us to assess that NCOs were approximately 3 times less detectable than COs.
 
 As such, even if our sequencing fragments were relatively short (2$\times$250 bp) and if NCOs were less detectable than COs, our method allowed to detect an unprecendentedly large number of both types of events, and the ABC permitted to extrapolate the genuine average recombination parameters.\\
-
-% and, since the process of recombination has not been completely elucidated yet but rests on models that are generally accepted by the scientific community, we cannot be sure that the latter assumptions
-
-% Though, since the process of recombination has not been completely elucidated but rests on models that are widely accepted
-% Though, the ABC itself rested on assumptions that we made on the process of recombination and which may impact the CT length estimates.
-% Notably, we hypothesised that the CO:NCO ratio was identical for all hotspots and that both CO and NCO CTs were centred on the DSB\@.
 
 
 Altogether thus, our approach provides exceptional power to detect recombination at high resolution and at low cost in single individuals.
@@ -133,7 +104,6 @@ To better understand how it evolved in mammals, we next compared our results wit
 Using the approach previously described by \citet{glemin2015quantification}, Brice Letcher, an intern in our lab, measured the population-scaled gBGC coefficient ($B$) in humans and in the two subspecies from which the parents of the hybrid mice we studied originated.
 He found that $B$ is 1.5 to 3.5 times lower in humans than in mice (Table~\ref{tab:estimation-variation-b}).
 
-% He found that the variation of $B$ was confined into a 1-to-1.5 range between \textit{H. sapiens} (${B = 0.355}$; ${CI_{95\%} = [0.282; 0.445]}$) and \textit{Mus musculus domesticus} (${B = 0.465}$; ${CI_{95\%} = [0.337; 0.603]}$) and into a 1-to-3.5 range between \textit{H. sapiens} (${B = 0.355}$; ${CI_{95\%} = [0.282; 0.445]}$) and \textit{Mus musculus castaneus} (${B = 1.21}$; ${CI_{95\%} = [1.13; 1.26]}$).
 
 Interestingly, the effective population size ($N_e$) is respectively 20- and 70-fold as high in \textit{Mus musculus domesticus} and in \textit{Mus musculus castaneus} as in humans \citep{charlesworth2009fundamental,phifer-rixey2012adaptive}.
 Since $B = 4 \times N_e \times b$ (see Chapter~\ref{ch:4-gBGC}), this implies that $b$ is 6 to 10 times as high in humans as in the two mouse subspecies (Table~\ref{tab:estimation-variation-b}).\\
@@ -154,7 +124,6 @@ Since $B = 4 \times N_e \times b$ (see Chapter~\ref{ch:4-gBGC}), this implies th
 
 
 
-% If we decompose the relative contributions of COs and NCOs to gBGC, their parameters (recombination rate r, conversion tract length L and transmission bias b0) are related to the gBGC coefficient b in the following way:
 Different factors may contribute to this $b$ discrepancy between humans and mice.
 Indeed, the gBGC coefficient ($b$) can be decomposed as: 
 
@@ -165,18 +134,7 @@ Indeed, the gBGC coefficient ($b$) can be decomposed as:
 \end{alignat*}
 
 where $r^{i}$, $L^{i}$ and $b_0^{i}$ respectively represent the rate, conversion tract length and transmission bias on recombination events $i$ ($i$ corresponding either to CO or NCO events).\\
-% where the $r^{CO}$ and $r^{NCO}$ represent the CO and NCO rates, $L^{CO}$ and $L^{NCO}$ the conversion tract lengths of COs and NCOs, and $b_0^{CO}$ and $b_0^{NCO}$ the transmission bias on COs and NCOs.
-% into the recombination rate $r$, the conversion tract length $L$ and transmission bias $b_0$ of COs and NCOs in the following way:
 
-% After replacing the parameters of the equation above with the values that we estimated in Chapters~\ref{ch:6-recombination-parameters} and~\ref{ch:7-quantification-BGC}, we calculated that $b$ in male mice and humans respectively equalled 0.422 and 2.89 (Table~\ref{tab:estimation-gBGC-values}), i.e.\ an almost 7-fold difference between the two species.
-%
-% This difference in $b$ is sufficient to account for the observed stability of $B$.
-% Indeed, since the minimum and maximum $N_e$ in humans are estimated to be 10,000 and 20,000 respectively \citep{charlesworth2009fundamental}, $B$ (calculated as ${4 \times N_e \times b}$) would give a min.--max.\ range of 0.184--0.369, perfectly compatible with our independent observation of $B$ (0.355).
-% As for mice, the sex-averaged $b$ could not be calculated since it has never been reported for females.
-% Using the male $b$ instead, the estimate for $4 \times N_e \times b_{male}$ would range between 0.0979 and 0.338 for \textit{Mus musculus domesticus} and between 0.338 and 1.24 for \textit{Mus musculus castaneus}, which are slightly lower estimates than the observed $B$ (0.465 and 1.21 respectively for the two species).
-% Under the assumption that, like in humans, females would contribute more than males to gBGC (Table~\ref{tab:estimation-gBGC-values}) and thus that the sex-averaged $b$ would be slightly higher than the male $b$, the estimate would fit well with the observed sex-averaged $B$.\\
-% % If this were true, it could mean that any sexual difference concerning gBGC in humans may also exist in mice.\\
-%
 In the remaining portion of the discussion, I will go through all the parameters on which $b$ depends to try and identify which contribute more to the difference in $b$ between humans and mice.
 
 
@@ -197,17 +155,6 @@ In the remaining portion of the discussion, I will go through all the parameters
 		\textit{M.\ m.\ castaneus} & 1.21 [1.13--1.26] & 466,500 [200,000--733,000]\textsuperscript{[2]} & $0.65 \times 10^{-6}$ \\
 
 		\bottomrule
-
-	   %  \toprule
-		% & \textbf{\textit{Homo sapiens}} & \textbf{\textit{Mus musculus domesticus}} & \textbf{\textit{Mus musculus  castaneus}} \\
-		%
-		% \midrule
-        %
-		% $B$ [$CI_{95\%}$] & 0.355 [0.282; 0.445] & 0.465 [0.337; 0.603] & 1.21 [1.13; 1.26] \\
-		% $N_e$ [min.-max.] & 15,000 [10,000--20,000]\textsuperscript{[1]} & 129,000 [58,000--200,000]\textsuperscript{[2]} & 466,500 [200,000--733,000]\textsuperscript{[2]} \\
-		% Expected $b = \frac{B}{4 \times N_e}$ ($\times 10^{-6}$) & 5.9 & 0.90 & 0.65 \\
-        %
-	   %  \bottomrule
 
 	\end{tabular}
 	\end{adjustbox}
@@ -235,14 +182,9 @@ Therefore, the CO rate ($r^{CO}$) contributes to decreasing $b$ by 2-fold in mic
 On the other hand, the $r^{NCO} \times L^{NCO}$ parameter is three times as small in male mice as in men (Table~\ref{tab:estimation-gBGC-values}).
 Since we found mouse $L^{NCO}$ to be at least 1.5 times as small as human $L^{NCO}$, the 3-fold difference on the $r^{NCO} \times L^{NCO}$ parameter is compatible with a 2-fold difference on the NCO rate ($r^{NCO}$) between male mice and humans.
 We note that, since the mouse CO rate ($r^{CO}$) too is twice as small as the human CO rate, the 2-fold difference on the NCO rate is compatible with a human CO:NCO rate of 0.10, i.e.\ close to the known mouse CO:NCO rate \citep{cole2010comprehensive}.
-%, and thus, in agreement with what one could have legitimately expected: similar CO:NCO rates for species within the mammalian clade.
-% Therefore, the parameters that we estimated indirectly with our ABC approach were in agreement with what one could have legitimately expected: similar CO:NCO rates for species within the mammalian clade.
-
-% Altogether thus, except for the length of CO conversion tracts which were roughly identical in the two species, all the other recombination parameters (the recombination rate for both COs and NCOs, and the length of NCO conversion tracts) were smaller in the species with larger $N_e$ (mice) than in that with smaller $N_e$ (humans).
 
 
-% - NCO: 3 fold diff rxL qui s'explique pour 1.5 par L, et, donc par 2 pour r (cel donnerait le meme CO:NCO sur les mamif)
-% - CO: 2 fold difference rxL qui s'explique directement par r.
+
 
 
 \begin{sidewaystable}[p]
@@ -255,7 +197,6 @@ We note that, since the mouse CO rate ($r^{CO}$) too is twice as small as the hu
 		\cmidrule(l){2-2} \cmidrule(l){3-5}
 		Parameter (unit) & \textit{Male} & \textit{Male} & \textit{Female} & \textit{Sex-averaged} \\
 
-		% \midrule
 		\cmidrule(l){1-1} \cmidrule(l){2-2} \cmidrule(l){3-5}
 
 		$r^{CO}$ (cM/Mb)    & 0.42\textsuperscript{[3,4]} & 0.812\textsuperscript{[2]} & 1.398\textsuperscript{[2]} & 1.13\textsuperscript{[1,2]} \\
@@ -265,7 +206,6 @@ We note that, since the mouse CO rate ($r^{CO}$) too is twice as small as the hu
 		\textbf{$r^{CO} \times L^{CO} \times b_0^{CO}$ ($\times 10^{-6}$)}      & \textbf{0.00 [-0.0529--0.0198]\textsuperscript{c}} & \textbf{1.87 [1.22--4.135]\textsuperscript{b}} & \textbf{2.60 [1.10--8.15]\textsuperscript{c}} & \textbf{2.09 [0.882--6.63]\textsuperscript{c}} \\
 		\\
 		\midrule
-		% \cmidrule(l){1-1} \cmidrule(l){2-2} \cmidrule(l){3-5}
 		\\
 		$r^{NCO}$ (cM/Mb)   & 3.78\textsuperscript{$\ddagger$} & \textit{-} & \textit{-} & \textit{-} \\
 		$L^{NCO}$ (bp)      & 36\textsuperscript{$\star$} [4--54]\textsuperscript{b} & 55--290\textsuperscript{[5],$\mathsection$} & \textit{-} & \textit{-} \\
@@ -274,7 +214,6 @@ We note that, since the mouse CO rate ($r^{CO}$) too is twice as small as the hu
 		\textbf{$r^{NCO} \times L^{NCO} \times b_0^{NCO}$ ($\times 10^{-6}$)}   & \textbf{0.422 [0.0469--0.633]\textsuperscript{b}} & \textbf{1.02 [0.497--1.68]\textsuperscript{c}} & \textbf{4.50 [3.25--6.06]\textsuperscript{c}} & \textbf{2.52 [0.96--4.48]\textsuperscript{c}} \\
 		\\
 		\midrule
-		% \cmidrule(l){1-1} \cmidrule(l){2-2} \cmidrule(l){3-5}
 
 		\textbf{$b$ ($\times 10^{-6}$)} & \textbf{0.422 [0.0469--0.633]\textsuperscript{b} } & \textbf{2.89 [1.72--5.81]\textsuperscript{c} } & \textbf{7.10 [4.35--14.21]\textsuperscript{c} } & \textbf{4.61 [1.84--11.1]\textsuperscript{c} } \\
 
@@ -284,7 +223,6 @@ We note that, since the mouse CO rate ($r^{CO}$) too is twice as small as the hu
 	\end{adjustbox}
 	\caption[Estimation of biased gene conversion parameters in \textit{Homo sapiens} and \textit{Mus musculus}]
 	{\textbf{Estimation of biased gene conversion parameters in \textit{Homo sapiens} and \textit{Mus musculus}.}
-		%The sources providing the values reported in this table are given in numbered superscript brackets. [1]: \citet{dumont2008evolution}. [2]: \citet{kong2002high}. [3]: \citet{cox2009new}. [4]: \citet{jensen2004comparative}. [5]: \citet{jeffreys2004intense}. [6]: \citet{halldorsson2016rate}. [7]: \citet{williams2015non}.
 		\par The sources providing the values reported in this table are given with the following numbered superscript brackets. [1]: \citet{dumont2008evolution}. [2]: \citet{kong2002highresolution}. [3]: \citet{shifman2006highresolution}. [4]: \citet{paigen2008recombinational}. [5]: \citet{jeffreys2004intense}. [6]: \citet{halldorsson2016rate}. [7]:~\citet{williams2015noncrossover}.
 		$\star$: Measured or estimated in this study.
 		$\ddagger$: We assumed that the mouse $r^{NCO}$ was about 9 times the mouse $r^{CO}$, since the CO:NCO ratio is 1:10 in the mouse \citep{handel2010genetics}.
@@ -310,9 +248,6 @@ Indeed, if the inferred donor were \textit{not} accurate, results for the defect
 
 Regarding Rec-2S events (NCO-2+ and NCO-1 events), since both edges of its CTs\textsuperscript{$\star$} were directly observable, there should not have been any mistake on their orientation.
 
-% Concerning NCO-1 events, we grossly estimated $b_0^{NCO_1}$ by monitoring the number and direction (S\textrightarrow{} W or W\textrightarrow{} S) of erroneous base calls in all fragments potentially corresponding to NCO-1 events.
-% In view of the fact that the value we found for $b_0^{NCO_1}$ was extremely close to that of human $b_0$ \citep{williams2015noncrossover,halldorsson2016rate} and very close to the one measured by \citet{li2018highresolution} on mice, we are confident that our estimate is roughly correct.
-%
 As for Rec-1S events, we reduced their genuine CT to the segment (CT\textsuperscript{$\star$}) located between the switch point and the PRDM9 ChIP-seq peak summit (see Chapter~\ref{ch:6-recombination-parameters}).
 But, if the DSB site were located outside this CT\textsuperscript{$\star$} (for example, in the portion of the CT on the opposite side of the unambiguous CT\textsuperscript{$\star$} edge), donor inference would be erroneous.
 It was previously shown that the position of the DSB may vary by up to 30 bp from the consensus motif \citep{lange2016landscape} and we thus performed simulations in which the genuine position of the DSB was 30 bp away from its inference (the PRDM9 ChIP-seq peak summit).
@@ -330,14 +265,6 @@ Whatsoever, even under a worst-case scenario where the donor would be erroneousl
 
 
 
-% Hotspot centres, defined as the summits of PRDM9 ChIP-seq peaks, coincided with the positions of PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-hotspot-centres}) and most (77\%) Spo-11 ChIP-seq peak centres previously detected in B6 \citep{lange2016landscape} were located closer than 50-bp away from our PRDM9 binding motifs (see \ref{par:MM-motifs-close-to-DSBs}). Altogether, this suggests that hotspot centres approximate accurately the genuine locations of DSB sites.
-
-% \citet{lange2016landscape} published Spo-11 ChIP-seq data on B6 mice. 141 of our hotspots overlapped a Spo-11 ChIP-seq peak and for each of them, we computed the distance between the center of the Spo-11 ChIP-seq peak and the PRDM9 binding motif we previously identified. We found that 77.3\% of these 141 peaks were located less than 50-bp away from the PRDM9 binding motif which proves that the PRDM9 binding motifs are located adjacently to genuine DSB sites.
-
-
-
-
-% Speculative interpretation of BGC evolution
 \section{Speculations on the evolution of BGC}
 \subsection{Role of CO and NCO events in limiting $B$}
 
@@ -354,45 +281,6 @@ As the repair mechanism which leads to the formation of these complex COs might 
 As such, aside from the recombination rate and conversion tract lengths, the factors explaining the $b$ difference between mice and humans are still unclear.
 
 
-% The contribution of COs to gBGC seems to differ qualitatively between \textit{Homo sapiens} and \textit{Mus musculus}.
-% Indeed, we found in this study that, in mice, the transmission bias of COs is null (Table~\ref{tab:estimation-gBGC-values}).
-% In contrast, in humans, at least a portion (though small) of COs contribute to gBGC\@: the transmission bias of complex COs (CCOs) — which represent about 0.31\% and 1.33\% of male and female COs, respectively \citep{webb2008sperm, halldorsson2016rate} — equals 0.5.
-%
-% As for simple COs, data still lack to find out whether or not (and to what extent) they contribute to gBGC in humans.
-% Either they could exhibit a non-null transmission bias; in that case, there would indeed be a qualitative difference between \textit{Homo sapiens} and \textit{Mus musculus} regarding the contribution of all COs to gBGC\@.
-% Or they could exhibit a null transmission bias, as seen in mice; in that case, the qualitative difference between the two species would rest solely upon the existence of complex COs in humans, and, since complex COs principally occur in women, what seems to be a discrepancy between species may only be the reflect of inter-sexual differences. Though, the latter assumption cannot be tested, since no data is available for female mice.\\
-%
-
-% As for NCOs, the transmission bias ($b_0^{NCO}$) we estimated for male mice in this study was similar to that previously reported in male humans (Table~\ref{tab:estimation-gBGC-values}).
-% Therefore, the quantitative difference on the $r^{NCO} \times L^{NCO}$ parameter between male mice and humans led to a 2.5-fold difference on $b^{NCO}$ between the two species.
-% As such, it seems that NCOs contribute quantitatively differently to gBGC in male mice and in men.
-
-% More specifically, in mice, NCO-1 events largely predominate in the intensity of $b$, since $b_0^{NCO_1}$ is largely superior to $b_0^{NCO_{2+}}$ — a finding that is consistent with what has been found by \citet{li2018highresolution}.
-% After reanalysing data from \citet{halldorsson2016rate}, \citet{li2018highresolution} showed that this finding also held true in male humans.
-% They also saw this effect in women, after excluding events located outside hotspots, i.e.\ those likely to arise through non-programmed DSBs.
-
-% Though, by re-analysing the same dataset, we found that there was no transmission bias decrease in NCO-2+ events when including all events for women (Table~\ref{tab:analysis-halldorsson}) and, since these events also affect genome evolution, we argue that they should not be excluded when thinking in evolutionary terms.
-% In addition, regarding men, the number of events on which their interpretation is based is extremely reduced (only 5 events including 3 markers, see Table~\ref{tab:analysis-halldorsson}).
-% Thus, even if we cannot rule out that the intensity of gBGC may indeed decrease with the number of markers in the CT for humans as \citet{li2018highresolution} claim, data lacks to make this statement with certainty.
-
-% Therefore, either markers involved in human NCO-2+ events do not display a transmission bias decrease as compared to those involved in NCO-1 events — in that case, gBGC proceeds differently for NCOs in \textit{Homo sapiens} and in \textit{Mus musculus} — or markers involved in NCO-2+ events in men indeed display a transmission bias decrease as compared to NCO-1 events — in that case, it cannot be excluded that inter-sexual differences exist, since women clearly do not display such decrease (Table~\ref{tab:analysis-halldorsson}) but the latter assumption cannot be tested in mice since no data is available for female mice.
-
-
-
-
-
-% Thus, because the transmission bias decreases for NCO-2+ events as compared to NCO-1 events in men (and male mice) but not in women, the consequences of gBGC on genomes differ between sexes.
-
-
-
-% - pourrait etre les CO, car 0 chez souris, mais chez Halldorsson oui sur les complexes et sait pas sur les autres (mais on ne peut pas exclure)
-% - on a donc une diff qualitative, mais ca pourrait n'etre du qu'aux complexes (qui n'existent pas chez souris et qui existent chez sapiens) et ca pourrait meme n'etre du qu'aux femmes, car elles ont plus de CO complexes (mais on ne peut pas tester chez souris femelles si effet BGC sur leurs COs).
-
-% - qund on regarde les NCO, le b0 est globalement similaire entre humain et souris
-% - mais pas rxL, donc ce parametre joue directement et on bserve donc une difference quantitative
-% - en particulier, les NCO-1 sont les plus importants, et on observe une decroissance des NCO-2+ dans la participation au BGC
-% - li disent que idem chez homme, et femme. Ttoutefois, pas de decrease si on garde toutes les donnees (cf table), et la decroissance est difficile a ascertain pour l'homme car tres peu d'evenements.
-% - Donc, possible que effet de NCO-2+ qui differe entre souris et sapiens, ou du seulement a femme
 
 
 
@@ -417,15 +305,11 @@ But it is presently impossible to discriminate between these two possible explan
 
 More generally, since species with large $N_e$ are more polymorphic and thus entail more NCO-2+ events, the fact that $b_0^{NCO_{2+}}$ is much smaller than $b_0^{NCO_1}$ may be interpreted as another manifestation of the existence of a selective pressure acting to restrain $B$ in large-$N_e$ populations.
 
-% Presently, there is no data available in female mice allowing to discriminate between an interspecific (between mice and humans) or an intersexual (between males and females) for this observed difference between $b_0^{NCO_{2+}}$ and $b_0^{NCO_{1}}$.
 
 
-% However, as, in \textit{Homo sapiens}, most of the NCO-2+ events come from women (Table~\ref{tab:analysis-halldorsson}), the difference between $b_0^{NCO_{2+}}$ and $b_0^{NCO_{1}}$ may reflect a sex-based discrepancy.
-% But, presently, there is no data available in female mice allowing to discriminate between an interspecific or an intersexual origin for this observed difference between $b_0^{NCO_{2+}}$ and $b_0^{NCO_{1}}$.
 
 
 \begin{table}[t]
-	% \small
 	\centering
 	\begin{adjustbox}{width=0.581\textwidth}
 	\begin{tabular}{rrrrr}
@@ -443,7 +327,6 @@ More generally, since species with large $N_e$ are more polymorphic and thus ent
 		>4 markers & 119  & 731  & 357  & 0.35 \\
 		\midrule
 		All CTs     & 2140 & 2216 & 1053 & 0.36 \\
-		%\textbf{All CTs}     & \textbf{875} & \textbf{605} & \textbf{346} & \textbf{0.27} & \textbf{1265} & \textbf{1611} & \textbf{707} & \textbf{0.39} \\
 
 		\bottomrule
 
@@ -469,9 +352,6 @@ Finally, the other type of biased gene conversion — dBGC — also seems to pla
 Indeed, the hybrid mice that we analysed descended from crosses between two strains derived from subspecies which displayed distinct \textit{Prdm9} alleles.
 Thus, their respective hotspots specifically underwent gBGC and got GC-enriched as compared to the genome of the other (‘nonself’) strain:
 in the B6 (resp.\ CAST) lineage, PRDM9\textsuperscript{Dom2}-targeted (resp.\ PRDM9\textsuperscript{Cst}-targeted) hotspots locally enriched in GC while these positions in the CAST (resp.\ B6) lineage did not.
-% in the B6 lineage, PRDM9\textsuperscript{Dom2}-targeted hotspots locally enriched in GC while these positions in the CAST lineage did not;
-% and, conversely, in the CAST lineage, PRDM9\textsuperscript{Cst}-targeted hotspots enriched more their GC-content than the B6 lineage did.
-% while in the CAST lineage, PRDM9\textsuperscript{Cst}-targeted hotspots got GC-enriched.
 In parallel, the targeted hotspots got eroded in the ‘self’ lineage, as predicted by the hotspot conversion paradox \citep{boulton1997hotspot}.
 
 
@@ -480,23 +360,6 @@ In parallel, the targeted hotspots got eroded in the ‘self’ lineage, as pred
 	\begin{adjustbox}{width=\textwidth}
 	\begin{tabular}{rrrrrrrrr}
 	
-		% AVEC FREQUENCE
-   %      \toprule
-		% & \multicolumn{4}{c}{\textbf{Paternal NCO events}} &  \multicolumn{4}{c}{\textbf{Maternal NCO events}}  \\
-		% \cmidrule(l){2-5} \cmidrule(l){6-9}
-		% CT class & \# CTs & \# W\textrightarrow{}S & \# S\textrightarrow{}W & \% W\textrightarrow{} S & \# CTs & \# W\textrightarrow{}S & \# S\textrightarrow{} W& \% W\textrightarrow{} S \\
-        %
-		% \cmidrule(l){1-1} \cmidrule(l){2-5} \cmidrule(l){6-9}
-        %
-		% 1 marker   & 824 & 513 & 270 & 0.655 & 994 & 679 & 284 & 0.705 \\
-		% 2 markers  & 34  & 34  & 23  & 0.596 & 116 & 153 & 72  & 0.680 \\
-		% 3 markers  & 5   & 7   & 7   & 0.500 & 48  & 99  & 40  & 0.712 \\
-		% >4 markers & 12 & 51  & 46  & 0.526 & 107 & 680 & 311 & 0.686 \\
-		% All CTs     & 875 & 605 & 346 & 0.636 & 1265 & 1611 & 707 & 0.695 \\
-		%
-		% \bottomrule
-%
-
 		% AVEC b0
 		\toprule
 		& \multicolumn{4}{c}{\textbf{Paternal NCO events}} &  \multicolumn{4}{c}{\textbf{Maternal NCO events}}  \\
@@ -511,7 +374,6 @@ In parallel, the targeted hotspots got eroded in the ‘self’ lineage, as pred
 		>4 markers & 12 & 51  & 46  & 0.05 & 107 & 680 & 311 & 0.37 \\
 		\midrule
 		All CTs     & 875 & 605 & 346 & 0.27 & 1265 & 1611 & 707 & 0.39 \\
-		%\textbf{All CTs}     & \textbf{875} & \textbf{605} & \textbf{346} & \textbf{0.27} & \textbf{1265} & \textbf{1611} & \textbf{707} & \textbf{0.39} \\
 
 		\bottomrule
 
@@ -540,7 +402,6 @@ if two populations with distinct \textit{Prdm9} alleles have evolved independent
 \begin{figure}[p]
 	\centering
 	\includegraphics[width = 0.9\textwidth]{figures/inkscape/dBGC-hitchhiking.eps}
-	% \missingfigure[figwidth=14cm, figheight = 15cm]{Schema du design experimental}
 	\caption[dBGC hitchhiking in structured populations]
 	{\textbf{dBGC hitchhiking in structured populations.}
 		\par In the CAST lineage (yellow box) where PRDM9\textsuperscript{Cst} (yellow triangles) is present, PRDM9\textsuperscript{Cst}-targeted motifs (yellow square) undergo erosion and, because of gBGC, weak (W) bases (A or T) get supplanted by strong (S) bases (G or C) at WS polymorphic sites.
@@ -555,23 +416,8 @@ if two populations with distinct \textit{Prdm9} alleles have evolved independent
 
 
 
-
-% In the particular scenario of B6xCAST hybrids (and this surely extends to other cases of structured populations too), we found that the B6 haplotype was more GC-enriched in PRDM9\textsuperscript{Dom2}-targeted hotspots than the CAST haplotype was in PRDM9\textsuperscript{Cst}-targeted hotspots (Figure~\ref{fig:GC-profiles}).
-% This may be due to the fact that
-% As such, because of different levels of erosion and GC-increase in the past lineages, the interplay between dBGC and gBGC when populations cross may differ quantitatively between the two sets of targeted hotspots.\\
-%
-% - particular case of B6xCAST
-% - B6 plus erode (car plus vieux, ou parce que
-
-
 This phenomenon of dBGC hitchhiking brought a confounding effect to quantify gBGC and we thus decoupled the two processes by equalising, at every hotspot, the number of B6- and CAST-donor fragments to cancel the dBGC effect.
 This allowed us to quantify the transmission bias ($b_0$) in mice, which was useful to comprehend how the gBGC coefficient ($b$) varies with the effective population size ($N_e$) and to show that the observations complied with the hypothesis of a selective pressure restraining gBGC at the individual-scale to limit its nefast consequences at the population-scale.
-% But, prior to that, the other parameters on which $b$ depends (the recombination rate $r$ and the length of conversion tracts $L$) should also be examined: this is the object of the next subsection.
-
-
-% Discuter aussi de la figure 7.4 (GC-profiles): B6 a plus de GC car a ete plus erode car plus vieux et/ou vu que parmi les hotspots selectionnes, on n'a moins de cibles par B6, donc ceux selectionnes sont les plus forts. + on observe une inversion hors des tracts. Du a qqch?
-
-
 
 
 
@@ -583,19 +429,9 @@ This allowed us to quantify the transmission bias ($b_0$) in mice, which was use
 
 
 But, this hypothesis, — if it were true, — would surely bring other more conceptual questions like the following:
-% The hypothesis of a selective pressure restraining gBGC at the individual-scale to limit its nefast consequences at the population-scale, — if it were true, — would surely bring other more conceptual questions like the following:
-% open more philosophical and epistemological questions like the following:
-% how could the population affect genetically
-% how could the population benefits act upon molecular components of individuals
 how can effects on a population drive the evolution of a molecular mechanism in single individuals?
 And at what scale, — populational or individual, — should the concept of evolutionary forces be defined?
 Rather than answering them, I will try and provide food for thought on these open questions in the following — and final — chapter of this thesis.
-
-% DANS CHAP9 s'assurer que pose bien la question: la question est comment la selection peut se mettre en place en fonction de la taille efficace, qui est une propriete externe aux individus sur laquelle la selection s'applique.
-
-% \textbf{Puis, mettre une transition sur pourquoi ce b pourrait etre limite a l'echelle individuelle}
-
-% (Autrement, d'ailleurs, ca serait simplement que les especes qui ont cet attribut ont survecu — peut-on parler de force dans ce cas? (oui))
 
 
 

@@ -7,8 +7,6 @@
 \end{savequote}
 
 \chapter{\label{ch:7-quantification-BGC}Quantification of biased gene conversion in mouse hotspots}
-% \chapter{\label{ch:7-quantification-BGC}Quantification of biased gene conversion in mouse F1 hybrids}
-% \chapter{\label{ch:7-quantification-BGC}Quantification of DSB-induced and GC-biased gene conversion}
 %\otherpagedecoration
 
 
@@ -23,17 +21,6 @@ We first quantified DSB-induced biased gene conversion (dBGC) in autosomal hotsp
 We then controlled for this confounding effect to quantify gBGC in both COs and NCOs.
 We found that the transmission bias ($b_0$) was null for COs and very weak for multiple-marker NCOs. 
 In contrast, single-marker NCOs exhibited a large transmission bias comparable with that observed in humans.
-% suggere mecanisme OU pression de selection quand bcp de SNPs (a discuter a la fin de ce chpaitre + dans chapitre 9)
-
-% Resume
-% BGC avec Ne variable
-% On meusre chez souris
-% On a mesure le dBGC sur 1000 hotspots
-% On observe que, dans des populations structures comme dans nos hybrides F1, il existe un hitchhiking du dBGC sur le gBGC passe.
-% donc il nous a fallu controller pour cet effet pour quantifier le gBGC
-% On observe que l'intensite du gBGC est nul pour les CO, faible pour les NCO longs et plus eleve chez les NCO a 1 SNP.
-% Mais pas d'effet sur les bordures de SNPs dans les fins de tracts.
-% Cela suggere qu'il y a un mecanisme different qui met en place le gBGC sur els NCO courts et longs. Ou qu'il y a une pression de selection qui limite l'effet du gBGC sur les longs tracts.
 
 
 }
@@ -44,18 +31,10 @@ Considering that the intensity of GC-biased gene conversion (gBGC) at the popula
 Logically thus, one or several of the parameters on which $b$ depends — among which the transmission bias $b_0$ — should vary inversely with $N_e$.
 
 Though, among mammals, the transmission bias ($b_0$) has only been measured in humans \citep{williams2015noncrossover, halldorsson2016rate} and consequently, the interplay between $b$ and $N_e$ remains unexplained.
-% To shed new insight into this relationship, we thus quantified gBGC in another mammalian species with larger $N_e$ (mice).
 In this chapter, I describe how we managed to shed new insight into this relationship by quantifying gBGC in another mammalian species with larger $N_e$ (mice).
 Since this quantification required to classify hotspots according to their PRDM9 target so as to control for the confounding effect of DSB-induced biased gene conversion (dBGC), I will start this chapter with two sections presenting this process.
-% But, before that, it appeared necessary to classify hotspots according to their PRDM9 target so as to control for the confounding effect of DSB-induced biased gene conversion (dBGC).
-%, as I report in the last section of this chapter.
-% But, before that, it appeared necessary to classify hotspots according to their PRDM9 target so as to control for the confounding effect of DSB-induced biased gene conversion (dBGC).
-% I describe this process in the first two sections of this chapter.
 
 
-
-% \section{Classification of hotspots}
-% \subsection{Identification of the PRDM9 target}
 
 \section{Identification of the PRDM9 target}
 \subsection{Methodology to classify hotspots}
@@ -66,60 +45,14 @@ To discriminate between these two scenarii, we classified all 1,018 hotspots bas
 
 First, we used PRDM9 ChIP-seq data in the parental B6 and CAST strains from \citet{baker2015prdm9}: 
 when a peak was detected in one parental strain, the hotspot was necessarily targeted by the allele present in that strain, i.e.\ PRDM9\textsuperscript{Dom2} (resp.\ PRDM9\textsuperscript{Cst}) when the peak was found in the B6 (resp.\ CAST) lineage.
- % and PRDM9\textsuperscript{Cst} when it was found in the CAST lineage.
 
-% When, however, no PRDM9 ChIP-seq peak was detected in either parent, knowing which allele targeted the hotspot was not straightforward.
-% % As a substitute, we used information from the strand-specific detection of PRDM9 ChIP-seq reads in the B6xCAST cross from \citet{baker2015prdm9} to predict which haplotype was hot, i.e.\ targeted by PRDM9, and which was cold, i.e.\ donor in the subsequent gene conversion event.
-% As a substitute, we used information from the strand-specific detection of PRDM9 ChIP-seq reads in the B6xCAST cross from \citet{baker2015prdm9} to predict which haplotype was cold, i.e.\ the donor in the subsequent gene conversion event.
-% % Indeed, if the majority of PRDM9 ChIP-seq tags map onto one haplotype, it means that this haplotype is preferentially bound by PRDM9 and thus, that it hosts the DSB more often than the alternate (thus, cold) haplotype.
-% Indeed, the haplotype onto which the majority of PRDM9 ChIP-seq tags map is necessarily that preferentially bound by PRDM9 and thus, the hot haplotype.
-% Like \citet{baker2015prdm9}, we set the threshold at 75\%: if more than 75\% of ChIP-seq reads mapped onto the B6 (resp.\ CAST) haplotype, we inferred that the cold haplotype was CAST (resp.\ B6).
-%
 
 When, however, no PRDM9 ChIP-seq peak was detected in either parent (i.e.\ for novel hotspots detected only in the F1 hybrid), knowing which allele targeted the hotspot was not straightforward.
-% As a substitute, we used information from the strand-specific detection of PRDM9 ChIP-seq reads in the B6xCAST cross from \citet{baker2015prdm9} to predict which haplotype was hot, i.e.\ targeted by PRDM9, and which was cold, i.e.\ donor in the subsequent gene conversion event.
-% As a substitute, we used information from the strand-specific detection of PRDM9 ChIP-seq reads in the B6xCAST cross from \citet{baker2015prdm9}.
 As a substitute, we used information from the strand-specific detection of PRDM9 ChIP-seq reads \citep{baker2015prdm9}.
 Indeed, the proportion of PRDM9 ChIP-seq tags mapping onto one haplotype directly reflects its propensity to be bound by PRDM9 (relatively to that of the other haplotype).
 Using the assumption that the least bound haplotype had a lower affinity because it had co-evolved with the \textit{Prdm9} allele targeting the hotspot and had thus undergone erosion in the parental lineage, we inferred that \textit{Prdm9\textsuperscript{Dom2}} (resp.\ \textit{Prdm9\textsuperscript{Cst}}) was the target when at least 75\% of PRDM9 ChIP-seq tags mapped preferentially onto the CAST (resp.\ B6) haplotype.
- % and \textit{Prdm9\textsuperscript{Cst}} when they mapped preferentially onto the B6 haplotype.
 
 
-% Using the assumption that the differential PRDM9 affinity arose from the erosion of the least bound haplotype in the parental lineage, we inferred that the \textit{Prdm9} allele targeting the hotspot was the one which co-evolved with the eroded haplotype.
-% We assumed that the least bound haplotype was least bound because it had co-evolved with eroded in the parental lineage where
-%
-% We assumed that the differential PRDM9 affinity was a manifestation of the erosion of the least bound haplotype during its coevolution with the \textit{Prdm9} allele targeting the hotspot in the parental lineage.
-% As such, we could infer that the \textit{Prdm9} allele targeting the hotspot was the one that had coevolved with the least bound haplotype.
-%
-% We assumed that the haplotype that had co-evolved with the \textit{Prdm9} allele targeting the hotspot had undergone erosion due to biased gene conversion in the parental lineage.
-%
-% We made the assumption that the differential PRDM9 affinity was the result of the erosion of the least bound haplotype during its co-evolution with the \textit{Prdm9} allele targeting the hotspot in the parental lineage.
-% we could determine that the
-% We then infered that the \textit{Prdm9} allele targeting the hotspot was the one that had co-evolved with the least bound haplotype
-%
-%
-%
-% We assumed that the least bound haplotype was eroded because it had co-evolved with the \textit{Prdm9} allele targeting the hotspot in the parental lineage.
-%
-%
-% And thus, we could
-%
-% % its motif in the haplotype that co-evolved with the \textit{Prdm9} allele targeting it, we can infer that the
-% % \textit{Prdm9} allele targeting the hotspot is the one which co-evolved with the eroded haplotype.
-%
-%
-% La proportion de tags sur un haplo reflete directement sa propensite (relativement a l'autre) a etre cible par PRDM9.
-% En supposant que dans la majorite des cas, la difference de ciblage est due a l'erosion dans l'autre haplo, et que cette erosion provient du fait qu'il etait cible dans la lignee parentale par l'llele PrdM9, on peut inferer que l'allele Prdm9 est celui qui a coevolue avec l'haplotype erode (non cible).
-%
-% - l'haplotype sur lequel les tags mappent est celui cible par PRDM9 (propensite a etre cible). Donc s'i haplotype bias, alors fort bias de formation de DSBs, donc c'est un hot haplotype.
-% - on dit que si plus de 75 alors biais fort et c'est l'aplot chaud.
-% Or, dans le cas d'une hybride ou les deux alleles sont presents,
-%
-%  to predict which haplotype was cold, i.e.\ the donor in the subsequent gene conversion event.
-% % Indeed, if the majority of PRDM9 ChIP-seq tags map onto one haplotype, it means that this haplotype is preferentially bound by PRDM9 and thus, that it hosts the DSB more often than the alternate (thus, cold) haplotype.
-% Indeed, the haplotype onto which the majority of PRDM9 ChIP-seq tags map is necessarily that preferentially bound by PRDM9 and thus, the hot haplotype.
-% Like \citet{baker2015prdm9}, we set the threshold at 75\%: if more than 75\% of ChIP-seq reads mapped onto the B6 (resp.\ CAST) haplotype, we inferred that the cold haplotype was CAST (resp.\ B6).
-%
 
 
 \subsection{Symmetric \textit{versus} asymmetric hotspots}
@@ -178,10 +111,7 @@ Using the assumption that the least bound haplotype had a lower affinity because
 
 
 We named the aforementioned class of hotspots displaying large haplotype biases (i.e.\ those with over 75\% of PRDM9 ChIP-seq tags mapping onto one haplotype) ‘asymmetric’ hotspots, and all the others ‘symmetric’ hotspots.
-% (i.e.\ those displaying no large haplotype bias)
 As mentioned above, such asymmetry materialises the erosion of the target motif in the parental lineage. 
-% We further subdivided the group of asymmetric hotspots into two subgroups, based on the extent of their erosion:
-% either they had undergone full erosion in the parental lineage and
 We further subdivided the group of asymmetric hotspots into two subgroups, based on the presence (or not) of a ChIP-seq peak in the parental strain:
 either no PRDM9 ChIP-seq peak was detected in either parental strain — in that case, the hotspot had undergone full erosion in the parental lineage and we classified it as a ‘novel’ hotspot; or a PRDM9 ChIP-seq peak was detected in one of the two parents — in that case, the hotspot had only been partially eroded in the parental strain.\\
 
@@ -197,54 +127,37 @@ We note that, as most polymorphic sites in F1 hybrid hotspots result from hotspo
 
 \subsection{Validation by detection of the target motifs}
 
-% Identifying the hotspot-activating \textit{Prdm9} allele at fully eroded hotspots (i.e.\ those for which no PRDM9 ChIP-seq peak was detected in the parental strains) rested on the assumption that the differential PRDM9 binding affinity originated from motif erosion in one lineage (see Subsection~\ref{chap7:PRDM9-target-inference}).
 Identifying the hotspot-activating \textit{Prdm9} allele at fully eroded hotspots (i.e.\ those for which no PRDM9 ChIP-seq peak was detected in the parental strains) was done by deduction in lieu of direct observations (see Subsection~\ref{chap7:PRDM9-target-inference}) and may thus entail errors.
 Since the accuracy of the inferred \textit{Prdm9} target was critical to the posterior quantification of biased gene conversion, we wanted to make sure that our predictions were correct by verifying that occurrences of the PRDM9\textsuperscript{Dom2} (resp.\ PRDM9\textsuperscript{Cst}) target motif were found in hotspots predicted to be bound by it.
 
 \subsubsection{Discovery of the consensus target motifs}
 To do this, we first had to discover the motif targeted by PRDM9\textsuperscript{Dom2} and PRDM9\textsuperscript{Cst}.
-%— which we inferred to correspond to the position of the PRDM9 ChIP-seq peak summit (see Chapter~\ref{ch:6-recombination-parameters}), 
 Since the motifs targeted by PRDM9 are known to be located in the vicinity of the DSB site \citep{brick2012genetic, baker2014prdm9}, we used the 300-bp central regions of the hotspots undoubtedly targeted by each of the \textit{Prdm9} alleles to discover their consensus motif.
 For the PRDM9\textsuperscript{Dom2} consensus motif, the hotspots we used were those for which a PRDM9 ChIP-seq peak had been found in the B6 strain:
 the B6 and CAST haplotypes of the symmetric PRDM9\textsuperscript{Dom2}-targeted hotspots (tB.sym) and the CAST haplotype of the partially eroded PRDM9\textsuperscript{Dom2}-targeted hotspots (tB.chB).
 Respectively, for the PRDM9\textsuperscript{Cst} consensus motif, the hotspots we used were those for which a PRDM9 ChIP-seq peak had been found in the CAST strain:
 the B6 and CAST haplotypes of the symmetric PRDM9\textsuperscript{Cst}-targeted hotspots (tC.sym) and the B6 haplotype of the partially eroded PRDM9\textsuperscript{Cst}-targeted hotspots (tC.chC).
 
-% The motifs targeted by PRDM9 are known to be located in the vicinity of the DSB site \citep{brick2012genetic, baker2014prdm9}, which we inferred to correspond to the position of the PRDM9 ChIP-seq peak summit (see Chapter~\ref{ch:6-recombination-parameters}).
-%
-% Therefore, to learn the PRDM9\textsuperscript{Dom2} consensus motif, we used the 300-bp central regions of the hotspots undoubtedly targeted by PRDM9\textsuperscript{Dom2}, i.e.\ hotspots for which a PRDM9 ChIP-seq peak had been found in the B6 strain:
-% the B6 and CAST haplotypes of the symmetric PRDM9\textsuperscript{Dom2}-targeted hotspots (tB.sym) and the CAST haplotype of the partially eroded PRDM9\textsuperscript{Dom2}-targeted hotspots (tB.chB).
-% Respectively, to learn the PRDM9\textsuperscript{Cst} consensus motif, we used the 300-bp central regions of the hotspots undoubtedly targeted by PRDM9\textsuperscript{Cst}, i.e.\ hotspots for which a PRDM9 ChIP-seq peak had been found in the CAST strain:
-% the B6 and CAST haplotypes of the symmetric PRDM9\textsuperscript{Cst}-targeted hotspots (tC.sym) and the B6 haplotype of the partially eroded PRDM9\textsuperscript{Cst}-targeted hotspots (tC.chC).
-%
 
 
 \begin{figure}[b!]
 	\centering
 	\begin{subfigure}[b]{0.495\textwidth}
 		\includegraphics[width=\textwidth]{figures/chap7/Baker_B6_motif.eps}
-		% \caption{PRDM9\textsuperscript{Dom2} \citep{baker2015prdm9}}
 		\caption{\textit{Prdm9\textsuperscript{Dom2}} \citep{baker2015prdm9}}
-		% \label{fig:baker_B6_motif}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.495\textwidth}
 		\includegraphics[width=\textwidth]{figures/chap7/Baker_CAST_motif.eps}
-		% \caption{PRDM9\textsuperscript{Cst} \citep{baker2015prdm9}}
 		\caption{\textit{Prdm9\textsuperscript{Cst}} \citep{baker2015prdm9}}
-		% \label{fig:baker_CAST_motif}
 	\end{subfigure}
 
 	\begin{subfigure}[b]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim=0.848cm 0.485cm 0cm 0cm,clip]{figures/chap7/Motif_B6.eps}
-		% \caption{PRDM9\textsuperscript{Dom2} (this study)}
 		\caption{\textit{Prdm9\textsuperscript{Dom2}} (this study)}
-		% \label{fig:B6_motif}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim=0.835cm 0.478cm 0cm 0cm,clip]{figures/chap7/Motif_CAST.eps}
-		% \caption{PRDM9\textsuperscript{Cst} (this study)}
 		\caption{\textit{Prdm9\textsuperscript{Cst}} (this study)}
-		% \label{fig:CAST_motif}
 	\end{subfigure}
 	\caption[Comparison of consensus motifs for \textit{Prdm9\textsuperscript{Dom2}} and \textit{Prdm9\textsuperscript{Cst}}]
 	{\textbf{Comparison of consensus motifs for \textit{Prdm9\textsuperscript{Dom2}} and \textit{Prdm9\textsuperscript{Cst}}.}
@@ -257,10 +170,8 @@ the B6 and CAST haplotypes of the symmetric PRDM9\textsuperscript{Cst}-targeted 
 In practice, to search for the consensus motifs, we used the MEME motif discovery tool \citep{bailey2006meme} from the MEME Suite (version 4.11.2) \citep{bailey2009meme}, in the any-number-of-repetitions mode and allowing up to 10 motifs of width comprised between 10 and 30 bp.
 For each \textit{Prm9} allele, the consensus motif we retained was the one with the lowest E-value.
 We found that, in both cases, they were either identical to or the complement reverse of the ones published by \citet{baker2015prdm9} (Figure~\ref{fig:consensus-motifs}).
-% We were confident in the correctness of the consensus motifs we identified for both PRDM9\textsuperscript{Dom2} and PRDM9\textsuperscript{Cst} since they were either identical to or the complement reverse of the ones published by \citet{baker2015prdm9} (Figure~\ref{fig:consensus-motifs}).
 We also verified that these consensus motifs were specific to the sequences we selected: 
 we searched for them in control regions defined as sequences located 5-kb downstream of those used to discover the motifs and found that the consensus motif for \textit{Prdm9\textsuperscript{Dom2}} (resp.\ \textit{Prdm9\textsuperscript{Cst}}) appeared 10 (resp.\ 7) times less in these control sequences than in the training set.
-% by searching for them in control regions defined as sequences located 5-kb downstream of those used to discover the motifs: we found the consensus motif for \textit{Prdm9\textsuperscript{Dom2}} (resp.\ \textit{Prdm9\textsuperscript{Cst}}) in 10 (resp.\ 7) times more training sequences than control sequences.
 
 
 \subsubsection{Occurrences of consensus motifs in the predicted hotspots}
@@ -269,28 +180,20 @@ we searched for them in control regions defined as sequences located 5-kb downst
 	\centering
 	\begin{subfigure}[b]{0.495\textwidth}
 		\includegraphics[width=\textwidth]{figures/chap7/dom_tB.eps}
-		% \caption{Predicted \textit{Prdm9\textsuperscript{Dom2}}-activated.}
 		\caption{Predicted PRDM9\textsuperscript{Dom2}-targeted.}
-		% \label{fig:distrib_B6_motif_tB}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.495\textwidth}
 		\includegraphics[width=\textwidth]{figures/chap7/dom_tC.eps}
-		% \caption{Predicted \textit{Prdm9\textsuperscript{Cst}}-activated.}
 		\caption{Predicted PRDM9\textsuperscript{Cst}-targeted.}
-		% \label{fig:distrib_B6_motif_tC}
 	\end{subfigure}
 
 	\begin{subfigure}[b]{0.495\textwidth}
 		\includegraphics[width=\textwidth]{figures/chap7/cas_tB.eps}
-		% \caption{Predicted \textit{Prdm9\textsuperscript{Dom2}}-activated.}
 		\caption{Predicted PRDM9\textsuperscript{Dom2}-targeted.}
-		% \label{fig:distrib_CAST_motif_tB}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.495\textwidth}
 		\includegraphics[width=\textwidth]{figures/chap7/cas_tC.eps}
-		% \caption{Predicted \textit{Prdm9\textsuperscript{Cst}}-activated.}
 		\caption{Predicted PRDM9\textsuperscript{Cst}-targeted.}
-		% \label{fig:distrib_CAST_motif_tC}
 	\end{subfigure}
 	\caption[Occurrences of \textit{Prdm9\textsuperscript{Dom2}} and \textit{Prdm9\textsuperscript{Cst}} consensus motifs along hotspots predicted to be targeted by these alleles]
 	{\textbf{Occurrences of \textit{Prdm9\textsuperscript{Dom2}} and \textit{Prdm9\textsuperscript{Cst}} consensus motifs along hotspots predicted to be targeted by these alleles.}
@@ -307,7 +210,7 @@ we searched for them in control regions defined as sequences located 5-kb downst
 Next, we searched for occurrences of both these consensus motifs in the two haplotypes of each 1-kb long hotspot, using the FIMO tool \citep{grant2011fimo} with default parameters. 
 When more than one occurrence of the motif was found in a given hotspot, we retained solely the motif with the highest log-likelihood ratio score.
 
-	% CF file:///Users/maudgautier/Documents/These/R_projects/02_Hotspots/02_Identification_motifs_copy.html
+% CF file:///Users/maudgautier/Documents/These/R_projects/02_Hotspots/02_Identification_motifs_copy.html
 Altogether, we found that, in hotspots predicted to be targeted by PRDM9\textsuperscript{Dom2}, the majority (76.25\%) of the haplotypes predicted to be hot (i.e.\ targeted by PRDM9) on the basis of the strand-specific detection of PRDM9 ChIP-seq reads from \citet{baker2015prdm9} (see Subsection~\ref{chap7:PRDM9-target-inference}) indeed contained a \textit{Prdm9\textsuperscript{Dom2}} motif. 
 Reciprocally, in hotspots predicted to be targeted by PRDM9\textsuperscript{Cst}, most (72.44\%) haplotypes predicted to be hot contained a \textit{Prdm9\textsuperscript{Cst}} motif.
 
@@ -321,7 +224,6 @@ Also, these motifs gathered in the close vicinity of the inferred DSB sites (i.e
 
 \addtocontents{toc}{\protect\pagebreak}
 \section{dBGC hitchhiking of past gBGC}
-% \section{Quantification of DSB-induced biased gene conversion (dBGC)}
 
 
 \subsection{Direct quantification of dBGC} 
@@ -386,7 +288,6 @@ Alternatively, considering that PRDM9\textsuperscript{Dom2}-targeted hotspots ar
 
 \begin{table}[b!]
 	\centering
-	% \begin{adjustbox}{width = 1\textwidth}
 	\begin{tabular}{rrrr}
 
 
@@ -412,7 +313,6 @@ Alternatively, considering that PRDM9\textsuperscript{Dom2}-targeted hotspots ar
 		\bottomrule
 
 	\end{tabular}
-	% \end{adjustbox}
 	\caption[Number of B6- and CAST-donor fragments per category of hotspots]
 	{\textbf{Number of B6- and CAST-donor fragments per category of hotspots.}
 		\par The donor haplotype for each fragment was identified as described in Chapter~\ref{ch:6-recombination-parameters} in each of the six categories of hotspots reported in Table~\ref{tab:classification-hotspots}.
@@ -479,8 +379,6 @@ Consequently, at this point, cancelling the action of dBGC was absolutely critic
 To control for the impact of dBGC onto the transmission bias, we equalised the number of fragments coming from B6-donor and from CAST-donor conversion events.
 Concretely, we counted, for each hotspot, the total number of B6-donor ($n\textsubscript{B6}$) and of CAST-donor ($n\textsubscript{CAST}$) fragments. 
 If there were fewer B6- than CAST-donor fragments (resp.\ fewer CAST- than B6-donor fragments), all B6-donor (resp.\ CAST-donor) fragments as well as a random selection of $n\textsubscript{B6}$ fragments among the $n\textsubscript{CAST}$ CAST-donor (resp.\ $n\textsubscript{CAST}$ among the $n\textsubscript{B6}$ B6-donor) fragments were retained. 
-% If there were fewer B6- than CAST-donor fragments ($n\textsubscript{B6} < n\textsubscript{CAST}$), all B6-donor fragments as well as a random selection of $n\textsubscript{B6}$ fragments among the $n\textsubscript{CAST}$ CAST-donor fragments were retained.
-% Conversely, if there were fewer CAST- than B6-donor fragments ($n\textsubscript{CAST} < n\textsubscript{B6}$), all CAST-donor fragments as well as a random selection of $n\textsubscript{CAST}$ fragments among the $n\textsubscript{B6}$ B6-donor fragments were retained.
 
 To check if this simple method functioned properly, we examined the portions of the fragments located outside the observed CTs (CTs\textsuperscript{$\star$}).
 By definition, gene conversion does not occur in these DNA chunks and, thus, the allelic frequencies are expected \textit{not} to depart from a 1:1 transmission ratio.
@@ -491,7 +389,6 @@ We found that the transmission of \textit{S} and \textit{W} alleles indeed abode
 
 
 \section{Quantification of GC-biased gene conversion}
-% \subsection{Controling for dBGC to quantify gBGC}
 \subsection{Null $b_0$ in COs and weak $b_0$ in multiple-marker NCOs}
 
 After controlling for dBGC, it became possible to measure the intensity of gBGC\@.
@@ -518,61 +415,11 @@ Thus, we aimed at quantifying the transmission bias in single-marker NCOs as wel
 
 
 
-% , i.e.\ those whose CT overlapped at least two markers.
-%
-% Nevertheless, since the CTs of NCOs are extremely short (36 bp on average, see Chapter~\ref{ch:6-recombination-parameters}), a significant proportion of them should overlap only 1 marker.
-% Thus, we aimed at quantifying the transmission bias in single-marker NCOs as well, this time through an indirect approach that I describe in the following subsection.
-%
 \subsection{Strong $b_0$ in single-marker NCOs}
-
-% Briefly, estimating the contribution of single-marker NCO (NCO-1) events consisted in three main steps.
-% First, we adapted the procedure developed in Chapter~\ref{ch:5-methodology} to fish out all events which were likely to be NCO-1 events (pot-NCO-1, for ‘potential NCO-1 events’).
-% Second, since the large majority of them (90.0\%, Table~\ref{tab:NCO-1-FP-rate}) were false positives (FPs) and most of these FPs (66.7\%) arose from sequencing errors, we measured the sequencing error rate directly in our sequencing data to estimate, among the pot-NCO-1 events, the relative proportion of FPs displaying W\textrightarrow{} S and S\textrightarrow{} W erroneous conversion events.
-% With this, we could finally deconvolute the fraction of the observed ratio of $\frac{WS}{WS+SW}$ due to FPs and to genuine NCO-1 events, and thus, extrapolate the transmission bias on single-marker NCOs.
-%
-% I detail these three steps in this subsection.
-%
-
-% - 1) on extrait les NCO-1 (qui ont de nombreux FP principalement du a erreur de seq)
-% - 2) on estime le taux de WS du a erreur de sequencage seulement
-% - 3) on calcule la difference avec ce qui est observe pour extrapoler le BGC dans les NCO-1
-
-% \subsubsection{Extraction of potential single-marker NCOs (pot-NCO-1 events)}
-
-% \begin{table}[b!]
-%     \centering
-%     \begin{adjustbox}{width = 1\textwidth}
-%         \begin{tabular}{rrrrrrrr}
-%             \toprule
-%             \multicolumn{3}{r}{} & \multicolumn{2}{c}{\textbf{Filter off}} & & \multicolumn{2}{c}{\textbf{Filter on}} \\
-%             \cmidrule{4-5}
-%             \cmidrule{7-8}
-%             \textbf{Target} & \textbf{Nb of} & \textbf{Nb of} & \textbf{Nb of} & \textbf{Event rate} & & \textbf{Nb of} & \textbf{Event rate} \\
-%
-%             \textbf{category} & \textbf{targets} & \textbf{fragments} & \textbf{events} & \textbf{($\times$ 10\textsuperscript{-6})} & & \textbf{events} & \textbf{($\times$ 10\textsuperscript{-6})} \\
-%
-%             \midrule
-%             Hotspots & 1,018 & 228,984,512 & 243,390 & 1062.9 & & 147,792 & 645.4 \\
-%             Controls & 500 & 106,850,906 & 110,615 & 1035.2 & & 62,074 & 580.9 \\
-%             \midrule
-%             \multicolumn{1}{r}{\textbf{FP rate}} & \multicolumn{4}{r}{\textbf{97.4 \%}} & & \multicolumn{2}{r}{\textbf{90.0 \%}} \\
-%             \bottomrule
-%         \end{tabular}
-%     \end{adjustbox}
-%     \caption[Number of pot-NCO-1 events detected in hotspot and control targets with and without the sequencing error filter]
-%     {\textbf{Number of pot-NCO-1 events detected in hotspot and control targets with and without the sequencing error filter.}
-%         \par Pot-NCO-1 events were detected with or without a sequencing error filter (see main text).
-%         All fragments or events overlapping at least 1 bp with a given target are counted in this table.
-%         The event rate corresponds to the ratio of candidate recombination events over the total number of fragments.
-%         The maximum false positive (FP) rate is the ratio of the event rate in control targets over that in hotspots.
-%     }
-% \label{tab:NCO-1-FP-rate}
-% \end{table}
 
 
 \begin{table}[b!]
 	\centering
-	% \begin{adjustbox}{width = 1\textwidth}
 		\begin{tabular}{rrrrr}
 			\toprule
 			\textbf{Target} & \textbf{Nb of} & \textbf{Nb of} & \textbf{Nb of} & \textbf{Event rate} \\
@@ -586,7 +433,6 @@ Thus, we aimed at quantifying the transmission bias in single-marker NCOs as wel
 			\multicolumn{1}{r}{\textbf{FP rate}} & \multicolumn{4}{r}{\textbf{90.0 \%}} \\
 			\bottomrule
 		\end{tabular}
-	% \end{adjustbox}
 	\caption[Number of pot-NCO-1 events detected in hotspot and control targets]
 	{\textbf{Number of pot-NCO-1 events detected in hotspot and control targets.}
         \par Pot-NCO-1 events were detected as detailed in the main text.
@@ -604,29 +450,14 @@ To fish NCO-1 events out, we mapped all reads on both the B6 and the CAST refere
 We then designated all fragments containing one \textit{B6}-typed marker surrounded by \textit{CAST}-typed markers on both sides (resp.\ one \textit{CAST}-typed marker surrounded by \textit{B6}-typed markers on both sides) as potential NCO-1 events (‘pot-NCO-1’).
 We found 147,792 such pot-NCO-1 within hotspots and 62,074 within control regions.
 Under the assumption that the recombination rate in control regions is null, this implies that 90.0\% of pot-NCO-1 events detected within hotspots are false positives (Table~\ref{tab:NCO-1-FP-rate}), which meant that as few as 14,766 of the pot-NCO-1 events detected within hotspots corresponded to genuine NCO-1 events.\\
-% Taking into account the number of fragments in those regions, the NCO-1 FP error rate was as high as 90.0\% (Table~\ref{tab:NCO-1-FP-rate}), which meant that as few as 14,766 of the pot-NCO-1 events detected within hotspots corresponded to genuine NCO-1 events.
 
 
 
 
-% %% LE MIEN
-% We next estimated the sequencing machine error rate by analysing the apparition of \textit{de novo} variants outside heterozygous sites directly in our sequencing data (see Appendix~\ref{app:data-and-figs}).
-% Using this knowledge, we extrapolated the proportion of errors coming from sequencing errors within the heterozygous sites of control regions.
-% This way, we estimated that the largest part of FPs (66.7\%, CI $= [60\%; 78\%$]) directly came from sequencing errors.
-% In particular, we found that S bases were more often mistakenly sequenced as W bases than the other way round, which implied that a greater number of FPs were detected as NCO-1 products with a S\textrightarrow{} W rather than with a W\textrightarrow{} S conversion event.
-% More precisely, sequencing errors, by themselves, were expected to lead to a $\frac{WS}{WS+SW}$ ratio of 0.39 (see Appendix~\ref{app:data-and-figs}).
-%
-% For pot-NCO-1 discoveries located within control regions, we found that the $\frac{WS}{WS+SW}$ ratio was 0.31.
-% As this value was slightly lower than that expected based on sequencing errors only, we believe that the remaining gap comes from the 34\% of FPs that do not originate from sequencing errors.
-%
-
-
-%% CORRECTION LAURENT
 % cat $DATA/2_dBGC/6_ThirdSequencing/07_Count_sequencing_errors_min_qual_20/Frequencies/*|awk -v OFS="\t" {print} | cut -f5|sort -gr
 To investigate the origin of these FPs, we measured the base-specific sequencing error rate by analysing the frequency of \textit{de novo} variants observed at non-polymorphic sites, directly in our sequencing data (see Appendix~\ref{app:data-and-figs}). 
 The rate of base-substitution sequencing errors (i.e.\ ignoring indels) varies among bases from $3\times10^{-5}$ to $10^{-4}$ per bp. 
 This source of error accounts for 66.7\% (CI $= [60\%; 78\%$]) of detected FPs (see Appendix~\ref{app:data-and-figs}).
-% 66.7% (CI = [60%; 78%]) of detected FPs (see Appendix A).
 Among all pot-NCO-1 events, we observed an excess of S~$\rightarrow$~W over W~$\rightarrow$~S potential conversion events ($\frac{WS}{WS+SW} \sim 0.39$). 
 This is in large part explained by the fact that the pattern of sequencing errors is biased: S bases were more often mistakenly sequenced as W bases than the other way round (see Appendix~\ref{app:data-and-figs}). 
 
@@ -636,20 +467,6 @@ Under the assumption that the pattern of sequencing errors is the same in hotspo
 
 
 
-
-
-% The procedure we implemented in Chapter~\ref{ch:5-methodology} to identify recombination events discarded (1) genotyping errors coming from alignment defects by mapping the reads on both the B6 and the CAST reference genomes and (2) genotyping errors coming from sequencing miscalls by requiring a minimum of 2 markers.
-% To uncover pot-NCO-1 events, we removed this second filter and replaced it with an alternative, less efficient filter to limit the number of sequencing miscalls: we checked that the allele supporting the genotype call with the mapping onto the B6 genome was identical to that based on the mapping onto the CAST genome.
-% When setting this filter on, the NCO-1 FP error rate was lower than without the filter, but remained as high as 90.0\% (Table~\ref{tab:NCO-1-FP-rate}), which meant that as few as 14,766 of the pot-NCO-1 events detected within hotspots corresponded to genuine NCO-1 events.
-% The NCO-1 FP error rate was as high as 90.0\% when this second filter whereas, without it, the error rate was even higher (Table~\ref{tab:NCO-1-FP-rate}).
-
-
-
-
-% \subsubsection{Extrapolation of the transmission bias for single-marker NCOs}
-
-% In spite of the high FP error rate, we found that the transmission of S alleles was significantly higher in hotspot regions (0.356, CI\textsubscript{95\%} $=[0.3532, 0.3594]$) than in control regions (0.317, CI\textsubscript{95\%} $=[0.3129,0.3220]$).
-% Assuming that the 133,026 FPs found in hotspot regions contributed to the $\frac{WS}{WS+SW}$ ratio in the same manner as those found in control regions, and that the contribution of the remaining 14,766 genuine NCO-1 events reflected the transmission bias of NCO-1 events, we could deconvolute both phenomena as such:
 
 \begin{equation*}
 	n_{hotspots}^{NCO_1 + FP} \times r_{hotspots}^{NCO_1 + FP}  = n_{hotspots}^{NCO_1} \times r_{hotspots}^{NCO_1} + n_{hotspots}^{FP} \times r_{control}^{FP}
@@ -690,8 +507,6 @@ To estimate the overall contribution of NCOs to gBGC, we deconvoluted $b_0^{NCO}
 	b_{0}^{NCO} = b_{0}^{NCO_{1}} \times f^{NCO_{1}} + b_{0}^{NCO_{2+}} \times f^{NCO_{2+}} 
 \end{equation*}
 
-% Though, the relative proportion of NCO-2+ events increases with marker density (Figure~\ref{fig:density-NCO}), and our experimental design required a high level of heterozygosity (see Chapter~\ref{ch:5-methodology}), not representative of the real heterozygosity in mouse populations.
-% However, other studies have estimated the genome-wide polymorphism in wild \textit{Mus musculus domesticus} mice: using a 95\% sensitivity for SNP discovery, it was estimated to be around 0.47\% \citep{davies2015factors}, a result similar to the 0.55\% value previously found on a subset of the genome \citep{frazer2007sequencebased}.
 
 The genome-wide level of polymorphism in natural populations of \textit{Mus musculus domesticus} mice was estimated to be around 0.47\% \citep{davies2015factors}, a result similar to the 0.55\% value previously found on a subset of the genome \citep{frazer2007sequencebased}.
 With such SNP density, we would expect 74.75\% of NCO CT markers to come from NCO-1 events (representing 86.23\% of the NCOs overlapping at least one marker) and the remaining 25.25\% from NCO-2+ events (representing 13.77\% of the NCOs overlapping at least one marker) (Figure~\ref{fig:density-NCO}), which would result in an overall $b_0^{NCO}$ of 0.310.
