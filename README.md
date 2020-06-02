@@ -2,7 +2,7 @@ PhD dissertation
 ================
 
 This repo contains the source code for my PhD dissertation entitled "Recombination as a driver of genome evolution: characterisation of biased gene conversion in mice". 
-The final work is available ![online](https://tel.archives-ouvertes.fr/tel-02435079) (and ![here](https://tel.archives-ouvertes.fr/tel-02435079/document) is the direct access to the resulting .pdf file).
+The final work is available [online](https://tel.archives-ouvertes.fr/tel-02435079) (and [here](https://tel.archives-ouvertes.fr/tel-02435079/document) is the direct access to the resulting .pdf file).
 
 
 
@@ -16,7 +16,7 @@ First, clone the repository:
 git clone https://github.com/MaudGautier/PhD-dissertation.git
 ```
 
-Second, download the figures from ![this link](https://drive.google.com/file/d/1OzvMGjm0hkz8oFhoyoe6km3u5xp-gpJe/view?usp=sharing). 
+Second, download the figures from [this link](https://drive.google.com/file/d/1OzvMGjm0hkz8oFhoyoe6km3u5xp-gpJe/view?usp=sharing). 
 Unzip the file and put the `figures` folder in the root directory of the cloned repository.
 
 
@@ -28,7 +28,7 @@ pdflatex main.tex
 pdflatex main.tex
 ```
 
-Note that it is necessary to run `pdflatex` three times to have the correct final result (for a more detailed explanation, read ![this page](https://tex.stackexchange.com/questions/53235/why-does-latex-bibtex-need-three-passes-to-clear-up-all-warnings)).
+Note that it is necessary to run `pdflatex` three times to have the correct final result (for a more detailed explanation, read [this page](https://tex.stackexchange.com/questions/53235/why-does-latex-bibtex-need-three-passes-to-clear-up-all-warnings)).
 
 
 
